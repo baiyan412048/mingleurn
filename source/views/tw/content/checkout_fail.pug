@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/checkout_result.css")
+  body.checkout_result(data-page="checkout_result")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .content(style="background-image: url('../../../uploads/shopping/checkout-fail.jpg')")
+              .result-circle.fail
+                .line1 Oops !
+                .line2 Payment Fail
+                .brush-img
+                  img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/shopping/result-decor.png", alt="")
+              p.description Your payment failed. Please go back to the previous page, select a new payment method, and perform the payment action again.
+              .btn-group
+                a.btn.btn-gold(href="javascript:;") Repay
+                a.btn.btn-black(href="javascript:;") Contact Us
+
+
+
+        // 頁尾
+        footer
+          .footer-top
+            .header Achieve Now
+            include ../layouts/_quick-link.pug
+                                                
+          include ../layouts/_footer_bottom.pug
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

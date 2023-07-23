@@ -1,0 +1,71 @@
+//共用
+  
+*
+  outline: none
+html
+  overflow: -moz-hidden-unscrollable
+  height: 100%
+body
+  font-family: '微軟正黑體修正', '微軟正黑體', sans-serif
+  font-weight: normal
+  -ms-overflow-style: none
+  height: 100%
+  overflow: auto
+  &::-webkit-scrollbar
+    display: none
+    width: 0 !important
+  .main-wrapper
+    width: 100vw
+
+input[type='number']
+  -moz-appearance: textfield
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none
+
+.swiper-container
+  width: 100%
+  height: 100%
+    
+.swiper-slide
+  text-align: center
+  font-size: 18px
+  background: #fff
+  /* Center slide text vertically */
+  display: -webkit-box
+  display: -ms-flexbox
+  display: -webkit-flex
+  display: flex
+  -webkit-box-pack: center
+  -ms-flex-pack: center
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-box-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+
+//複製連結成功提示
+.notice-wrapper
+  position: fixed
+  bottom: 80px
+  left: 50%
+  transform: translate(-50%,0)
+  z-index: 99999999
+  .text
+    display: none
+    font-size: px(14)
+    padding: 10px
+    color: white
+    background-color: #006fcc
+  #clipboard
+    position: absolute
+    width: 100%
+    min-width: 200px
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: -10
+    opacity: 0
+    cursor: default
+    

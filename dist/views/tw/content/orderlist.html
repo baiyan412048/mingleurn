@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <!--共用設定-->
+    <!-- 網站語系及語言宣告-->
+    <meta http-equiv="content-language" content="zh-TW"/>
+    <meta charset="UTF-8"/>
+    <!-- RWD設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 瀏覽器設定-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- 網站關鍵字-->
+    <meta name="keywords" content="網站關鍵字"/>
+    <!-- 網頁內容描述-->
+    <meta name="description" content="網頁內容描述，中文 80 個字元、英文 160 個字元"/>
+    <!-- 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="robots" content="noindex"/>
+    <!-- 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="googlebot" content="noindex"/>
+    <!-- Open Graph Protocol for facebook-->
+    <meta property="og:title" content="網頁Title"/>
+    <meta property="og:description" content="網頁內容描述"/>
+    <meta property="og:url" content="主要網址"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="網頁內容描述"/>
+    <!-- Open Graph Protocol for google plus-->
+    <meta itemprop="name" content="網站名稱或標題"/>
+    <meta itemprop="image" content="分享的影像位址"/>
+    <meta itemprop="description" content="網頁描述"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="分享的影像位址"/>
+    <meta name="twitter:site" content="網站名稱"/>
+    <meta name="twitter:title" content="網頁標題"/>
+    <meta name="twitter:description" content="網頁描述 200 個字元以內"/>
+    <meta name="twitter:creator" content="客戶公司或品牌名稱"/>
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content=" http://www.example.com/image.html"/>
+    <title>Mingleurn</title>
+    <!-- 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中-->
+    <link rel="canonical" href="主要網址" itemprop="url"/>
+    <link rel="shortcut icon" href="../../../assets/img/favicon.ico" type="image/x-icon"/>
+    <!-- 以下script 後端自行打開-->
+    <!-- Google Tag Manager-->
+    <!-- script.-->
+    <!--   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+    <!--   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+    <!--   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+    <!--   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+    <!--   })(window,document,'script','dataLayer','GTM編號');-->
+    <!--全站共用CSS-->
+    <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
+    <!--獨立CSS-->
+  </head>
+  <link rel="stylesheet" href="../../../assets/css/orderlist.css"/>
+  <body class="orderlist" data-page="orderlist">
+    <div class="main-wrapper scrollbar-macosx" data-fake-body="">
+      <div class="all-wrapper">
+        <div class="decor-layer">
+          <div class="decor1"><img src="../../../assets/img/member/orderlist-decor01.png" alt=""/></div>
+          <div class="decor2"><img src="../../../assets/img/member/orderlist-decor02.png" alt=""/></div>
+        </div>
+        <!-- 主要內容-->
+        <main>
+          <div class="container">
+            <div class="header"><a class="back-member" href="./member.html">BACK</a></div>
+            <div class="order-info">
+              <div class="item">
+                <div class="key">Time</div>
+                <div class="value">2020.03.24</div>
+              </div>
+              <div class="item">
+                <div class="key">Code</div>
+                <div class="value">20010001</div>
+              </div>
+              <div class="item">
+                <div class="key">Total</div>
+                <div class="value">USD 6,870</div>
+              </div>
+              <div class="item">
+                <div class="key">Status</div>
+                <div class="value">Processing</div>
+              </div>
+            </div>
+            <div class="orderlist-header" data-now-tab="">
+              <ul class="order-content-tab nav-tabs" data-id="orderlist-tabs">
+                <li class="tab-btn active" href="javascript:;" data-page="list">
+                  <div class="icon icon-regulation"></div>
+                  <div class="text">Order List</div>
+                </li>
+                <li class="tab-btn has-new" href="javascript:;" data-page="attached">
+                  <div class="icon icon-attachment"></div>
+                  <div class="text">Attached</div>
+                </li>
+              </ul>
+              <div class="option-area"><a class="cancel-order ajax_open" href="javascript:;" data-ajax-route="./ajax_cancel_order.html" data-ajax-container=".cancel-order-wrap" data-ajax-callback="_ajaxCallback.normalLightbox">Cancel Order</a>
+                <div class="contact-text">
+                  <div class="icon icon-send2"></div>
+                  <div class="text">Need helps ? <a href="./contact.html">Contact Us</a> now !</div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content" id="orderlist-tabs">
+              <!--Order List-->
+              <div class="tab-pane" id="list">
+                <div class="list-wrap">
+                  <!--4-1-->
+                  <div class="step-section step1">
+                    <div class="step-box">
+                      <div class="step">1</div>
+                      <div class="text">
+                        <div class="line1">Order List</div>
+                        <div class="line2">List items are as follows</div>
+                      </div>
+                    </div>
+                    <ul class="order-list">
+                      <li>
+                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list01.jpg')"></div>
+                        <div class="product-info">
+                          <div class="name">Chantilly Lace</div>
+                          <div class="unit-price"><span>1 SET = 50Y</span><span>USD 5.00 / Y</span></div>
+                        </div>
+                        <div class="buy-count" data-inventories=""><span class="minus"></span>
+                          <div class="count-wrap">
+                            <div class="count">1</div><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <p class="is-customized">customized</p>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div><a class="detail" href="javascript:;">
+                          <div class="text">See Detail</div>
+                          <div class="icon"><i class="icon-detail"></i></div></a>
+                      </li>
+                      <li>
+                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list02.jpg')"></div>
+                        <div class="product-info">
+                          <div class="name">Multi Color Embroidery Trim</div>
+                          <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 3.00 / PRS</span></div>
+                        </div>
+                        <div class="buy-count" data-inventories=""><span class="minus"></span>
+                          <div class="count-wrap">
+                            <div class="count">30</div><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <p class="is-customized">customized</p>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">4,500</span></div><a class="detail" href="javascript:;">
+                          <div class="text">See Detail</div>
+                          <div class="icon"><i class="icon-detail"></i></div></a>
+                      </li>
+                      <li>
+                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list03.jpg')"></div>
+                        <div class="product-info">
+                          <div class="name">Chantilly Lace</div>
+                          <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 0.80 / PRS</span></div>
+                        </div>
+                        <div class="buy-count" data-inventories=""><span class="minus"></span>
+                          <div class="count-wrap">
+                            <div class="count">50</div><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <p class="is-customized">customized</p>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">2,000</span></div><a class="detail" href="javascript:;">
+                          <div class="text">See Detail</div>
+                          <div class="icon"><i class="icon-detail"></i></div></a>
+                      </li>
+                      <li class="customized">
+                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list04.jpg')"></div>
+                        <div class="product-info">
+                          <div class="name">Chantilly Lace</div>
+                          <div class="unit-price"><span>1 SET = 50Y</span><span>USD 5.00 / Y</span></div>
+                        </div>
+                        <div class="buy-count" data-inventories=""><span class="minus"></span>
+                          <div class="count-wrap">
+                            <div class="count">1</div><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <p class="is-customized">customized</p>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div><a class="detail" href="javascript:;">
+                          <div class="text">See Detail</div>
+                          <div class="icon"><i class="icon-detail"></i></div></a>
+                      </li>
+                      <li>
+                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list05.jpg')"></div>
+                        <div class="product-info">
+                          <div class="name">Chantilly Lace</div>
+                          <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 3.00 / PRS</span></div>
+                        </div>
+                        <div class="buy-count" data-inventories=""><span class="minus"></span>
+                          <div class="count-wrap">
+                            <div class="count">30</div><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <p class="is-customized">customized</p>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">4,500</span></div><a class="detail" href="javascript:;">
+                          <div class="text">See Detail</div>
+                          <div class="icon"><i class="icon-detail"></i></div></a>
+                      </li>
+                      <li>
+                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list06.jpg')"></div>
+                        <div class="product-info">
+                          <div class="name">Chantilly Lace</div>
+                          <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 0.80 / PRS</span></div>
+                        </div>
+                        <div class="buy-count" data-inventories=""><span class="minus"></span>
+                          <div class="count-wrap">
+                            <div class="count">50</div><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <p class="is-customized">customized</p>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">2,000</span></div><a class="detail" href="javascript:;">
+                          <div class="text">See Detail</div>
+                          <div class="icon"><i class="icon-detail"></i></div></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!--4-2-->
+                  <div class="step-section step2" data-select="type1">
+                    <div class="step-box">
+                      <div class="step">2</div>
+                      <div class="text">
+                        <div class="line1">Shipping</div>
+                        <div class="line2">Select the shipping</div>
+                      </div>
+                    </div>
+                    <div class="shipping-content type1">
+                      <div class="icon-box">
+                        <div class="icon"><i class="icon-airplane"></i></div>
+                        <div class="text">Mingleurn</div>
+                      </div>
+                      <div class="form">
+                        <div class="form-wrap">
+                          <div class="form-grid">
+                            <div class="form-group address has-checkbox">
+                              <p>Shipping Address</p>
+                              <div class="element-wrap">
+                                <div class="readonly">Asia</div>
+                                <div class="readonly">Taiwan</div>
+                                <div class="readonly">407</div>
+                              </div>
+                              <div class="address-input">
+                                <div class="readonly">7F.-1, No. 90, Darong E. St., Xitun Dist., Taichung City</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-wrap">
+                          <div class="form-grid">
+                            <div class="form-group address has-checkbox">
+                              <p>Recipient Information</p>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <div class="form-group">
+                              <p>Name</p>
+                              <div class="readonly">Huang Hailey</div>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <div class="form-group">
+                              <p>Phone</p>
+                              <div class="readonly"><span>+886</span><span>912345678</span></div>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <div class="form-group">
+                              <p>E-mail</p>
+                              <div class="readonly">example@gmail.com</div>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <div class="form-group">
+                              <p>Receipt</p>
+                              <div class="readonly">We will upload the receipt to your member center after the order is completed.</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--只要不符合結帳條件就不顯示下面結構-->
+                      <div class="form-extra-description">
+                        <div class="content">
+                          <div class="text">Your shipping fee is<span class="amount">190</span><span class="unit">USD</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="shipping-content type2">
+                      <div class="icon-box">
+                        <div class="icon"><i class="icon-shipping"></i></div>
+                        <div class="text">Cooperate logistics</div>
+                      </div>
+                      <div class="form">
+                        <div class="form-wrap">
+                          <div class="form-grid">
+                            <div class="form-group wrap">
+                              <p>Cooperate logistics</p>
+                              <div class="readonly">DHL Express</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-wrap">
+                          <div class="form-grid">
+                            <div class="form-group wrap">
+                              <p>Manufacturer Number</p>
+                              <div class="readonly">0123456789</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-wrap">
+                          <div class="form-grid">
+                            <div class="form-group address has-checkbox">
+                              <p>Shipping Address</p>
+                              <div class="element-wrap">
+                                <div class="readonly">Asia</div>
+                                <div class="readonly">Taiwan</div>
+                                <div class="readonly">407</div>
+                              </div>
+                              <div class="address-input">
+                                <div class="readonly">7F.-1, No. 90, Darong E. St., Xitun Dist., Taichung City</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-wrap">
+                          <div class="form-grid">
+                            <div class="form-group address has-checkbox">
+                              <p>Recipient Information</p>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <div class="form-group">
+                              <p>Name</p>
+                              <div class="readonly">Huang Hailey</div>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <div class="form-group">
+                              <p>Phone</p>
+                              <div class="readonly"><span>+886</span><span>912345678</span></div>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <div class="form-group">
+                              <p>E-mail</p>
+                              <div class="readonly">example@gmail.com</div>
+                            </div>
+                          </div>
+                          <div class="form-grid">
+                            <div class="form-group">
+                              <p>Receipt</p>
+                              <div class="readonly">We will upload the receipt to your member center after the order is completed.</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--只要不符合結帳條件就不顯示下面結構-->
+                      <div class="form-extra-description">
+                        <div class="content">
+                          <div class="text">Your shipping fee will be notified separately</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--4-3-->
+                  <div class="step-section step3" data-select="">
+                    <div class="step-box">
+                      <div class="step">3</div>
+                      <div class="text">
+                        <div class="line1">Payment</div>
+                        <div class="line2">Select the payment</div>
+                      </div>
+                    </div>
+                    <div class="payment-content credit-card-content">
+                      <div class="icon-box">
+                        <div class="icon"><i class="icon-credit-card"></i></div>
+                        <div class="text">Credit Card</div>
+                      </div>
+                      <div class="panel-container">
+                        <div class="payment-header">Support Type</div><img class="credit-card" src="../../../assets/img/credit-card.png" alt=""/>
+                        <p>It is not limited to domestic and international card issuers, and supports VISA / MASTER / JCB / UnionPay card issuers, allowing consumers to make quick payments.You will be redirected to a new screen to complete the payment transaction.</p><br/>
+                        <p class="notice">We do not offer installment service, please settle all expenses at once.</p>
+                      </div>
+                    </div>
+                    <div class="payment-content paypal-content">
+                      <div class="icon-box">
+                        <div class="icon"><i class="icon-paypal"></i></div>
+                        <div class="text">Paypal</div>
+                      </div>
+                      <div class="panel-container">
+                        <div class="payment-header">Support Type</div><img class="credit-card" src="../../../assets/img/credit-card.png" alt=""/>
+                        <p>p If you choose to pay with paypal, your screen will be redirected to a new screen to complete the payment transaction.</p><br/>
+                        <p class="notice">We do not offer installment service, please settle all expenses at once.</p>
+                      </div>
+                    </div>
+                    <div class="remark-content">
+                      <div class="panel-container">
+                        <div class="icon-box">
+                          <div class="icon icon-checkout-remark"></div>
+                          <div class="text">Special Remark</div>
+                        </div>
+                        <div class="remark-text">The delivery time should be delivered between 9: 00 - 12: 00 in the morning , thank you!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Attached-->
+              <div class="tab-pane" id="attached">
+                <!--如果沒有檔案的話加上 no-file 這個 Class-->
+                <!--然後將 .item-counts 的文字改為 There are 0 items-->
+                <div class="attached-wrap">
+                  <div class="attached-header">
+                    <div class="title">Files Download</div>
+                    <div class="item-counts">There are 6 items</div>
+                  </div>
+                  <ul class="files-list">
+                    <li>
+                      <div class="number">01</div>
+                      <div class="file-name">Order Details_20010012.pdf</div>
+                      <div class="file-action">
+                        <div class="action-item"><a href="javascript:;"><i class="icon-watch"></i></a></div>
+                        <div class="action-item"><a href="javascript:;" download="download"><i class="icon-download"></i></a></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="number">02</div>
+                      <div class="file-name">Logistics Tracking Files.pdf</div>
+                      <div class="file-action">
+                        <div class="action-item"><a href="javascript:;"><i class="icon-watch"></i></a></div>
+                        <div class="action-item"><a href="javascript:;" download="download"><i class="icon-download"></i></a></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="number">03</div>
+                      <div class="file-name">Invoices and receipts.pdf</div>
+                      <div class="file-action">
+                        <div class="action-item"><a href="javascript:;"><i class="icon-watch"></i></a></div>
+                        <div class="action-item"><a href="javascript:;" download="download"><i class="icon-download"></i></a></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="number">04</div>
+                      <div class="file-name">Contract file_20200331_Ver2.pdf</div>
+                      <div class="file-action">
+                        <div class="action-item"><a href="javascript:;"><i class="icon-watch"></i></a></div>
+                        <div class="action-item"><a href="javascript:;" download="download"><i class="icon-download"></i></a></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="number">05</div>
+                      <div class="file-name">Attachment File Name ABC.jpg</div>
+                      <div class="file-action">
+                        <div class="action-item"><a href="javascript:;"><i class="icon-watch"></i></a></div>
+                        <div class="action-item"><a href="javascript:;" download="download"><i class="icon-download"></i></a></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="number">06</div>
+                      <div class="file-name">Attachment File Name DEF.png</div>
+                      <div class="file-action">
+                        <div class="action-item"><a href="javascript:;"><i class="icon-watch"></i></a></div>
+                        <div class="action-item"><a href="javascript:;" download="download"><i class="icon-download"></i></a></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- 頁尾-->
+        <div class="footer"><a class="backTop" href="javascript:;"><i class="icon-top"></i></a></div>
+      </div>
+    </div>
+  </body>
+  <!--引入的script-->
+  <script>document.createElement( "picture" );</script>
+  <script src="../../../assets/js/plugins/picturefill/picturefill.min.js" async="async"></script>
+  <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
+  <script src="../../../assets/js/plugins-dist.js"></script>
+  <script src="../../../assets/js/fesdDB.1.0-dist.js"></script>
+  <script src="../../../assets/js/fesd.1.1-dist.js"></script>
+  <script src="../../../assets/js/methods-dist.js"></script>
+  <script src="../../../assets/js/main-dist.js"></script><!-- microdata : professional service -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "ProfessionalService",
+      "name": "網站名子",
+      "email": "mailto:email",
+      "url": "本站網址",
+      "image": "favicon logo路徑",
+      "priceRange":"商品價格區間",
+      "telephone": "電話",
+      "logo": "logo路徑",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "地址",
+        "addressLocality": "區",
+        "addressRegion": "成市",
+        "postalCode": "郵遞區號",
+        "addressCountry": "中華民國 (台灣)"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.619435",
+        "longitude": "120.296034"
+      },
+      "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+      "openingHours": [
+        "Mo-Th 11:00-22:00",
+        "Fr 11:00-22:30",
+        "Sa 10:30-22:30",
+        "Su 10:30-22:00"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+886-00-12345678"
+      },
+      "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+    }
+    
+    
+  </script><!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://example.com/dresses",
+            "name": "Dresses"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "https://example.com/dresses/real",
+            "name": "Real Dresses"
+          }
+        }
+      ]
+    }
+  </script>
+</html>

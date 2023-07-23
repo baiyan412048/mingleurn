@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+html(lang="en")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/gdpr.css")
+  body.gdpr(data-page="gdpr")
+    h1.visuallyhidden Mingleurn 明綸國際有限公司
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/member/gdpr-decor01.png", alt="")
+          .decor2
+            img(src="../../../assets/img/member/gdpr-decor02.png", alt="")
+
+        // 主要內容
+        main
+          .gdpr-wrap
+            .sidebar
+              a.close-btn(href="./member.html")
+                span
+              ul.gdpr-menu.nav-tabs(data-id="gdpr-tabs")
+                li.backup
+                  a.option.tab-btn.active(href="javascript:;" data-page="backup") Backup
+                  .status
+                    .text status
+                    .switch-input(data-ajax-route="./ajax_gdpr_backup.html" data-ajax-route2="./ajax_gdpr_cancel_backup.html")
+                      input(type="checkbox" disabled)
+                      .fake-checkbox
+                li.delete
+                  a.option.tab-btn(href="javascript:;" data-page="delete") Delete
+                  .status
+                    .text status
+                    .switch-input(data-ajax-route="./ajax_gdpr_delete.html" data-ajax-route2="./ajax_gdpr_cancel_delete.html")
+                      input(type="checkbox" disabled)
+                      .fake-checkbox
+                li.block
+                  a.option.tab-btn(href="javascript:;" data-page="block") Block
+                  .status
+                    .text status
+                    .switch-input(data-ajax-route="./ajax_gdpr_block.html" data-ajax-route2="./ajax_gdpr_cancel_block.html")
+                      input(type="checkbox" disabled)
+                      .fake-checkbox
+            .content
+              .tab-content#gdpr-tabs
+                //跳步驟幫我傳跑這支 _gdpr.stepChange('.tab-pane 的 ID', 步驟)
+                //裡面的按鈕有範例
+                //備份
+                .tab-pane#backup
+                  .step-wrap(data-now-step="1")
+                    .step-content.step1
+                      h2.title Backup Your Account
+                      p.description Dear member,<br>We need 7 working days to carry out the work after submitting the senior account, and you can download it in the member center after completing, please pay attention.
+                      //後端判斷是否有下載過
+                      //有下載過顯示 .last-backup 這個 p
+                      p.last-backup(style="display: none") Date of last backup :  2020 - 03 - 12
+                      p.emphasis If you decide to back up your account, please fill in the fields to ensure that this operation is yours.
+                      .form
+                        .form-grid
+                          .form-group
+                            p Password
+                            input(type="password" placeholder="Enter the current password" required)
+                        .form-grid
+                          .form-group
+                            p E-mail
+                            input(type="email" inputmode="email" placeholder="We will send a notice to your email when it is done" required)
+                        .use-member-data
+                          label.checkbox
+                            input(type="checkbox")
+                            .fake-checkbox
+                              span
+                            p Same as member
+                        .form-grid
+                          .form-group.verification
+                            p Verification
+                            .element-wrap
+                              input(type="text" placeholder="Please enter  verification code")
+                              img(src="../../../uploads/contact/code.jpg", alt="")
+                              a(href="javascript:;")
+                                span.icon-refresh
+                      a.btn.btn-black(href="javascript:;" onclick="_gdpr.stepChange('backup', 2)") Submit
+                    .step-content.step2
+                      .icon-backup
+                      h2.title Successfully Submit
+                      p.description Dear member,<br>We need 7 working days to carry out the work after submitting successful, we will send a notice to your email when it is done.
+                      //後端只要幫我帶天數到 data-day 就好
+                      .progress-bar(data-day="1")
+                      .date Date of finished backup :  2020 - 03 - 12
+                      .btn.operating.btn-black Operating
+                      a.btn.download.btn-gold(href="javascript:;" download) Download
+
+                //刪除
+                .tab-pane#delete
+                  .step-wrap(data-now-step="1")
+                    .step-content.step1
+                      h2.title Delete Your Account
+                      p.description Dear member,<br>if you think you will no longer use this website, you can ask us to permanently delete your account. Please note that you will not be able to re-enable it after deletion, or keep any added content, and we recommend that you back it up before proceeding.
+                      .see-detail
+                        span See Details
+                        .tips ?
+                          .tips-box
+                              p.text After you propose to delete the account, it means that others cannot see your account on the website and all the information published through this account. After 14 days of the submission, we will start the deletion process. We will take up to 90 days (from the time the account is deleted and submitted) ) In order to delete your published content, which will no longer be visible to others when we delete it.
+                      p.emphasis If you decide to back up your account, please fill in the fields to ensure that this operation is yours.
+                      .form
+                        .form-grid
+                          .form-group
+                            p Password
+                            input(type="password" placeholder="Enter the current password" required)
+                        .form-grid
+                          .form-group.verification
+                            p Verification
+                            .element-wrap
+                              input(type="text" placeholder="Please enter  verification code")
+                              img(src="../../../uploads/contact/code.jpg", alt="")
+                              a(href="javascript:;")
+                                span.icon-refresh
+                      a.btn.btn-black(href="javascript:;" onclick="_gdpr.stepChange('delete', 2)") Submit
+                    .step-content.step2
+                      .icon-delete2
+                      h2.title Successfully Submit
+                      p.description Dear member,<br>We will begin the removal process after 14 days, before which you can reactivate your account. It needs up to 90 days to delete all account content.
+                      .date Date of finished backup :  2020 - 03 - 12
+                      //後端只要幫我帶天數到 data-day 就好
+                      .progress-bar(data-day="14")
+                        .interval
+                          span Day14
+                        .interval
+                          span Day90
+                      .extra-description Wanna reboot account ? Please contact us.
+                      a.btn.reboot.btn-gold.ajax_open(href="javascript:;" data-ajax-route="./ajax_gdpr_cancel_delete.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.gdprLightbox") Reboot
+                      a.btn.contact.btn-gold(href="./contact.html") Contact Us
+                //停用
+                .tab-pane#block
+                  .step-wrap(data-now-step="1")
+                    .step-content.step1
+                      h2.title Backup Your Account
+                      p.description Dear member,<br>We need 7 working days to carry out the work after submitting the senior account, and you can download it in the member center after completing, please pay attention.
+                      p.emphasis If you decide to back up your account, please fill in the fields to ensure that this operation is yours.
+                      .form
+                        .form-grid
+                          .form-group
+                            p Password
+                            input(type="password" placeholder="Enter the current password" required)
+                        .form-grid
+                          .form-group.verification
+                            p Verification
+                            .element-wrap
+                              input(type="text" placeholder="Please enter  verification code")
+                              img(src="../../../uploads/contact/code.jpg", alt="")
+                              a(href="javascript:;")
+                                span.icon-refresh
+                      a.btn.btn-black(href="javascript:;" onclick="_gdpr.stepChange('block', 2)") Submit
+                    .step-content.step2
+                      .icon-lock
+                      h2.title Successfully Submit
+                      p.description Dear member,<br>You have successfully disabled your account. If you want to reactivate it, click the button below.
+                      //後端只要幫我帶天數到 data-day 就好
+                      a.btn.contact.btn-gold.ajax_open(href="javascript:;" data-ajax-route="./ajax_gdpr_cancel_block.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.gdprLightbox") Reboot
+
+          
+
+
+  //引入的script
+  include ../layouts/_script.pug

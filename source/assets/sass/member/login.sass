@@ -1,0 +1,138 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/layouts/_form
+@import ../common/ajax/_ajax_member_joinus
+@import ../common/ajax/_ajax_member_register
+@import ../common/ajax/_ajax_member_rights_statement
+@import ../common/ajax/_ajax_member_forgetps
+
+.login
+  .all-wrapper
+    .decor-layer
+      position: fixed
+      width: 100vw
+      height: 100vh
+      z-index: -1
+      overflow: hidden
+      >div
+        position: absolute
+        opacity: 0
+        &.decor1
+          width: 14vw
+          right: 16.3%
+          top: 0
+          height: 0
+          overflow: hidden
+          transition: opacity 0.3s, height 0.3s
+          +rwdmax(1024)
+            display: none
+        &.decor2
+          width: 9.21875vw
+          top: 42.77vh
+          left: 14.84375%
+          height: 0
+          overflow: hidden
+          transition: opacity 0.3s, height 0.3s
+          +rwdmax(1024)
+            display: none
+        &.decor3
+          width: 6vw
+          top: 34.3vh
+          left: 17.5%
+          transition: opacity 0.3s linear 0.6s
+          +rwdmax(1024)
+            display: none
+        &.decor4
+          width: 4.427vw
+          top: 44.5vh
+          left: 22%
+          transition: opacity 0.3s linear 0.6s
+          +rwdmax(1024)
+            display: none
+        &.decor5
+          width: 17.1875vw
+          right: 9.635%
+          bottom: 0
+          opacity: 0
+          transition: opacity 0.3s linear 0.6s
+          +rwdmax(1024)
+            display: none
+      &.show
+        >div
+          opacity: 1
+          &.decor1
+            height: 207px
+          &.decor2
+            height: 200px
+  main
+    .container
+      padding: 0 20px
+      +maxWidth($maxw: 1610px)
+    .header
+      text-align: center
+      margin-bottom: 56px
+      .unit-name
+        padding: 42px 0
+        +fontSet($size: px(13))
+        +rwdmax(767)
+          padding: 10px 0
+      .unit-alias
+        +fontSetBold($font: $LBB, $size: px(54))
+        +rwdmax(1024)
+          font-size: px(48)
+        +rwdmax(767)
+          font-size: px(32)
+      .unit-description
+        +maxWidth($maxw: 500px, $margin: 20px auto 0 auto)
+      +rwdmax(767)
+        margin-bottom: 26px
+    .form
+      text-align: center
+      +maxWidth($maxw: 495px, $margin: 0 auto 15.287% auto)
+      +rwdmax(767)
+        margin-bottom: 37.333%
+      .tip-block
+        margin-bottom: 40px
+        cursor: pointer
+        +flex($display: inline-flex, $y: baseline)
+        +fontSetBold($font: $LBB, $size: px(14), $lh: 25px)
+        span
+          margin-left: 5px
+          background-color: #000
+          border-radius: 500px
+          width: 20px
+          height: 20px
+          +flex
+          +fontSet($font: $MP, $size: px(13), $color: #fff)
+      .form-grid
+        .form-group
+          +rwdmax(767)
+            padding: 22px 0
+          &.verification
+            >p
+              +rwdmax(767)
+                margin-bottom: 0
+      .forget
+        margin-top: 16px
+        +fontSet($size: px(13), $color: black)
+      .button-group
+        margin-top: 80px
+        +flex
+        +rwdmax(575)
+          margin-top: 35px
+        .button
+          height: 50px
+          border-radius: 10rem
+          max-width: 180px
+          width: 100%
+          cursor: pointer
+          +flex
+          +fontSetBold($font: $LBB, $size: px(13), $color: white)
+          +rwdmax(575)
+            max-width: 140px
+          &:not(:first-child)
+            margin-left: 15px
+            +rwdmax(575)
+              margin-left: 8px
+          
+

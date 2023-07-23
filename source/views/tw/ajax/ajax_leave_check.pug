@@ -1,0 +1,14 @@
+.modal-scroll-wrap.scrollbar-macosx
+  .modal-contain
+    .modal-dialog
+      .modal-content
+        .remind-wrap
+          .icon-leave
+          p.remind-title Leave the page?
+          p.remind-text Are you sure to leave?
+            br
+            | This page action will not be retained.
+          a.remind-link.ajax_close(href="javascript:;" data-ajax-route="./ajax_customized_submit.html" data-ajax-container=".customized-submit-wrap" data-ajax-callback="_ajaxCallback.normalLightbox") Complete the process and close the window
+          .modal-btn-group
+            a.modal-btn.btn-gold.ajax_close(href="javascript:;") No
+            a.modal-btn.btn-black(href="./product_detail.html") Yes

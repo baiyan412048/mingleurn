@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+html(lang="en")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/contact.css")
+  body.contact(data-page="contact")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/contact/decor01.png", alt="")
+          .decor2
+            img(src="../../../assets/img/contact/decor02.png", alt="")
+          .decor3
+            img(src="../../../assets/img/contact/decor03.png", alt="")
+          .decor4
+            img(src="../../../assets/img/contact/decor04.png", alt="")
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .header
+              .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Contact Us
+              h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") MING will help
+              p.section-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Dear customer, welcome to use online customer service to leave a message,Please leave any questions, we will have customer service staff to contact you further, thank you!
+            section.form
+              // label.checkbox 僅在登入後顯示
+              label.checkbox
+                input(type="checkbox")
+                .fake-checkbox
+                  span
+                p Use my member profile
+              .form-row
+                .form-grid
+                  label.form-group.required
+                    p Name
+                    input(type="text")
+                .form-grid
+                  label.form-group.community
+                    p Community
+                    .element-wrap
+                      .select-element(data-default="Select")
+                        .selected
+                          span.text Select
+                          span.arrow.icon-arrow-up
+                        .dropdown
+                          ul.scrollbar-inner
+                            li Line
+                            li Wechat
+                            li QQ
+                            li Whatsapp
+                      input(type="text" placeholder="ID number")
+              .form-grid
+                label.form-group.mobile.required
+                  p Phone Number
+                  .element-wrap
+                    .select-element(data-default="Area code")
+                      .selected
+                        span.text Area code
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          li + 886
+                          li + 86
+                          li + 852
+                          li + 62
+                          li + 81
+                          li + 82
+                    input(type="tel" inputmode="tel" placeholder="ex : 912345678")
+              .form-grid
+                label.form-group.required
+                  p E-mail
+                  input(type="email" inputmode="email")
+              .form-row
+                .form-grid
+                  label.form-group
+                    p Company
+                    input(type="text" id="")
+                .form-grid
+                  label.form-group
+                    p Job Title
+                    input(type="text" id="")
+              .form-grid
+                label.form-group.subject.required
+                  p Subject
+                  .element-wrap
+                    .select-element(data-default="Select")
+                      .selected
+                        span.text Select
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          li Member Register
+                          li Product Customized
+                          li Subject A
+                          li Subject B
+                          li Subject C
+                          li Subject D
+                    input(type="text" placeholder="Enter the title")
+              .form-grid
+                label.form-group.message.required
+                  p Content
+                  textarea.scrollbar-inner(placeholder="Please enter what you want to contact")
+              .form-grid
+                label.form-group.attachment
+                  p Attachment
+                  .element-wrap
+                    .file-name File size is mainly below 2MB
+                    .custom-file-input
+                      span.icon-upload
+                      input(type="file" accept="image/jpeg, image/png")
+              .form-grid
+                label.form-group.verification
+                  p Verification
+                  .element-wrap
+                    input(type="text" placeholder="Please enter  verification code")
+                    img(src="../../../uploads/contact/code.jpg", alt="")
+                    a(href="javascript:;")
+                      span.icon-refresh
+              .contact-box
+                p If you have any questions, please contact us during our business hours.
+                .info
+                  p
+                    span Office Time
+                    |  Mon. to Fri.    ( GTM+8 ) 9:00-18:00
+                  p
+                    span Phone
+                    | +886 2 29512727
+                .button-group
+                  .button.btn-black.reset Reset
+                  .button.btn-gold.ajax_open(data-ajax-route="./ajax_send_success.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.contactForm") Submit
+        // 頁尾
+        footer
+          .footer-top
+            .header Fabric Wonderland
+            include ../layouts/_quick-link.pug
+          include ../layouts/_footer_bottom.pug
+
+  //引入的script
+  include ../layouts/_script.pug

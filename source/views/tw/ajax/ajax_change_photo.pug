@@ -1,0 +1,40 @@
+-
+  var defaultPhoto = [
+    '../../../uploads/member/default-photo01-200x200.png',
+    '../../../uploads/member/default-photo02-200x200.png',
+    '../../../uploads/member/default-photo03-200x200.png',
+    '../../../uploads/member/default-photo04-200x200.png',
+    '../../../uploads/member/default-photo05-200x200.png',
+    '../../../uploads/member/default-photo06-200x200.png',
+    '../../../uploads/member/default-photo07-200x200.png',
+    '../../../uploads/member/default-photo08-200x200.png',
+    '../../../uploads/member/default-photo09-200x200.png',
+    '../../../uploads/member/default-photo10-200x200.png',
+  ]
+.modal-scroll-wrap.scrollbar-macosx
+  .modal-contain
+    .modal-dialog
+      .modal-content
+        .close-btn.ajax_close
+          span
+        .modal-header
+          .title EDIT HEAD SHOT
+          .description Upload or choose your head shot
+        .modal-body
+          .member-photo.edit
+          .area-title Use your photo ?
+            label.upload-btn Upload
+              input(type="file")
+          .upload-tips Please upload a 250 *250  pixel photo, the file format is png, jpg, gif
+          .or
+            span or
+          .area-title Choose preset head shot
+          .photo-wrap
+            .row
+              each data in defaultPhoto
+                .grid
+                  .item
+                    .photo-box(style="background-image: url('" + data + "')")
+        .modal-footer
+          .modal-btn-group
+            a.modal-btn.btn-black.save(href="javascript:;" data-ajax-route="./ajax_change_photo_success.html" data-ajax-container=".change-photo-success-wrap" data-ajax-callback="_ajaxCallback.changePhotoSuccess") Save

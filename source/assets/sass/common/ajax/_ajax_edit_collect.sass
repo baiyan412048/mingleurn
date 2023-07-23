@@ -1,0 +1,197 @@
+.edit-collect-wrap,.add-collect-wrap
+  position: fixed
+  width: 100%
+  top: 0
+  bottom: 0
+  left: 0
+  background-color: rgba(0,0,0,0.6)
+  opacity: 0
+  transition: opacity 0.4s
+  z-index: 99
+  &.show
+    opacity: 1
+    .modal-scroll-wrap
+      .modal-contain
+        .modal-dialog
+          opacity: 1
+          transform: scale(1)
+  
+  .modal-scroll-wrap
+    width: 100%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    .modal-contain
+      display: table-cell
+      vertical-align: middle
+      width: 100vw
+      height: 100vh
+      padding: 0 20px
+      .modal-dialog
+        max-width: 445px
+        width: 100%
+        height: 540px
+        margin: 0 auto
+        padding: 12px
+        background-color: white
+        opacity: 0
+        transform: scale(0.7)
+        transition: transform 0.6s, opacity 0.6s
+        +rwdmax(575)
+          height: 75vh
+          height: calc(var(--vh, 1vh) * 75)
+          // margin: 12.5vh auto
+          // margin: calc(var(--vh, 1vh) * 12.5) auto
+        .modal-content
+          width: 100%
+          height: 100%
+          border: 1px solid #a88438
+          overflow: hidden
+          .step
+            width: 100%
+            height: 100%
+            &:not(.delete-check)
+              padding: 54px 0
+              +rwdmax(575)
+                padding: 0
+            &.delete-check
+              display: none
+              padding: 80px 0
+              +rwdmax(575)
+                padding: 0
+            .content-wrapper
+              width: 100%
+              height: 100%
+              text-align: center
+              transition: opacity 0.3s
+              +flex($direction: column, $x: space-between)
+              +rwdmax(575)
+                justify-content: center
+              .modal-header
+                .icon-delete
+                  display: block
+                  font-size: 62px
+                  color: #a88438
+                  margin-bottom: 24px
+                  +rwdmax(575)
+                    font-size: 50px
+                    margin-bottom: 14px
+                .title
+                  margin-bottom: 15px
+                  +fontSetBold($font: $LBB, $size: px(20))
+                  +rwdmax(575)
+                    margin-bottom: 6px
+                .description
+                  +fontSet($size: px(13))
+              .modal-body
+                .naming-area
+                  .icon-edit
+                    display: block
+                    font-size: 48px
+                    color: #a88438
+                    +rwdmax(575)
+                      font-size: 35px
+                  .icon-add-category
+                    display: block
+                    font-size: 64px
+                    color: #a88438
+                    +rwdmax(575)
+                      font-size: 45px
+                  .text
+                    +fontSetBold($font: $LBB, $size: px(13), $lh: 25px, $color: rgba(0,0,0,0.6))
+                  input
+                    width: 250px
+                    height: 45px
+                    margin: 0
+                    padding: 0 30px
+                    border-radius: 10px
+                    border: solid 1px #eeeeee
+                    text-align: center
+                    +fontSetBold($font: $LBB, $size: px(14), $color: black)
+                    +placeholder($size: px(14), $color: rgba(0,0,0,0.6))
+                    +rwdmax(320)
+                      width: 80%
+              .modal-footer
+                .modal-btn-group
+                  +flex
+                  .modal-btn
+                    width: 120px
+                    height: 50px
+                    border-radius: 10rem
+                    text-align: center
+                    +fontSetBold($font: $LBB, $size: px(13), $lh: 50px, $color: white)
+                    +rwdmax(320)
+                      width: 90px
+                    &:not(:first-child)
+                      margin-left: 8px
+                    &.no,&.yes
+                      width: 90px
+                  
+
+.edit-collect-wrap
+  .modal-scroll-wrap
+    .modal-contain
+      .modal-dialog
+        .modal-content
+          .step
+            &.rename
+              .content-wrapper
+                .modal-header
+                  +rwdmax(575)
+                    margin-bottom: 38px
+                .modal-body
+                  +rwdmax(575)
+                    margin-bottom: 64px
+                  .naming-area
+                    .icon-edit
+                      margin-bottom: 10px
+                      +rwdmax(575)
+                        margin-bottom: 4px
+                    .text
+                      margin-bottom: 10px
+                      +rwdmax(575)
+                        margin-bottom: 6px
+            &.delete-check
+              .content-wrapper
+                .modal-header
+                  +rwdmax(575)
+                    margin-bottom: 28px
+                  .title
+                    margin-bottom: 0
+                    +rwdmax(575)
+                      font-size: px(16)
+                .modal-body
+                  +rwdmax(575)
+                    margin-bottom: 22px
+                  .naming-area
+                    input
+                      margin-bottom: 20px
+                      +rwdmax(575)
+                        margin-bottom: 8px
+                    .text
+                      +rwdmax(575)
+                        font-size: px(12)
+
+.add-collect-wrap
+  .modal-scroll-wrap
+    .modal-contain
+      .modal-dialog
+        .modal-content
+          .step
+            .content-wrapper
+              .modal-header
+                +rwdmax(575)
+                  margin-bottom: 34px
+              .modal-body
+                +rwdmax(575)
+                  margin-bottom: 40px
+                .naming-area
+                  .icon-add-category
+                    margin-bottom: 22px
+                    +rwdmax(575)
+                      margin-bottom: 16px
+                  input
+                    margin-bottom: 10px
+                    +rwdmax(575)
+                      margin-bottom: 8px

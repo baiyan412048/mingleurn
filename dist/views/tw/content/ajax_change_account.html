@@ -1,0 +1,51 @@
+
+<div class="close-btn" data-ajax-route="./ajax_member_register_leave.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox"><span></span></div>
+<div class="modal-scroll-wrap scrollbar-macosx">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="register-wrap">
+        <div class="step-circle" data-step="1">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 35 35" xml:space="preserve">
+            <path stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 0 0 31.831 a 15.9155 15.9155 0 0 0 0 -31.831" stroke-linecap="butt" stroke-width="1"></path>
+            <path step="step" stroke-dasharray="50, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-linecap="butt" stroke-width="1"></path>
+          </svg>
+          <p><span class="now-step">1</span><span>2</span></p>
+        </div>
+        <p class="step-title">CHANGE ACCOUNT</p>
+        <p class="step-subtitle">Reset my account</p>
+        <!-- 切換步驟 _register.switchStep()-->
+        <div class="step-content active" data-step="1">
+          <p class="step-text">Please enter your new account</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <p>Account</p>
+              <input type="text" placeholder="" required="required"/>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <p>Password</p>
+              <input type="password" placeholder="Enter the current password" required="required"/>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group verification">
+              <p>Verification</p>
+              <div class="element-wrap">
+                <input type="text" placeholder="Please enter  verification code"/><img src="../../../uploads/contact/code.jpg" alt=""/><a href="javascript:;"><span class="icon-refresh"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-btn-group"><a class="modal-btn btn-black" onclick="_common.accountStepChange(2)" href="javascript:;">Next</a></div>
+        </div>
+        <div class="step-content" data-step="2">
+          <div class="icon-account-success"></div>
+          <p class="title">Success</p>
+          <p class="subtitle">Your account has been successfully updated. </p>
+          <p class="text">In order to maintain the security of your account, we will log out of your account, please login again as a member, thank you.</p>
+          <div class="modal-btn-group"><a class="modal-btn btn-black ajax_close" href="./login.html">Login</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

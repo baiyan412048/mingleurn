@@ -1,0 +1,546 @@
+nav
+  .header
+    position: relative
+    padding: 36px 54px 36px 30px
+    +rwdmax(1024)
+      padding: 46px 30px
+    +rwdmax(767)
+      padding: 36px 20px
+    +flex($x: flex-start)
+    .logo
+      width: 112px
+      +rwdmax(767)
+        width: 90px
+      img
+        &.logo-black
+          display: block
+        &.logo-white
+          display: none
+    .function-bar
+      margin-left: auto
+      +flex($x: flex-start)
+      .function-btn
+        padding: 0 14px
+        >i
+          color: black
+          &.icon-member
+            font-size: 19px
+          &.icon-language
+            font-size: 18px
+          &.icon-shop
+            font-size: 20px
+          &.icon-search
+            font-size: 18px
+        &.member,&.language
+          display: none
+          +rwdmax(1024)
+            display: block
+          +rwdmax(767)
+            display: none
+        &.language
+          position: relative
+          cursor: pointer
+          p
+            display: flex
+            position: absolute
+            right: 50%
+            padding: 10px
+            transform: translate(0, 10px)
+            border-radius: 14px
+            box-shadow: 4.1px 2.9px 20px 0 rgba(0, 0, 0, 0.1)
+            background-color: #fff
+            opacity: 0
+            transition: .5s
+            pointer-events: none
+            &:after
+              position: absolute
+              top: -5px
+              left: 50%
+              transform: translateX(-50%) rotate(45deg)
+              width: 10px
+              height: 10px
+              background-color: #fff
+              content: ''
+            a
+              display: block
+              padding: 0 14px
+              border-radius: 500px
+              white-space: nowrap
+              transition: .3s
+              +fontSetBold($font: $LBB, $size: px(12), $lh:34px)
+              +rwdmin(768)
+                &:hover
+                  color: #fff
+                  background-color: #a88438
+          &.active
+            p
+              opacity: 1
+              transform: translate(50%, 10px)
+              pointer-events: auto
+        &.shop
+          display: none
+          position: relative
+          +rwdmax(1024)
+            display: block
+          &.has_product
+            &::before
+              opacity: 1
+          &::before
+            content: attr(data-count)
+            position: absolute
+            top: -14px
+            right: -4px
+            width: 26px
+            height: 26px
+            border-radius: 50%
+            background-color: #a88438
+            opacity: 0
+            transition: opacity 0.3s
+            +flex
+            +fontSet($size: px(12), $color: white)
+          .notice-wrapper
+            display: none
+            top: 0
+            left: 50%
+        &.search
+          display: none
+          +rwdmax(767)
+            display: block
+      .menu-switch
+        margin-left: 36px
+        cursor: pointer
+        +fontSetBold($font: $LBB, $size: px(14))
+        +rwdmax(767)
+          margin-left: 12px
+  .menubar
+    opacity: 0
+    padding: 42px 0
+    +flex
+    +rwdmax(1024)
+      display: none
+    .menu
+      display: flex
+      align-items: center
+      li
+        padding: 0 21px
+        a
+          white-space: nowrap
+          +fontSet($size: px(13))
+  &.sticky
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 80px
+    background-color: $mainBGColor
+    opacity: 0
+    transform: translateY(-100%)
+    transition: 0.3s linear
+    z-index: 999
+    &.show
+      opacity: 1
+      transform: translateY(0)
+    .header
+      width: 100%
+      padding: 0 54px 0 30px
+      +posCenter
+      +rwdmax(1024)
+        padding: 0 30px
+      +rwdmax(767)
+        padding: 0 20px
+      .logo
+        width: 80px
+    .menubar
+      display: block
+      opacity: 1
+      padding: 0
+      +posCenter
+      +rwdmax(1024)
+        display: none
+// 主選單
+section.menulbox
+  display: flex
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  z-index: 1000
+  background-color: #f4f4f4
+  color: black
+  pointer-events: none
+  overflow-y: auto
+  opacity: 0
+  transition: opacity .5s
+  +rwdmax(1200)
+    align-items: flex-start
+  &.open 
+    pointer-events: auto
+    opacity: 1
+  .menu-wrap
+    display: flex
+    flex: 1
+    position: relative
+    padding: 6.7708% 8.3333%
+    .menu-closebtn
+      display: block
+      position: absolute
+      top: 6.3158%
+      right: 6.3158%
+      width: 24px
+      height: 24px
+      transform: rotate(45deg)
+      cursor: pointer
+      &::before,&::after
+        content: ''
+        background-color: black
+        +posCenter
+      &::before
+        width: 2px
+        height: 24px
+      &::after
+        width: 24px
+        height: 2px
+    .menu-status
+      margin-right: 50px
+      +flex($direction: column, $x: flex-start)
+      .photo-wrap
+        margin-bottom: auto
+        a
+          display: block
+        div
+          border-radius: 500px
+          background-color: #bdbdbd
+          background-size: cover
+          background-position: center center
+          width: 92px
+          height: 92px
+          font-size: px(50)
+          color: #fff
+          +flex($x: center, $y: center)
+          i
+            transform: translateX(4px)
+        p
+          display: block
+          margin-top: 8px
+          text-align: center
+          +fontSetBold($font: $LBB, $size: px(12), $lh:34px)
+      .fixed-left-function
+        position: static
+        height: auto
+        +rwdmax(1024)
+          max-height: 100%
+          bottom: 11.2992%
+        .function-btn
+          &.member
+            margin-bottom: 0
+            padding-bottom: 0
+            +rwdmax(767)
+              padding-top: 0
+            .icon-member
+              display: block
+              font-size: 19px
+            .icon-member-logout
+              display: block
+              font-size: 24px
+              transform: translateX(3px)
+          &.language
+            position: relative
+            cursor: pointer
+            p
+              display: flex
+              position: absolute
+              top: 50%
+              left: 0
+              opacity: 0
+              transform: translate(0, -50%)
+              pointer-events: none
+              transition: .5s
+              a
+                display: block
+                padding: 0 12px
+                border-radius: 500px
+                white-space: nowrap
+                transition: .3s
+                +fontSetBold($font: $LBB, $size: px(13), $lh:34px)
+                &:hover,&:active
+                  color: #fff
+                  background-color: #a88438
+            &.active
+              p
+                opacity: 1
+                transform: translate(30%, -50%)
+                pointer-events: auto
+                +rwdmax(767)
+                  transform: translate(0, 15px)
+    .menu-list
+      &.scroll-wrap
+        height: 100%
+        &.scroll-wrapper
+          margin-left: auto
+          .scroll-element.scroll-y
+            .scroll-bar
+              width: 3px !important
+          .scroll-element.scroll-x
+            display: none !important
+        > .list
+          padding-right: 30px
+          min-width: 220px
+          > li
+            margin-bottom: 25px
+            &:last-child
+              margin: 0
+            p
+              display: inline-block
+              cursor: pointer
+              +fontSetBold($font: $LBB, $size: px(26), $lh:34px, $color: rgba(0, 0, 0, 0.4))
+            ul
+              display: none
+              padding: 24px 0 30px
+              li
+                transition: .3s
+                +fontSet($font: $basic, $size: px(14), $lh:28px)
+                &:hover
+                  color: #a88438
+            &.active
+              p
+                color: #000
+    .menu-block
+      margin-left: auto
+      +flex($direction: column, $x: flex-start, $y: flex-end)
+      .unit
+        margin-bottom: auto
+        li
+          margin-bottom: 28px
+          +fontSetBold($font: $LBB, $size: px(15))
+          a
+            display: inline-block
+            position: relative
+            transition: .3s
+            &:after
+              display: block
+              position: absolute
+              top: 50%
+              left: -5px
+              margin: -0.5px 0 0 0
+              width: 0
+              height: 1px
+              background-color: #a88438
+              transition: .3s
+              content: ''
+            &:hover
+              color: #a88438
+              &:after
+                width: calc(100% + 10px)
+          &:last-child
+            margin: 0
+      .control
+        width: 100%
+        text-align: right
+        .wrap
+          display: inline-block
+          div
+            +flex($x: flex-start, $y: center)
+            p
+              +flex($y: center)
+              +fontSet($font: $basic, $size: px(13))
+              &:after
+                display: block
+                margin: 0 20px
+                width: 5px
+                height: 5px
+                background-color: rgba(#000, 0.3)
+                content: ''
+              &:last-child
+                &:after
+                  content: none
+              a
+                transition: .3s
+                &:hover
+                  color: #a88438
+          ul
+            margin-top: 36px
+            +flex
+            >li
+              &:not(:last-child)
+                margin-right: 26px
+              a
+                &:hover
+                  i
+                    color: black
+                i
+                  display: block
+                  color: rgba(0,0,0,0.5)
+                  transition: color 0.3s
+                  &.icon-ig
+                    font-size: 20px
+                  &.icon-fb,&.icon-wechat
+                    font-size: 19px
+                  &.icon-twitter,&.icon-line
+                    font-size: 18px
+                  &.icon-youtube
+                    font-size: 16px
+    +rwdmax(1466)
+      padding: 6.2992% 3.937%
+      .menu-closebtn
+        top: 4.3158%
+        right: 4.3158%
+    +rwdmax(1200)
+      .menu-block
+        margin: 0 auto
+    +rwdmax(1024)
+      padding: 11.2992% 3.937%
+      .menu-status
+        .fixed-left-function
+          .function-btn
+            &.search, &.shop
+              display: none
+            &.language, &.member
+              display: block
+    +rwdmax(767)
+      display: block
+      padding: 60px 20px
+      .menu-closebtn
+        top: 30px
+        right: 20px
+      .menu-status
+        margin: 0
+        flex-direction: row
+        justify-content: space-between
+        .photo-wrap
+          a
+            +flex($y: center)
+            div
+              width: 60px
+              height: 60px
+              font-size: px(38)
+            p
+              margin: 0 0 0 8px
+        .fixed-left-function
+          flex-direction: row
+          margin-right: 4px
+          .function-btn
+            &.language
+              margin-left: 26px
+              order: 1
+              p
+                top: auto
+                left: auto
+                right: -12px
+                transform: translate(0,0)
+
+      .menu-list
+        +flex($x: center)
+        &.scroll-wrapper
+          margin: 45px 0 0
+        &.scroll-wrap
+          height: auto !important
+          > .list
+            padding: 0
+            margin: 0 auto
+            max-width: 200px
+            min-width: auto
+            > li
+              margin-bottom: 5px
+              p
+                font-size: px(20)
+              ul
+                padding: 10px 0 20px
+                li
+      .menu-block
+        margin-top: 30px
+        .unit
+          max-width: 320px
+          margin: 0 auto
+          +flex($display: inline-flex,$wrap: wrap, $x: space-around)
+          li
+            min-width: 160px
+            margin: 20px 0 0
+            font-size: px(13)
+            &:last-child
+              margin: 20px 0 0
+            &:nth-child(odd)
+              padding-right: 15px
+            &:nth-child(even)
+              padding-left: 15px
+        .control
+          margin-top: 60px
+          .wrap
+            display: block
+            div
+              justify-content: center
+    +rwdmax(575)
+      .menu-block
+        .unit
+          li
+            min-width: 140px
+            &:nth-child(odd)
+              padding-right: 10px
+            &:nth-child(even)
+              padding-left: 10px
+  .menu-photo
+    position: relative
+    width: 33.8542%
+    flex-shrink: 0
+    overflow: hidden
+    +rwdmax(1200)
+      display: none
+    .decor1
+      position: absolute
+      width: 37.846%
+      height: 0
+      top: 0
+      right: 0
+      z-index: 100
+      overflow: hidden
+      transition: opacity 0.3s, height 0.3s
+      &.show
+        height: 189px
+    .decor2
+      position: absolute
+      width: 25.23%
+      height: 0
+      top: 99%
+      left: 28%
+      transform: translateY(-192px)
+      z-index: 100
+      overflow: hidden
+      transition: opacity 0.3s, height 0.3s
+      &.show
+        height: 192px
+    .swiper-container
+      .content
+        display: block
+        position: relative
+        width: 100%
+        height: 100%
+        background-size: cover
+        background-position: center center
+        &.default
+          cursor: default
+    .text-box
+      position: absolute
+      bottom: 80px
+      right: 60px
+      text-align: right
+      transition: transform 0.2s linear, opacity 0.2s linear
+      z-index: 101
+      &.changing
+        transform: translateY(100%)
+        opacity: 0
+      .text1
+        +fontSetBold($font: $LBB, $size: px(16), $lh:32px)
+      .text2
+        +fontSetBold($font: $LBB, $size: px(30), $lh:52px)
+      &.black
+        .text1, .text2
+          color: #010101
+      &.white
+        .text1, .text2
+          color: #fff
+body
+  &:not(.home)
+    nav:not(.sticky)
+      .menubar
+        display: none

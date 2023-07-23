@@ -1,0 +1,18 @@
+.modal-scroll-wrap.scrollbar-macosx
+  .modal-contain
+    .modal-dialog
+      .modal-content
+        .close-btn.ajax_close
+          span
+        .modal-header
+          .title EDIT HEAD SHOT
+          .description Upload or choose your head shot
+        .modal-body
+          .member-photo.success
+          .text-area
+            .line1 Success !
+            .line2 Your head shot has been update successfully. If you want to edit it again,please  click button below.
+        .modal-footer
+          .modal-btn-group
+            a.modal-btn.btn-black.edit.ajax_close(href="javascript:;" data-ajax-route="./ajax_change_photo.html" data-ajax-container=".change-photo-wrap" data-ajax-callback="_ajaxCallback.changePhoto") Edit
+            a.modal-btn.btn-gold.ajax_close(href="javascript:;") Ok

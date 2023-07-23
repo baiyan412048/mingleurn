@@ -1,0 +1,137 @@
+.mode-explain-wrap
+  position: fixed
+  width: 100%
+  top: 0
+  bottom: 0
+  left: 0
+  background-color: rgba(0,0,0,0.6)
+  opacity: 0
+  transition: opacity 0.4s
+  z-index: 99
+  &.show
+    opacity: 1
+    .modal-scroll-wrap
+      .modal-contain
+        .modal-dialog
+          opacity: 1
+          transform: scale(1)
+  
+  .modal-scroll-wrap
+    width: 100%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    .modal-contain
+      display: table-cell
+      vertical-align: middle
+      width: 100vw
+      height: 100vh
+      padding: 0 20px
+      +rwdmax(575)
+        padding: 9.4vh 20px
+      .modal-dialog
+        max-width: 800px
+        width: 100%
+        margin: 0 auto
+        padding: 12px
+        background-color: white
+        opacity: 0
+        transform: scale(0.7)
+        transition: transform 0.6s, opacity 0.6s
+        +rwdmax(575)
+          padding: 10px
+        .modal-content
+          width: 100%
+          height: 100%
+          border: 1px solid #a88438
+          padding: 80px 0 60px 0
+          text-align: center
+          overflow: hidden
+          +rwdmax(575)
+            padding: 45px 20px
+          .modal-header
+            margin-bottom: 56px
+            +rwdmax(575)
+              margin-bottom: 24px
+            .title
+              margin-bottom: 50px
+              +fontSetBold($font: $LBB, $size: px(20))
+              +rwdmax(575)
+                margin-bottom: 20px
+            .description
+              +fontSet($size: px(14), $lh: 24px)
+              span
+                font-family: $LBB
+                font-weight: bold
+          .modal-body
+            margin-bottom: 54px
+            +rwdmax(575)
+              margin-bottom: 0
+            .mode-wrap
+              +flex($wrap: wrap)
+              .mode
+                width: 50%
+                padding: 0 7.5%
+                +rwdmax(575)
+                  width: 100%
+                &:not(:first-child)
+                  border-left: 1px solid #d8d8d8
+                  +rwdmax(575)
+                    border-left: none
+                    border-top: 1px solid #d8d8d8
+                &:first-child
+                  .item
+                    margin-left: auto
+                    +rwdmax(575)
+                      margin: 0 auto
+                &:last-child
+                  .item
+                    margin-right: auto
+                    +rwdmax(575)
+                      margin: 0 auto
+                .item
+                  max-width: 234px
+                  width: 100%
+                  padding: 24px 0
+                  +rwdmax(575)
+                    max-width: 192px
+                  .icon
+                    width: 80px
+                    margin: 0 auto 42px auto
+                    +rwdmax(575)
+                      width: 65px
+                      margin: 0 auto 18px auto
+                  .example
+                    +flex
+                    margin: 0 -4px
+                    +rwdmax(575)
+                      margin: 0 -3px
+                    .grid
+                      width: calc(100% / 3)
+                      padding: 0 4px
+                      +rwdmax(575)
+                        padding: 0 3px
+                      .box
+                        position: relative
+                        width: 100%
+                        padding-top: 100%
+                        border: 1px solid #d8d8d8
+                        border-radius: 10px
+                        img
+                          width: auto
+                          height: 70%
+                          +posCenter
+          .modal-footer
+            .modal-btn-group
+              +flex
+              .modal-btn
+                width: 120px
+                height: 50px
+                border-radius: 10rem
+                text-align: center
+                +fontSetBold($font: $LBB, $size: px(13), $lh: 50px, $color: white)
+                +rwdmax(320)
+                  width: 90px
+                &:not(:first-child)
+                  margin-left: 8px

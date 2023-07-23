@@ -1,0 +1,35 @@
+.modal-scroll-wrap.scrollbar-macosx
+  .modal-contain
+    .modal-dialog
+      .modal-content
+        //更改名稱
+        .step.rename
+          .content-wrapper
+            .modal-header
+              .title EDIT CATEGORY
+              .description Rename or delete
+            .modal-body
+              .naming-area
+                i.icon-edit
+                .text Rename
+                input(type="text")
+            .modal-footer
+              .modal-btn-group
+                a.modal-btn.delete.btn-black(href="javascript:;") Delete
+                //↓↓↓ 後端可把 .ajax_close 拿掉 跑完你們的js再執行 _common.closeAjax('.edit-collect-wrap') ↓↓↓
+                a.modal-btn.btn-gold.ajax_close(href="javascript:;") Save
+        //刪除確認
+        .step.delete-check
+          .content-wrapper
+            .modal-header
+              .icon-delete
+              .title Delete Category ?
+            .modal-body
+              .naming-area
+                input(type="text" readonly)
+                .text Sure to delete category?<br>All items in this list will be cleared.
+            .modal-footer
+              .modal-btn-group
+                a.modal-btn.no.btn-gold(href="javascript:;") No
+                //↓↓↓ 後端可把 .ajax_close 拿掉 跑完你們的js再執行 _common.closeAjax('.edit-collect-wrap') ↓↓↓
+                a.modal-btn.yes.btn-black.ajax_close(href="javascript:;") Yes

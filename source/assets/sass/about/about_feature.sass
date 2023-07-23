@@ -1,0 +1,75 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.about_feature
+  main
+    padding-bottom: 156px
+    +rwdmax(767)
+      padding-bottom: 100px
+    .container
+      text-align: center
+      padding: 0 60px
+      +maxWidth($maxw: 1135px)
+      +rwdmax(767)
+        padding: 0 20px
+    .header
+      text-align: center
+      margin-bottom: 82px
+      +rwdmax(767)
+        margin-bottom: 40px
+      &::after
+        content: ''
+        display: block
+        width: 60px
+        height: 10px
+        background-color: black
+        margin: 42px auto 0 auto
+      .back-overview
+        display: inline-block
+        transform: translateY(-50px)
+        margin-bottom: 36px
+        +fontSet($size: px(13), $color: rgba(0,0,0,0.8))
+        +rwdmax(767)
+          transform: translateY(-22px)
+          margin-bottom: 8px
+      .unit-alias
+        +fontSetBold($font: $LBB, $size: px(30), $lh: 40px)
+        +rwdmax(1024)
+          font-size: px(48)
+        +rwdmax(767)
+          font-size: px(32)
+      .unit-description
+        margin-top: 14px
+        +maxWidth($maxw: 725px, $margin: 20px auto 0 auto)
+        +rwdmax(767)
+          margin-top: 8px
+    .mainBanner-slider
+      margin-bottom: 95px
+      +mainBanner($ratio: 56.158%, $dotW: 60px)
+      +rwdmax(767)
+        margin: 0 -20px 95px -20px
+      .slider-textarea
+        position: relative
+        width: 100%
+        padding: 13px 28px
+        text-align: center
+        +rwdmax(767)
+          max-width: 100%
+          height: auto
+          padding: 0 20px
+        +rwdmax(575)
+          flex-direction: column
+        +sliderInfo($textColor: rgba(0,0,0,0.6))
+    ._articleBlock
+      article
+        &:not(:last-child)
+          margin-bottom: 150px !important
+          +rwdmax(767)
+            margin-bottom: 75px !important
+        &._article.-typeFull-Box ._contentWrap
+          width: 100%
+          padding: 136px 128px
+    .footer
+      padding-top: 174px
+      +rwdmax(767)
+        padding-top: 100px

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/checkout_result.css")
+  body.checkout_result(data-page="checkout_result")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .content(style="background-image: url('../../../uploads/shopping/checkout-form-success.jpg')")
+              .result-circle.success
+                .line1 Success !
+                .line2 Submit successful !
+                .brush-img
+                  img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/shopping/result-decor.png", alt="")
+              p.description Successfully submit the request form. We will arrange a service staff to contact you as soon as possible after receiving your request.
+              .btn-group
+                a.btn.btn-gold(href="javascript:;") Member Center
+                a.btn.btn-black(href="./index.html") Back to home
+            .contact-box
+              p If you have any questions, please contact us during our business hours.
+              .info
+                p
+                  span Office Time
+                  |  Mon. to Fri.    ( GTM+8 ) 9:00-18:00
+                p
+                  span Phone
+                  | +886 2 29512727
+
+
+
+        // 頁尾
+        footer
+          .footer-top
+            .header Achieve Now
+            include ../layouts/_quick-link.pug
+                                                
+          include ../layouts/_footer_bottom.pug
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

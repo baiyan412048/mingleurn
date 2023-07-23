@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <!--共用設定-->
+    <!-- 網站語系及語言宣告-->
+    <meta http-equiv="content-language" content="zh-TW"/>
+    <meta charset="UTF-8"/>
+    <!-- RWD設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 瀏覽器設定-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- 網站關鍵字-->
+    <meta name="keywords" content="網站關鍵字"/>
+    <!-- 網頁內容描述-->
+    <meta name="description" content="網頁內容描述，中文 80 個字元、英文 160 個字元"/>
+    <!-- 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="robots" content="noindex"/>
+    <!-- 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="googlebot" content="noindex"/>
+    <!-- Open Graph Protocol for facebook-->
+    <meta property="og:title" content="網頁Title"/>
+    <meta property="og:description" content="網頁內容描述"/>
+    <meta property="og:url" content="主要網址"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="網頁內容描述"/>
+    <!-- Open Graph Protocol for google plus-->
+    <meta itemprop="name" content="網站名稱或標題"/>
+    <meta itemprop="image" content="分享的影像位址"/>
+    <meta itemprop="description" content="網頁描述"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="分享的影像位址"/>
+    <meta name="twitter:site" content="網站名稱"/>
+    <meta name="twitter:title" content="網頁標題"/>
+    <meta name="twitter:description" content="網頁描述 200 個字元以內"/>
+    <meta name="twitter:creator" content="客戶公司或品牌名稱"/>
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content=" http://www.example.com/image.html"/>
+    <title>Mingleurn</title>
+    <!-- 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中-->
+    <link rel="canonical" href="主要網址" itemprop="url"/>
+    <link rel="shortcut icon" href="../../../assets/img/favicon.ico" type="image/x-icon"/>
+    <!-- 以下script 後端自行打開-->
+    <!-- Google Tag Manager-->
+    <!-- script.-->
+    <!--   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+    <!--   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+    <!--   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+    <!--   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+    <!--   })(window,document,'script','dataLayer','GTM編號');-->
+    <!--全站共用CSS-->
+    <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
+    <!--獨立CSS-->
+  </head>
+  <link rel="stylesheet" href="../../../assets/css/customized.css"/>
+  <body class="customized show-tips" data-page="customized">
+    <div class="opacity-mask">
+      <div class="skip-btn">
+        <div class="text">Skip Guiding</div>
+        <div class="icon icon-right"></div>
+      </div>
+    </div>
+    <div class="loading-page">
+      <div class="icon-box">
+        <div class="icon"><img src="../../../assets/img/loading.svg" alt=""/></div>
+        <div class="loading-text">Loading</div>
+        <p class="description">Please wait for the page</p>
+      </div>
+    </div>
+    <div class="main-wrapper scrollbar-macosx" data-fake-body="">
+      <div class="all-wrapper">
+        <div class="mobile-text-input">
+          <div class="nav">
+            <div class="cancel-input"><span class="icon"></span></div>
+            <div class="header">Edit Text</div>
+            <div class="confirm-input">OK</div>
+          </div>
+          <textarea class="text-input"></textarea>
+        </div>
+        <div class="menu-mask"></div><a class="close-remark" href="javascript:;"><i class="icon-right"></i></a><a class="close-favorite" href="javascript:;"><i class="icon-right"></i></a><a class="menu-btn" href="javascript:;"><i class="icon-menu-switch"></i>
+          <div class="function-tips">More options for edit</div></a>
+        <nav class="customized-nav">
+          <div class="close-menu"><span class="icon"></span></div>
+          <ul class="function-bar">
+            <li class="remark"><i class="icon-remark"></i><span class="text">Notes</span></li>
+            <li class="preview" href="javascript:;" data-ajax-route="./ajax_customized_preview.html" data-ajax-container=".preview-wrap" data-ajax-callback="_ajaxCallback.preview"><i class="icon-preview"></i><span class="text">Preview</span></li>
+            <li class="tool-guide ajax_open" href="javascript:;" data-ajax-route="./ajax_tool_guide.html" data-ajax-container=".tool-guide-wrap" data-ajax-callback="_ajaxCallback.guide"><i class="icon-tool-guide"></i><span class="text">Guide</span></li>
+            <li class="complete ajax_open" href="javascript:;" data-ajax-route="./ajax_customized_submit.html" data-ajax-container=".customized-submit-wrap" data-ajax-callback="_ajaxCallback.normalLightbox"><i class="icon-complete"></i><span class="text">Submit</span></li>
+            <li class="function-tips">Guide For Customized</li>
+          </ul><a class="close-btn ajax_open" href="javascript:;" data-ajax-route="./ajax_leave_check.html" data-ajax-container=".leave-check-wrap" data-ajax-callback="_ajaxCallback.normalLightbox"><span class="icon"></span><span class="text">Leave</span></a>
+        </nav>
+        <!-- 主要內容-->
+        <main>
+          <div class="customized-wrap">
+            <div class="tool-guide-mask">
+              <div class="right">
+                <div class="text">
+                  <div class="line1">Remarks area</div>
+                  <div class="line2">Needs can be supplemented in detail here</div>
+                </div>
+              </div>
+            </div>
+            <div class="artboard-block">
+              <div class="toolbar-top">
+                <ul class="bg-select mobile">
+                  <li class="item selected active" data-page="default" style="background-image: url('../../../uploads/product/pic1.jpg')">
+                    <div class="add-new"></div>
+                  </li>
+                  <li class="item" data-page="attached1">
+                    <div class="delete-paper">Delete</div>
+                    <div class="add-new"></div>
+                  </li>
+                  <li class="item" data-page="attached2">
+                    <div class="delete-paper">Delete</div>
+                    <div class="add-new"></div>
+                  </li>
+                  <li class="function-tips">Add files</li>
+                </ul>
+                <!--data-default 帶產品名稱-->
+                <div class="product-name"><span>Name</span><span data-default="M7703-N44-1">M7703-N44-1</span></div>
+                <div class="maximize"><span class="max">Maximize</span><span class="min">Minimize</span><i class="icon-open_web"></i><i class="icon-close-cart"></i>
+                  <div class="function-tips">Full screen</div>
+                </div>
+              </div>
+              <div class="toolbar-left"><a class="select tool-btn active" href="javascript:;" data-tool="select"><i class="icon-select"></i></a><a class="move tool-btn" href="javascript:;" data-tool="move"><i class="icon-move"></i></a>
+                <!--data-alert 之後多語系文字要串在這--><a class="zoom" href="javascript:;" data-option="zoom-in" data-alert="Maximum limit"></a><a class="zoom" href="javascript:;" data-option="zoom-out" data-alert="Minimum limit"></a>
+                <div class="function-tips">Select & Drag & Zoom</div>
+              </div>
+              <div class="toolbar-bottom">
+                <ul class="bg-select">
+                  <li class="item selected active" data-page="default" style="background-image: url('../../../uploads/product/pic1.jpg')">
+                    <div class="add-new"></div>
+                  </li>
+                  <li class="item" data-page="attached1">
+                    <div class="delete-paper">Delete</div>
+                    <div class="add-new"></div>
+                  </li>
+                  <li class="item" data-page="attached2">
+                    <div class="delete-paper">Delete</div>
+                    <div class="add-new"></div>
+                  </li>
+                  <li class="function-tips">Add files</li>
+                </ul>
+                <div class="draw-tool" data-select-tool="">
+                  <div class="tool-btn" data-tool="brush"><i class="icon-brush"></i>
+                    <div class="tool-setting">
+                      <div class="setting-wrap">
+                        <div class="setting-btn brush-size size-L" data-size="10"></div>
+                        <div class="setting-btn brush-size size-M default active" data-size="5"></div>
+                        <div class="setting-btn brush-size size-S" data-size="3"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tool-btn" data-tool="text"><i class="icon-text"></i></div>
+                  <div class="tool-btn" data-tool="shape"><i class="icon-shape"></i>
+                    <div class="tool-setting">
+                      <div class="setting-wrap">
+                        <div class="setting-btn shape-btn default active" data-option="circle"></div>
+                        <div class="setting-btn shape-btn" data-option="rect"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tool-btn" data-tool="line"><i class="icon-draw-line"></i>
+                    <div class="tool-setting">
+                      <div class="setting-wrap">
+                        <div class="setting-btn line-btn default active" data-option="straight-line"><i class="icon-draw-line"></i></div>
+                        <div class="setting-btn line-btn" data-option="arrow"><i class="icon-draw-arrow"></i></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tool-btn" data-tool="color">
+                    <div class="color-box" data-option="fill">
+                      <div class="display fill-color"></div>
+                    </div>
+                    <div class="color-box disabled" data-option="stroke">
+                      <div class="display stroke-color"></div>
+                    </div>
+                  </div>
+                  <div class="color-select">
+                    <div class="color-wrap">
+                      <div class="status">
+                        <div class="now-color">
+                          <div class="display fill-color"></div>
+                          <div class="display stroke-color"></div>
+                        </div>
+                        <div class="type-select">
+                          <div class="type-box active" data-option="fill">
+                            <div class="fill-color"></div>
+                          </div>
+                          <div class="type-box disabled" data-option="stroke">
+                            <div class="stroke-color"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="color-palettes">
+                        <div class="row">
+                          <div class="grid">
+                            <div class="colorBox disabled"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #000000"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #434343"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #666666"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #b7b7b7"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #efefef"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #462696"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #741b47"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #880015"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #ed1c24"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #ff7f27"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #ffff00"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #3eb160"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #4986e7"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #3f48cc"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #a349a4"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #b97a57"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #ea9999"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #f6b26b"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #fff2cc"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #c3e755"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #99d9ea"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #7092be"></div>
+                          </div>
+                          <div class="grid">
+                            <div class="colorBox" style="background-color: #ae9ee5"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="function-tips">Texting & Drawing tools</div>
+                </div>
+                <div class="draw-step">
+                  <!--data-alert 之後多語系文字要串在這-->
+                  <div class="icon-prev-step step-btn" data-option="undo" data-alert="No Prev Step"></div>
+                  <div class="icon-next-step step-btn" data-option="redo" data-alert="No Next Step"></div>
+                  <div class="function-tips">Previous & Next</div>
+                </div>
+                <div class="function-tips">Tools bar for add files, texting, drawing, and previous & next steps.</div>
+              </div>
+              <!--可視範圍-->
+              <div class="visual-range">
+                <div class="guide-mask">
+                  <div class="text">
+                    <div class="line1">Painting Area</div>
+                    <div class="line2">Using the tools below for drawing here</div>
+                  </div>
+                </div>
+                <!--選擇背景圖-->
+                <div class="select-background">
+                  <div class="content">
+                    <div class="content-head">Select file from</div>
+                    <div class="select-from">
+                      <div class="item upload">
+                        <input id="uploadBG" type="file"/>
+                        <div class="icon icon-photo"></div>
+                        <div class="text">Upload</div>
+                      </div>
+                      <div class="or">
+                        <div class="text">or</div>
+                      </div>
+                      <div class="item favorite">
+                        <div class="icon icon-collect"></div>
+                        <div class="text">Favorite</div>
+                      </div>
+                    </div>
+                    <div class="back-btn">Back</div>
+                  </div>
+                </div>
+                <!--確認刪除畫布-->
+                <div class="paper-delete-check">
+                  <div class="check-wrap">
+                    <div class="icon icon-delete2"></div>
+                    <div class="title">Delete <span class="paper-name" data-name="Attached file-1"></span> ?</div>
+                    <div class="description">Any actions you made will be cleared after deleting.</div>
+                    <div class="btn-group"><a class="btn no" href="javascript:;">No</a><a class="btn yes" href="javascript:;">Yes</a></div>
+                  </div>
+                </div>
+                <!--畫布-->
+                <div class="drawing-paper show" data-page="default" data-src="../../../uploads/product/pic1.jpg">
+                  <div class="artboard-background">
+                    <div class="bg-box"></div>
+                  </div>
+                  <canvas id="default"></canvas>
+                  <canvas id="default-cursor"></canvas>
+                </div>
+                <div class="drawing-paper" data-page="attached1">
+                  <div class="artboard-background">
+                    <div class="bg-box"></div>
+                  </div>
+                  <canvas id="attached1"></canvas>
+                  <canvas id="attached1-cursor"></canvas>
+                </div>
+                <div class="drawing-paper" data-page="attached2">
+                  <div class="artboard-background">
+                    <div class="bg-box"></div>
+                  </div>
+                  <canvas id="attached2"></canvas>
+                  <canvas id="attached2-cursor"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="other-wrap">
+              <div class="block">
+                <div class="from-favorite">
+                  <div class="content">
+                    <div class="content-head">Select file from</div>
+                    <div class="select-from">
+                      <div class="item">
+                        <div class="icon icon-collect"></div>
+                        <div class="text">Favorite</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block">
+                <div class="remark-block">
+                  <div class="content">
+                    <div class="title">Remarks column</div>
+                    <div class="description">Please add your needs in the field below</div>
+                    <div class="form">
+                      <div class="form-group">
+                        <div class="field-title">Backing</div>
+                        <div class="option-wrap">
+                          <div class="option">
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Modify</p>
+                              </label>
+                              <input type="text" placeholder="ex : Pantone color number 19-4045 TPG or Mingleurn N44-4"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="field-title">Embroidery thread</div>
+                        <div class="option-wrap">
+                          <div class="cancel-option">
+                            <label class="checkbox">
+                              <input type="checkbox"/>
+                              <div class="fake-checkbox"><span></span></div>
+                              <p>Cancel</p>
+                            </label>
+                          </div>
+                          <div class="option">
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Color</p>
+                              </label>
+                              <input type="text" placeholder="ex : Pantone color number 19-4045 TPG"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="field-title">Sequins</div>
+                        <div class="option-wrap">
+                          <div class="cancel-option">
+                            <label class="checkbox">
+                              <input type="checkbox"/>
+                              <div class="fake-checkbox"><span></span></div>
+                              <p>Cancel</p>
+                            </label>
+                          </div>
+                          <div class="option">
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Color</p>
+                              </label>
+                              <input type="text" placeholder="ex : Pantone color number 19-4045 TPG"/>
+                            </div>
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Addition</p>
+                              </label>
+                              <input type="text" placeholder="Please mark your desired location or fill in the reference number"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="field-title">Bead</div>
+                        <div class="option-wrap">
+                          <div class="cancel-option">
+                            <label class="checkbox">
+                              <input type="checkbox"/>
+                              <div class="fake-checkbox"><span></span></div>
+                              <p>Cancel</p>
+                            </label>
+                          </div>
+                          <div class="option">
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Color</p>
+                              </label>
+                              <input type="text" placeholder="ex : Pantone color number 19-4045 TPG"/>
+                            </div>
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Addition</p>
+                              </label>
+                              <input type="text" placeholder="Please mark your desired location or fill in the reference number"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="field-title">Bone thread &amp; Strap</div>
+                        <div class="option-wrap">
+                          <div class="cancel-option">
+                            <label class="checkbox">
+                              <input type="checkbox"/>
+                              <div class="fake-checkbox"><span></span></div>
+                              <p>Cancel</p>
+                            </label>
+                          </div>
+                          <div class="option">
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Color</p>
+                              </label>
+                              <input type="text" placeholder="ex : Pantone color number 19-4045 TPG"/>
+                            </div>
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Addition</p>
+                              </label>
+                              <input type="text" placeholder="Please mark your desired location or fill in the reference number"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="field-title">3D decals</div>
+                        <div class="option-wrap">
+                          <div class="cancel-option">
+                            <label class="checkbox">
+                              <input type="checkbox"/>
+                              <div class="fake-checkbox"><span></span></div>
+                              <p>Cancel</p>
+                            </label>
+                          </div>
+                          <div class="option">
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Addition</p>
+                              </label>
+                              <input type="text" placeholder="Please mark your desired location or fill in the reference number"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="field-title">Reshape</div>
+                        <div class="option-wrap">
+                          <div class="option">
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Reshape</p>
+                              </label>
+                              <input type="text" placeholder="Please elaborate as much as possible. Mark the flower shape you want on the drawing board"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="field-title">Other</div>
+                        <div class="option-wrap">
+                          <div class="option">
+                            <div class="option-group">
+                              <label class="checkbox">
+                                <input type="checkbox"/>
+                                <div class="fake-checkbox"><span></span></div>
+                                <p>Supplementary explanation</p>
+                              </label>
+                              <input type="text" placeholder="Please tell us other needs"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div><a class="backTop" href="javascript:;"><i class="icon-top"></i></a>
+                  </div>
+                </div>
+                <div class="favorite-block">
+                  <div class="content">
+                    <div class="title">Favorite</div>
+                    <div class="description">Please select product below</div>
+                    <ul class="mobile-filter-tabs">
+                      <li class="filter-product active">Product Categories</li>
+                      <li class="filter-collect">Collect Categories</li>
+                    </ul>
+                    <div class="filter-type-select">
+                      <div class="item product active">
+                        <div class="type">Product Categories</div>
+                        <div class="categories-select" data-default="ALL">
+                          <div class="selected"> 
+                            <div class="text">ALL</div>
+                            <div class="arrow icon-arrow-up"></div>
+                          </div>
+                          <div class="dropdown">
+                            <ul class="scrollbar-inner">
+                              <li>New Arrival</li>
+                              <li>Lace</li>
+                              <li>Beading</li>
+                              <li>Embroidery</li>
+                              <li>Accessories</li>
+                              <li>Wedding</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="or">OR</div>
+                      <div class="item collect">
+                        <div class="type">Collect Categories</div>
+                        <div class="categories-select" data-default="Default">
+                          <div class="selected"> 
+                            <div class="text">Default</div>
+                            <div class="arrow icon-arrow-up"></div>
+                          </div>
+                          <div class="dropdown">
+                            <ul class="scrollbar-inner">
+                              <li>Default</li>
+                              <li>Summer2020</li>
+                              <li>Company material</li>
+                              <li>Project A</li>
+                              <li>Project B</li>
+                              <li>Proposal - 0608</li>
+                              <li>Exhibition</li>
+                              <li>Texword</li>
+                              <li>Project C</li>
+                              <li>Project D</li>
+                              <li>Project E</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="product-list">
+                      <div class="row">
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list01.jpg')"></div>
+                            </div>
+                            <div class="number">M7702</div>
+                            <div class="name">Chantilly Lace</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="tag" style="background-color: #26ae8c">New</div>
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list02.jpg')"></div>
+                            </div>
+                            <div class="number">ER14486AG8</div>
+                            <div class="name">Red&amp;Green Flower</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list03.jpg')"></div>
+                            </div>
+                            <div class="number">M7704</div>
+                            <div class="name">Chantilly Lace</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list04.jpg')"></div>
+                            </div>
+                            <div class="number">M7705</div>
+                            <div class="name">Chantilly Lace</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list05.jpg')"></div>
+                            </div>
+                            <div class="number">ER14486AG5</div>
+                            <div class="name">Blue Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list06.jpg')"></div>
+                            </div>
+                            <div class="number">J15104A2</div>
+                            <div class="name">Blue Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list07.jpg')"></div>
+                            </div>
+                            <div class="number">J15104A4</div>
+                            <div class="name">Pink Flower Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list08.jpg')"></div>
+                            </div>
+                            <div class="number">ER14486AG7</div>
+                            <div class="name">Pink Flower Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list09.jpg')"></div>
+                            </div>
+                            <div class="number">M7703</div>
+                            <div class="name">Chantilly Lace</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list10.jpg')"></div>
+                            </div>
+                            <div class="number">BJME500938T</div>
+                            <div class="name">Red Flower with Green Leaf Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list11.jpg')"></div>
+                            </div>
+                            <div class="number">ER14486AG6</div>
+                            <div class="name">Yellow Flying Bee Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="tag" style="background-color: #5e50b5">Hot</div>
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list12.jpg')"></div>
+                            </div>
+                            <div class="number">J15104A3</div>
+                            <div class="name">Horizontal Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list13.jpg')"></div>
+                            </div>
+                            <div class="number">BJME500938T</div>
+                            <div class="name">Pink Flower Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list14.jpg')"></div>
+                            </div>
+                            <div class="number">J15104A1</div>
+                            <div class="name">Flower Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list15.jpg')"></div>
+                            </div>
+                            <div class="number">BJME500938T</div>
+                            <div class="name">Blue Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list16.jpg')"></div>
+                            </div>
+                            <div class="number">BJME500938T</div>
+                            <div class="name">Yellow Flying Bee Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list17.jpg')"></div>
+                            </div>
+                            <div class="number">BJME500938T</div>
+                            <div class="name">Flower Sequin</div></a></div>
+                        <div class="grid"><a class="item" href="javascript:;">
+                            <div class="img-wrapper">
+                              <!--客戶自行設定標籤的 文字 / 顏色-->
+                              <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                              <div class="shadow"></div>
+                              <div class="img-box" style="background-image: url('../../../uploads/product/list18.jpg')"></div>
+                            </div>
+                            <div class="number">M7706</div>
+                            <div class="name">Chantilly Lace</div></a></div>
+                      </div>
+                    </div>
+                    <div class="load-more">
+                      <div class="icon"><img src="../../../assets/img/loading.svg" alt=""/></div>
+                      <div class="text">Loading</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+  <!--引入的script-->
+  <script>document.createElement( "picture" );</script>
+  <script src="../../../assets/js/plugins/picturefill/picturefill.min.js" async="async"></script>
+  <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
+  <script src="../../../assets/js/plugins-dist.js"></script>
+  <script src="../../../assets/js/fesdDB.1.0-dist.js"></script>
+  <script src="../../../assets/js/fesd.1.1-dist.js"></script>
+  <script src="../../../assets/js/methods-dist.js"></script>
+  <script src="../../../assets/js/main-dist.js"></script><!-- microdata : professional service -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "ProfessionalService",
+      "name": "網站名子",
+      "email": "mailto:email",
+      "url": "本站網址",
+      "image": "favicon logo路徑",
+      "priceRange":"商品價格區間",
+      "telephone": "電話",
+      "logo": "logo路徑",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "地址",
+        "addressLocality": "區",
+        "addressRegion": "成市",
+        "postalCode": "郵遞區號",
+        "addressCountry": "中華民國 (台灣)"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.619435",
+        "longitude": "120.296034"
+      },
+      "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+      "openingHours": [
+        "Mo-Th 11:00-22:00",
+        "Fr 11:00-22:30",
+        "Sa 10:30-22:30",
+        "Su 10:30-22:00"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+886-00-12345678"
+      },
+      "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+    }
+    
+    
+  </script><!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://example.com/dresses",
+            "name": "Dresses"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "https://example.com/dresses/real",
+            "name": "Real Dresses"
+          }
+        }
+      ]
+    }
+  </script>
+  <script src="../../../assets/js/plugins/fabric/fabric_4.1.0.min.js"></script>
+  <script src="../../../assets/js/customized-dist.js"></script>
+</html>

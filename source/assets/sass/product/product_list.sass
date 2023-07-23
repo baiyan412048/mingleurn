@@ -1,0 +1,368 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.product_list
+  .all-wrapper
+    .decor-layer
+      position: fixed
+      width: 100vw
+      height: 100vh
+      z-index: -1
+      >div
+        position: absolute
+        opacity: 0
+        &.decor1
+          width: 15.729vw
+          right: 12.083%
+          top: 0
+          height: 0
+          overflow: hidden
+          transition: opacity 0.5s, height 0.5s
+          +rwdmax(1024)
+            display: none
+        &.decor2
+          width: 6.979vw
+          left: 0
+          top: 100vh
+          height: 0
+          overflow: hidden
+          transform: translateY(-159px)
+          transition: opacity 0.5s, height 0.5s
+          +rwdmax(1024)
+            display: none
+      &.show
+        >div
+          opacity: 1
+          &.decor1
+            height: 189px
+          &.decor2
+            height: 247px
+  main
+    margin-bottom: 12.604%
+    +rwdmax(767)
+      margin-bottom: 140px
+    .container
+      text-align: center
+      padding: 0 20px
+      +maxWidth($maxw: 1610px)
+    .header
+      text-align: center
+      margin-bottom: 102px
+      +rwdmax(767)
+        margin-bottom: 40px
+      .back-overview
+        display: inline-block
+        transform: translateY(-50px)
+        margin-bottom: 25px
+        +fontSet($size: px(13), $color: rgba(0,0,0,0.8))
+        +rwdmax(767)
+          transform: translateY(-22px)
+          margin-bottom: 8px
+      .unit-alias
+        +fontSetBold($font: $LBB, $size: px(54))
+        +rwdmax(1024)
+          font-size: px(48)
+        +rwdmax(767)
+          font-size: px(32)
+      .unit-description
+        margin-top: 20px
+        +maxWidth($maxw: 500px, $margin: 20px auto 0 auto)
+        +rwdmax(767)
+          margin-top: 8px
+    .type-filter
+      position: relative
+      display: inline-block
+      max-width: 1180px
+      padding: 0 210px
+      margin: 0 auto 95px auto
+      +rwdmax(1024)
+        max-width: 620px
+        padding: 0
+      +rwdmax(767)
+        margin: 0 auto 63px auto
+      .type-dropdown
+        +rwdmax(767)
+          position: relative
+          z-index: 4
+        &.active
+          .selected
+            .arrow
+              transform: translate(0,-50%) rotateX(0deg)
+        .selected
+          display: none
+          +rwdmax(767)
+            position: relative
+            width: 285px
+            height: 40px
+            padding: 0 20px
+            cursor: pointer
+            user-select: none
+            z-index: 1
+            background-color: white
+            border-radius: 10rem
+            border: none
+            box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+            +flex
+          .text
+            text-align: center
+            +fontSetBold($font: $LBB, $size: px(13), $color: black)
+          .arrow
+            position: absolute
+            top: 50%
+            right: 12px
+            transition: transform 0.3s
+            transform: translate(0,-50%) rotateX(180deg)
+            z-index: 1
+        .dropdown
+          +rwdmax(767)
+            display: none
+            position: absolute
+            width: 100%
+            top: 20px
+            left: 0
+            padding: 28px 0 8px 0
+            border-bottom-left-radius: 40px
+            border-bottom-right-radius: 40px
+            box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+            background-color: #eeeeee
+            overflow: hidden
+            z-index: 0
+          ul
+            +flex($wrap: wrap, $y: flex-start)
+            +rwdmax(767)
+              display: block
+              height: 100%
+              max-height: 168px !important
+              overflow: auto
+            >li
+              position: relative
+              padding: 8px 20px
+              user-select: none
+              cursor: pointer
+              +fontSetBold($font: $LBB, $size: px(18))
+              +rwdmax(767)
+                font-size: px(13)
+                text-align: center
+                width: 100%
+                padding: 9px 30px
+                line-height: 24px
+                transition: 0.3s
+                &:hover,&:active
+                  background-color: #a88438
+                  color: white
+              &::before
+                content: ''
+                position: absolute
+                width: 0
+                height: 2px
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+                background-color: #a88438
+                transition: width 0.3s
+                +rwdmax(767)
+                  display: none
+              +rwdmin(768)
+                &.active
+                  color: #a88438
+                  &::before
+                    width: calc(100% - 30px)
+          .scrollbar-inner > .scroll-element.scroll-y
+            right: 17px
+      .float-back
+        position: absolute
+        top: 0
+        right: 210px
+        height: 38px
+        transform: translateX(100%)
+        z-index: 2
+        +flex
+        +rwdmax(1024)
+          position: static
+          height: auto
+          margin-top: 30px
+          transform: none
+        .divider
+          width: 1px
+          height: 21px
+          background-color: rgba(0,0,0,0.3)
+          margin: 0 8px
+          +rwdmax(1024)
+            display: none
+        .filter-option
+          position: relative
+          +flex
+          +rwdmax(1024)
+            flex-direction: column
+          .filter-btn
+            position: relative
+            margin: 0 11px 0 24px
+            z-index: 3
+            +rwdmax(1024)
+              margin: 0 0 8px 0
+            .icon-filter
+              position: relative
+              font-size: 19px
+              cursor: pointer
+              z-index: 2
+            .filter-menu
+              position: absolute
+              top: -15px
+              right: -20px
+              width: 0
+              height: 0
+              opacity: 0
+              border-radius: 20px
+              box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+              border: solid 1px #cdcdcd
+              background-color: #f4f4f4
+              overflow: hidden
+              transition: 0.3s linear
+              z-index: 1
+              +rwdmax(1024)
+                width: 235px !important
+                right: auto
+                left: 50%
+                transform: translate(-50%,0)
+              ul
+                padding: 49px 0 8px 0
+                >li
+                  width: 100%
+                  height: 42px
+                  padding: 0 0 0 32px
+                  cursor: pointer
+                  user-select: none
+                  text-align: left
+                  transition: 0.2s
+                  +flex($x: flex-start)
+                  +fontSetBold($font: $LBB, $size: px(13), $lh: 42px, $color: #666666)
+                  .sort-option
+                    min-width: 62px
+                    margin-right: 8px
+                  i
+                    display: block
+                    font-size: 13px
+                    margin-right: 8px
+                    &.icon-triangle
+                      transform: rotate(-180deg)
+                  .remarks
+                    opacity: 0
+                    transition: opacity 0.2s
+                  &:hover
+                    background-color: #a88438
+                    color: white
+                    .remarks
+                      opacity: 1
+          .selected-filter
+            user-select: none
+            +fontSetBold($font: $LBB, $size: px(13), $lh: 20px, $color: #666666)
+            +rwdmax(1024)
+              height: 20px
+    .product-list
+      overflow: hidden
+      +maxWidth($maxw: 1180px, $margin: 0 auto)
+      +rwdmax(1200)
+        max-width: 840px
+      +rwdmax(1024)
+        max-width: 620px
+      +rwdmax(767)
+        max-width: 360px
+      .row
+        +flex($wrap: wrap, $y: flex-start)
+        .grid
+          width: 20%
+          padding: 0 35px
+          +rwdmin(1201)
+            &:not(:nth-child(-n+5))
+              margin-top: 76px
+          +rwdmax(1200)
+            width: 25%
+            padding: 0 20px
+            &:not(:nth-child(-n+4))
+              margin-top: 76px
+          +rwdmax(1024)
+            width: calc(100% / 3)
+            &:not(:nth-child(-n+3))
+              margin-top: 76px
+          +rwdmax(767)
+            width: 50%
+            &:not(:nth-child(-n+2))
+              margin-top: 50px
+          &:nth-child(9n+6)
+            margin-left: calc(10% - 35px)
+            +rwdmax(1200)
+              margin-left: 0
+          &:nth-child(9n+9)
+            margin-right: calc(10% - 35px)
+            +rwdmax(1200)
+              margin-right: 0
+          .item
+            display: block
+            width: 100%
+            text-align: center
+            &:hover
+              .shadow
+                opacity: 0
+              .img-box
+                box-shadow: 5px 8.7px 14px 6px rgba(0, 0, 0, 0.25)
+            .img-wrapper
+              position: relative
+              width: 150px
+              height: 150px
+              margin: 0 auto 16px auto
+              z-index: -1
+              +rwdmax(767)
+                width: 120px
+                height: 120px
+              .tag
+                position: absolute
+                right: -10px
+                bottom: 0
+                width: 60px
+                height: 60px
+                border-radius: 50%
+                text-align: center
+                z-index: 2
+                +fontSet($size: px(12), $lh: 60px, $color: white)
+              .shadow
+                width: 100%
+                height: 100%
+                border-radius: 50%
+                box-shadow: inset 5px 8.7px 14px 6px rgba(0, 0, 0, 0.65)
+                z-index: 1
+                transition: opacity 0.2s
+                +posCenter
+              .img-box
+                position: relative
+                width: 100%
+                padding-bottom: 100%
+                border-radius: 50%
+                overflow: hidden
+                transition: 0.2s
+                background-repeat: no-repeat
+                background-position: center
+                background-size: cover
+            .number
+              +fontSetBold($font: $LBB, $size: px(14), $lh: 22px)
+              +rwdmax(767)
+                font-size: px(12)
+            .name
+              margin-bottom: 10px
+              +fontSetBold($font: $LBB, $size: px(16), $lh: 22px)
+              +rwdmax(767)
+                +ellipsis($line: 1, $lh: 22px)
+            .price
+              +fontSet($size: px(14), $lh: 22px, $color: #666666)
+              +rwdmax(767)
+                font-size: px(12)
+    .load-more
+      display: none
+      margin-top: 130px
+      +rwdmax(767)
+        margin-top: 60px
+      .icon
+        width: 40px
+        margin: 0 auto
+      .text
+        margin-top: 10px
+        +fontSetBold($font: $LBB, $size: px(14), $color: black)

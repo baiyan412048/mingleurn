@@ -1,0 +1,57 @@
+
+<div class="close-btn ajax_close"><span></span></div>
+<div class="download-btn"><i class="icon-download"></i></div>
+<div class="modal-scroll-wrap scrollbar-macosx">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="container">
+        <div class="modal-header">CUSTOMIZED PREVIEW</div>
+        <div class="modal-body">
+          <div class="preview-section"></div>
+          <div class="form-block"></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><a class="backTop" href="javascript:;" data-anchor-container=".modal-scroll-wrap"><i class="icon-top"></i></a></div>
+  </div>
+</div>
+<script>
+  $('.download-btn').on('click', function (e) {
+    e.stopPropagation()
+    html2canvas(document.querySelector(".preview-wrap .modal-content")).then(canvas => {
+      var contentWidth = canvas.width;
+      var contentHeight = canvas.height;
+  
+      //一頁pdf顯示html頁面生成的canvas高度
+      var pageHeight = contentWidth / 595.28 * 841.89;
+      //未生成pdf的html頁面高度
+      var leftHeight = contentHeight;
+      //pdf頁面偏移
+      var position = 0;
+      //A4紙的尺寸[595.28,841.89]，html頁面生成的canvas在pdf中圖片的寬高
+      var imgWidth = 555.28;
+      var imgHeight = 555.28/contentWidth * contentHeight;
+  
+      var pageData = canvas.toDataURL('image/jpeg', 1.0);
+  
+      var pdf = new jsPDF('', 'pt', 'a4');
+      //有兩個高度需要區分，一個是html頁面的實際高度，和生成pdf的頁面高度(841.89)
+      //當內容未超過pdf一頁顯示的範圍，無需分頁
+      if (leftHeight < pageHeight) {
+        pdf.addImage(pageData, 'JPEG', 20, 0, imgWidth, imgHeight);
+      }
+      else {
+        while(leftHeight > 0) {
+          pdf.addImage(pageData, 'JPEG', 20, position, imgWidth, imgHeight)
+          leftHeight -= pageHeight;
+          position -= 841.89;
+          //避免添加空白頁
+          if(leftHeight > 0) {
+              pdf.addPage();
+          }
+        }
+      }
+      pdf.save('content.pdf');
+    });
+  })
+</script>

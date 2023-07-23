@@ -1,0 +1,237 @@
+-
+  news_slider = [
+    {
+      day: '06',
+      monthYear: 'Jan. 2020',
+      img: '../../../uploads/news/top-news01.jpg',
+      title: 'Texworld NYC Winter 19th - 21th Jan., 2020',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute couture and fashion grasp the trend',
+      href: "./ajax_news_detail.html",
+    },
+    {
+      day: '06',
+      monthYear: 'Jan. 2020',
+      img: 'https://via.placeholder.com/940x570',
+      title: 'The title only show one line here',
+      description: 'The description only show two line here',
+      href: "./ajax_news_detail.html",
+    },
+    {
+      day: '06',
+      monthYear: 'Jan. 2020',
+      img: 'https://via.placeholder.com/940x570',
+      title: 'The title only show one line here',
+      description: 'The description only show two line here',
+      href: "./ajax_news_detail.html",
+    },
+  ]
+-
+  newsCard = [
+    {
+      type: 'New Arrival',
+      noImg: false,
+      bgColor: '',
+      day: '06',
+      monthYear: 'Jan. 2020',
+      img: '../../../uploads/news/news-img01.jpg',
+      title: 'Georges Hobeika Autumn and Winter Series Lace',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'Exhibitions',
+      noImg: false,
+      bgColor: '',
+      day: '25',
+      monthYear: 'Dec. 2019',
+      img: '../../../uploads/news/news-img02.jpg',
+      title: '2020 New Lace Is On The Market, Welcome To Discover More',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'Design Trand',
+      noImg: false,
+      bgColor: '',
+      day: '14',
+      monthYear: 'Dec. 2019',
+      img: '../../../uploads/news/news-img03.jpg',
+      title: 'Texworld NYC Winter 19th - 21th Jan., 2020',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'New Arrival',
+      noImg: false,
+      bgColor: '',
+      day: '09',
+      monthYear: 'Jan. 2020',
+      img: '../../../uploads/news/news-img04.jpg',
+      title: 'Mingleurn Elegant Wedding Veil Series for you',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'Exhibitions',
+      noImg: true,
+      bgColor: '#7982ab',
+      day: '23',
+      monthYear: 'Nov. 2019',
+      img: '',
+      title: 'Texworld NYC Winter 19th - 21th Jan., 2020',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'Exhibitions',
+      noImg: false,
+      bgColor: '',
+      day: '17',
+      monthYear: 'Nov. 2019',
+      img: '../../../uploads/news/news-img05.jpg',
+      title: '30th Anniversary of Mingleurn, a Professional and Popular Brand',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'New Arrival',
+      noImg: true,
+      bgColor: '#b74c4c',
+      day: '08',
+      monthYear: 'Oct. 2019',
+      img: '../../../uploads/news/news-img05.jpg',
+      title: 'The International Trade Fair : Fabrics, Trims, Accessories',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/news.css")
+  body.news(data-page="news")
+    //搜尋燈箱
+    .search_lightbox
+      .content-wrap
+        .content
+          .close-search
+            span
+          .header Search News
+          .searchbar
+            input.search-style(type="text" placeholder="Enter the keywords...")
+            .search-year
+              .selected.search-style
+                .text Select the year of news
+                .arrow.icon-arrow-up
+              .dropdown
+                ul.scrollbar-inner
+                  li 2020
+                  li 2019
+                  li 2018
+                  li 2017
+                  li 2016
+                  li 2015
+          a.search-btn(href="./search_result.html")
+            i.icon-search
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .decor-layer
+          .decor2
+            img(src="../../../assets/img/news/decor04.png", alt="")
+          .decor3
+            img(src="../../../assets/img/news/decor05.png", alt="")
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .header
+              .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") NEWSROOM
+              h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") MING to Tell
+            .top-news
+              .brush-img.brush1
+                img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/news/decor01.png", alt="")
+              .brush-img.brush2
+                img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/news/decor02.png", alt="")
+              .mainBanner-slider(data-anchor-obj=".top-news" data-animate="fadeInUp" data-duration="0.8s" data-delay="0.8s")
+                .slider-wrapper
+                  .swiper-container(
+                    data-swiper-id="top-news-slider-ID"
+                    data-swiper-name="top-news-slider"
+                    data-swiper-direction="horizontal" 
+                    data-swiper-num="1" 
+                    data-swiper-arrow="off" 
+                    data-swiper-nav="on" 
+                    data-swiper-nav-name=".banner-slider-pagination"
+                    data-swiper-autoplay="on" 
+                    data-swiper-effect="fade"
+                    data-swiper-breakpoints="{1025: { direction: 'vertical' }}")
+                    .swiper-wrapper
+                      //這邊跑迴圈
+                      //請將欄位串在swiper-slide的data上
+                      //日期(天) - data-day, 日期(年月) - data-month-year, 標題 - data-title, 描述 - data-description, ajax路徑 - data-href
+                      each slider in news_slider
+                        .swiper-slide(data-swiper-autoplay="5000" data-day= slider.day, data-month-year= slider.monthYear, data-title= slider.title, data-description= slider.description, data-href= slider.href)
+                          .content
+                            .img-box.ajax_open(data-ajax-route= slider.href, data-ajax-container=".news_detail", data-ajax-callback="_ajaxCallback.newsDetail")
+                              img(src= slider.img, alt="")
+                  .swiper-pagination.banner-slider-pagination.top-news-slider-ID
+                //輪播文字區塊
+                .slider-textarea.ajax_open(data-ajax-route="" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail")
+                  .news-date
+                    span.day
+                    span.month_year
+                  .info
+                    .title
+                    .description
+            .custom-hr
+            .bottom-news
+              .news-type
+                .type-select
+                  .head TYPES FOR YOU 
+                  .type-dropdown
+                    .selected
+                      .text All News
+                      .arrow.icon-arrow-up
+                    .dropdown
+                      ul.scrollbar-inner
+                        li.active All News
+                        li Design Trend
+                        li New Arrival
+                        li Exhibitions
+                  .news-search Search
+              .news-list
+                //這邊跑迴圈
+                //分兩種形式 .news-card上有兩種class 有圖 .has-img 無圖 .no-img
+                each data in newsCard
+                  .news-card(class= (data.noImg == true ? 'no-img' : 'has-img') data-animate="fadeIn" data-duration="0.4s" data-delay="0.4s")
+                    .card-img
+                      .img-box.ajax_open(data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail")
+                        .cover
+                          .text= data.type
+                          i.icon-right
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src= data.img alt="")
+                    //如果沒有圖就把顏色洗到card-text上
+                    .card-text.ajax_open(style= (data.noImg == true ? `background-color: ${data.bgColor}` : '') data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail")
+                      .news-date
+                        span.day= data.day
+                        span.month_year= data.monthYear
+                      .custom-hr
+                      .news-info
+                        .news-title= data.title
+                        .news-description.innertext= data.description
+          
+
+        // 頁尾
+        footer
+          .footer-top
+            .header Be Your Wings
+            include ../layouts/_quick-link.pug
+                                                
+          include ../layouts/_footer_bottom.pug
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

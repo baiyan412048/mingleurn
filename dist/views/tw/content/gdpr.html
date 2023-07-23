@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- head標籤 & 網站設定-->
+  <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <!--共用設定-->
+    <!-- 網站語系及語言宣告-->
+    <meta http-equiv="content-language" content="zh-TW"/>
+    <meta charset="UTF-8"/>
+    <!-- RWD設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 瀏覽器設定-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- 網站關鍵字-->
+    <meta name="keywords" content="網站關鍵字"/>
+    <!-- 網頁內容描述-->
+    <meta name="description" content="網頁內容描述，中文 80 個字元、英文 160 個字元"/>
+    <!-- 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="robots" content="noindex"/>
+    <!-- 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="googlebot" content="noindex"/>
+    <!-- Open Graph Protocol for facebook-->
+    <meta property="og:title" content="網頁Title"/>
+    <meta property="og:description" content="網頁內容描述"/>
+    <meta property="og:url" content="主要網址"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="網頁內容描述"/>
+    <!-- Open Graph Protocol for google plus-->
+    <meta itemprop="name" content="網站名稱或標題"/>
+    <meta itemprop="image" content="分享的影像位址"/>
+    <meta itemprop="description" content="網頁描述"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="分享的影像位址"/>
+    <meta name="twitter:site" content="網站名稱"/>
+    <meta name="twitter:title" content="網頁標題"/>
+    <meta name="twitter:description" content="網頁描述 200 個字元以內"/>
+    <meta name="twitter:creator" content="客戶公司或品牌名稱"/>
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content=" http://www.example.com/image.html"/>
+    <title>Mingleurn</title>
+    <!-- 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中-->
+    <link rel="canonical" href="主要網址" itemprop="url"/>
+    <link rel="shortcut icon" href="../../../assets/img/favicon.ico" type="image/x-icon"/>
+    <!-- 以下script 後端自行打開-->
+    <!-- Google Tag Manager-->
+    <!-- script.-->
+    <!--   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+    <!--   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+    <!--   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+    <!--   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+    <!--   })(window,document,'script','dataLayer','GTM編號');-->
+    <!--全站共用CSS-->
+    <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
+    <!--獨立CSS-->
+    <link rel="stylesheet" href="../../../assets/css/gdpr.css"/>
+  </head>
+  <body class="gdpr" data-page="gdpr">
+    <h1 class="visuallyhidden">Mingleurn 明綸國際有限公司</h1>
+    <div class="main-wrapper scrollbar-macosx" data-fake-body="">
+      <div class="all-wrapper">
+        <div class="decor-layer">
+          <div class="decor1"><img src="../../../assets/img/member/gdpr-decor01.png" alt=""/></div>
+          <div class="decor2"><img src="../../../assets/img/member/gdpr-decor02.png" alt=""/></div>
+        </div>
+        <!-- 主要內容-->
+        <main>
+          <div class="gdpr-wrap">
+            <div class="sidebar"><a class="close-btn" href="./member.html"><span></span></a>
+              <ul class="gdpr-menu nav-tabs" data-id="gdpr-tabs">
+                <li class="backup"><a class="option tab-btn active" href="javascript:;" data-page="backup">Backup</a>
+                  <div class="status">
+                    <div class="text">status</div>
+                    <div class="switch-input" data-ajax-route="./ajax_gdpr_backup.html" data-ajax-route2="./ajax_gdpr_cancel_backup.html">
+                      <input type="checkbox" disabled="disabled"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="delete"><a class="option tab-btn" href="javascript:;" data-page="delete">Delete</a>
+                  <div class="status">
+                    <div class="text">status</div>
+                    <div class="switch-input" data-ajax-route="./ajax_gdpr_delete.html" data-ajax-route2="./ajax_gdpr_cancel_delete.html">
+                      <input type="checkbox" disabled="disabled"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="block"><a class="option tab-btn" href="javascript:;" data-page="block">Block</a>
+                  <div class="status">
+                    <div class="text">status</div>
+                    <div class="switch-input" data-ajax-route="./ajax_gdpr_block.html" data-ajax-route2="./ajax_gdpr_cancel_block.html">
+                      <input type="checkbox" disabled="disabled"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="content">
+              <div class="tab-content" id="gdpr-tabs">
+                <!--跳步驟幫我傳跑這支 _gdpr.stepChange('.tab-pane 的 ID', 步驟)-->
+                <!--裡面的按鈕有範例-->
+                <!--備份-->
+                <div class="tab-pane" id="backup">
+                  <div class="step-wrap" data-now-step="1">
+                    <div class="step-content step1">
+                      <h2 class="title">Backup Your Account</h2>
+                      <p class="description">Dear member,<br>We need 7 working days to carry out the work after submitting the senior account, and you can download it in the member center after completing, please pay attention.</p>
+                      <!--後端判斷是否有下載過-->
+                      <!--有下載過顯示 .last-backup 這個 p-->
+                      <p class="last-backup" style="display: none">Date of last backup :  2020 - 03 - 12</p>
+                      <p class="emphasis">If you decide to back up your account, please fill in the fields to ensure that this operation is yours.</p>
+                      <div class="form">
+                        <div class="form-grid">
+                          <div class="form-group">
+                            <p>Password</p>
+                            <input type="password" placeholder="Enter the current password" required="required"/>
+                          </div>
+                        </div>
+                        <div class="form-grid">
+                          <div class="form-group">
+                            <p>E-mail</p>
+                            <input type="email" inputmode="email" placeholder="We will send a notice to your email when it is done" required="required"/>
+                          </div>
+                        </div>
+                        <div class="use-member-data">
+                          <label class="checkbox">
+                            <input type="checkbox"/>
+                            <div class="fake-checkbox"><span></span></div>
+                            <p>Same as member</p>
+                          </label>
+                        </div>
+                        <div class="form-grid">
+                          <div class="form-group verification">
+                            <p>Verification</p>
+                            <div class="element-wrap">
+                              <input type="text" placeholder="Please enter  verification code"/><img src="../../../uploads/contact/code.jpg" alt=""/><a href="javascript:;"><span class="icon-refresh"></span></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div><a class="btn btn-black" href="javascript:;" onclick="_gdpr.stepChange('backup', 2)">Submit</a>
+                    </div>
+                    <div class="step-content step2">
+                      <div class="icon-backup"></div>
+                      <h2 class="title">Successfully Submit</h2>
+                      <p class="description">Dear member,<br>We need 7 working days to carry out the work after submitting successful, we will send a notice to your email when it is done.</p>
+                      <!--後端只要幫我帶天數到 data-day 就好-->
+                      <div class="progress-bar" data-day="1"></div>
+                      <div class="date">Date of finished backup :  2020 - 03 - 12</div>
+                      <div class="btn operating btn-black">Operating</div><a class="btn download btn-gold" href="javascript:;" download="download">Download</a>
+                    </div>
+                  </div>
+                </div>
+                <!--刪除-->
+                <div class="tab-pane" id="delete">
+                  <div class="step-wrap" data-now-step="1">
+                    <div class="step-content step1">
+                      <h2 class="title">Delete Your Account</h2>
+                      <p class="description">Dear member,<br>if you think you will no longer use this website, you can ask us to permanently delete your account. Please note that you will not be able to re-enable it after deletion, or keep any added content, and we recommend that you back it up before proceeding.</p>
+                      <div class="see-detail"><span>See Details</span>
+                        <div class="tips">?
+                          <div class="tips-box">
+                            <p class="text">After you propose to delete the account, it means that others cannot see your account on the website and all the information published through this account. After 14 days of the submission, we will start the deletion process. We will take up to 90 days (from the time the account is deleted and submitted) ) In order to delete your published content, which will no longer be visible to others when we delete it.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="emphasis">If you decide to back up your account, please fill in the fields to ensure that this operation is yours.</p>
+                      <div class="form">
+                        <div class="form-grid">
+                          <div class="form-group">
+                            <p>Password</p>
+                            <input type="password" placeholder="Enter the current password" required="required"/>
+                          </div>
+                        </div>
+                        <div class="form-grid">
+                          <div class="form-group verification">
+                            <p>Verification</p>
+                            <div class="element-wrap">
+                              <input type="text" placeholder="Please enter  verification code"/><img src="../../../uploads/contact/code.jpg" alt=""/><a href="javascript:;"><span class="icon-refresh"></span></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div><a class="btn btn-black" href="javascript:;" onclick="_gdpr.stepChange('delete', 2)">Submit</a>
+                    </div>
+                    <div class="step-content step2">
+                      <div class="icon-delete2"></div>
+                      <h2 class="title">Successfully Submit</h2>
+                      <p class="description">Dear member,<br>We will begin the removal process after 14 days, before which you can reactivate your account. It needs up to 90 days to delete all account content.</p>
+                      <div class="date">Date of finished backup :  2020 - 03 - 12</div>
+                      <!--後端只要幫我帶天數到 data-day 就好-->
+                      <div class="progress-bar" data-day="14">
+                        <div class="interval"><span>Day14</span></div>
+                        <div class="interval"><span>Day90</span></div>
+                      </div>
+                      <div class="extra-description">Wanna reboot account ? Please contact us.</div><a class="btn reboot btn-gold ajax_open" href="javascript:;" data-ajax-route="./ajax_gdpr_cancel_delete.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.gdprLightbox">Reboot</a><a class="btn contact btn-gold" href="./contact.html">Contact Us</a>
+                    </div>
+                  </div>
+                </div>
+                <!--停用-->
+                <div class="tab-pane" id="block">
+                  <div class="step-wrap" data-now-step="1">
+                    <div class="step-content step1">
+                      <h2 class="title">Backup Your Account</h2>
+                      <p class="description">Dear member,<br>We need 7 working days to carry out the work after submitting the senior account, and you can download it in the member center after completing, please pay attention.</p>
+                      <p class="emphasis">If you decide to back up your account, please fill in the fields to ensure that this operation is yours.</p>
+                      <div class="form">
+                        <div class="form-grid">
+                          <div class="form-group">
+                            <p>Password</p>
+                            <input type="password" placeholder="Enter the current password" required="required"/>
+                          </div>
+                        </div>
+                        <div class="form-grid">
+                          <div class="form-group verification">
+                            <p>Verification</p>
+                            <div class="element-wrap">
+                              <input type="text" placeholder="Please enter  verification code"/><img src="../../../uploads/contact/code.jpg" alt=""/><a href="javascript:;"><span class="icon-refresh"></span></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div><a class="btn btn-black" href="javascript:;" onclick="_gdpr.stepChange('block', 2)">Submit</a>
+                    </div>
+                    <div class="step-content step2">
+                      <div class="icon-lock"></div>
+                      <h2 class="title">Successfully Submit</h2>
+                      <p class="description">Dear member,<br>You have successfully disabled your account. If you want to reactivate it, click the button below.</p>
+                      <!--後端只要幫我帶天數到 data-day 就好--><a class="btn contact btn-gold ajax_open" href="javascript:;" data-ajax-route="./ajax_gdpr_cancel_block.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.gdprLightbox">Reboot</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+  <!--引入的script-->
+  <script>document.createElement( "picture" );</script>
+  <script src="../../../assets/js/plugins/picturefill/picturefill.min.js" async="async"></script>
+  <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
+  <script src="../../../assets/js/plugins-dist.js"></script>
+  <script src="../../../assets/js/fesdDB.1.0-dist.js"></script>
+  <script src="../../../assets/js/fesd.1.1-dist.js"></script>
+  <script src="../../../assets/js/methods-dist.js"></script>
+  <script src="../../../assets/js/main-dist.js"></script><!-- microdata : professional service -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "ProfessionalService",
+      "name": "網站名子",
+      "email": "mailto:email",
+      "url": "本站網址",
+      "image": "favicon logo路徑",
+      "priceRange":"商品價格區間",
+      "telephone": "電話",
+      "logo": "logo路徑",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "地址",
+        "addressLocality": "區",
+        "addressRegion": "成市",
+        "postalCode": "郵遞區號",
+        "addressCountry": "中華民國 (台灣)"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.619435",
+        "longitude": "120.296034"
+      },
+      "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+      "openingHours": [
+        "Mo-Th 11:00-22:00",
+        "Fr 11:00-22:30",
+        "Sa 10:30-22:30",
+        "Su 10:30-22:00"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+886-00-12345678"
+      },
+      "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+    }
+    
+    
+  </script><!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://example.com/dresses",
+            "name": "Dresses"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "https://example.com/dresses/real",
+            "name": "Real Dresses"
+          }
+        }
+      ]
+    }
+  </script>
+</html>

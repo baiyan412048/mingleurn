@@ -1,0 +1,79 @@
+
+<div class="close-btn" data-ajax-route="./ajax_member_register_leave.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox"><span></span></div>
+<div class="modal-scroll-wrap scrollbar-macosx">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="register-wrap">
+        <div class="step-circle" data-step="1">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 35 35" xml:space="preserve">
+            <path stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 0 0 31.831 a 15.9155 15.9155 0 0 0 0 -31.831" stroke-linecap="butt" stroke-width="1"></path>
+            <path step="step" stroke-dasharray="33.33, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-linecap="butt" stroke-width="1"></path>
+          </svg>
+          <p><span class="now-step">1</span><span>3</span></p>
+        </div>
+        <p class="step-title">CHANGE NUMBER</p>
+        <p class="step-subtitle">Change Phone Number</p>
+        <!-- 切換步驟 _register.switchStep()-->
+        <div class="step-content active" data-step="1">
+          <p class="step-text">In order to ensure your identity,  please enter your member password and fill in your new mobile phone number for verification.</p>
+          <div class="form-grid">
+            <div class="form-group mobile">
+              <p>Phone Number</p>
+              <div class="element-wrap">
+                <div class="select-element" data-default="Area code">
+                  <div class="selected"><span class="text">Area code</span><span class="arrow icon-arrow-up"></span></div>
+                  <div class="dropdown">
+                    <ul class="scrollbar-inner">
+                      <li>+ 886</li>
+                      <li>+ 86</li>
+                      <li>+ 852</li>
+                      <li>+ 62</li>
+                      <li>+ 81</li>
+                      <li>+ 82</li>
+                    </ul>
+                  </div>
+                </div>
+                <input type="tel" inputmode="tel" placeholder="ex : 912345678"/>
+              </div>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <p>Password</p>
+              <input type="password" placeholder="More than eight digits including numbers and letters" required="required"/>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group verification">
+              <p>Verification</p>
+              <div class="element-wrap">
+                <input type="text" placeholder="Please enter  verification code"/><img src="../../../uploads/contact/code.jpg" alt=""/><a href="javascript:;"><span class="icon-refresh"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-btn-group"><a class="modal-btn btn-black" onclick="_common.accountStepChange(3)" href="javascript:;">Next</a></div>
+        </div>
+        <div class="step-content" data-step="2">
+          <p class="step-text">Enter the verification code of your phone</p>
+          <div class="form-grid">
+            <div class="form-group sms">
+              <input type="number" inputmode="numeric" placeholder="Six-digit verification code" required="required"/>
+            </div>
+          </div>
+          <div class="tip-box">
+            <p>Haven’t received ? <a class="resend" href="javascript:;">Resend</a><span class="countdown" data-seconds="300"></span></p><span>or</span>
+            <p>You can get help by <a href="./contact.html">Contact Us</a></p>
+          </div>
+          <div class="modal-btn-group"><a class="modal-btn btn-black" onclick="_common.accountStepChange(3)" href="javascript:;">Next</a></div>
+        </div>
+        <div class="step-content" data-step="3">
+          <div class="icon-phone-success"></div>
+          <p class="title">Success</p>
+          <p class="subtitle">Your mobile number has been successfully updated</p>
+          <div class="changed-phone"><span class="number">+886 912345678</span><span class="icon icon-verified"></span></div>
+          <div class="modal-btn-group"><a class="modal-btn btn-black ajax_close" href="javascript:;">Ok</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

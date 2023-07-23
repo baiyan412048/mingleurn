@@ -1,0 +1,190 @@
+-
+  banner_slider = [
+    {
+      type: 'img',
+      img: '../../../uploads/about/fabric-img01.jpg',
+      description: 'Here is to put some describes about pictur or video.'
+    },
+    {
+      type: 'img',
+      img: 'https://picsum.photos/1015/570',
+      description: 'Here is to put some describes about pictur or video.'
+    },
+    {
+      type: 'img',
+      img: 'https://picsum.photos/1015/570',
+      description: 'Here is to put some describes about pictur or video.'
+    },
+  ]
+
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/about_fabric.css")
+  body.about_fabric(data-page="about_fabric")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .header
+              a.back-overview(href="./about.html") BACK
+              h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Featured Embroidery
+              .unit-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") MingLeurn is a team of revolution, innovated by dozens of designers who lead the trend well. With elegant taste, unique patterns, delicate work, and excellent service, we are proud to present our best collection here.
+            //主圖輪播
+            .mainBanner-slider
+              .slider-wrapper
+                .swiper-container(
+                  data-swiper-id="detail-banner-slider-ID"
+                  data-swiper-name="detail-banner-slider"
+                  data-swiper-direction="horizontal" 
+                  data-swiper-num="1" 
+                  data-swiper-arrow="off" 
+                  data-swiper-nav="on" 
+                  data-swiper-nav-name=".banner-slider-pagination"
+                  data-swiper-autoplay="on" 
+                  data-swiper-effect="fade"
+                  data-swiper-breakpoints="{1024: { direction: 'vertical' }}")
+                  .swiper-wrapper
+                    //這邊跑迴圈
+                    //請將欄位串在swiper-slide的data上
+                    //描述 - data-description
+                    each slider in banner_slider
+                      .swiper-slide(data-swiper-autoplay="5000" data-description= slider.description)
+                        .content
+                          if slider.type == 'img'
+                            //圖片
+                            .img-box
+                              img.swiper-lazy(data-src= slider.img, alt="")
+                              .swiper-lazy-preloader
+                          else if slider.type == 'video'
+                            //影片
+                            .video-box(video-id="zBU4R1Jm46k" video-type="youtube")
+                              //影片封面圖
+                              img.swiper-lazy(data-src= slider.img, alt="")
+                              .swiper-lazy-preloader
+                .swiper-pagination.banner-slider-pagination.detail-banner-slider-ID
+              //輪播文字區塊
+              .slider-textarea
+                .info
+                  .description
+            //段落編輯器
+            ._articleBlock
+              article._article(img-row='x3' img-merge="on" h-align="left" subh-align="left" button-align='left' button-textalign='center' button-textcolor='#fff' button-color='#000')
+                ._contentWrap
+                  ._imgCover
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img02.jpg' alt='圖片描述')
+                      span._description Description
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img03.jpg' alt='圖片描述')
+                      span._description Description
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img04.jpg' alt='圖片描述')
+                      span._description Description
+                  ._wordWrap
+                    h4._H New Year
+                    h5._subH Here you can place the title bold text
+                    p._P
+                      | This season tailors the beautiful lines of outstanding women, and gives the image of women who love fashion. This is achieved through exquisite embroidery, such as owls made with colorful embroidery threads, which are perfectly integrated into other designs. The work also features simple fabric or large color patchwork, attractive cuts, lace details, high slits and a shoulderless design.
+                      span._buttonCover
+                        a._button(href='javascript:;') Button Description
+              article._article(img-row='x3' img-merge="on" h-align="left" subh-align="left" button-align='left' button-textalign='center' button-textcolor='#fff' button-color='#000')
+                ._contentWrap
+                  ._imgCover
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img05.jpg' alt='圖片描述')
+                      span._description Description
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img06.jpg' alt='圖片描述')
+                      span._description Description
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img07.jpg' alt='圖片描述')
+                      span._description Description
+                  ._wordWrap
+                    h4._H New Year
+                    h5._subH Here you can place the title bold text
+                    p._P
+                      | This season tailors the beautiful lines of outstanding women, and gives the image of women who love fashion. This is achieved through exquisite embroidery, such as owls made with colorful embroidery threads, which are perfectly integrated into other designs. The work also features simple fabric or large color patchwork, attractive cuts, lace details, high slits and a shoulderless design.
+                      span._buttonCover
+                        a._button(href='javascript:;') Button Description
+              article._article(img-row='x3' img-merge="on" h-align="left" subh-align="left" button-align='left' button-textalign='center' button-textcolor='#fff' button-color='#000')
+                ._contentWrap
+                  ._imgCover
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img08.jpg' alt='圖片描述')
+                      span._description Description
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img09.jpg' alt='圖片描述')
+                      span._description Description
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img10.jpg' alt='圖片描述')
+                      span._description Description
+                  ._wordWrap
+                    h4._H New Year
+                    h5._subH Here you can place the title bold text
+                    p._P
+                      | This season tailors the beautiful lines of outstanding women, and gives the image of women who love fashion. This is achieved through exquisite embroidery, such as owls made with colorful embroidery threads, which are perfectly integrated into other designs. The work also features simple fabric or large color patchwork, attractive cuts, lace details, high slits and a shoulderless design.
+                      span._buttonCover
+                        a._button(href='javascript:;') Button Description
+              article._article(img-row='x3' img-merge="on" h-align="left" subh-align="left" button-align='left' button-textalign='center' button-textcolor='#fff' button-color='#000')
+                ._contentWrap
+                  ._imgCover
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img11.jpg' alt='圖片描述')
+                      span._description Description
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img12.jpg' alt='圖片描述')
+                      span._description Description
+                    ._cover
+                      ._photo
+                        img(src='../../../uploads/about/fabric-img13.jpg' alt='圖片描述')
+                      span._description Description
+                  ._wordWrap
+                    h4._H New Year
+                    h5._subH Here you can place the title bold text
+                    p._P
+                      | This season tailors the beautiful lines of outstanding women, and gives the image of women who love fashion. This is achieved through exquisite embroidery, such as owls made with colorful embroidery threads, which are perfectly integrated into other designs. The work also features simple fabric or large color patchwork, attractive cuts, lace details, high slits and a shoulderless design.
+                      span._buttonCover
+                        a._button(href='javascript:;') Button Description
+              article._article.-typeFull(typefull-img='../../../uploads/about/fabric-img14.jpg' typefull-img-rwd='../../../uploads/about/fabric-img14_mobile.jpg' h-color="#fff" h-align="left" subh-color="#fff" subh-align="left" p-color="#fff" p-align="left" typefull-size='l' button-textalign="center")
+                ._contentWrap
+                  // ._imgCover
+                  //   ._cover
+                  //     ._photo
+                  //       img(src='../../../uploads/product/detail07.jpg' alt='圖片描述')
+                  //     span._description Description
+                  ._wordWrap
+                    h4._H Happy Christmas
+                    h5._subH Here you can place the title bold text
+                    ._P
+                      | This season tailors the beautiful lines of outstanding women, and gives the image of women who love fashion. This is achieved through exquisite embroidery, such as owls made with colorful embroidery threads, which are perfectly integrated into other designs. The work also features simple fabric or large color patchwork, attractive cuts, lace details, high slits and a shoulderless design.
+                      span._buttonCover
+                        a._button(href='javascript:;') Button description
+            .footer
+              a.backTop(href="javascript:;" data-anchor-container=".main-wrapper")
+                i.icon-top
+
+  //引入的script
+  include ../layouts/_script.pug

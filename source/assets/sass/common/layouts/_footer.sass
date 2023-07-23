@@ -1,0 +1,195 @@
+footer
+  padding: 0 20px 55px 20px
+  .footer-top
+    .header
+      text-align: center
+      +fontSet($size: px(42), $lh: 48px)
+      +maxWidth($maxw: 1150px, $margin: 0 auto 50px auto)
+      +rwdmax(1024)
+        font-size: px(38)
+      +rwdmax(767)
+        margin-bottom: 25px
+    .quick-link
+      .main-unit
+        margin-bottom: 28px
+        +flex($wrap: wrap)
+        +rwdmax(767)
+          margin-bottom: 10px
+        >li
+          padding: 0 22px
+          +rwdmax(1024)
+            padding: 0 12px
+          +rwdmax(767)
+            width: 50%
+            padding: 5px 10px
+          +rwdmax(320)
+            padding: 5px
+          &:nth-child(odd)
+            text-align: right
+          &:nth-child(even)
+            text-align: left
+          a
+            +fontSetBold($font: $LBB, $size: px(14))
+            +rwdmax(767)
+              font-size: px(13)
+            +rwdmax(320)
+              font-size: px(12)
+      .sub-unit
+        margin-bottom: 18px
+        +flex($wrap: wrap)
+        +rwdmax(767)
+          padding-left: 35px
+          margin-bottom: 0
+        +rwdmax(320)
+          padding-left: 25px
+        >li
+          +flex
+          +rwdmax(767)
+            width: 50%
+            padding: 5px 0
+          &:nth-child(odd)
+            justify-content: flex-end
+          &:nth-child(even)
+            justify-content: flex-start
+          &:nth-child(2)
+            &::after
+              +rwdmax(767)
+                display: none !important
+          &:not(:last-child)
+            &::after
+              content: ''
+              display: block
+              width: 5px
+              height: 4px
+              background-color: rgba(0,0,0,0.3)
+              margin: 0 20px
+              +rwdmax(767)
+                margin: 0 15px
+              +rwdmax(320)
+                margin: 0 10px
+          a
+            +fontSet($size: px(14))
+            +rwdmax(767)
+              font-size: px(13)
+            +rwdmax(320)
+              font-size: px(12)
+  .footer-bottom
+    +maxWidth($maxw: 1570px)
+    +rwdmax(1024)
+      text-align: center
+    .backTop
+      margin-bottom: 60px
+      +rwdmax(1024)
+        margin: 50px 0 82px 0
+      +rwdmax(767)
+        margin: 10px 0 40px 0
+      .icon-backTop
+        display: block
+    .company-info
+      +flex($x: space-between, $y: flex-end)
+      +rwdmax(1024)
+        flex-direction: column
+        align-items: center
+      .block
+        &:first-child
+          text-align: left
+          +rwdmax(1024)
+            order: 1
+            margin-bottom: 40px
+            +flex($x: flex-start, $y: flex-start)
+          +rwdmax(767)
+            flex-direction: column
+            align-items: center
+          .contact-info
+            +flex($x: flex-start, $wrap: wrap)
+            +rwdmax(1024)
+              align-items: flex-start
+              flex-direction: column
+            +rwdmax(767)
+              align-items: center
+        &:last-child
+          text-align: right
+          +rwdmax(1024)
+            text-align: left
+            order: 2
+            margin-bottom: 96px
+            +flex($x: flex-start, $y: flex-start)
+          +rwdmax(767)
+            flex-direction: column
+            align-items: center
+            margin-bottom: 30px
+          .contact-info
+            +flex($x: flex-end, $wrap: wrap)
+            +rwdmax(1024)
+              flex-direction: column
+              align-items: flex-start
+            +rwdmax(767)
+              align-items: center
+        &:nth-child(2)
+          +rwdmax(1024)
+            order: 3
+        &:not(:nth-child(2))
+          max-width: 410px
+          width: 100%
+          +rwdmax(1024)
+            max-width: 630px
+            width: 100%
+        .area
+          margin-bottom: 32px
+          +fontSetBold($font: $LBB, $size: px(16))
+          +rwdmax(1024)
+            min-width: 220px
+            margin-bottom: 0
+            margin-right: 24px
+          +rwdmax(767)
+            font-size: px(15)
+            min-width: 100%
+            margin-bottom: 10px
+            margin-right: 0
+            text-align: center
+        .contact-info
+          >li
+            &:first-child
+              margin-right: 30px
+              +rwdmax(767)
+                margin-right: 0
+            &:last-child
+              width: 100%
+              +rwdmax(767)
+                text-align: center
+            &:nth-child(-n+2)
+              margin-bottom: 8px
+            .key
+              margin-right: 8px
+              +fontSetBold($font: $LBB, $size: px(13))
+            .value
+              +fontSet($size: px(13), $lh: 25px)
+        .social-link
+          margin-bottom: 36px
+          +flex
+          +rwdmax(767)
+            margin-bottom: 30px
+          >li
+            &:not(:last-child)
+              margin-right: 26px
+            a
+              &:hover
+                i
+                  color: black
+              i
+                display: block
+                color: rgba(0,0,0,0.5)
+                transition: color 0.3s
+                &.icon-ig
+                  font-size: 20px
+                &.icon-fb,&.icon-wechat
+                  font-size: 19px
+                &.icon-twitter,&.icon-line
+                  font-size: 18px
+                &.icon-youtube
+                  font-size: 16px
+        .copyright
+          text-align: center
+          +fontSet($font: $RL, $size: px(12), $lh: 24px)
+          .wdd
+            +fontSet($font: $RB, $size: px(12), $lh: 24px)

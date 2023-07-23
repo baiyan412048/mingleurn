@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/login.css")
+  body.login(data-page="login")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/member/login-decor01.png", alt="")
+          .decor2
+            img(src="../../../assets/img/member/login-decor02.png", alt="")
+          .decor3
+            img(src="../../../assets/img/member/login-decor03.png", alt="")
+          .decor4
+            img(src="../../../assets/img/member/login-decor04.png", alt="")
+          .decor5
+            img(src="../../../assets/img/member/login-decor05.png", alt="")
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .header
+              .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") MEMBER CENTER
+              h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Member of MING
+              .unit-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") If you are already a member, please log in directly. If you are not a full member, please go through the registration process.
+            section.form
+              .tip-block.ajax_open(data-ajax-route="./ajax_member_joinus.html" data-ajax-container=".member-joinus-lbox" data-ajax-callback="_ajaxCallback.contactForm") Why to join membership
+                span ?
+              .form-grid
+                label.form-group.nowrap
+                  p Account
+                  input(type="text")
+              .form-grid
+                label.form-group.nowrap
+                  p Password
+                  input(type="password")
+              .form-grid
+                label.form-group.verification
+                  p Verification
+                  .element-wrap
+                    input(type="text" placeholder="Please enter  verification code")
+                    img(src="../../../uploads/contact/code.jpg", alt="")
+                    a(href="javascript:;")
+                      span.icon-refresh
+              .forget.ajax_open(data-ajax-route="./ajax_member_forgetps.html" data-ajax-container=".forgetps-lbox" data-ajax-callback="_ajaxCallback.accountStep") Forget password
+              .button-group
+                .button.btn-black.ajax_open(data-ajax-route="./ajax_member_register.html" data-ajax-container=".register-lbox" data-ajax-callback="_ajaxCallback.accountStep") Register
+                a.button.btn-gold(href="./member.html") Login
+
+        // 頁尾
+        footer
+          .footer-top
+            .header Achieve Now
+            include ../layouts/_quick-link.pug
+          include ../layouts/_footer_bottom.pug
+  //引入的script
+  include ../layouts/_script.pug

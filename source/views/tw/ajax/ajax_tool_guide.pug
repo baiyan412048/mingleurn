@@ -1,0 +1,146 @@
+-
+  banner_slider = [
+    {
+      type: 'video',
+      img: '../../../uploads/customized/tool-guide01.jpg',
+      description: 'Here is to put some describes about pictur or video.'
+    },
+    {
+      type: 'img',
+      img: 'https://via.placeholder.com/1100x620',
+      description: 'Here is to put some describes about pictur or video.'
+    },
+    {
+      type: 'img',
+      img: 'https://via.placeholder.com/1100x620',
+      description: 'Here is to put some describes about pictur or video.'
+    },
+  ]
+
+.modal-scroll-wrap.scrollbar-macosx
+  .modal-dialog
+    .close-btn.ajax_close
+      span
+    .modal-content
+      .container
+        .modal-header GUIDE FOR CUSTOMIZED
+        .modal-body
+          //主圖輪播
+          .mainBanner-slider
+            .slider-wrapper
+              .swiper-container(
+                data-swiper-id="guide-banner-slider-ID"
+                data-swiper-name="guide-banner-slider"
+                data-swiper-direction="horizontal" 
+                data-swiper-num="1" 
+                data-swiper-arrow="off" 
+                data-swiper-nav="on" 
+                data-swiper-nav-name=".banner-slider-pagination"
+                data-swiper-autoplay="off" 
+                data-swiper-effect="fade"
+                data-swiper-breakpoints="{1024: { direction: 'vertical' }}")
+                .swiper-wrapper
+                  //這邊跑迴圈
+                  //請將欄位串在swiper-slide的data上
+                  //描述 - data-description
+                  each slider in banner_slider
+                    .swiper-slide(data-description= slider.description)
+                      .content
+                        if slider.type == 'img'
+                          //圖片
+                          .img-box
+                            img(src= slider.img, alt="")
+                        else if slider.type == 'video'
+                          //影片
+                          .video-box(video-id="zBU4R1Jm46k" video-type="youtube")
+                            //影片封面圖
+                            img(src= slider.img, alt="")
+              .swiper-pagination.banner-slider-pagination.guide-banner-slider-ID
+            //輪播文字區塊
+            .slider-textarea
+              .info
+                .description
+          //段落編輯器
+          ._articleBlock
+            article._articleU(img-row='x2' button-align='left' button-textalign='center' button-textcolor='#000' button-color='#fff')
+              ._contentWrap
+                  // ._imgCover
+                  //     ._cover
+                  //         ._photo
+                  //             img(src='assets/images/sample_01.jpg' alt='圖片描述')
+                  //         span._description Description
+                  //     ._cover
+                  //         ._photo
+                  //             img(src='assets/images/sample_02.jpg' alt='圖片描述')
+                  //         span._description Description
+                  ._wordWrap
+                      // h4._H This is the title of the Article, A satirical title generator for designers...
+                      h5._subH Mingleurn Customized Service
+                      p._P
+                        | Mingleurn provides you with intimate customized services, so that you have exclusive fabrics.Follow these steps to start your custom experience !
+                        // span._buttonCover
+                        //   a._button(href='javascript:;') Button Description
+            article._articleR(h-align="left" subh-align="left" article-flex="center")
+              ._contentWrap
+                ._imgCover
+                  ._cover
+                    ._photo
+                      img(src='../../../uploads/customized/tool-guide02.jpg' alt='圖片描述')
+                    // span._description Description
+                ._wordWrap
+                  // h4._H This is the title of the Article, A satirical title generator for designers...
+                  h5._subH Step1 : Choose the style you want to customize
+                  p._P
+                    | Please place customized instructions according to different steps. Here, users can understand the entire process through graphic operations. The text here can be replaced by yourself.
+                    // span._buttonCover
+                    //   a._button(href='javascript:;') Button Description
+            article._articleR(h-align="left" subh-align="left" article-flex="center")
+              ._contentWrap
+                ._imgCover
+                  ._cover
+                    ._photo
+                      img(src='../../../uploads/customized/tool-guide03.jpg' alt='圖片描述')
+                    // span._description Description
+                ._wordWrap
+                  // h4._H This is the title of the Article, A satirical title generator for designers...
+                  h5._subH Step2 : Click here to add to list
+                  p._P
+                    | Please place customized instructions according to different steps. Here, users can understand the entire process through graphic operations. The text here can be replaced by yourself.
+                    // span._buttonCover
+                    //   a._button(href='javascript:;') Button Description
+            article._articleR(h-align="left" subh-align="left" article-flex="center")
+              ._contentWrap
+                ._imgCover
+                  ._cover
+                    ._photo
+                      img(src='../../../uploads/customized/tool-guide04.jpg' alt='圖片描述')
+                    // span._description Description
+                ._wordWrap
+                  // h4._H This is the title of the Article, A satirical title generator for designers...
+                  h5._subH Step3 : Successfully added it
+                  p._P
+                    | Please place customized instructions according to different steps. Here, users can understand the entire process through graphic operations. The text here can be replaced by yourself.
+                    // span._buttonCover
+                    //   a._button(href='javascript:;') Button Description
+            article._article.-typeFull-Box(typefull-img='../../../uploads/customized/tool-guide05.jpg' typefull-img-rwd='../../../uploads/customized/tool-guide05.jpg' typefull-size='l' typefull-box-color='#fff' img-row='x2' img-merge="on" h-color="#000" h-align="center" subh-color="#000" subh-align="center" p-color="#000" p-align="center" button-textalign="center")
+              ._contentWrap
+                // ._imgCover
+                //   ._cover
+                //     ._photo
+                //       img(src='../../../uploads/about/feature-img20.jpg' alt='圖片描述')
+                //     span._description Description
+                //   ._cover
+                //     ._photo
+                //       img(src='../../../uploads/about/feature-img21.jpg' alt='圖片描述')
+                //     span._description Description
+                ._wordWrap
+                  h4._H Enjoy it !
+                  h5._subH Enjoy intimate customized service
+                  ._P
+                    | If you have any questions, please feel free to contact us during business hours or to negotiate with the responsible business, we will be happy to assist you.
+                    // span._buttonCover
+                    //   a._button(href='javascript:;') Button description
+    .footer
+      a.backTop(href="javascript:;" data-anchor-container=".modal-scroll-wrap")
+        i.icon-top
+        

@@ -1,0 +1,319 @@
+-
+  var orderList = [
+    {
+      customized: false,
+      img: '../../../uploads/product/list01.jpg',
+      name: 'Chantilly Lace',
+      set: '50Y',
+      unitPrice: '5.00 / Y',
+      count: '1',
+      setPrice: '250',
+    },
+    {
+      customized: false,
+      img: '../../../uploads/product/list02.jpg',
+      name: 'Multi Color Embroidery Trim',
+      set: '50PRS',
+      unitPrice: '3.00 / PRS',
+      count: '30',
+      setPrice: '4,500',
+    },
+    {
+      customized: false,
+      img: '../../../uploads/product/list03.jpg',
+      name: 'Chantilly Lace',
+      set: '50PRS',
+      unitPrice: '0.80 / PRS',
+      count: '50',
+      setPrice: '2,000',
+    },
+    {
+      customized: true,
+      img: '../../../uploads/product/list04.jpg',
+      name: 'Chantilly Lace',
+      set: '50Y',
+      unitPrice: '5.00 / Y',
+      count: '1',
+      setPrice: '250',
+    },
+    {
+      customized: false,
+      img: '../../../uploads/product/list05.jpg',
+      name: 'Chantilly Lace',
+      set: '50PRS',
+      unitPrice: '3.00 / PRS',
+      count: '30',
+      setPrice: '4,500',
+    },
+    {
+      customized: false,
+      img: '../../../uploads/product/list06.jpg',
+      name: 'Chantilly Lace',
+      set: '50PRS',
+      unitPrice: '0.80 / PRS',
+      count: '50',
+      setPrice: '2,000',
+    },
+  ]
+
+-
+  var fileList = [
+    'Order Details_20010012.pdf',
+    'Logistics Tracking Files.pdf',
+    'Invoices and receipts.pdf',
+    'Contract file_20200331_Ver2.pdf',
+    'Attachment File Name ABC.jpg',
+    'Attachment File Name DEF.png',
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/orderlist.css")
+  body.orderlist(data-page="orderlist")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/member/orderlist-decor01.png", alt="")
+          .decor2
+            img(src="../../../assets/img/member/orderlist-decor02.png", alt="")
+        // 主要內容
+        main
+          .container
+            .header
+              a.back-member(href="./member.html") BACK
+            .order-info
+              .item
+                .key Time
+                .value 2020.03.24
+              .item
+                .key Code
+                .value 20010001
+              .item
+                .key Total
+                .value USD 6,870
+              .item
+                .key Status
+                .value Processing
+            .orderlist-header(data-now-tab="")
+              ul.order-content-tab.nav-tabs(data-id="orderlist-tabs")
+                li.tab-btn.active(href="javascript:;" data-page="list")
+                  .icon.icon-regulation
+                  .text Order List
+                li.tab-btn.has-new(href="javascript:;" data-page="attached")
+                  .icon.icon-attachment
+                  .text Attached
+              .option-area
+                a.cancel-order.ajax_open(href="javascript:;" data-ajax-route="./ajax_cancel_order.html" data-ajax-container=".cancel-order-wrap" data-ajax-callback="_ajaxCallback.normalLightbox") Cancel Order
+                .contact-text
+                  .icon.icon-send2
+                  .text Need helps ? <a href="./contact.html">Contact Us</a> now !
+            .tab-content#orderlist-tabs
+              //Order List
+              .tab-pane#list
+                .list-wrap
+                  //4-1
+                  .step-section.step1
+                    .step-box
+                      .step 1
+                      .text
+                        .line1 Order List
+                        .line2 List items are as follows
+                    ul.order-list
+                      each data in orderList
+                        li(class= (data.customized ? 'customized' : ''))
+                          .thumbnail(style="background-image: url('" + data.img + "')")
+                          .product-info
+                            .name= data.name
+                            .unit-price
+                              span= '1 SET = ' + data.set
+                              span= 'USD ' + data.unitPrice
+                          .buy-count(data-inventories="")
+                            span.minus
+                            .count-wrap
+                              .count= data.count
+                              span.unit set
+                            span.plus
+                          p.is-customized customized
+                          .total-price
+                            span.unit USD
+                            span.number= data.setPrice
+                          a.detail(href="javascript:;")
+                            .text See Detail
+                            .icon
+                              i.icon-detail
+                  //4-2
+                  .step-section.step2(data-select="type1")
+                    .step-box
+                      .step 2
+                      .text
+                        .line1 Shipping
+                        .line2 Select the shipping
+                    .shipping-content.type1
+                      .icon-box
+                        .icon
+                          i.icon-airplane
+                        .text Mingleurn
+                      .form
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Shipping Address
+                              .element-wrap
+                                .readonly Asia
+                                .readonly Taiwan
+                                .readonly 407
+                              .address-input
+                                .readonly 7F.-1, No. 90, Darong E. St., Xitun Dist., Taichung City
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Recipient Information
+                          .form-grid
+                            .form-group
+                              p Name
+                              .readonly Huang Hailey
+                          .form-grid
+                            .form-group
+                              p Phone
+                              .readonly
+                                span +886
+                                span 912345678
+                          .form-grid
+                            .form-group
+                              p E-mail
+                              .readonly example@gmail.com
+                          .form-grid
+                            .form-group
+                              p Receipt
+                              .readonly We will upload the receipt to your member center after the order is completed.
+                      //只要不符合結帳條件就不顯示下面結構
+                      .form-extra-description
+                        .content
+                          .text Your shipping fee is
+                            span.amount 190
+                            span.unit USD
+                    .shipping-content.type2
+                      .icon-box
+                        .icon
+                          i.icon-shipping
+                        .text Cooperate logistics
+                      .form
+                        .form-wrap
+                          .form-grid
+                            .form-group.wrap
+                              p Cooperate logistics
+                              .readonly DHL Express
+                        .form-wrap
+                          .form-grid
+                            .form-group.wrap
+                              p Manufacturer Number
+                              .readonly 0123456789
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Shipping Address
+                              .element-wrap
+                                .readonly Asia
+                                .readonly Taiwan
+                                .readonly 407
+                              .address-input
+                                .readonly 7F.-1, No. 90, Darong E. St., Xitun Dist., Taichung City
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Recipient Information
+                          .form-grid
+                            .form-group
+                              p Name
+                              .readonly Huang Hailey
+                          .form-grid
+                            .form-group
+                              p Phone
+                              .readonly
+                                span +886
+                                span 912345678
+                          .form-grid
+                            .form-group
+                              p E-mail
+                              .readonly example@gmail.com
+                          .form-grid
+                            .form-group
+                              p Receipt
+                              .readonly We will upload the receipt to your member center after the order is completed.
+                      //只要不符合結帳條件就不顯示下面結構
+                      .form-extra-description
+                        .content
+                          .text Your shipping fee will be notified separately
+                  //4-3
+                  .step-section.step3(data-select="")
+                    .step-box
+                      .step 3
+                      .text
+                        .line1 Payment
+                        .line2 Select the payment
+                    .payment-content.credit-card-content
+                      .icon-box
+                        .icon
+                          i.icon-credit-card
+                        .text Credit Card
+                      .panel-container
+                        .payment-header Support Type
+                        img.credit-card(src="../../../assets/img/credit-card.png", alt="")
+                        p It is not limited to domestic and international card issuers, and supports VISA / MASTER / JCB / UnionPay card issuers, allowing consumers to make quick payments.You will be redirected to a new screen to complete the payment transaction.
+                        br
+                        p.notice We do not offer installment service, please settle all expenses at once.
+                    .payment-content.paypal-content
+                      .icon-box
+                        .icon
+                          i.icon-paypal
+                        .text Paypal
+                      .panel-container
+                        .payment-header Support Type
+                        img.credit-card(src="../../../assets/img/credit-card.png", alt="")
+                        p p If you choose to pay with paypal, your screen will be redirected to a new screen to complete the payment transaction.
+                        br
+                        p.notice We do not offer installment service, please settle all expenses at once.
+                    .remark-content
+                      .panel-container
+                        .icon-box
+                          .icon.icon-checkout-remark
+                          .text Special Remark
+                        .remark-text The delivery time should be delivered between 9: 00 - 12: 00 in the morning , thank you!
+              //Attached
+              .tab-pane#attached
+                //如果沒有檔案的話加上 no-file 這個 Class
+                //然後將 .item-counts 的文字改為 There are 0 items
+                .attached-wrap
+                  .attached-header
+                    .title Files Download
+                    .item-counts There are 6 items
+                  ul.files-list
+                    each data,index in fileList
+                      li
+                        .number= (index+1) <= 9 ? '0' + (index+1) : (index+1)
+                        .file-name= data
+                        .file-action
+                          .action-item
+                            a(href="javascript:;")
+                              i.icon-watch
+                          .action-item
+                            a(href="javascript:;" download)
+                              i.icon-download
+
+
+
+
+
+        // 頁尾
+        .footer
+          a.backTop(href="javascript:;")
+            i.icon-top
+
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

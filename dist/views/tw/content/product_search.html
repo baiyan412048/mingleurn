@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <!--共用設定-->
+    <!-- 網站語系及語言宣告-->
+    <meta http-equiv="content-language" content="zh-TW"/>
+    <meta charset="UTF-8"/>
+    <!-- RWD設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 瀏覽器設定-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- 網站關鍵字-->
+    <meta name="keywords" content="網站關鍵字"/>
+    <!-- 網頁內容描述-->
+    <meta name="description" content="網頁內容描述，中文 80 個字元、英文 160 個字元"/>
+    <!-- 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="robots" content="noindex"/>
+    <!-- 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="googlebot" content="noindex"/>
+    <!-- Open Graph Protocol for facebook-->
+    <meta property="og:title" content="網頁Title"/>
+    <meta property="og:description" content="網頁內容描述"/>
+    <meta property="og:url" content="主要網址"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="網頁內容描述"/>
+    <!-- Open Graph Protocol for google plus-->
+    <meta itemprop="name" content="網站名稱或標題"/>
+    <meta itemprop="image" content="分享的影像位址"/>
+    <meta itemprop="description" content="網頁描述"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="分享的影像位址"/>
+    <meta name="twitter:site" content="網站名稱"/>
+    <meta name="twitter:title" content="網頁標題"/>
+    <meta name="twitter:description" content="網頁描述 200 個字元以內"/>
+    <meta name="twitter:creator" content="客戶公司或品牌名稱"/>
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content=" http://www.example.com/image.html"/>
+    <title>Mingleurn</title>
+    <!-- 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中-->
+    <link rel="canonical" href="主要網址" itemprop="url"/>
+    <link rel="shortcut icon" href="../../../assets/img/favicon.ico" type="image/x-icon"/>
+    <!-- 以下script 後端自行打開-->
+    <!-- Google Tag Manager-->
+    <!-- script.-->
+    <!--   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+    <!--   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+    <!--   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+    <!--   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+    <!--   })(window,document,'script','dataLayer','GTM編號');-->
+    <!--全站共用CSS-->
+    <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
+    <!--獨立CSS-->
+    <link rel="stylesheet" href="../../../assets/css/product_search.css"/>
+  </head>
+  <body class="product_search" data-page="product_search"><a class="sidebar-switch sidebar-open" href="javascript:;">
+      <div class="icon-right"></div>
+      <div class="text">Search</div></a>
+    <div class="search_sidebar">
+      <div class="sidebar-head"><a class="close" href="javascript:;"><i class="icon-left"></i></a><a class="text ajax_open" href="javascript:;" data-ajax-route="./ajax_mode_explain.html" data-ajax-container=".mode-explain-wrap" data-ajax-callback="_ajaxCallback.normalLightbox"><span>Searching Guidelines</span>
+          <div class="tips">?</div></a></div>
+      <div class="search-mode"><a class="mode-item selected" href="javascript:;">
+          <div class="mode-icon union-of"></div></a><a class="mode-item" href="javascript:;">
+          <div class="mode-icon intersection"></div></a></div>
+      <div class="keyword-search">
+        <!--搜尋時跑 _product_search.search() 這支，不管是按放大鏡或是在input按Enter-->
+        <input type="text" placeholder="Enter keywords..."/><a class="search-btn" href="javascript:;" onclick="_product_search.search()">
+          <div class="icon-search"></div></a>
+      </div>
+      <div class="search-range scrollbar-macosx">
+        <div class="catagory-wrap">
+          <!--預設第一個 .search-catagory 有active-->
+          <div class="search-catagory active">
+            <div class="catagory">Hot Words</div>
+            <div class="option-collapse" style="display: block;">
+              <ul class="option-list">
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Spring</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Floral</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Handmadeflower</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>MultipleColor</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>FasionLace</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Comination</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Applique</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>ColorfulLace</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>WhiteLace</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Fabric</p>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="arrow"><i class="icon-arrow-up"></i></div>
+          </div>
+          <div class="search-catagory">
+            <div class="catagory">Bridal</div>
+            <div class="option-collapse">
+              <ul class="option-list">
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Spring</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Floral</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Handmadeflower</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>MultipleColor</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>FasionLace</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Comination</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Applique</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>ColorfulLace</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>WhiteLace</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Fabric</p>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="arrow"><i class="icon-arrow-up"></i></div>
+          </div>
+          <div class="search-catagory">
+            <div class="catagory">Fashion</div>
+            <div class="option-collapse">
+              <ul class="option-list">
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Spring</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Floral</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Handmadeflower</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>MultipleColor</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>FasionLace</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Comination</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Applique</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>ColorfulLace</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>WhiteLace</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Fabric</p>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="arrow"><i class="icon-arrow-up"></i></div>
+          </div>
+          <div class="search-catagory">
+            <div class="catagory">Color</div>
+            <div class="option-collapse">
+              <ul class="option-list">
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <div class="colorBox" style="background-color: #ffffff"></div>
+                    <p>White</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <div class="colorBox" style="background-color: #fff6b8"></div>
+                    <p>Ivory</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <div class="colorBox" style="background-color: #e9d6e4"></div>
+                    <p>Nude</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <div class="colorBox" style="background-color: #375291"></div>
+                    <p>Navy</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <div class="colorBox" style="background-color: #994d88"></div>
+                    <p>Fuchsia</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <div class="colorBox" style="background-color: #78caa0"></div>
+                    <p>Green</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <div class="colorBox" style="background-color: #e71945"></div>
+                    <p>Red</p>
+                  </label>
+                </li>
+                <li class="option">
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <div class="colorBox" style="background: linear-gradient(45deg, #f4b5c7 0%, #b5d4f1 50%, #ffa366 100%)"></div>
+                    <p>Multiple Color</p>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div class="arrow"><i class="icon-arrow-up"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-wrapper scrollbar-macosx" data-fake-body="">
+      <div class="all-wrapper">
+        <!-- 主要內容-->
+        <main>
+          <div class="result-wrap">
+            <div class="container">
+              <div class="header"><a class="back-overview" href="./product.html">BACK</a>
+                <div class="search-before-header">
+                  <div class="unit-alias" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">Popular Items</div>
+                  <div class="unit-description innertext" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">View our popular products</div>
+                </div>
+                <div class="search-after-header">
+                  <div class="unit-alias" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">Product Search</div>
+                  <div class="unit-description innertext" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">Match all searching</div>
+                  <div class="function-bar" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">
+                    <div class="wrap">
+                      <div class="search-mode"><a class="mode-item" href="javascript:;" data-text="The search results using this filter mode are as follows">
+                          <div class="mode-icon union-of"></div></a><a class="mode-item" href="javascript:;" data-text="The search results using this filter mode are as follows2">
+                          <div class="mode-icon intersection"></div></a></div><a class="icon-search sidebar-open" href="javascript:;"></a>
+                    </div>
+                  </div>
+                  <div class="filter-text innertext" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">The search results using this filter mode are as follows</div>
+                  <div class="search-keyword-container">
+                    <div class="content">
+                      <div class="clear-search">Clear All</div>
+                      <div class="scrollbar-inner">
+                        <div class="inner-wrap">
+                          <div class="title">You entered keyword <span class="keyword">12776-N44-2</span> and select items below</div>
+                          <div class="item-wrap">
+                            <div class="item">
+                              <div class="text">Handmadeflower</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">MultipleColor</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Comination</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">ColorfulLace</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 01</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 02</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 03</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 04</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 05</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 06</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Handmadeflower</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">MultipleColor</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Comination</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">ColorfulLace</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 01</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 02</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 03</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 04</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 05</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 06</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Handmadeflower</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">MultipleColor</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Comination</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">ColorfulLace</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 01</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 02</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 03</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 04</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 05</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 06</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Handmadeflower</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">MultipleColor</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Comination</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">ColorfulLace</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 01</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 02</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 03</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 04</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 05</div>
+                              <div class="remove"></div>
+                            </div>
+                            <div class="item">
+                              <div class="text">Custom label - 06</div>
+                              <div class="remove"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="collapse-btn open">
+                      <div class="text"></div>
+                      <div class="icon">
+                        <div class="icon-arrow-up"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-list has-sidebar">
+                <div class="row">
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list01.jpg"></div>
+                      </div>
+                      <div class="number">M7702</div>
+                      <div class="name">Chantilly Lace</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="tag" style="background-color: #26ae8c">New</div>
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list02.jpg"></div>
+                      </div>
+                      <div class="number">ER14486AG8</div>
+                      <div class="name">Red&amp;Green Flower</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list03.jpg"></div>
+                      </div>
+                      <div class="number">M7704</div>
+                      <div class="name">Chantilly Lace</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list04.jpg"></div>
+                      </div>
+                      <div class="number">M7705</div>
+                      <div class="name">Chantilly Lace</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list05.jpg"></div>
+                      </div>
+                      <div class="number">ER14486AG5</div>
+                      <div class="name">Blue Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list06.jpg"></div>
+                      </div>
+                      <div class="number">J15104A2</div>
+                      <div class="name">Blue Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list07.jpg"></div>
+                      </div>
+                      <div class="number">J15104A4</div>
+                      <div class="name">Pink Flower Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list08.jpg"></div>
+                      </div>
+                      <div class="number">ER14486AG7</div>
+                      <div class="name">Pink Flower Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list09.jpg"></div>
+                      </div>
+                      <div class="number">M7703</div>
+                      <div class="name">Chantilly Lace</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list10.jpg"></div>
+                      </div>
+                      <div class="number">BJME500938T</div>
+                      <div class="name">Red Flower with Green Leaf Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list11.jpg"></div>
+                      </div>
+                      <div class="number">ER14486AG6</div>
+                      <div class="name">Yellow Flying Bee Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="tag" style="background-color: #5e50b5">Hot</div>
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list12.jpg"></div>
+                      </div>
+                      <div class="number">J15104A3</div>
+                      <div class="name">Horizontal Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list13.jpg"></div>
+                      </div>
+                      <div class="number">BJME500938T</div>
+                      <div class="name">Pink Flower Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list14.jpg"></div>
+                      </div>
+                      <div class="number">J15104A1</div>
+                      <div class="name">Flower Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list15.jpg"></div>
+                      </div>
+                      <div class="number">BJME500938T</div>
+                      <div class="name">Blue Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list16.jpg"></div>
+                      </div>
+                      <div class="number">BJME500938T</div>
+                      <div class="name">Yellow Flying Bee Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list17.jpg"></div>
+                      </div>
+                      <div class="number">BJME500938T</div>
+                      <div class="name">Flower Sequin</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                  <div class="grid"><a class="item" href="./product_detail.html">
+                      <div class="img-wrapper">
+                        <!--客戶自行設定標籤的 文字 / 顏色-->
+                        <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                        <div class="shadow"></div>
+                        <div class="img-box b-lazy" data-src="../../../uploads/product/list18.jpg"></div>
+                      </div>
+                      <div class="number">M7706</div>
+                      <div class="name">Chantilly Lace</div>
+                      <div class="price">US$ 9.40 / Y</div></a></div>
+                </div>
+              </div>
+              <!--如果沒有搜尋結果則輸出以下結構-->
+              <!--display: none要拿掉-->
+              <div class="no-result" style="display: none;">
+                <div class="container">
+                  <div class="notice-content">
+                    <div class="icon icon-notification"></div>
+                    <div class="text">No Result</div>
+                    <p class="notice innertext">The keywords and years you entered have no matching results.Please re-adjust the data you are searching for.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="load-more">
+                <div class="icon"><img src="../../../assets/img/loading.svg" alt=""/></div>
+                <div class="text">Loading</div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+  <!--引入的script-->
+  <script>document.createElement( "picture" );</script>
+  <script src="../../../assets/js/plugins/picturefill/picturefill.min.js" async="async"></script>
+  <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
+  <script src="../../../assets/js/plugins-dist.js"></script>
+  <script src="../../../assets/js/fesdDB.1.0-dist.js"></script>
+  <script src="../../../assets/js/fesd.1.1-dist.js"></script>
+  <script src="../../../assets/js/methods-dist.js"></script>
+  <script src="../../../assets/js/main-dist.js"></script><!-- microdata : professional service -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "ProfessionalService",
+      "name": "網站名子",
+      "email": "mailto:email",
+      "url": "本站網址",
+      "image": "favicon logo路徑",
+      "priceRange":"商品價格區間",
+      "telephone": "電話",
+      "logo": "logo路徑",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "地址",
+        "addressLocality": "區",
+        "addressRegion": "成市",
+        "postalCode": "郵遞區號",
+        "addressCountry": "中華民國 (台灣)"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.619435",
+        "longitude": "120.296034"
+      },
+      "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+      "openingHours": [
+        "Mo-Th 11:00-22:00",
+        "Fr 11:00-22:30",
+        "Sa 10:30-22:30",
+        "Su 10:30-22:00"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+886-00-12345678"
+      },
+      "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+    }
+    
+    
+  </script><!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://example.com/dresses",
+            "name": "Dresses"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "https://example.com/dresses/real",
+            "name": "Real Dresses"
+          }
+        }
+      ]
+    }
+  </script>
+</html>

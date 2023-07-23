@@ -1,0 +1,39 @@
+.home
+  background: url('../img/inspire_bg.jpg')
+  background-attachment: fixed
+  +rwdmax(768)
+    background: url('../img/inspire_bg_pad.jpg')
+    background-attachment: fixed
+  +rwdmax(414)
+    background: url('../img/inspire_bg_phone.jpg')
+    background-attachment: fixed
+  .main-wrapper
+    main
+      .desktop
+        display: block
+        +rwdmax(768)
+          display: none
+      .tablet
+        display: none
+        +rwdmax(768)
+          display: block
+        +rwdmax(500)
+          display: none
+      .mobile
+        display: none
+        +rwdmax(768)
+          display: none
+        +rwdmax(500)
+          display: block
+      .search
+        position: fixed
+        width: 60px
+        height: 60px
+        left: 4.6875vw
+        bottom: 6.0185vh
+        opacity: 0
+        transition: all .5s
+        +rwdmax(500)
+          display: none
+        &.show
+          opacity: 1

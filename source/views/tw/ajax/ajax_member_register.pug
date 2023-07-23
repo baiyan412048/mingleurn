@@ -1,0 +1,265 @@
+.close-btn(data-ajax-route="./ajax_member_register_leave.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")
+  span
+.modal-scroll-wrap.scrollbar-macosx
+  .modal-dialog
+    .modal-content
+      .register-wrap
+        .step-circle(data-step="1")
+          svg(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 35 35" xml:space="preserve")
+            path(stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 0 0 31.831 a 15.9155 15.9155 0 0 0 0 -31.831" stroke-linecap="butt" stroke-width="1")
+            path(step stroke-dasharray="25, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-linecap="butt" stroke-width="1")
+          p
+            span.now-step 1
+            span 4
+        p.step-title Membership
+        p.step-subtitle Registered member
+        // 切換步驟 _common.accountStepChange(步驟數,'back'(如果要回上一步才要帶))
+        // 可參照第二步驟的用法
+        .step-content(data-step="1").active
+          p.step-text Please fill in your mobile phone or email address during registration and we will send the verification code.
+          .bookmark
+            .bookmark-switch
+              div(data-bookmark="mobile").active
+                .icon-phone
+                p Mobile
+              div(data-bookmark="email")
+                .icon-email
+                p Email
+            .bookmark-block(data-bookmark="mobile").active
+              .form-grid
+                .form-group.mobile
+                  p Phone Number
+                  .element-wrap
+                    .select-element(data-default="Area code")
+                      .selected
+                        span.text Area code
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          li + 886
+                          li + 86
+                          li + 852
+                          li + 62
+                          li + 81
+                          li + 82
+                    input(type="tel" inputmode="tel" placeholder="ex : 912345678")
+              .form-grid
+                .form-group.verification
+                  p Verification
+                  .element-wrap
+                    input(type="text" placeholder="Please enter  verification code")
+                    img(src="../../../uploads/contact/code.jpg", alt="")
+                    a(href="javascript:;")
+                      span.icon-refresh
+            .bookmark-block(data-bookmark="email")
+              .form-grid
+                .form-group
+                  p Email
+                  input(type="email" inputmode="email")
+              .form-grid
+                .form-group.verification
+                  p Verification
+                  .element-wrap
+                    input(type="text" placeholder="Please enter  verification code")
+                    img(src="../../../uploads/contact/code.jpg", alt="")
+                    a(href="javascript:;")
+                      span.icon-refresh
+          .modal-btn-group
+            a.modal-btn.btn-black.ajax_open(href="javascript:;" data-ajax-route="./ajax_member_rights_statement.html" data-ajax-container=".member-statement-lbox" data-ajax-callback="_ajaxCallback.normalLightbox") Next
+        .step-content(data-step="2")
+          p.step-text Enter the verification code of your phone
+          .form-grid
+            .form-group.sms
+              input(type="number" inputmode="numeric" placeholder="Six-digit verification code" required)
+          .tip-box
+            p Send Again!
+              a.resend(href="javascript:;") Resend
+              span.countdown(data-seconds="300")
+            span or
+            p Still Not Receive?
+              a(href="./contact.html") CONTACT US
+          .modal-btn-group
+            a.modal-btn.btn-black(onclick="_common.accountStepChange(4,'back')" href="javascript:;") Back
+            a.modal-btn.btn-gold(onclick="_common.accountStepChange(4)" href="javascript:;") Next
+        .step-content(data-step="3")
+          p.step-text We will review the information, please make sure that the information you filled in is correct.
+          .form
+            .form-wrap
+              p.form-title Part1 . Account Setting
+              .form-grid
+                .form-group.required
+                  p Account
+                  input(type="text" placeholder="account name" required)
+              .form-grid
+                .form-group.required
+                  p Password
+                  input(type="password" placeholder="More than eight digits including numbers and letters" required)
+              .form-grid
+                .form-group.required
+                  p Password Confirm
+                  input(type="password" placeholder="Enter the password again" required)
+            .form-wrap
+              p.form-title Part2 . Basic Information
+              .form-grid
+                .form-group.required
+                  p Name
+                  input(type="text" placeholder="" required)
+              .form-grid
+                .form-group.birth.required
+                  p Birth
+                  .element-wrap
+                    .select-element(data-default="Year")
+                      .selected
+                        span.text Year
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          - for (var i = 1995; i <= 2020; i++)
+                            li= i
+                    .select-element(data-default="Month")
+                      .selected
+                        span.text Month
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          - for (var i = 1; i <= 12 ; i++)
+                            if i < 10
+                              li= '0' + i
+                            else
+                              li= i
+                    .select-element(data-default="Date")
+                      .selected
+                        span.text Date
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          - for (var i = 1; i <= 31 ; i++)
+                            if i < 10
+                              li= '0' + i
+                            else
+                              li= i
+              .form-grid
+                .form-group.community
+                  p Community
+                  .element-wrap
+                    .select-element(data-default="Select")
+                      .selected
+                        span.text Select
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          li Line
+                          li Wechat
+                          li QQ
+                          li Whatsapp
+                    input(type="text" placeholder="ID number")
+              .form-grid
+                .form-group
+                  p Phone Number
+                  .readonly
+                    span +886
+                    span 912345678
+              .form-grid
+                .form-group.required
+                  p E-mail
+                  input(type="email" inputmode="email" placeholder="We will send important notifications by mail" required)
+            .form-wrap
+              .form-grid
+                .form-group
+                  p Brand
+                  input(type="text" placeholder="")
+              .form-grid
+                .form-group
+                  p Company Name
+                  input(type="text" placeholder="")
+              .form-grid
+                .form-group
+                  p Title
+                  input(type="text" placeholder="ex : Designer")
+              .form-grid
+                .form-group
+                  p Website
+                  input(type="text" placeholder="http://")
+            .form-wrap
+              .form-grid
+                .form-group.address.required
+                  p Contact Address
+                  .element-wrap
+                    .select-element(data-default="Region")
+                      .selected
+                        span.text Region
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          li Asia
+                          li Europe
+                          li North America
+                          li South America
+                          li Africa
+                          li Oceania
+                          li Antarctica
+                    .select-element(data-default="Country")
+                      .selected
+                        span.text Country
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          li Taiwan
+                          li Japan
+                    input(type="text" placeholder="Zip code")
+                  .address-input
+                    input(type="text" placeholder="Please enter full address")
+              .form-grid
+                .form-group.address.has-checkbox
+                  p Shipping Address
+                  label.checkbox
+                    input(type="checkbox")
+                    .fake-checkbox
+                      span
+                    p Same as above
+                  .element-wrap
+                    .select-element(data-default="Region")
+                      .selected
+                        span.text Region
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          li Asia
+                          li Europe
+                          li North America
+                          li South America
+                          li Africa
+                          li Oceania
+                          li Antarctica
+                    .select-element(data-default="Country")
+                      .selected
+                        span.text Country
+                        span.arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          li Taiwan
+                          li Japan
+                    input(type="text" placeholder="Zip code")
+                  .address-input
+                    input(type="text" placeholder="Please enter full address")
+            .form-wrap
+              .form-grid
+                .form-group.verification
+                  p Verification
+                  .element-wrap
+                    input(type="text" placeholder="Please enter  verification code")
+                    img(src="../../../uploads/contact/code.jpg", alt="")
+                    a(href="javascript:;")
+                      span.icon-refresh
+          .modal-btn-group
+            a.modal-btn.btn-black(onclick="_common.accountStepChange(4)" href="javascript:;") Next
+        .step-content(data-step="4")
+          .icon-diamond
+          p.title Success
+          p.subtitle Congratulations on becoming a friend of<br>MINGLEURN
+          p.text.
+            Please wait a bit for the review by MINGLEURN Genie. Genie will activate your VIP qualifications as soon as possible, and send you an exclusive Genie to customize your needs for you.
+            <br>
+            After becoming the VIP member of MINGLEURN, you can enjoy the latest design of MINGLEURN every season, and purchase products with preferential prices. Let's start the infinity design journey! 
+          .modal-btn-group
+            a.modal-btn.btn-black(onclick="_common.closeAjax('.register-lbox')" href="javascript:;") Login

@@ -1,0 +1,390 @@
+.news_detail
+  position: fixed
+  width: 100vw
+  top: 0
+  bottom: 0
+  left: 0
+  opacity: 0
+  transition: opacity 0.4s
+  z-index: 99
+  +rwdmax(767)
+    transition: opacity 1s
+  &.show
+    opacity: 1
+  .modal-scroll-wrap
+    width: 100%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    .modal-dialog
+      .modal-content
+        +rwdmax(1024)
+          position: relative
+        &.show
+          .close-btn
+            opacity: 1
+          .detail-wrap
+            &::before
+              width: 0
+          .next-news
+            &::before
+              width: 0
+        .close-btn
+          position: absolute
+          top: 50%
+          left: 0
+          width: 64px
+          height: 64px
+          transform: translate(-50%,-50%)
+          background-color: #a88438
+          border-radius: 50%
+          cursor: pointer
+          z-index: 1
+          opacity: 0
+          transition: opacity 0.3s linear 1.2s
+          +flex
+          +rwdmax(1024)
+            top: 42px
+            width: 55px
+            height: 55px
+            left: auto
+            right: 50px
+            transform: none
+            transition: none
+          +rwdmax(767)
+            width: 30px
+            height: 30px
+            top: 14px
+            right: 14px
+          span
+            position: relative
+            display: block
+            width: 20px
+            height: 20px
+            transform: rotate(45deg)
+            +rwdmax(1024)
+              width: 18px
+              height: 18px
+            +rwdmax(767)
+              width: 10px
+              height: 10px
+            &::before,&::after
+              content: ''
+              background-color: white
+              +posCenter
+            &::before
+              width: 2px
+              height: 20px
+              +rwdmax(1024)
+                height: 18px
+              +rwdmax(767)
+                height: 10px
+            &::after
+              width: 20px
+              height: 2px
+              +rwdmax(1024)
+                width: 18px
+              +rwdmax(767)
+                width: 10px
+        .detail-wrap
+          position: relative
+          max-width: calc(100vw - 320px)
+          width: 72.916vw
+          background-color: $mainBGColor
+          +rwdmax(1024)
+            max-width: 100%
+            width: 100%
+          &::before
+            content: ''
+            position: absolute
+            width: 100%
+            height: 100%
+            background-color: $mainBGColor
+            left: 0
+            top: 0
+            opacity: 1
+            transition: 0.8s ease-in 0.4s
+            z-index: 99
+            +rwdmax(1024)
+              display: none
+          .social-share-bar
+            padding: 60px 136px
+            +flex($x: flex-end)
+            +rwdmax(1024)
+              justify-content: flex-start
+              padding: 60px 50px
+            +rwdmax(767)
+              padding: 20px 14px
+              margin-bottom: 50px
+            >li
+              >a
+                padding: 0 14px
+                &:hover
+                  >i
+                    color: #a88438
+                >i
+                  color: #676767
+                  font-size: 18px
+                  transition: 0.2s
+          .container
+            padding: 0 50px
+            +maxWidth($maxw: 1100px)
+            +rwdmax(767)
+              padding: 0
+          .news-header
+            padding: 0 22px
+            +flex($x: flex-start, $y: stretch)
+            +rwdmax(767)
+              padding: 0 20px
+              flex-direction: column
+              align-items: center
+            .date
+              padding-top: 2.5px
+              margin-right: 28px
+              white-space: nowrap
+              +flex($direction: column, $x: flex-start)
+              +rwdmax(767)
+                padding-top: 0
+                margin-right: 0
+                margin-bottom: 32px
+                &::after
+                  content: ''
+                  display: block
+                  width: 50px
+                  height: 8px
+                  background-color: black
+                  margin-top: 15px
+              .day
+                +fontSetBold($font: $LBB, $size: px(30))
+              .month_year
+                +fontSet($size: px(14))
+            .info
+              position: relative
+              padding: 2px 0 2px 28px
+              border-left: 10px solid black
+              +rwdmax(767)
+                border-left: none
+                padding: 0
+                text-align: center
+              .type
+                margin-bottom: 5px
+                +fontSet($size: px(13), $color: rgba(0,0,0,0.4))
+                +rwdmax(767)
+                  margin-bottom: 8px
+              .title
+                +fontSetBold($font: $LBB, $size: px(24), $lh: 34px)
+                +rwdmax(1024)
+                  font-size: px(30)
+                +rwdmax(767)
+                  font-size: px(24)
+          .news-body
+            padding-top: 80px
+            margin-top: 18px
+            border-top: 1px solid rgba(0,0,0,0.2)
+            +rwdmax(767)
+              margin-top: 28px
+            .top-news
+              position: relative
+              padding: 0 55px
+              +maxWidth($maxw: 910px, $margin: 0 auto 67px auto)
+              +rwdmax(767)
+                padding: 0
+              .mainBanner-slider
+                +mainBanner($ratio: 65%, $dotW: 55px)
+                .slider-textarea
+                  position: relative
+                  width: 100%
+                  padding: 13px 28px
+                  text-align: center
+                  +rwdmax(767)
+                    max-width: 100%
+                    height: auto
+                    padding: 0 20px
+                  +rwdmax(575)
+                    flex-direction: column
+                  +sliderInfo($textColor: rgba(0,0,0,0.6))
+            //引文區塊
+            .quoteBlock
+              padding: 0 28px
+              +maxWidth($maxw: 800px, $margin: 0 auto 80px auto)
+              +rwdmax(767)
+                margin-bottom: 50px
+              .textarea
+                position: relative
+                padding: 33px 0 12px 36px
+                border-left: 8px solid black
+                +rwdmax(767)
+                  padding: 32px 0 0 27px
+                &::before
+                  content: '“'
+                  position: absolute
+                  top: 0
+                  left: 20px
+                  +fontSetBold($font: $LBB, $size: px(28), $lh: 34px)
+                  +rwdmax(767)
+                    font-size: px(24)
+                p
+                  +fontSetBold($font: $LBB, $size: px(24), $lh: 34px)
+                  +rwdmax(767)
+                    font-size: px(20)
+            //段落編輯器
+            ._articleBlock
+              +maxWidth($maxw: 800px)
+              +rwdmax(767)
+                padding: 0 20px
+          .news-footer
+            text-align: right
+            padding: 80px 0 60px 0
+            margin-top: 80px
+            border-top: 1px solid rgba(0,0,0,0.2)
+            +rwdmax(767)
+              text-align: center
+              padding: 50px 0 35px 0
+              margin-top: 50px
+            .head
+              text-align: center
+              margin-bottom: 42px
+              +fontSetBold($font: $LBB, $size: px(18))
+            .other-link
+              +maxWidth($maxw: 800px)
+              +flex($wrap: wrap, $y: flex-start)
+              +rwdmax(767)
+                max-width: 360px
+              .item
+                width: calc(100% / 3)
+                margin-bottom: 30px
+                +rwdmin(1025)
+                  &:not(:nth-child(-n+3)):last-child
+                    margin-right: auto
+                +rwdmax(1024)
+                  &:not(:nth-child(-n+2)):last-child
+                    margin-right: auto
+                +rwdmax(767)
+                  width: 50%
+                a
+                  +flex($x: flex-start, $y: flex-start)
+                  +rwdmax(1024)
+                    flex-direction: column
+                    justify-content: center
+                    align-items: center
+                  &:hover
+                    .icon
+                      background-color: #a88438
+                      i
+                        color: white
+                  .icon
+                    width: 54px
+                    height: 54px
+                    border-radius: 50%
+                    background-color: #d2d2d2
+                    flex-shrink: 0
+                    transition: 0.5s
+                    +flex
+                    i
+                      font-size: 24px
+                      color: black
+                      transition: 0.5s
+                  .text
+                    width: 100%
+                    margin-top: 15px
+                    text-align: left
+                    padding: 0 14px
+                    +fontSetBold($font: $LBB, $size: px(14), $lh: 24px)
+                    +rwdmax(1024)
+                      text-align: center
+        .next-news
+          position: fixed
+          top: 0
+          right: 0
+          min-width: 320px
+          width: 27.084vw
+          height: 100vh
+          height: calc(var(--vh, 1vh) * 100)
+          padding: 0 60px
+          background-color: rgba(0,0,0,0.8)
+          z-index: 1
+          +flex
+          +rwdmax(1024)
+            position: static
+            width: 100%
+            min-width: 100%
+            height: auto !important
+            padding: 70px 20px
+            &.outsider
+              display: none
+          &::before
+            content: ''
+            position: absolute
+            width: 100%
+            height: 100%
+            background-color: black
+            right: 0
+            top: 0
+            opacity: 1
+            transition: 0.6s ease-in 0.4s
+            z-index: 99
+            +rwdmax(1024)
+              display: none
+          .next-wrap
+            position: relative
+            z-index: 1
+            +rwdmax(1024)
+              max-width: 360px
+            &:hover
+              .next-news-img
+                .next-news-date
+                  .day,.month_year
+                    color: #a88438
+                img
+                  transform: translate(-50%,-50%) scale(1.1)
+            .head
+              text-align: center
+              margin-bottom: 28px
+              +fontSetBold($font: $LBB, $size: px(18), $color: white)
+            .next-news-img
+              position: relative
+              width: 200px
+              height: 200px
+              margin: 0 auto 33px auto
+              .img-box
+                position: relative
+                width: 100%
+                height: 100%
+                -webkit-filter: grayscale(100%)
+                -moz-filter: grayscale(100%)
+                -ms-filter: grayscale(100%)
+                -o-filter: grayscale(100%)
+                filter: grayscale(100%)
+                filter: gray
+                background-repeat: no-repeat
+                background-position: center
+                background-size: cover
+                &::before
+                  content: ''
+                  width: 100%
+                  height: 100%
+                  background-color: rgba(0,0,0,0.5)
+                  +posCenter
+              .next-news-date
+                text-align: center
+                z-index: 1
+                +posCenter
+                .day
+                  transition: color 0.5s
+                  +fontSetBold($font: $LBB, $size: px(30), $color: white)
+                .month_year
+                  transition: color 0.5s
+                  +fontSet($size: px(14), $color: white)
+              img
+                transition: 0.8s
+                +posCenter
+            .next-news-title
+              margin-bottom: 18px
+              +fontSetBold($font: $LBB, $size: px(18), $color: white)
+              +ellipsis($line: 1, $lh: 22px)
+            .next-news-description
+              color: #8c8c8c
+              +ellipsis($line: 2, $lh: 25px)
+
+          

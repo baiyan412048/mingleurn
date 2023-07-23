@@ -1,0 +1,427 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/layouts/_form
+@import ../common/ajax/_ajax_cancel_order
+
+.orderlist
+  .all-wrapper
+    .decor-layer
+      position: fixed
+      width: 100vw
+      height: 100vh
+      z-index: -1
+      overflow: hidden
+      >div
+        position: absolute
+        opacity: 0
+        &.decor1
+          width: 14vw
+          top: 37.445vh
+          right: 3.38%
+          height: 0
+          overflow: hidden
+          transition: opacity 0.3s, height 0.3s
+          +rwdmax(1024)
+            display: none
+        &.decor2
+          width: 9.21875vw
+          top: 68.8vh
+          left: 8.4375%
+          height: 0
+          overflow: hidden
+          transition: opacity 0.3s, height 0.3s
+          +rwdmax(1024)
+            display: none
+      &.show
+        >div
+          opacity: 1
+          &.decor1
+            height: 311px
+          &.decor2
+            height: 200px
+  main
+    .container
+      text-align: center
+      padding: 0
+      +maxWidth($maxw: 1320px)
+    .header
+      text-align: center
+      padding: 110px 0 100px 0
+      +rwdmax(767)
+        padding: 70px 0
+      .back-member
+        +fontSet($size: px(13), $color: rgba(0,0,0,0.8))
+    .order-info
+      margin-bottom: 80px
+      +flex
+      +rwdmax(767)
+        max-width: 390px
+        width: 100%
+        margin: 0 auto 60px auto
+        flex-wrap: wrap
+      +rwdmax(575)
+        max-width: 300px
+      .item
+        padding: 0 35px
+        +rwdmax(767)
+          width: 190px
+          padding: 0 40px
+          margin-bottom: 36px
+        +rwdmax(575)
+          width: 150px
+          padding: 0 10px
+        .key
+          margin-bottom: 20px
+          +fontSet($size: px(13), $color: rgba(0,0,0,0.5))
+          +rwdmax(767)
+            margin-bottom: 6px
+        .value
+          +fontSetBold($font: $LBB, $size: px(18), $color: black)
+    .orderlist-header
+      +flex($x: space-between)
+      +rwdmax(767)
+        flex-direction: column-reverse
+      &[data-now-tab="attached"]
+        .option-area
+          .cancel-order
+            display: none
+      .order-content-tab
+        width: 100%
+        transform: translateY(10px)
+        +flex($x: flex-start)
+        >li
+          max-width: 345px
+          width: 100%
+          height: 100px
+          background-color: #e4e4e4
+          border-top-left-radius: 10px
+          border-top-right-radius: 10px
+          padding-bottom: 10px
+          +flex
+          +rwdmax(767)
+            max-width: 50%
+            height: 80px
+          &.active
+            background-color: white
+          &.has-new
+            position: relative
+            &::before
+              content: 'New'
+              position: absolute
+              top: 10px
+              right: 10px
+              width: 50px
+              height: 25px
+              text-align: center
+              border-radius: 10rem
+              background-color: #d31d1d
+              +fontSetBold($font: $LBB, $size: px(12), $lh: 25px, $color: white)
+              +rwdmax(767)
+                top: 5px
+                right: 5px
+          .icon
+            margin-right: 15px
+            font-size: 30px
+            +rwdmax(767)
+              font-size: 24px
+          .text
+            +fontSetBold($font: $LBB, $size: px(14), $color: black)
+      .option-area
+        flex-shrink: 0
+        padding: 0 24px
+        +rwdmax(767)
+          margin-bottom: 44px
+          padding: 0
+        .cancel-order
+          display: block
+          width: 150px
+          height: 35px
+          border-radius: 10rem
+          text-align: center
+          border: solid 1px rgba(0,0,0,0.3)
+          margin: 0 0 12px auto
+          +fontSetBold($font: $LBB, $size: px(13), $lh: 35px, $color: black)
+          +rwdmax(767)
+            margin: 0 auto 18px auto
+        .contact-text
+          +flex
+          .icon
+            font-size: 18px
+            margin-right: 12px
+          .text
+            +fontSetBold($font: $LBB, $size: px(13), $color: black)
+            a
+              font-family: $LBB
+              font-weight: bold
+              color: #a88438
+    .tab-content
+      position: relative
+      width: 100%
+      background-color: white
+      border-radius: 10px
+      z-index: 1
+      .tab-pane
+        &#list
+          .list-wrap
+            .step-section
+              &:not(:first-child)
+                border-top: 1px solid black
+              .step-box
+                width: 100%
+                padding: 24px 0
+                color: black
+                margin-bottom: 30px
+                +flex
+                +rwdmax(767)
+                  padding: 60px 0 15px 0
+                  margin-bottom: 0
+                .step
+                  margin-right: 28px
+                  +fontSetBold($font: $LBB, $size: px(54))
+                .text
+                  text-align: left
+                  .line1
+                    margin-bottom: 6px
+                    +fontSetBold($font: $LBB, $size: px(20))
+                  .line2
+                    +fontSet($size: px(13))
+              &.step1
+                padding: 42px 0 74px 0
+                +rwdmax(767)
+                  padding: 0
+                +orderList
+                .order-list
+                  >li
+                    .buy-count
+                      justify-content: flex-start
+                      +rwdmax(767)
+                        width: auto
+                      .count-wrap
+                        .count
+                          width: auto
+                      .minus,.plus
+                        display: none
+                    .total-price
+                      margin-left: 10%
+                      +rwdmax(767)
+                        width: auto
+                        margin-left: 10px
+                    .detail
+                      margin-left: 10%
+                      +rwdmax(767)
+                        margin-left: 0
+                        right: 0
+              &.step2
+                padding: 64px 0 75px 0
+                +rwdmax(767)
+                  padding: 0 0 50px 0
+                .form
+                  .form-grid
+                    .form-group
+                      &.address
+                        .element-wrap
+                          .select-element
+                            cursor: text
+                &[data-select="type1"]
+                  .shipping-content.type1
+                    display: block
+                    .form
+                      .form-wrap
+                        &:not(:first-child)
+                          margin-top: 90px
+                  .shipping-content.type2
+                    display: none
+                &[data-select="type2"]
+                  .shipping-content.type1
+                    display: none
+                  .shipping-content.type2
+                    display: block
+                    .form-wrap
+                    &:nth-child(1)
+                      margin-bottom: 26px
+                      &:nth-child(2)
+                        margin-bottom: 78px
+                      &:nth-child(3)
+                        margin-bottom: 68px
+                .shipping-content
+                  display: none
+                  .icon-box
+                    margin-bottom: 60px
+                    .icon
+                      height: 65px
+                      margin-bottom: 16px
+                      color: #a88438
+                      +rwdmax(767)
+                        height: 48px
+                        margin-top: 45px
+                      +flex
+                      .icon-airplane
+                        font-size: 65px
+                        +rwdmax(767)
+                          font-size: 48px
+                      .icon-shipping
+                        font-size: 65px
+                        +rwdmax(767)
+                          font-size: 48px
+                    .text
+                      +fontSetBold($font: $LBB, $size: px(14), $color: #a88438)
+                  .form
+                    padding: 0 20px 55px 20px
+                    +maxWidth($maxw: 880px)
+                    +rwdmax(767)
+                      padding: 0 20px 50px 20px
+                  .form-extra-description
+                    .content
+                      width: 100%
+                      +flex
+                      .text
+                        +fontSetBold($font: $LBB, $size: px(14))
+                      .amount
+                        padding: 0 12px
+                        +fontSetBold($font: $LBB, $size: px(26), $color: #a88438)
+                      .unit
+                        +fontSetBold($font: $LBB, $size: px(12), $color: #a88438)
+              &.step3
+                padding: 76px 0 0 0
+                +rwdmax(767)
+                  padding: 0
+                &[data-select="credit-card"]
+                  .payment-content.credit-card-content
+                    display: block
+                  .remark-content
+                    padding: 92px 20px 88px 20px
+                    +rwdmax(767)
+                      padding: 42px 20px 65px 20px
+                &[data-select="paypal"]
+                  .payment-content.paypal-content
+                    display: block
+                  .remark-content
+                    padding: 92px 20px 88px 20px
+                    +rwdmax(767)
+                      padding: 42px 20px 65px 20px
+                &[data-select="form"]
+                  .step-box
+                    display: none
+                  .remark-content
+                    .icon-box
+                      margin-top: 42px
+                .panel-container
+                  +maxWidth($maxw: 840px)
+                .payment-content
+                  display: none
+                  text-align: left
+                  padding-bottom: 100px
+                  border-bottom: 1px solid black
+                  +rwdmax(767)
+                    padding: 0 20px 30px 20px
+                  .icon-box
+                    color: #a88438
+                    text-align: center
+                    margin-bottom: 25px
+                    +rwdmax(767)
+                      margin-top: 45px
+                    .icon
+                      font-size: 56px
+                      margin-bottom: 22px
+                      +rwdmax(767)
+                        font-size: 38px
+                    .text
+                      +fontSetBold($font: $LBB, $size: px(14))
+                  .payment-header
+                    padding: 16px 0
+                    border-bottom: 1px solid #dedede
+                    margin-bottom: 35px
+                    +fontSetBold($font: $LBB, $size: px(14))
+                  .credit-card
+                    width: auto
+                    margin: 35px 0
+                  p
+                    +fontSet($size: px(13), $lh: 25px)
+                    &.notice
+                      display: block
+                      font-family: $LBB
+                      font-weight: bold
+                .remark-content
+                  padding: 0 20px 88px 20px
+                  .icon-box
+                    color: #a88438
+                    margin-bottom: 25px
+                    .icon
+                      font-size: 56px
+                      margin-bottom: 22px
+                      +rwdmax(767)
+                        font-size: 46px
+                    .text
+                      +fontSetBold($font: $LBB, $size: px(14))
+                  .remark-description
+                    +maxWidth($maxw: 655px, $margin: 0 auto 40px auto)
+                    +fontSet($size: px(13), $lh: 25px)
+                  .remark-text
+                    width: 100%
+                    min-height: 180px
+                    text-align: left
+                    border-radius: 10px
+                    border: 1px solid #dedede
+                    padding: 20px
+                    +fontSet($size: px(13), $lh: 25px, $color: black)
+        &#attached
+          .attached-wrap
+            padding: 66px 0 120px 0
+            +rwdmax(767)
+              padding: 50px 0
+            &.no-file
+              padding: 0
+              height: 400px
+              +flex
+              +rwdmax(767)
+                height: 170px
+              .attached-header
+                margin-bottom: 0
+              .files-list
+                display: none
+            .attached-header
+              margin-bottom: 70px
+              .title
+                margin-bottom: 6px
+                +fontSetBold($font: $LBB, $size: px(20))
+              .item-counts
+                +fontSet($size: px(13))
+            .files-list
+              +maxWidth($maxw: 1050px)
+              >li
+                padding: 31px 24px
+                border-bottom: 1px solid #dedede
+                +flex($x: flex-start, $y: flex-start)
+                +rwdmax(767)
+                  padding: 11px 15px
+                .number
+                  flex-shrink: 0
+                  margin-right: 80px
+                  +fontSetBold($font: $LBB, $size: px(22), $color: rgba(0,0,0,0.3))
+                  +rwdmax(767)
+                    margin-right: 18px
+                .file-name
+                  text-align: left
+                  +fontSet($size: px(14), $lh: 25px, $color: black)
+                .file-action
+                  margin-left: auto
+                  +flex
+                  .action-item
+                    padding: 0 15px
+                    +rwdmax(767)
+                      padding: 0 10px
+                    a
+                      display: block
+                    &:not(:last-child)
+                      border-right: 1px solid rgba(0,0,0,0.3)
+                    [class^="icon-"], [class*=" icon-"]
+                      display: block
+                      font-size: 20px
+          
+  .footer
+    padding: 60px 0
+    text-align: center
+    +rwdmax(767)
+      padding: 12px 0
+    .backTop
+      padding: 20px

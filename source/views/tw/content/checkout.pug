@@ -1,0 +1,618 @@
+-
+  var orderList = [
+    {
+      customized: false,
+      smallUnit: false,
+      img: '../../../uploads/product/list01.jpg',
+      name: 'Chantilly Lace',
+      set: '50Y',
+      unitPrice: '5.00 / Y',
+      count: '1',
+      setPrice: '250',
+    },
+    {
+      customized: false,
+      smallUnit: true,
+      img: '../../../uploads/product/list02.jpg',
+      name: 'Multi Color Embroidery Trim',
+      set: '50PRS',
+      unitPrice: '3.00 / PRS',
+      count: '30',
+      setPrice: '4,500',
+    },
+    {
+      customized: false,
+      smallUnit: false,
+      img: '../../../uploads/product/list03.jpg',
+      name: 'Chantilly Lace',
+      set: '50PRS',
+      unitPrice: '0.80 / PRS',
+      count: '50',
+      setPrice: '2,000',
+    },
+    {
+      customized: true,
+      smallUnit: false,
+      img: '../../../uploads/product/list04.jpg',
+      name: 'Chantilly Lace',
+      set: '50Y',
+      unitPrice: '5.00 / Y',
+      count: '1',
+      setPrice: '250',
+    },
+    {
+      customized: false,
+      smallUnit: false,
+      img: '../../../uploads/product/list05.jpg',
+      name: 'Chantilly Lace',
+      set: '50PRS',
+      unitPrice: '3.00 / PRS',
+      count: '30',
+      setPrice: '4,500',
+    },
+    {
+      customized: false,
+      smallUnit: false,
+      img: '../../../uploads/product/list06.jpg',
+      name: 'Chantilly Lace',
+      set: '50PRS',
+      unitPrice: '0.80 / PRS',
+      count: '50',
+      setPrice: '2,000',
+    },
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/checkout.css")
+  body.checkout(data-page="checkout")
+    // 結帳Loading畫面
+    .loading-page
+      .icon-box
+        .icon
+          .icon-checkout-loading
+          .dot-wrap
+            .dot
+            .dot
+            .dot
+        .loading-text Convert...
+        p.description Page will go to new screen
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        // 導覽列
+        nav
+          .header
+            a.logo(href="./index.html")
+              img(src="../../../assets/img/logo-black.svg", alt="LOGO")
+            .function-bar
+              a.close-btn(href="javascript:;" onclick="history.back()")
+                span
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main(data-step="1")
+          .container
+            .header
+              a.back(href="javascript:;" onclick="history.back()")
+                .icon.icon-left
+                .text BACK TO MY SHOPPING BAG
+              .step4-header
+                .line1 Checkout Overview
+                .line2 Please confirm the order content
+            .content
+              .brush-img.brush1
+                img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/shopping/checkout-decor01.png", alt="")
+              .brush-img.brush2
+                img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/shopping/checkout-decor02.png", alt="")
+              ul.step-wrap
+                li.active
+                  .step 1
+                  .text
+                    .line1 Order List
+                    .line2 List items are as follows
+                li
+                  .step 2
+                  .text
+                    .line1 Shipping
+                    .line2 Shipping Method
+                li
+                  .step 3
+                  .text
+                    .line1 Payment
+                    .line2 Pay & Request
+                li
+                  .step 4
+                  .text
+                    .line1 Overview
+                    .line2
+              //後端判斷完要換步驟請跑↓↓↓
+              //_checkout.stepChange() 兩種用法
+              //1.傳數字 ex: 第二步 _checkout.stepChange(2)
+              //2.傳字串 ex: 上一步 _checkout.stepChange('prev') / 下一步 _checkout.stepChange('next')
+              
+              //進到第一步時或是跳到第二步之前要判斷是否符合線上結帳條件(金額超標或是含有客製化商品)
+              //如果不符合條件要跑
+              //1.擁有客製化權限者 _common.openAjax('./ajax_checkout_tips1.html','.checkout-tips-wrap')
+              //2.不擁有客製化權限者 _common.openAjax('./ajax_checkout_tips2.html','.checkout-tips-wrap')
+              //第一個值是Ajax Route
+
+              //第一步驟 - Order List
+              //如果沒有商品時，step-content 加上 empty 這個 Class
+              .step-content.step1
+                ul.order-list
+                  each data in orderList
+                    li(class= (data.customized ? 'customized' : ''))
+                      .thumbnail(style="background-image: url('" + data.img + "')")
+                      .product-info
+                        if data.smallUnit
+                          .sm-unit Small Unit
+                        .name= data.name
+                        .unit-price
+                          span= '1 SET = ' + data.set
+                          span= 'USD ' + data.unitPrice
+                      //data-inventories 裡面請填庫存數量
+                      .buy-count(data-inventories="50")
+                        span.minus
+                        .count-wrap
+                          input.count(type="text" value= data.count)
+                          span.unit set
+                        span.plus
+                      p.is-customized customized
+                      .total-price
+                        span.unit USD
+                        span.number= data.setPrice
+                      a.detail(href="javascript:;")
+                        .text See Detail
+                        .icon
+                          i.icon-detail
+                      .product-option
+                        a.option-btn.edit.ajax_open(href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")
+                          .icon
+                            i.icon-edit
+                        a.option-btn.detail(href="javascript:;")
+                          .icon
+                            i.icon-detail
+                        a.option-btn.delete.ajax_open(href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")
+                          .icon
+                            i
+                //沒有商品時的結構
+                .empty-content
+                  .icon-box
+                    .icon.icon-shop
+                    .text List is empty
+                  p.description You haven’t  added any item.
+              //第二步驟 - Shipping
+              .step-content.step2
+                .shipping-wrap
+                  .shipping-head Which one for shipping?
+                  .shipping-select.nav-tabs(data-id="shipping-tabs")
+                    a.item.tab-btn.active(href="javascript:;" data-page="type1")
+                      .icon
+                        i.icon-airplane
+                      .text Mingleurn
+                    .or or
+                    a.item.tab-btn(href="javascript:;" data-page="type2")
+                      .icon
+                        i.icon-shipping
+                      .text Cooperate logistics
+                  .tab-content#shipping-tabs
+                    .tab-pane#type1
+                      .form
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Shipping Address
+                              label.checkbox
+                                input(type="checkbox")
+                                .fake-checkbox
+                                  span
+                                p Same as above
+                              .element-wrap
+                                .select-element(data-default="Region")
+                                  .selected
+                                    span.text Region
+                                    span.arrow.icon-arrow-up
+                                  .dropdown
+                                    ul.scrollbar-inner
+                                      li Asia
+                                      li Europe
+                                      li North America
+                                      li South America
+                                      li Africa
+                                      li Oceania
+                                      li Antarctica
+                                .select-element(data-default="Country")
+                                  .selected
+                                    span.text Country
+                                    span.arrow.icon-arrow-up
+                                  .dropdown
+                                    ul.scrollbar-inner
+                                      li Taiwan
+                                      li Japan
+                                input(type="text" placeholder="Zip code")
+                              .address-input
+                                input(type="text" placeholder="Please enter full address")
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Recipient Information
+                              label.checkbox
+                                input(type="checkbox")
+                                .fake-checkbox
+                                  span
+                                p Same as above
+                          .form-grid
+                            .form-group
+                              p Name
+                              input(type="text" placeholder="")
+                          .form-grid
+                            .form-group
+                              p Phone
+                              input(type="tel" inputmode="tel" placeholder="")
+                          .form-grid
+                            .form-group
+                              p E-mail
+                              input(type="email" inputmode="email" placeholder="We will send important notifications by mail")
+                          .form-grid
+                            .form-group
+                              p Receipt
+                              .readonly We will upload the receipt to your member center after the order is completed.
+                      //只要不符合結帳條件就不顯示下面結構
+                      .form-extra-description
+                        .content
+                          .text Your shipping fee is
+                            //這邊會根據使用者選擇不同州而有不同的運費
+                            span.amount 190
+                            span.unit USD
+                    .tab-pane#type2
+                      .form
+                        .form-wrap
+                          .form-grid
+                            .form-group.wrap
+                              p Cooperate logistics
+                              input(type="text" placeholder="Name of  logistics company , ex : DHL Express")
+                        .form-wrap
+                          .form-grid
+                            .form-group.wrap
+                              p Manufacturer Number
+                              input(type="text" placeholder="Number of  company")
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Shipping Address
+                              label.checkbox
+                                input(type="checkbox")
+                                .fake-checkbox
+                                  span
+                                p Same as above
+                              .element-wrap
+                                .select-element(data-default="Region")
+                                  .selected
+                                    span.text Region
+                                    span.arrow.icon-arrow-up
+                                  .dropdown
+                                    ul.scrollbar-inner
+                                      li Asia
+                                      li Europe
+                                      li North America
+                                      li South America
+                                      li Africa
+                                      li Oceania
+                                      li Antarctica
+                                .select-element(data-default="Country")
+                                  .selected
+                                    span.text Country
+                                    span.arrow.icon-arrow-up
+                                  .dropdown
+                                    ul.scrollbar-inner
+                                      li Taiwan
+                                      li Japan
+                                input(type="text" placeholder="Zip code")
+                              .address-input
+                                input(type="text" placeholder="Please enter full address")
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Recipient Information
+                              label.checkbox
+                                input(type="checkbox")
+                                .fake-checkbox
+                                  span
+                                p Same as above
+                          .form-grid
+                            .form-group
+                              p Name
+                              input(type="text" placeholder="")
+                          .form-grid
+                            .form-group
+                              p Phone
+                              input(type="tel" inputmode="tel" placeholder="")
+                          .form-grid
+                            .form-group
+                              p E-mail
+                              input(type="email" inputmode="email" placeholder="We will send important notifications by mail")
+                          .form-grid
+                            .form-group
+                              p Receipt
+                              .readonly We will upload the receipt to your member center after the order is completed.
+                      //只要不符合結帳條件就不顯示下面結構
+                      .form-extra-description
+                        .content
+                          .text Your shipping fee will be notified separately
+              //第三步驟 - Pay & Request
+              .step-content.step3
+                //後端判斷顯示哪個結構(可付款 / 不可付款)
+                //可付款
+                .payable-block
+                  .step-header Online checkout or submit request?
+                  .step-description You can choose to checkout online , or send a request form, and the business staff will contact you.
+                  .type-select.nav-tabs(data-id="type-tabs")
+                    a.item.tab-btn(href="javascript:;" data-page="payment")
+                      .text Payment
+                    a.item.tab-btn(href="javascript:;" data-page="form")
+                      .text Request
+                  .tab-content#type-tabs
+                    //線上付款
+                    .tab-pane#payment
+                      .payment-wrap
+                        .payment-select-head Which one for payment?
+                        .payment-select.nav-tabs(data-id="payment-tabs")
+                          a.item.tab-btn.active(href="javascript:;" data-page="credit-card")
+                            .icon
+                              i.icon-credit-card
+                            .text Credit Card
+                          .or or
+                          a.item.tab-btn(href="javascript:;" data-page="paypal")
+                            .icon
+                              i.icon-paypal
+                            .text Paypal
+                        .tab-content#payment-tabs
+                          //信用卡
+                          .tab-pane#credit-card
+                            .payment-content
+                              .panel-container
+                                .payment-header Support Type
+                                img.credit-card(src="../../../assets/img/credit-card.png", alt="")
+                                p It is not limited to domestic and international card issuers, and supports VISA / MASTER / JCB / UnionPay card issuers, allowing consumers to make quick payments.You will be redirected to a new screen to complete the payment transaction.
+                                br
+                                p.notice We do not offer installment service, please settle all expenses at once.
+                          //paypal
+                          .tab-pane#paypal
+                            .payment-content
+                              .panel-container
+                                .payment-header Support Type
+                                img.credit-card(src="../../../assets/img/credit-card.png", alt="")
+                                p If you choose to pay with paypal, your screen will be redirected to a new screen to complete the payment transaction.
+                                br
+                                p.notice We do not offer installment service, please settle all expenses at once.
+                          .remark-content
+                            .panel-container
+                              .icon-box
+                                .icon.icon-checkout-remark
+                                .text Special Remark
+                              p.remark-description If you have any questions about the content of this order, please feel free to let us know in the field below, and we will answer your questions when contacting.
+                              textarea.scrollbar-inner(placeholder="If there are any remarks, please fill in here")
+                    //表單
+                    .tab-pane#form
+                      .remark-content
+                        .panel-container
+                          .icon-box
+                            .icon.icon-checkout-remark
+                            .text Special Remark
+                          p.remark-description If you have any questions about the content of this order, please feel free to let us know in the field below, and we will answer your questions when contacting.
+                          textarea.scrollbar-inner(placeholder="If there are any remarks, please fill in here")
+                //不可付款
+                .non-payable-block(style="display: none")
+                  .step-header We will submit your request
+                  .step-description Your order contains customized items, or the total amount of the order is over <span>USD 1,000</span> , we will set up a demand list, and the specialist will contact you to serve you.
+                  .remark-content
+                    .panel-container
+                      .icon-box
+                        .icon.icon-checkout-remark
+                        .text Special Remark
+                      p.remark-description If you have any questions about the content of this order, please feel free to let us know in the field below, and we will answer your questions when contacting.
+                      textarea.scrollbar-inner(placeholder="If there are any remarks, please fill in here")
+              //第四步驟 - Overview
+              .step-content.step4
+                .overview-wrap
+                  //4-1
+                  .step-section.step1
+                    .step-box
+                      .step 1
+                      .text
+                        .line1 Order List
+                        .line2 List items are as follows
+                    ul.order-list
+                      each data in orderList
+                        li(class= (data.customized ? 'customized' : ''))
+                          .thumbnail(style="background-image: url('" + data.img + "')")
+                          .product-info
+                            if data.smallUnit
+                              .sm-unit Small Unit
+                            .name= data.name
+                            .unit-price
+                              span= '1 SET = ' + data.set
+                              span= 'USD ' + data.unitPrice
+                          .buy-count(data-inventories="")
+                            span.minus
+                            .count-wrap
+                              .count= data.count
+                              span.unit set
+                            span.plus
+                          p.is-customized customized
+                          .total-price
+                            span.unit USD
+                            span.number= data.setPrice
+                          a.detail(href="javascript:;")
+                            .text See Detail
+                            .icon
+                              i.icon-detail
+                  //4-2
+                  .step-section.step2(data-select="type1")
+                    .step-box
+                      .step 2
+                      .text
+                        .line1 Shipping
+                        .line2 Select the shipping
+                    .shipping-content.type1
+                      .icon-box
+                        .icon
+                          i.icon-airplane
+                        .text Mingleurn
+                      .form
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Shipping Address
+                              .element-wrap
+                                .readonly Asia
+                                .readonly Taiwan
+                                .readonly 407
+                              .address-input
+                                .readonly 7F.-1, No. 90, Darong E. St., Xitun Dist., Taichung City
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Recipient Information
+                          .form-grid
+                            .form-group
+                              p Name
+                              .readonly Huang Hailey
+                          .form-grid
+                            .form-group
+                              p Phone
+                              .readonly
+                                span +886
+                                span 912345678
+                          .form-grid
+                            .form-group
+                              p E-mail
+                              .readonly example@gmail.com
+                          .form-grid
+                            .form-group
+                              p Receipt
+                              .readonly We will upload the receipt to your member center after the order is completed.
+                      //只要不符合結帳條件就不顯示下面結構
+                      .form-extra-description
+                        .content
+                          .text Your shipping fee is
+                            span.amount 190
+                            span.unit USD
+                    .shipping-content.type2
+                      .icon-box
+                        .icon
+                          i.icon-shipping
+                        .text Cooperate logistics
+                      .form
+                        .form-wrap
+                          .form-grid
+                            .form-group.wrap
+                              p Cooperate logistics
+                              .readonly DHL Express
+                        .form-wrap
+                          .form-grid
+                            .form-group.wrap
+                              p Manufacturer Number
+                              .readonly 0123456789
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Shipping Address
+                              .element-wrap
+                                .readonly Asia
+                                .readonly Taiwan
+                                .readonly 407
+                              .address-input
+                                .readonly 7F.-1, No. 90, Darong E. St., Xitun Dist., Taichung City
+                        .form-wrap
+                          .form-grid
+                            .form-group.address.has-checkbox
+                              p Recipient Information
+                          .form-grid
+                            .form-group
+                              p Name
+                              .readonly Huang Hailey
+                          .form-grid
+                            .form-group
+                              p Phone
+                              .readonly
+                                span +886
+                                span 912345678
+                          .form-grid
+                            .form-group
+                              p E-mail
+                              .readonly example@gmail.com
+                          .form-grid
+                            .form-group
+                              p Receipt
+                              .readonly We will upload the receipt to your member center after the order is completed.
+                      //只要不符合結帳條件就不顯示下面結構
+                      .form-extra-description
+                        .content
+                          .text Your shipping fee will be notified separately
+                  //4-3
+                  .step-section.step3(data-select="")
+                    .step-box
+                      .step 3
+                      .text
+                        .line1 Payment
+                        .line2 Select the payment
+                    .payment-content.credit-card-content
+                      .icon-box
+                        .icon
+                          i.icon-credit-card
+                        .text Credit Card
+                      .panel-container
+                        .payment-header Support Type
+                        img.credit-card(src="../../../assets/img/credit-card.png", alt="")
+                        p It is not limited to domestic and international card issuers, and supports VISA / MASTER / JCB / UnionPay card issuers, allowing consumers to make quick payments.You will be redirected to a new screen to complete the payment transaction.
+                        br
+                        p.notice We do not offer installment service, please settle all expenses at once.
+                    .payment-content.paypal-content
+                      .icon-box
+                        .icon
+                          i.icon-paypal
+                        .text Paypal
+                      .panel-container
+                        .payment-header Support Type
+                        img.credit-card(src="../../../assets/img/credit-card.png", alt="")
+                        p p If you choose to pay with paypal, your screen will be redirected to a new screen to complete the payment transaction.
+                        br
+                        p.notice We do not offer installment service, please settle all expenses at once.
+                    .remark-content
+                      .panel-container
+                        .icon-box
+                          .icon.icon-checkout-remark
+                          .text Special Remark
+                        textarea.scrollbar-inner(placeholder="If there are any remarks, please fill in here" readonly) The delivery time should be delivered between 9: 00 - 12: 00 in the morning , thank you!
+
+            .footer
+              .container
+                a.step-change.prev(href="javascript:;" onclick="_checkout.stepChange('prev')" data-leave-text="Back" data-pay-text="Payment" data-form-text="Payment")
+                  .step-btn
+                    i.icon-left
+                  .step-text Back
+                .middle
+                  .total-amount
+                    .text Total
+                    .amount 16,250
+                    .unit USD
+                  //後端判斷如果不能結帳才顯示下面結構
+                  .exceed-tips Unable to pay,set up a request
+                //付款或生成表單文字串在下一步按鈕上
+                a.step-change.next(href="javascript:;" onclick="_checkout.stepChange('next')" data-pay-text="Pay" data-form-text="Submit")
+                  .step-text Shipping
+                  .step-btn
+                    i.icon-right
+
+
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

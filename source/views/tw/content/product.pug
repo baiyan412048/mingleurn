@@ -1,0 +1,99 @@
+-
+  products = [
+    {
+      img: '../../../uploads/product/overview01.jpg',
+      name: 'Lace',
+      catagory: ['Lace','Embroidery'],
+    },
+    {
+      img: '../../../uploads/product/overview02.jpg',
+      name: 'Embroidery',
+      catagory: ['Embroidery','Re-embroidery', 'Sequin', 'Guipure', 'Laser cut'],
+    },
+    {
+      img: '../../../uploads/product/overview03.jpg',
+      name: 'New Arrival',
+      catagory: ['Cellection','Popular Series', 'Top50', 'Weekly Rank'],
+    },
+    {
+      img: '../../../uploads/product/overview04.jpg',
+      name: 'Lace',
+      catagory: ['Lace','Embroidery'],
+    },
+    {
+      img: '../../../uploads/product/overview05.jpg',
+      name: 'Embroidery',
+      catagory: ['Embroidery','Re-embroidery', 'Sequin', 'Guipure', 'Laser cut'],
+    },
+    {
+      img: '../../../uploads/product/overview06.jpg',
+      name: 'New Arrival',
+      catagory: ['Cellection','Popular Series', 'Top50', 'Weekly Rank'],
+    },
+    {
+      img: '../../../uploads/product/overview07.jpg',
+      name: 'New Arrival',
+      catagory: ['Cellection','Popular Series', 'Top50', 'Weekly Rank'],
+    },
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/product.css")
+  body.product(data-page="product")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/product/overview-decor01.png", alt="")
+          .decor2
+            img(src="../../../assets/img/product/overview-decor02.png", alt="")
+          .decor3
+            img(src="../../../assets/img/product/overview-decor03.png", alt="")
+          .decor4
+            img(src="../../../assets/img/product/overview-decor04.png", alt="")
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .header
+              .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") PRODUCTS
+              h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Pick MING up
+              .unit-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Every trace we focus on quality control in order to show you high-quality products, where you have a lot of inspiration to explore and unleash.
+            .products-list
+              .row
+                //點擊產品圖和產品名稱連結至列表頁
+                //點擊分類連結至列表頁該分類
+                each data in products
+                  .grid
+                    .products-card
+                      a.product-img(href="./product_list.html")
+                        img(src= data.img, alt="")
+                      h2.product-name
+                        a(href="./product_list.html")= data.name
+                      ul.product-catagory
+                        each catagory in data.catagory
+                          li
+                            a(href="./product_list.html")= catagory
+
+
+        // 頁尾
+        footer
+          .footer-top
+            .header Dream with Us
+            include ../layouts/_quick-link.pug
+                                                
+          include ../layouts/_footer_bottom.pug
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

@@ -1,0 +1,170 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.about_location
+  .all-wrapper
+    overflow: hidden
+  main
+    .container
+      padding: 0 70px
+      +maxWidth($maxw: 1710px)
+      +rwdmax(767)
+        padding: 0 20px
+    .header
+      text-align: center
+      margin-bottom: 62px
+      .back-overview
+        display: inline-block
+        transform: translateY(-50px)
+        margin-bottom: 64px
+        +fontSet($size: px(13), $color: rgba(0,0,0,0.8))
+        +rwdmax(767)
+          transform: translateY(-22px)
+          margin-bottom: 8px
+      .unit-alias
+        +fontSetBold($font: $LBB, $size: px(54))
+        +rwdmax(1024)
+          font-size: px(48)
+        +rwdmax(767)
+          font-size: px(32)
+      .unit-description
+        +maxWidth($maxw: 725px, $margin: 10px auto 0 auto)
+        +rwdmax(767)
+          margin-top: 8px
+    .location-section
+      position: relative
+      .map
+        position: relative
+        +rwdmax(1024)
+          margin-bottom: 60px
+        picture
+          display: block
+        .marker-wrap
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          +rwdmax(1024)
+            display: none
+          .location-point
+            position: absolute
+            .custom-mark
+              position: absolute
+              top: 50%
+              left: 50%
+              transform: translate(-50%,-50%)
+              width: 16px
+              cursor: pointer
+      .location-info-wrap
+        position: absolute
+        max-width: 480px
+        width: 45%
+        height: 70%
+        top: 10%
+        right: 4.4585%
+        +rwdmax(1366)
+          right: 0
+        +rwdmax(1024)
+          position: static
+          max-width: 650px
+          width: 100%
+          margin: 0 auto
+        .location-info
+          display: none
+          position: absolute
+          padding: 65px 45px
+          width: 100%
+          +rwdmax(1024)
+            position: relative
+            display: block
+            max-width: 400px
+            top: auto !important
+            right: auto !important
+            bottom: auto !important
+            left: auto !important
+            &:nth-child(odd)
+              margin-right: auto
+              margin-bottom: 70px
+              +rwdmax(575)
+                margin: 0 auto
+            &:nth-child(even)
+              margin-left: auto
+              +rwdmax(575)
+                margin: 0 auto
+          +rwdmax(767)
+            padding: 65px 0
+          &.up
+            top: 0
+            left: 0
+            +rwdmax(1366)
+              top: 20%
+          &.down
+            bottom: 0
+            left: 0
+            +rwdmax(1366)
+              top: 20%
+              bottom: auto
+          &::before
+            content: ''
+            position: absolute
+            width: 203px
+            height: 203px
+            border-radius: 50%
+            background-color: rgba(242, 235, 220,0.5)
+            top: 0
+            left: 0
+            z-index: -1
+            +rwdmax(575)
+              width: 180px
+              height: 180px
+          &::after
+            content: ''
+            position: absolute
+            width: 270px
+            height: 270px
+            border-radius: 50%
+            background-color: #e9e0ca
+            top: 64px
+            left: 118px
+            z-index: -2
+            +rwdmax(575)
+              width: 240px
+              height: 240px
+              top: 70px
+              left: 115px
+          .place
+            display: inline-block
+            padding: 4px 0
+            border-top: 2px solid #a88438
+            border-bottom: 2px solid #a88438
+            margin-bottom: 28px
+            +fontSetBold($font: $LBB, $size: px(16), $color: #a88438)
+          .contact-info
+            margin-bottom: 20px
+            >li
+              +flex($x: flex-start, $y:flex-start)
+              &:not(:last-child)
+                margin-bottom: 4px
+              &.email
+                .value
+                  text-decoration: underline
+              .key
+                display: inline-block
+                min-width: 60px
+                margin-right: 8px
+                +fontSetBold($font: $LBB, $size: px(14), $lh: 24px)
+                +rwdmax(575)
+                  font-size: px(12)
+              .value
+                +fontSet($size: px(14), $lh: 24px)
+                +rwdmax(575)
+                  font-size: px(12)
+          .extra-description
+            +fontSetBold($font: $LBB, $size: px(14), $color: #a88438)
+
+  .footer
+    text-align: center
+    padding: 104px 0 120px 0
+
+      

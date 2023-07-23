@@ -1,0 +1,970 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/layouts/_form
+@import ../common/ajax/_ajax_change_photo
+@import ../common/ajax/_ajax_change_photo_success
+@import ../common/ajax/_ajax_member_regulation
+@import ../common/ajax/_ajax_edit_profile
+@import ../common/ajax/_ajax_change_phone
+@import ../common/ajax/_ajax_change_password
+@import ../common/ajax/_ajax_change_account
+
+.member
+  .all-wrapper
+    .brush-img
+      &.brush1
+        width: 14vw
+        top: 0
+        right: 8.125vw
+        transition: opacity 0.4s ease-in-out 0.4s, height 0.4s ease-in-out 0.4s
+        +rwdmax(1024)
+          display: none
+        &.show
+          opacity: 1
+          height: 165px
+  main
+    .container
+      padding: 0 90px
+      +maxWidth($maxw: 1500px)
+      +rwdmax(767)
+        padding: 0 5px
+    .header
+      text-align: center
+      padding: 0 20px
+      .logout
+        display: inline-block
+        transform: translateY(-40px)
+        margin-bottom: 25px
+        +fontSetBold($font: $LBB, $size: px(13), $color: rgba(0,0,0,0.8))
+        +rwdmax(767)
+          transform: none
+          margin-top: 4px
+          margin-bottom: 24px
+    .overview-section
+      .welcome
+        position: relative
+        width: 100%
+        padding-bottom: 37.8788%
+        border-radius: 10px
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        +rwdmax(991)
+          padding-bottom: 325px
+        +rwdmax(575)
+          padding-bottom: 60.274%
+        .brush-img
+          &.brush2
+            width: 9.21875vw
+            top: 83.8%
+            left: -5.6%
+            transition: opacity 0.4s ease-in-out 0.4s, height 0.4s ease-in-out 0.4s
+            +rwdmax(1024)
+              display: none
+            &.show
+              opacity: 1
+              height: 200px
+        .content
+          text-align: center
+          +posCenter
+          .hello
+            margin-bottom: 16px
+            +fontSetBold($font: $LBB, $size: px(44), $color: white)
+            +rwdmax(767)
+              font-size: px(20)
+              margin-bottom: 6px
+          .today
+            margin-bottom: 40px
+            +rwdmax(767)
+              margin-bottom: 22px
+            span
+              +fontSet($size: px(14), $color: white)
+              +rwdmax(767)
+                font-size: px(13)
+              &:nth-child(-n+2)
+                &::after
+                  content: '\00a0.\00a0'
+          .member-photo
+            position: relative
+            display: block
+            width: 130px
+            height: 130px
+            border-radius: 50%
+            margin: 0 auto
+            cursor: pointer
+            overflow: hidden
+            +bg('../img/member/default-photo.jpg', cover, no-repeat, center)
+            +rwdmax(767)
+              width: 80px
+              height: 80px
+            &:hover
+              .edit-mask
+                opacity: 1
+            .edit-mask
+              width: 100%
+              height: 100%
+              background-color: rgba(0,0,0,0.3)
+              opacity: 0
+              transition: opacity 0.3s
+              +flex
+              +posCenter
+              span
+                position: relative
+                +fontSetBold($font: $LBB, $size: px(13), $color: white)
+                &::after
+                  content: ''
+                  position: absolute
+                  top: 50%
+                  left: -15px
+                  width: calc(100% + 30px)
+                  height: 2px
+                  background-color: white
+                  margin: -1px 0 0 0
+                  z-index: -1
+      .sub-unit-navbar
+        padding: 48px 0
+        margin-bottom: 88px
+        +flex
+        +rwdmax(1024)
+          margin-bottom: 60px
+        +rwdmax(767)
+          padding: 22px 0
+          margin-bottom: 32px
+        >li
+          margin: 0 27px
+          transition: color 0.3s
+          +fontSetBold($font: $LBB, $size: px(18), $color: rgba(0,0,0,0.6))
+          +rwdmax(767)
+            font-size: px(13)
+            margin: 0 12px
+          +rwdmax(320)
+            margin: 0 6px
+          &.active
+            color: black
+      .tab-content
+        margin-bottom: 18.18%
+        +rwdmax(767)
+          margin-bottom: 38.356%
+        .tab-pane
+          text-align: center
+          .pane-header
+            padding: 0 15px
+            margin-bottom: 12.72%
+            +rwdmax(1024)
+              margin-bottom: 85px
+            .title
+              +fontSetBold($font: $LBB, $size: px(44), $lh: 40px, $color: black)
+              +rwdmax(767)
+                font-size: px(26)
+                line-height: normal
+            .sub-title
+              margin-bottom: 12px
+              +fontSet($size: px(13), $lh: 26px, $color: black)
+            .extra-info
+              +fontSet($size: px(13), $lh: 26px, $color: rgba(0,0,0,0.8))
+              +rwdmax(1024)
+                display: none
+          &#overview
+            .overview-wrap
+              +maxWidth($maxw: 1055px)
+              +rwdmax(767)
+                max-width: 240px
+              .row
+                margin: 0 -50px
+                +flex($wrap: wrap, $x: flex-start, $y: flex-start)
+                +rwdmax(1024)
+                  margin: 0 -25px
+                +rwdmax(768)
+                  margin: 0 -35px
+                .grid
+                  width: calc(100% / 3)
+                  padding: 0 50px
+                  +rwdmax(1024)
+                    width: 50%
+                  +rwdmin(1025)
+                    &:not(:nth-child(-n+3))
+                      margin-top: 140px
+                  +rwdmax(1024)
+                    padding: 0 25px
+                    &:not(:nth-child(-n+2))
+                      margin-top: 100px
+                  +rwdmax(767)
+                    width: 155px
+                    padding: 0 35px
+                    &:not(:nth-child(-n+2))
+                      margin-top: 54px
+                  .item
+                    display: block
+                    +maxWidth($maxw: 285px)
+                    &:hover
+                      .unit-icon
+                        color: #a88438
+                    .unit-icon
+                      height: 53px
+                      margin-bottom: 35px
+                      transition: color 0.3s
+                      +flex($y: flex-end)
+                      +rwdmax(767)
+                        margin-bottom: 15px
+                      &.icon-member
+                        font-size: 42px
+                      &.icon-shop
+                        font-size: 53px
+                      &.icon-favorite
+                        font-size: 39px
+                      &.icon-qa
+                        font-size: 42px
+                      &.icon-regulation
+                        font-size: 45px
+                      &.icon-send2
+                        font-size: 43px
+                    .unit-name
+                      +fontSetBold($font: $LBB, $size: px(26), $color: black)
+                      +rwdmax(767)
+                        font-size: px(14)
+                    .unit-description
+                      margin-top: 4px
+                      +fontSet($size: px(13), $lh: 26px, $color: rgba(0,0,0,0.8))
+                      +rwdmax(767)
+                        display: none
+          &#account
+            .account-option
+              +flex($x: flex-start, $y: flex-start)
+              +rwdmax(1024)
+                flex-direction: column
+                align-items: center
+              .item
+                width: 50%
+                padding: 0 7.5%
+                +rwdmax(1366)
+                  padding: 0 2%
+                +rwdmax(1024)
+                  width: 100%
+                  max-width: 425px
+                  padding: 0
+                &:first-child
+                  +rwdmax(1024)
+                    margin-bottom: 90px
+                  .function-bar
+                    margin-top: 54px
+                .title
+                  +fontSetBold($font: $LBB, $size: px(20), $color: black)
+                  +rwdmax(1024)
+                    margin-bottom: 20px
+                .sub-title
+                  margin-bottom: 30px
+                  +fontSet($size: px(13), $lh: 26px, $color: black)
+                  +rwdmax(1024)
+                    display: none
+                .extra-info
+                  +fontSet($size: px(13), $lh: 26px, $color: rgba(0,0,0,0.8))
+                .function-bar
+                  +flex($wrap: wrap)
+                  >li
+                    flex-shrink: 0
+                    padding: 0 20px
+                    margin-bottom: 20px
+                    +fontSetBold($font: $LBB, $size: px(13), $lh: 20px, $color: black)
+                    +rwdmax(575)
+                      padding: 0 10px
+                    &:not(:last-child)
+                      border-right: 1px solid rgba(0,0,0,0.3)
+                .phone
+                  margin: 42px 0
+                  +flex
+                  .number
+                    margin-right: 12px
+                    +fontSetBold($font: $LBB, $size: px(16), $color: black)
+                  .icon
+                    font-size: 24px
+                    color: #a88438
+          &#orderlist
+            &.no-item
+              .table-wrap
+                .tbody
+                  display: none
+                .no-item
+                  display: block
+            &.no-result
+              display: block
+              .table-wrap
+                display: none
+              .no-result
+                display: block
+            .pane-header
+              margin-bottom: 80px
+              +rwdmax(767)
+                margin-bottom: 36px
+            .filter-type-select
+              margin-bottom: 100px
+              +flex($y: flex-start)
+              +rwdmax(767)
+                flex-direction: column
+                align-items: center
+                margin-bottom: 66px
+              .item
+                max-width: 250px
+                width: 100%
+                &:not(:first-child)
+                  margin-left: 63px
+                  +rwdmax(767)
+                    margin-left: 0
+                    margin-top: 16px
+                .categories-select
+                  position: relative
+                  &.active
+                    .selected
+                      .arrow
+                        transform: rotateX(0deg)
+                  .selected
+                    position: relative
+                    padding: 10px 20px
+                    border-bottom: 1px solid black
+                    cursor: pointer
+                    +flex
+                    .text
+                      +fontSetBold($font: $LBB, $size: px(13), $color: black)
+                    .arrow
+                      position: absolute
+                      top: 50%
+                      right: 0
+                      margin-top: -7px
+                      font-size: 14px
+                      transform: rotateX(180deg)
+                      transition: transform 0.3s
+                  .dropdown
+                    display: none
+                    position: absolute
+                    top: 100%
+                    left: 50%
+                    transform: translate(-50%,4px)
+                    min-width: 235px
+                    padding: 15px 0
+                    border-radius: 20px
+                    border: solid 1px #cdcdcd
+                    background-color: #f4f4f4
+                    overflow: hidden
+                    z-index: 20
+                    &.shadow
+                      box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+                    ul
+                      max-height: 252px !important
+                      height: 100% !important
+                      overflow: auto
+                      >li
+                        padding: 0 22px
+                        height: 42px
+                        white-space: nowrap
+                        transition: 0.3s
+                        text-align: center
+                        user-select: none
+                        cursor: pointer
+                        +fontSetBold($font: $LBB, $size: px(13), $lh: 42px, $color: #666666)
+                        &:hover
+                          background-color: #a88438
+                          color: white
+            .table-wrap
+              +maxWidth($maxw: 1130px)
+              +rwdmax(1024)
+                max-width: 600px
+              .thead
+                border-top: 2px solid black
+                border-bottom: 2px solid black
+                +rwdmax(1024)
+                  display: none
+                .tr
+                  height: 42px
+                  padding: 0 40px
+                  +flex($x: flex-start)
+                  +rwdmax(1200)
+                    padding: 0
+                  .th
+                    padding: 0 20px
+                    flex-shrink: 0
+                    +fontSetBold($font: $LBB, $size: px(12), $color: black)
+                    &:nth-child(1)
+                      width: 160px
+                    &:nth-child(2)
+                      width: 140px
+                      margin-left: auto
+                    &:nth-child(3)
+                      width: 140px
+                      margin-left: auto
+                    &:nth-child(4)
+                      width: 160px
+                      margin-left: auto
+                    &:nth-child(5)
+                      width: 120px
+                      margin-left: auto
+                    &:nth-child(6)
+                      width: 140px
+                      margin-left: 14px
+              .tbody
+                +rwdmax(1024)
+                  border-top: 2px solid black
+                .tr
+                  height: 90px
+                  padding: 0 40px
+                  border-bottom: 1px solid rgba(0,0,0,0.3)
+                  +flex($x: flex-start)
+                  +rwdmin(1025)
+                    &:hover
+                      border-bottom: 2px solid #a88438
+                  +rwdmax(1200)
+                    padding: 0
+                  +rwdmax(1024)
+                    position: relative
+                    height: 89px
+                    flex-direction: column
+                    align-items: flex-start
+                    border-bottom: 2px solid black
+                    padding-top: 13px
+                    overflow: hidden
+                    transition: height 0.3s
+                  &.open
+                    +rwdmax(1024)
+                      height: 325px
+                    .td
+                      &:nth-child(7)
+                        .content
+                          span
+                            &:nth-child(2)
+                              transform: rotate(90deg)
+                              opacity: 0
+                  &.has-new
+                    .td
+                      &:nth-child(6)
+                        .content
+                          &::after
+                            content: 'New'
+                            position: absolute
+                            top: -15px
+                            right: -25px
+                            width: 50px
+                            height: 25px
+                            text-align: center
+                            border-radius: 10rem
+                            background-color: #d31d1d
+                            +fontSetBold($font: $LBB, $size: px(12), $lh: 25px, $color: white)
+                            +rwdmax(1024)
+                              content: ''
+                              top: -2px
+                              left: -2px
+                              right: auto
+                              width: 6px
+                              height: 6px
+                              border-radius: 50%
+                  &.cancelled
+                    .td
+                      color: rgba(00,0,0,0.6)
+                  .td
+                    padding: 0 20px
+                    flex-shrink: 0
+                    +fontSetBold($font: $LBB, $size: px(14), $color: black)
+                    +rwdmax(1024)
+                      padding: 13px 15px
+                    &:first-child
+                      .content
+                        &::before
+                          margin-right: 0
+                          margin-bottom: 10px
+                    &:not(:first-child)
+                      .content
+                        +rwdmax(1024)
+                          +flex($x: flex-start)
+                    .content
+                      display: block
+                      +rwdmax(1024)
+                        text-align: left
+                      &::before
+                        content: attr(data-th)
+                        margin-right: 15px
+                        color: rgba(0,0,0,0.5)
+                        display: none
+                        +rwdmax(1024)
+                          display: block
+                      [class^="icon-"], [class*=" icon-"]
+                        font-size: 30px
+                        +rwdmax(1024)
+                          font-size: 25px
+                        &:hover
+                          color: #a88438
+                    &:nth-child(1)
+                      width: 160px
+                      +rwdmax(1024)
+                        width: calc(100% - 110px)
+                        font-size: px(18)
+                        margin-bottom: 24px
+                        +rwdmax(575)
+                          width: calc(100% - 90px)
+                        .content
+                          &::before
+                            font-size: px(14)
+                    &:nth-child(2)
+                      width: 140px
+                      margin-left: auto
+                      +rwdmax(1024)
+                        width: 100%
+                        margin-left: 0
+                    &:nth-child(3)
+                      width: 140px
+                      margin-left: auto
+                      +rwdmax(1024)
+                        width: 100%
+                        margin-left: 0
+                    &:nth-child(4)
+                      width: 160px
+                      margin-left: auto
+                      +rwdmax(1024)
+                        width: 100%
+                        margin-left: 0
+                    &:nth-child(5)
+                      width: 120px
+                      margin-left: auto
+                      +rwdmax(1024)
+                        width: calc(100% - 30px)
+                        height: 65px
+                        margin-left: 0
+                        padding: 0
+                        margin: 13px 15px 0 15px
+                        border-top: 1px solid rgba(0,0,0,0.3)
+                        .content
+                          height: 100%
+                          flex-direction: row-reverse
+                          &::before
+                            margin: 0 0 0 10px
+                            color: black
+                    &:nth-child(6)
+                      width: 140px
+                      margin-left: 14px
+                      +rwdmax(1024)
+                        position: absolute
+                        width: auto
+                        right: 55px
+                      +rwdmax(575)
+                        right: 39px
+                      .content
+                        position: relative
+                        +rwdmax(1024)
+                          &::before
+                            display: none
+                    &:nth-child(7)
+                      display: none
+                      +rwdmax(1024)
+                        display: block
+                        position: absolute
+                        top: 27px
+                        right: 25px
+                        padding: 0
+                      +rwdmax(575)
+                        top: 30px
+                        right: 15px
+                      .content
+                        position: relative
+                        display: block
+                        width: 20px
+                        height: 20px
+                        +rwdmax(575)
+                          width: 14px
+                          height: 14px
+                        span
+                          position: absolute
+                          top: 50%
+                          left: 50%
+                          background-color: black
+                          &:nth-child(1)
+                            width: 100%
+                            height: 2px
+                            margin: -1px 0 0 -10px
+                            +rwdmax(575)
+                              margin: -1px 0 0 -7px
+                          &:nth-child(2)
+                            width: 2px
+                            height: 100%
+                            margin: -10px 0 0 -1px
+                            transition: opacity 0.3s, transform 0.3s
+                            +rwdmax(575)
+                              margin: -7px 0 0 -1px
+              .no-item
+                display: none
+                padding: 84px 0
+                +rwdmax(1024)
+                  border-top: 1px solid black
+                +rwdmax(767)
+                  padding: 30px 15px
+                .title
+                  margin-bottom: 32px
+                  +fontSetBold($font: $LBB, $size: px(20), $color: rgba(0,0,0,0.8))
+                  +rwdmax(767)
+                    font-size: px(14)
+                    margin-bottom: 18px
+                .description
+                  +fontSet($size: px(13), $lh: 25px, $color: rgba(0,0,0,0.8))
+            .no-result
+              display: none
+              padding: 75px 20px
+              border: solid 2px #a88438
+              width: calc(100% - 30px)
+              max-width: 860px
+              margin: 0 auto
+              +rwdmax(767)
+                padding: 52px 8px
+              .icon
+                font-size: 42px
+                color: #a88438
+                margin-bottom: 16px
+              .title
+                margin-bottom: 32px
+                +fontSetBold($font: $LBB, $size: px(20), $color: rgba(0,0,0,0.8))
+                +rwdmax(767)
+                  font-size: px(14)
+                  margin-bottom: 18px
+              .description
+                +fontSet($size: px(13), $lh: 25px, $color: rgba(0,0,0,0.8))
+          &#favorite
+            .pane-header
+              margin-bottom: 8.1%
+              +rwdmax(767)
+                margin-bottom: 35px
+            .mobile-filter-tabs
+              margin-bottom: 24px
+              +flex
+              display: none
+              +rwdmax(767)
+                display: flex
+              >li
+                padding: 0 18px
+                cursor: pointer
+                transition: color 0.3s
+                +fontSet($size: px(13), $lh: 22px, $color: rgba(0,0,0,0.6))
+                &.active
+                  color: black
+                &:not(:last-child)
+                  border-right: 1px solid rgba(0,0,0,0.3)
+            .filter-type-select
+              margin-bottom: 100px
+              +flex($y: flex-start)
+              +rwdmax(767)
+                flex-direction: column
+                align-items: center
+                margin-bottom: 66px
+              .item
+                max-width: 250px
+                width: 100%
+                +rwdmax(767)
+                  &:not(.active)
+                    display: none
+                &.collect
+                  .categories-select
+                    .dropdown
+                      padding-bottom: 0
+                      .category-wrap
+                        ul
+                          max-height: 280px
+                          overflow: auto
+                          >li
+                            position: relative
+                            width: 100%
+                            padding: 0 42px 0 22px
+                            +flex($x: flex-start)
+                            &:hover
+                              background-color: #a88438
+                              .option
+                                color: white
+                            .option
+                              width: 100%
+                              text-align: left
+                              user-select: none
+                              cursor: pointer
+                              transition: color 0.3s
+                              +fontSetBold($font: $LBB, $size: px(13), $lh: 40px, $color: #666666)
+                            .edit
+                              position: absolute
+                              width: 42px
+                              height: 100%
+                              top: 0
+                              right: 0
+                              opacity: 1
+                              transition: opacity 0.3s
+                              +rwdmax(1024)
+                                opacity: 1
+                              a
+                                width: 100%
+                                height: 100%
+                                +flex
+                                i
+                                  display: block
+                                  color: #f4f4f4
+                                  font-size: 18px
+                                  +rwdmax(1024)
+                                    color: black
+                        .bottom-function
+                          width: 100%
+                          height: 65px
+                          padding: 0 15px 0 22px
+                          border-top: 1px solid #cdcdcd
+                          +flex($x: flex-start)
+                          .create
+                            margin-right: 20px
+                            +flex
+                            .icon
+                              position: relative
+                              width: 20px
+                              height: 20px
+                              border-radius: 50%
+                              background-color: black
+                              margin-right: 6px
+                              &::before,&::after
+                                content: ''
+                                position: absolute
+                                top: 50%
+                                left: 50%
+                                background-color: #cdcdcd
+                              &::before
+                                width: 2px
+                                height: 8px
+                                margin: -4px 0 0 -1px
+                              &::after
+                                width: 8px
+                                height: 2px
+                                margin: -1px 0 0 -4px
+                            .text
+                              +fontSetBold($font: $LBB, $size: px(13), $color: black)
+                          .confirm
+                            width: 70px
+                            height: 30px
+                            border-radius: 15px
+                            background-color: black
+                            +flex
+                            +fontSetBold($font: $LBB, $size: px(13), $color: white)
+                .type
+                  +fontSet($size: px(13), $lh: 26px, $color: rgba(0,0,0,0.8))
+                  +rwdmax(767)
+                    display: none
+                .categories-select
+                  position: relative
+                  &.active
+                    .selected
+                      .arrow
+                        transform: rotateX(0deg)
+                  .selected
+                    position: relative
+                    padding: 10px 20px
+                    border-bottom: 1px solid black
+                    cursor: pointer
+                    +flex
+                    .text
+                      +fontSetBold($font: $LBB, $size: px(13), $color: black)
+                    .arrow
+                      position: absolute
+                      top: 50%
+                      right: 0
+                      margin-top: -7px
+                      font-size: 14px
+                      transform: rotateX(180deg)
+                      transition: transform 0.3s
+                  .dropdown
+                    display: none
+                    position: absolute
+                    top: 100%
+                    left: 50%
+                    transform: translate(-50%,4px)
+                    min-width: 235px
+                    padding: 15px 0
+                    border-radius: 20px
+                    border: solid 1px #cdcdcd
+                    background-color: #f4f4f4
+                    overflow: hidden
+                    z-index: 2
+                    &.shadow
+                      box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+                    &::after
+                      content: ''
+                      width: 100%
+                      height: 100%
+                      background-color: #f4f4f4
+                      z-index: -1
+                      +posCenter
+                    ul
+                      max-height: 252px!important
+                      height: 100%
+                      overflow: auto
+                      >li
+                        padding: 0 22px
+                        height: 42px
+                        white-space: nowrap
+                        transition: 0.3s
+                        text-align: left
+                        user-select: none
+                        cursor: pointer
+                        +fontSetBold($font: $LBB, $size: px(13), $lh: 42px, $color: #666666)
+                        &:hover
+                          background-color: #a88438
+                          color: white
+              .or
+                flex-shrink: 0
+                align-self: center
+                padding: 0 50px
+                +fontSetBold($font: $LBB, $size: px(16), $color: black)
+                +rwdmax(767)
+                  display: none
+            .product-list
+              +maxWidth($maxw: 1180px, $margin: 0 auto)
+              +rwdmax(1200)
+                max-width: 840px
+              +rwdmax(1024)
+                max-width: 620px
+              +rwdmax(767)
+                max-width: 360px
+              .row
+                +flex($wrap: wrap, $y: flex-start)
+                .grid
+                  width: 20%
+                  padding: 0 35px
+                  +rwdmin(1201)
+                    &:not(:nth-child(-n+5))
+                      margin-top: 76px
+                  +rwdmax(1200)
+                    width: 25%
+                    padding: 0 20px
+                    &:not(:nth-child(-n+4))
+                      margin-top: 76px
+                  +rwdmax(1024)
+                    width: calc(100% / 3)
+                    &:not(:nth-child(-n+3))
+                      margin-top: 76px
+                  +rwdmax(767)
+                    width: 50%
+                    &:not(:nth-child(-n+2))
+                      margin-top: 50px
+                  &:nth-child(9n+6)
+                    margin-left: calc(10% - 35px)
+                    +rwdmax(1200)
+                      margin-left: 0
+                  &:nth-child(9n+9)
+                    margin-right: calc(10% - 35px)
+                    +rwdmax(1200)
+                      margin-right: 0
+                  .item
+                    display: block
+                    width: 100%
+                    text-align: center
+                    &:hover
+                      .img-wrapper
+                        .tag
+                          opacity: 0
+                        .shadow
+                          opacity: 0
+                        .option-mask
+                          opacity: 1
+                        .img-box
+                          box-shadow: 5px 8.7px 14px 6px rgba(0, 0, 0, 0.25)
+                    .img-wrapper
+                      position: relative
+                      max-width: 150px
+                      margin: 0 auto 16px auto
+                      z-index: 1
+                      +rwdmax(767)
+                        width: 120px
+                        height: 120px
+                      .tag
+                        position: absolute
+                        right: -10px
+                        bottom: 0
+                        width: 60px
+                        height: 60px
+                        border-radius: 50%
+                        text-align: center
+                        z-index: 2
+                        transition: opacity 0.3s
+                        +fontSet($size: px(12), $lh: 60px, $color: white)
+                      .shadow
+                        width: 100%
+                        height: 100%
+                        border-radius: 50%
+                        box-shadow: inset 5px 8.7px 14px 6px rgba(0, 0, 0, 0.65)
+                        z-index: 1
+                        transition: opacity 0.3s
+                        +posCenter
+                      .option-mask
+                        width: 101%
+                        height: 101%
+                        border-radius: 50%
+                        background-color: #a88438
+                        opacity: 0
+                        z-index: 1
+                        transition: opacity 0.3s
+                        +flex
+                        +posCenter
+                        .option
+                          +flex
+                          a
+                            padding: 0 25px
+                            height: 50px
+                            +flex
+                            +rwdmax(767)
+                              padding: 0 20px
+                            &:not(:first-child)
+                              border-left: 1px solid rgba(255,255,255,0.3)
+                            .icon-delete,.icon-open_web
+                              font-size: 20px
+                              color: white
+                      .img-box
+                        position: relative
+                        width: 100%
+                        padding-bottom: 100%
+                        border-radius: 50%
+                        overflow: hidden
+                        transition: 0.2s
+                        background-repeat: no-repeat
+                        background-position: center
+                        background-size: cover
+                    a
+                      display: block
+                    .number
+                      +fontSetBold($font: $LBB, $size: px(14), $lh: 22px)
+                      +rwdmax(767)
+                        font-size: px(12)
+                    .name
+                      margin-bottom: 10px
+                      +fontSetBold($font: $LBB, $size: px(16), $lh: 22px)
+                      +rwdmax(767)
+                        +ellipsis($line: 1, $lh: 22px)
+                    .price
+                      +fontSet($size: px(14), $lh: 22px, $color: #666666)
+                      +rwdmax(767)
+                        font-size: px(12)
+            .no-result
+              padding: 0
+              .container
+                +maxWidth($maxw: 860px)
+                +rwdmax(1024)
+                  padding: 0 40px
+                +rwdmax(767)
+                  padding: 0 18px
+                .notice-content
+                  border: 2px solid #a88438
+                  padding: 80px 18px
+                  +flex($direction: column)
+                  .icon
+                    font-size: 42px
+                    color: #a88438
+                    margin-bottom: 16px
+                  .text
+                    margin-bottom: 30px
+                    +fontSetBold($font: $LBB, $size: px(20), $color: black)
+                  .notice
+                    max-width: 480px
+                    text-align: center
+            .load-more
+              display: none
+              margin-top: 130px
+              +rwdmax(767)
+                margin-top: 60px
+              .icon
+                width: 40px
+                margin: 0 auto
+              .text
+                margin-top: 10px
+                +fontSetBold($font: $LBB, $size: px(14), $color: black)
+

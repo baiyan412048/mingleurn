@@ -1,0 +1,479 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/layouts/_form
+
+.gdpr
+  .all-wrapper
+    .decor-layer
+      position: fixed
+      width: 100vw
+      height: 100vh
+      z-index: -1
+      overflow: hidden
+      >div
+        position: absolute
+        opacity: 0
+        &.decor1
+          width: 18.23vw
+          top: 0
+          right: 0
+          overflow: hidden
+          transition: opacity 0.3s linear
+          +rwdmax(1024)
+            display: none
+        &.decor2
+          width: 19.27vw
+          bottom: 0
+          left: 0
+          z-index: 1
+          transition: opacity 0.3s linear
+          +rwdmax(1024)
+            display: none
+      &.show
+        >div
+          opacity: 1
+  main
+    .gdpr-wrap
+      padding: 12.5vh 9.53125vw 0 0
+      +flex($x: flex-start, $y: flex-start)
+      +rwdmax(1024)
+        flex-direction: column
+        align-items: center
+        padding: 60px 0 0 0
+      +rwdmax(767)
+        padding: 15px 0 0 0
+      .sidebar
+        flex-shrink: 0
+        padding: 0 9.6875vw
+        +rwdmax(1024)
+          padding: 0
+        .close-btn
+          width: 60px
+          height: 60px
+          background-color: #a88438
+          border-radius: 50%
+          z-index: 1
+          margin-left: 5px
+          +flex
+          +rwdmax(1024)
+            width: 55px
+            height: 55px
+            margin: 0 auto
+          +rwdmax(767)
+            width: 30px
+            height: 30px
+          span
+            position: relative
+            display: block
+            width: 20px
+            height: 20px
+            transform: rotate(45deg)
+            +rwdmax(1024)
+              width: 18px
+              height: 18px
+            +rwdmax(767)
+              width: 10px
+              height: 10px
+            &::before,&::after
+              content: ''
+              background-color: white
+              +posCenter
+            &::before
+              width: 2px
+              height: 20px
+              +rwdmax(1024)
+                height: 18px
+              +rwdmax(767)
+                height: 10px
+            &::after
+              width: 20px
+              height: 2px
+              +rwdmax(1024)
+                width: 18px
+              +rwdmax(767)
+                width: 10px
+        .gdpr-menu
+          margin-top: 8.889vh
+          +rwdmax(1024)
+            position: relative
+            margin-top: 60px
+            height: 74px
+            +flex($y: flex-start)
+          +rwdmax(767)
+            height: 77px
+            margin-top: 25px
+          >li
+            +rwdmax(1024)
+              padding: 0 12px
+            &:not(:first-child)
+              margin-top: 5.37vh
+              +rwdmax(1024)
+                margin-top: 0
+            .option
+              display: block
+              margin-bottom: 12px
+              +fontSetBold($font: $LBB, $size: px(26), $color: rgba(0,0,0,0.6))
+              +rwdmax(767)
+                font-size: px(13)
+                margin-bottom: 30px
+              &.active
+                color: black
+              &:not(.active)
+                +rwdmax(1024)
+                  & + .status
+                    display: none
+                      
+            .status
+              +flex
+              +rwdmax(1024)
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+              .text
+                white-space: nowrap
+                margin-right: 10px
+                +fontSet($size: px(13), $color: black)
+              .switch-input
+                position: relative
+                cursor: pointer
+                input
+                  position: absolute
+                  width: 100%
+                  height: 100%
+                  top: 0
+                  left: 0
+                  opacity: 0
+                  margin: 0
+                  z-index: -1
+                  &:checked
+                    & + .fake-checkbox
+                      background-color: #a88438
+                      &::before
+                        left: 32px
+                .fake-checkbox
+                  position: relative
+                  width: 60px
+                  height: 30px
+                  border-radius: 10rem
+                  background-color: #dddddd
+                  transition: 0.3s ease-in-out
+                  &::before
+                    content: ''
+                    position: absolute
+                    top: 50%
+                    left: 6px
+                    width: 20px
+                    height: 20px
+                    border-radius: 50%
+                    background-color: white
+                    transform: translate(0,-50%)
+                    transition: 0.3s ease-in-out
+      .content
+        width: 65.104vw
+        min-height: 87.5vh
+        background-color: white
+        +rwdmax(1024)
+          max-width: 620px
+          width: 100%
+          min-height: auto
+          margin: 0 auto
+          background-color: transparent
+        .tab-content
+          .tab-pane
+            .step-wrap
+              padding: 17.037vh 60px
+              +rwdmax(1024)
+                padding: 7.36vh 60px
+              +rwdmax(767)
+                padding: 7.36vh 20px
+              .step-content
+                display: none
+                text-align: center
+                .title
+                  +fontSetBold($font: $LBB, $size: px(26), $color: black)
+                  +rwdmax(767)
+                    font-size: px(20)
+                .description
+                  +fontSet($size: px(13), $lh: 25px, $color: rgba(0,0,0,0.8))
+                .emphasis
+                  text-align: left
+                  +fontSet($size: px(13), $lh: 25px, $color: #cf1111)
+                .form-grid
+                  .form-group
+                    >p
+                      padding-left: 0
+                    input
+                      +rwdmax(767)
+                        padding-left: 0
+                .btn
+                  display: block
+                  width: 180px
+                  height: 50px
+                  text-align: center
+                  border-radius: 10rem
+                  margin: 50px auto 0 auto
+                  +fontSetBold($font: $LBB, $size: px(13), $lh: 50px, $color: white)
+                  // +rwdmax(575)
+                  //   width: 140px
+            //備份
+            &#backup
+              .step-wrap
+                .step-content
+                  &.step1
+                    +maxWidth($maxw: 665px)
+                    .title
+                      margin-bottom: 20px
+                    .last-backup
+                      padding: 38px 0 16px 0
+                      +fontSetBold($font: $LBB, $size: px(13), $color: black)
+                    .emphasis
+                      padding: 75px 0 32px 0
+                      +rwdmax(767)
+                        padding: 40px 0 32px 0
+                    .use-member-data
+                      padding: 12px 0 20px 0
+                      text-align: right
+                  &.step2
+                    +maxWidth($maxw: 490px)
+                    .icon-backup
+                      font-size: 72px
+                      margin-bottom: 44px
+                      +rwdmax(767)
+                        font-size: 46px
+                        margin-bottom: 24px
+                    .title
+                      margin-bottom: 20px
+                    .description
+                      +maxWidth($maxw: 450px, $margin: 0 auto 52px auto)
+                    .progress-bar
+                      position: relative
+                      max-width: 490px
+                      margin: 0 auto
+                      height: 5px
+                      border-radius: 2.5px
+                      background-color: #dddddd
+                      overflow: hidden
+                      +rwdmax(767)
+                        width: calc(100% - 40px)
+                        margin: 0 auto
+                      &::before
+                        content: ''
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 0
+                        height: 100%
+                        border-radius: 2.5px
+                        background-color: black
+                        transition: width 0.3s
+                      @for $i from 0 through 7
+                        &[data-day="#{$i}"]
+                          &::before
+                            width: calc(100% / 7 * #{$i})
+                      &[data-day="7"]
+                        & ~ .btn
+                          &.operating
+                            display: none
+                          &.download
+                            display: block
+                        & ~ .date
+                          display: block
+                    .date
+                      display: none
+                      padding: 27px 0 16px 0
+                      +fontSetBold($font: $LBB, $size: px(13), $color: black)
+                    .btn
+                      &.download
+                        display: none
+            //刪除
+            &#delete
+              .step-wrap
+                .step-content
+                  &.step1
+                    +maxWidth($maxw: 665px)
+                    .title
+                      margin-bottom: 20px
+                    .see-detail
+                      padding: 22px 0 54px 0
+                      +fontSetBold($font: $LBB, $size: px(13))
+                      +flex
+                      .tips
+                        position: relative
+                        width: 20px
+                        height: 20px
+                        border-radius: 50%
+                        background-color: black
+                        margin-left: 6px
+                        user-select: none
+                        +flex
+                        +fontSet($font: $MP, $size: px(13), $color: white)
+                        &::before
+                          content: ''
+                          position: absolute
+                          width: 0
+                          height: 0
+                          border-style: solid
+                          border-width: 7px 9px 7px 0
+                          border-color: transparent #515151 transparent transparent
+                          transform: translateX(31px)
+                          transition: opacity 0.4s
+                          opacity: 0
+                          z-index: 3
+                          +rwdmax(1366)
+                            border-width: 0 7px 9px 7px
+                            border-color: transparent transparent #515151 transparent
+                            top: 36px
+                            left: 50%
+                            transform: translate(-50%,0)
+                        &:hover
+                          &::before
+                            opacity: 1
+                          .tips-box
+                            opacity: 1
+                            z-index: 1
+                        .tips-box
+                          position: absolute
+                          top: 50%
+                          right: 0
+                          width: 450px
+                          padding-left: 25px
+                          opacity: 0
+                          z-index: -1
+                          transform: translate(100%,-50%)
+                          transition: opacity 0.4s
+                          +rwdmax(1366)
+                            max-width: calc(100vw - 40px)
+                            top: 20px
+                            right: auto
+                            left: calc(50% - 40px)
+                            transform: translate(-50%,0)
+                            padding-left: 0
+                            padding-top: 25px
+                          .text
+                            background-color: #515151
+                            padding: 32px 24px
+                            user-select: text
+                            border-radius: 10px
+                            box-shadow: 2.5px 4.3px 20px 0 rgba(0, 0, 0, 0.1)
+                            text-align: left
+                            +fontSet($size: px(13), $lh: 20px, $color: white)
+                            +rwdmax(575)
+                              padding: 24px
+                    .emphasis
+                      padding: 0 0 6px 0
+                  &.step2
+                    +maxWidth($maxw: 515px)
+                    .icon-delete2
+                      font-size: 86px
+                      margin-bottom: 44px
+                      +rwdmax(767)
+                        font-size: 46px
+                        margin-bottom: 24px
+                    .title
+                      margin-bottom: 20px
+                    .description
+                      +maxWidth($maxw: 515px)
+                    .date
+                      padding: 60px 0 38px 0
+                      +fontSetBold($font: $LBB, $size: px(13), $color: black)
+                    .progress-bar
+                      position: relative
+                      max-width: 490px
+                      margin: 0 auto
+                      height: 5px
+                      border-radius: 2.5px
+                      background-color: #dddddd
+                      +rwdmax(767)
+                        width: calc(100% - 40px)
+                        margin: 0 auto
+                      &::before
+                        content: ''
+                        position: absolute
+                        top: 0
+                        left: 0
+                        width: 0
+                        height: 100%
+                        border-radius: 2.5px
+                        background-color: black
+                        transition: width 0.3s
+                      .interval
+                        position: absolute
+                        top: 50%
+                        width: 10px
+                        height: 10px
+                        border-radius: 50%
+                        background-color: #a88438
+                        transform: translate(-50%,-50%)
+                        &:nth-child(1)
+                          left: calc(100% / 90 * 14)
+                        &:nth-child(2)
+                          left: 100%
+                        span
+                          position: absolute
+                          top: 15px
+                          left: 50%
+                          transform: translate(-50%,0)
+                          white-space: nowrap
+                          +fontSet($size: px(13), $color: black)
+                      @for $i from 0 through 90
+                        &[data-day="#{$i}"]
+                          &::before
+                            width: calc(100% / 90 * #{$i})
+                      @for $j from 15 through 90
+                        &[data-day="#{$j}"]
+                          & ~ .extra-description
+                            display: block
+                          & ~ .btn
+                            margin-top: 40px
+                            &.reboot
+                              display: none
+                            &.contact
+                              display: block
+                    .extra-description
+                      display: none
+                      margin-top: 110px
+                      +fontSetBold($font: $LBB, $size: px(14), $color: black)
+                    .btn
+                      margin-top: 100px
+                      &.contact
+                        display: none
+
+            //停用
+            &#block
+              .step-wrap
+                .step-content
+                  &.step1
+                    +maxWidth($maxw: 665px)
+                    .title
+                      margin-bottom: 20px
+                    .see-detail
+                      padding: 22px 0 54px 0
+                      +fontSetBold($font: $LBB, $size: px(13))
+                      +flex
+                      .tips
+                        width: 20px
+                        height: 20px
+                        border-radius: 50%
+                        background-color: black
+                        margin-left: 6px
+                        user-select: none
+                        +flex
+                        +fontSet($font: $MP, $size: px(13), $color: white)
+                    .emphasis
+                      padding: 80px 0 6px 0
+                  &.step2
+                    +maxWidth($maxw: 650px)
+                    .icon-lock
+                      font-size: 90px
+                      margin-bottom: 44px
+                      +rwdmax(767)
+                        font-size: 46px
+                        margin-bottom: 24px
+                    .title
+                      margin-bottom: 20px
+                    .btn
+                      margin-top: 80px
+
+            
+              
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/about_history.css")
+  body.about_history(data-page="about_history")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .header
+            a.back-overview(href="./about.html") BACK
+            h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Start in 1987
+            .unit-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") MINGLEURN Lace,established in Taipei, Taiwan in 1987.
+          .history-section
+            .history-content
+              .top-motorcycle
+                img(src="../../../assets/img/about/motorcycle.svg", alt="")
+              picture
+                source(media="(min-width: 1025px)", data-srcset="../../../uploads/about/history_en.png")
+                img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/about/history_en_mobile.png", alt="")
+              .bottom-motorcycle
+                img(src="../../../assets/img/about/motorcycle.svg", alt="")
+
+
+
+        .footer
+          a.backTop(href="javascript:;" data-anchor-container=".main-wrapper")
+            i.icon-top
+
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

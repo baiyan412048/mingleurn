@@ -1,0 +1,44 @@
+
+.close-btn(data-ajax-route="./ajax_member_register_leave.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")
+  span
+.modal-scroll-wrap.scrollbar-macosx
+  .modal-dialog
+    .modal-content
+      .register-wrap
+        .step-circle(data-step="1")
+          svg(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 35 35" xml:space="preserve")
+            path(stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 0 0 31.831 a 15.9155 15.9155 0 0 0 0 -31.831" stroke-linecap="butt" stroke-width="1")
+            path(step stroke-dasharray="50, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-linecap="butt" stroke-width="1")
+          p
+            span.now-step 1
+            span 2
+        p.step-title CHANGE ACCOUNT
+        p.step-subtitle Reset my account
+        // 切換步驟 _register.switchStep()
+        .step-content(data-step="1").active
+          p.step-text Please enter your new account
+          .form-grid
+            .form-group
+              p Account
+              input(type="text" placeholder="" required)
+          .form-grid
+            .form-group
+              p Password
+              input(type="password" placeholder="Enter the current password" required)
+          .form-grid
+            .form-group.verification
+              p Verification
+              .element-wrap
+                input(type="text" placeholder="Please enter  verification code")
+                img(src="../../../uploads/contact/code.jpg", alt="")
+                a(href="javascript:;")
+                  span.icon-refresh
+          .modal-btn-group
+            a.modal-btn.btn-black(onclick="_common.accountStepChange(2)" href="javascript:;") Next
+        .step-content(data-step="2")
+          .icon-account-success
+          p.title Success
+          p.subtitle Your account has been successfully updated. 
+          p.text In order to maintain the security of your account, we will log out of your account, please login again as a member, thank you.
+          .modal-btn-group
+            a.modal-btn.btn-black.ajax_close(href="./login.html") Login

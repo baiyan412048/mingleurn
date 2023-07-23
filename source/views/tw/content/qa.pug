@@ -1,0 +1,151 @@
+-
+  qa_list = [
+    {
+      p: "Member Service",
+      qa: [
+        {
+          q: "Instruction manual for new visitor",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+        {
+          q: "How to register for Mingleurn membership",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+        {
+          q: "What's the difference of membership level",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+      ],
+    },
+    {
+      p: "Shop Guides",
+      qa: [
+        {
+          q: "How to use online shop",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+        {
+          q: "What is MOQ",
+          a: "MINGLEURN online shop’s products have minimum order quantity. Minimum order quantity will be different, which in accordance with the different types of products of every kind. As shown below.  Note: The minimum order quantity unit is SET.",
+        },
+        {
+          q: "How to track my order",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+        {
+          q: "If you find that the purchased product is defective or damaged",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+      ],
+    },
+    {
+      p: "Returns & Refunds",
+      qa: [
+        {
+          q: "When can I return or exchange",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+        {
+          q: "How many days does it takes to return the goods",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+        {
+          q: "Where can I see my return history",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+      ],
+    },
+    {
+      p: "Support Items",
+      qa: [
+        {
+          q: "If I want to ask online, where can I do it",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+        {
+          q: "Can I customize my favorite products",
+          a: "MINGLEURN Online shop adopts affiliate program. You need to complete a simple member registration form. After we approved, you will become a VIP member of MINGLEURN online shop. Once you become a VIP member, you can enjoy browsing MINGLEURN’s latest design products and purchases at preferential prices.",
+        },
+      ],
+    },
+  ]
+
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/qa.css")
+  body.qa(data-page="qa")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/shopping/qa-decor01.png", alt="")
+          .decor2
+            img(src="../../../assets/img/shopping/qa-decor02.png", alt="")
+          .decor3
+            img(src="../../../assets/img/shopping/qa-decor03.png", alt="")
+          .decor4
+            img(src="../../../assets/img/shopping/qa-decor04.png", alt="")
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .header
+              .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") SHOPPING GUIDES
+              h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") MING’s Service
+              .unit-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Here you can find common questions and answers, we hope that this information can solve your confusion and use the website more smoothly.
+            .qa-block
+              .qa-type
+                .type-select
+                  .head TYPES FOR YOU 
+                  .type-dropdown
+                    .selected
+                      .text Member Service
+                      .arrow.icon-arrow-up
+                    .dropdown
+                      ul.scrollbar-inner
+                        li(data-anchor-target=".category-list.b1" data-anchor-margintop="180" data-anchor4-active="off") Member Service
+                        li(data-anchor-target=".category-list.b2" data-anchor-margintop="180" data-anchor4-active="off") Shop Guides
+                        li(data-anchor-target=".category-list.b3" data-anchor-margintop="180" data-anchor4-active="off") Returns & Refunds
+                        li(data-anchor-target=".category-list.b4" data-anchor-margintop="180" data-anchor4-active="off") Support Items
+              .qa-list
+                .category
+                  each item,key in qa_list
+                    .category-list(class=`b${key+1}`)
+                      .title=item.p
+                      .list
+                        each list in item.qa
+                          .list-block
+                            .q
+                              p
+                                span.index
+                                span=list.q
+                              span.icon-arrow-up
+                            if list.q=='What is MOQ'
+                              .a
+                                .innertext=list.a
+                                  .img-box
+                                    img(src="../../../uploads/shopping/qa.jpg", alt="")
+                                    p.img-description Here is to put some describes about pictur.
+                            else
+                              .a
+                                .innertext=list.a
+
+        // 頁尾
+        footer
+          .footer-top
+            .header Achieve Now
+            include ../layouts/_quick-link.pug
+          include ../layouts/_footer_bottom.pug
+
+  //引入的script
+  include ../layouts/_script.pug

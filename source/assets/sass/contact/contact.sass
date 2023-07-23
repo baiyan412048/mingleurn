@@ -1,0 +1,166 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/layouts/_form
+
+.contact
+  .all-wrapper
+    .decor-layer
+      position: fixed
+      width: 100vw
+      height: 100vh
+      z-index: -1
+      overflow: hidden
+      >div
+        position: absolute
+        opacity: 0
+        &.decor1
+          width: 11.615vw
+          left: 13.177%
+          top: 7.8vh
+          height: 0
+          overflow: hidden
+          transition: opacity 0.3s, height 0.3s
+          +rwdmax(1024)
+            display: none
+        &.decor2
+          width: 15.78125vw
+          bottom: 15vh
+          right: 0
+          z-index: 1
+          transition: opacity 0.3s linear 0.6s
+          +rwdmax(1024)
+            display: none
+        &.decor3
+          width: 73px
+          left: 13.541%
+          bottom: 18.05vh
+          transition: opacity 0.3s linear 0.6s
+          +rwdmax(1024)
+            display: none
+        &.decor4
+          width: 10.9375vw
+          right: 0
+          bottom: 0
+          overflow: hidden
+          transition: opacity 0.3s
+          +rwdmax(1024)
+            display: none
+          &::before
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: #f4f4f4
+            transition: height 0.3s
+      &.show
+        >div
+          opacity: 1
+          &.decor1
+            height: 194px
+          &.decor4
+            &::before
+              height: 0
+          
+  main
+    .container
+      +maxWidth($maxw: 1570px)
+    .custom-hr
+      +hr($margin: 22px 0)
+      +rwdmax(767)
+        margin: 50px 0
+    .header
+      text-align: center
+      +rwdmax(767)
+        padding: 0 20px
+      .unit-name
+        padding: 42px 0
+        +fontSet($size: px(13))
+        +rwdmax(767)
+          padding: 10px 0
+      .unit-alias
+        +fontSetBold($font: $LBB, $size: px(54))
+        +rwdmax(1024)
+          font-size: px(48)
+        +rwdmax(767)
+          font-size: px(32)
+      .section-description
+        margin: 30px auto 0
+        max-width: 585px
+        width: 100%
+    .form
+      padding: 35px 20px 15.287%
+      text-align: center
+      +maxWidth($maxw: 860px)
+      +rwdmax(767)
+        padding-bottom: 32.533%
+      .checkbox
+        margin-bottom: 66px
+      .form-group
+        &.community
+          .select-element
+            width: 100px
+            +rwdmax(575)
+              width: 100%
+              flex-shrink: initial
+        &.mobile
+          .select-element
+            width: 100px
+            +rwdmax(575)
+              width: 100%
+              flex-shrink: initial
+        &.subject
+          .select-element
+            width: 220px
+            +rwdmax(575)
+              width: 100%
+              flex-shrink: initial
+      .contact-box
+        margin-top: 60px
+        +rwdmax(767)
+          margin-top: 40px
+        >p
+          padding: 15px 20px
+          +fontSetBold($font: $LBB, $size: px(15), $lh: 25px)
+          +rwdmax(767)
+            padding: 25px 20px
+        .info
+          padding: 15px 0
+          +flex
+          +rwdmax(767)
+            flex-direction: column
+          p
+            +fontSet($font: $basic, $size: px(14), $color: #555)
+            &:first-child
+              margin-right: 20px
+              padding-right: 20px
+              border-right: 1px solid #000
+              +rwdmax(767)
+                margin-bottom: 30px
+                margin-right: 0
+                padding-right: 0
+                border-right: none
+            span
+              margin-right: 15px
+              +fontSetBold($font: $LBB, $size: px(14), $color: black)
+              +rwdmax(767)
+                display: block
+                margin-right: 0
+                margin-bottom: 15px
+          // button
+        .button-group
+          margin-top: 80px
+          +flex
+          +rwdmax(767)
+            margin-top: 40px
+          .button
+            height: 50px
+            border-radius: 10rem
+            max-width: 180px
+            width: 100%
+            cursor: pointer
+            +flex
+            +fontSetBold($font: $LBB, $size: px(13), $color: white)
+            &:not(:first-child)
+              margin-left: 15px

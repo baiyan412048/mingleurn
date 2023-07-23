@@ -1,0 +1,413 @@
+-
+  var banner = [
+    {
+      small: '../../../uploads/home/inspiration-left-01.jpg',
+      large: '../../../uploads/home/inspiration-right-01.jpg',
+      decorLeft: '../../../uploads/home/decor/banner1-1.png',
+      decorTop: '../../../uploads/home/decor/banner1-2.png',
+      decorRight: '../../../uploads/home/decor/banner1-3.png',
+      text1: 'New Species',
+      text2: '',
+    },
+    {
+      small: '../../../uploads/home/inspiration-left-02.jpg',
+      large: '../../../uploads/home/inspiration-right-02.jpg',
+      decorLeft: '../../../uploads/home/decor/banner2-1.png',
+      decorTop: '../../../uploads/home/decor/banner2-2.png',
+      decorRight: '../../../uploads/home/decor/banner2-3.png',
+      text1: 'New Species',
+      text2: '',
+    },
+    {
+      small: '../../../uploads/home/inspiration-left-03.jpg',
+      large: '../../../uploads/home/inspiration-right-03.jpg',
+      decorLeft: '../../../uploads/home/decor/banner3-1.png',
+      decorTop: '../../../uploads/home/decor/banner3-2.png',
+      decorRight: '../../../uploads/home/decor/banner3-3.png',
+      text1: 'New Species',
+      text2: '',
+    },
+  ]
+-
+  var explore = [
+    {
+      align: 'center',
+      card: [
+        {
+          img: '../../../uploads/home/explore01-1.jpg',
+          href: 'javascript:;',
+          hashtag: ['Chenille','Missing Deer','Eastern Mysteries'],
+        },
+        {
+          img: '../../../uploads/home/explore01-2.jpg',
+          href: 'javascript:;',
+          hashtag: ['Hand Beading','Stunning Floral','Romantic Wedding'],
+        }
+      ]
+    },
+    {
+      align: 'center',
+      card: [
+        {
+          img: '../../../uploads/home/explore02-1.jpg',
+          href: 'javascript:;',
+          hashtag: ['Chantilly Lace','Traditional Red','Chinese New Year'],
+        },
+        {
+          img: '../../../uploads/home/explore02-2.jpg',
+          href: 'javascript:;',
+          hashtag: ['Machine Beading','Gypsophila','Elegant Gowns','Silver Star'],
+        }
+      ]
+    },
+    {
+      align: 'right',
+      card: [
+        {
+          img: '../../../uploads/home/explore03-1.jpg',
+          href: 'javascript:;',
+          hashtag: ['Multicolor',"Ming's Garden",'Spring Blossom'],
+        },
+        {
+          img: '../../../uploads/home/explore03-2.jpg',
+          href: 'javascript:;',
+          hashtag: ['Geometric','Chic Insect','Nature Calling'],
+        }
+      ]
+    },
+    {
+      align: 'left',
+      card: [
+        {
+          img: '../../../uploads/home/explore04-1.jpg',
+          href: 'javascript:;',
+          hashtag: ['Emb. Badge',"Rock N Roll",'Pop Aat','Party Queen'],
+        },
+        {
+          img: '../../../uploads/home/explore04-2.jpg',
+          href: 'javascript:;',
+          hashtag: ['Laser-cut Style','Universe Evolution','Starwars'],
+        }
+      ]
+    },
+  ]
+
+-
+  var news = ["Trendy Zone", "New Arrival", "Exhibitions"]
+
+-
+  news_slider = [
+    {
+      img: '../../../uploads/home/ming-to-tell01.jpg',
+      title: 'Texworld Paris Spring 10th - 13th February 2020',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute couture and fashion grasp the trend ...'
+    },
+    {
+      img: 'https://via.placeholder.com/870x525',
+      title: 'The title only show one line here',
+      description: 'The description only show two line here'
+    }
+  ]
+
+-
+  about = [
+    {
+      type: 'Designer Team',
+      lgImg: '../../../uploads/home/close-to-ming-large01.jpg',
+      smImg: '../../../uploads/home/close-to-ming-small01.jpg',
+      title: 'Expert of Embroidery',
+      description: 'We are proud of our creativity and always in lead for the industry.'
+    },
+    {
+      type: 'Customized',
+      lgImg: '../../../uploads/home/close-to-ming-large02.jpg',
+      smImg: '../../../uploads/home/close-to-ming-small02.jpg',
+      title: 'Meet Your Needs',
+      description: 'We are proud of our creativity and always in lead for the industry.'
+    },
+    {
+      type: 'Traditional Craft',
+      lgImg: '../../../uploads/home/close-to-ming-large03.jpg',
+      smImg: '../../../uploads/home/close-to-ming-small03.jpg',
+      title: 'Years of history',
+      description: 'The description only show two line here'
+    }
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  // head標籤 & 網站設定
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/index.css")
+  //首頁有四種顏色
+  //淺灰 #f4f4f4 (預設選項)、淺粉 #f6e3de、米白 #fffbe7、深藍 #0f131b
+  //除了深藍色要加 dark 以外，其餘都不變
+  //要把顏色寫在body上 ex: style='background-color: #0f131b'
+  body.home(data-page="home" data-ajax-route="./ajax_member_remind_login.html" data-login-remind="")
+    h1.visuallyhidden Mingleurn 明綸國際有限公司
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .brush-img.brush1
+          img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/home/decor01.png", alt="")
+        .explore-decor.right
+          img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/home/decor/lace4.png", alt="")
+        .explore-decor.left
+          img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/home/decor/lace5.png", alt="")
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          section.section1
+            .container
+              .title-wrap
+                .brush-img.brush2
+                  img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/home/decor02.png", alt="")
+                h3.section-title Mingleurn<br>your design inspiration
+              p.section-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="2.2s") MINGLEURN, a professional fabric supplier, provides various<br>embroidery lace for your selection.
+              a.section-link(href="javascript:;" data-animate="fadeInUp" data-duration="0.4s" data-delay="2.4s")
+                span.text BE MING'S MEMBER
+                i.icon-right
+              .inspiration-wrap
+                .item
+                  .left-block
+                    .swiper-container(
+                      data-swiper-id="inspiration-ID"
+                      data-swiper-name="inspiration-left" 
+                      data-swiper-num="1" 
+                      data-swiper-arrow="off" 
+                      data-swiper-nav="on" 
+                      data-swiper-nav-name=".inspiration-pagination"
+                      data-swiper-autoplay="on" 
+                      data-swiper-effect="fade" 
+                      data-swiper-breakpoints="{767: { slidePerview: 1 }}")
+                      .swiper-wrapper
+                        each data in banner
+                          .swiper-slide(data-swiper-autoplay="5000")
+                            a.content(href="javascript:;")
+                              .img-wrap
+                                .img-box
+                                  .cover
+                                    span SEE DETAIL
+                                  .slide-decor.left
+                                    img(src= data.decorLeft, alt="")
+                                  .slide-decor.top
+                                    img(src= data.decorTop, alt="")
+                                  .slide-decor.right
+                                    img(src= data.decorRight, alt="")
+                                  img(src= data.small, alt="")
+                              .text-box
+                                .text1= data.text1
+                                .text2= data.text2
+                      .swiper-pagination.inspiration-pagination.inspiration-ID.common
+                .item
+                  .right-block
+                    .swiper-container(data-swiper-name="inspiration-right" 
+                    data-swiper-num="1" 
+                    data-swiper-arrow="off" 
+                    data-swiper-nav="on"
+                    data-swiper-nav-name=".inspiration-pagination"
+                    data-swiper-nav-common="on" 
+                    data-swiper-autoplay="on" 
+                    data-swiper-effect="fade" 
+                    data-swiper-breakpoints="{767: { slidePerview: 1 }}" )
+                      .swiper-wrapper
+                        each data in banner
+                          .swiper-slide(data-swiper-autoplay="5000")
+                            a.content(href="javascript:;")
+                              .img-box
+                                img(src= data.large, alt="")
+              .decor-area
+                .decor-img.section1-decor(data-animate="zoomIn" data-duration="0.3s" data-delay="0.8s")
+                  img(src="../../../uploads/home/decor/flower1.png", alt="")
+          //Pick MING up
+          section.section2
+            .decor-img.section2-decor1
+              img(src="../../../uploads/home/decor/lace1.png", alt="")
+            .decor-img.section2-decor2
+              img(src="../../../uploads/home/decor/lace2.png", alt="")
+            .container
+              h2.section-unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Pick MING up
+              h3.section-title(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.6s") The Trend Leader<br>x MINGLEURN
+              .pickMingUp-wrap
+                .decor-img.section2-decor3(data-animate="zoomIn" data-duration="0.3s" data-delay="0.8s")
+                  img(src="../../../uploads/home/decor/flower2.png", alt="")
+                .large-block
+                  .img-box
+                    img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/home/pick-ming-up-left.jpg", alt="")
+                .small-block
+                  .decor-img.section2-decor4
+                    img(src="../../../uploads/home/decor/lace3.png", alt="")
+                  .img-box
+                    img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/home/pick-ming-up-right.jpg", alt="")
+                .text-area(data-animate="fadeInUp" data-duration="0.4s")
+                  p.section-description.innertext No matter how it takes, we always push ourselves to the boundary.<br>Come and grab the ideas you need!
+                  a.section-link(href="./product.html")
+                    span.text LET'S GET IT
+                    i.icon-right
+          //Explore
+          section.section3
+            .container
+              h2.section-unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Explore
+              h3.section-title(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Emb. Your Dreams with<br>MINGLEURN
+                .decor-img.section3-decor1(data-animate="zoomIn" data-duration="0.3s" data-delay="0.6s")
+                  img(src="../../../uploads/home/decor/flower3.png", alt="")
+              .explore-wrap
+                //規則
+                //客戶一次上兩張圖 可以選靠左 置中 靠右
+                //explore-item加上對應class(align-left、align-center、align-right)
+                each data in explore
+                  .explore-item(class= 'align-' + data.align)
+                    each card in data.card
+                      .grid
+                        .card.ajax_open(data-ajax-route="./ajax_index_inspire.html" data-ajax-container=".inspire-wrap" data-ajax-callback="_ajaxCallback.homeInspire")
+                          .card-top
+                              img.b-lazy(src="../../../assets/img/blazy.gif" data-src= card.img, alt="")
+                          .card-bottom
+                            .icon-right(href= card.href)
+                            ul.hashtag
+                              each tag in card.hashtag
+                                li= '# '+tag
+              .decor-area
+                .decor-img.section3-decor2(data-animate="zoomIn" data-duration="0.3s" data-delay="0.6s")
+                  img(src="../../../uploads/home/decor/flower4.png", alt="")
+          //Ming to tell
+          section.section4
+            .container
+              h2.section-unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Ming to tell
+              h3.section-title(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.6s") Share your EMB. world<br>with MINGLEURN
+              .mingToTell-wrap
+                .news-type-select
+                  ul.type-list
+                    each data,index in news
+                      li
+                        a(href="javascript:;")= data
+                  a.section-link(href="javascript:;")
+                    span.text NEWS OVERVIEW
+                    i.icon-right
+                .mainBanner-slider
+                  .slider-wrapper
+                    .swiper-container(
+                      data-swiper-id="home-news-slider-ID"
+                      data-swiper-name="home-news-slider"
+                      data-swiper-direction="horizontal" 
+                      data-swiper-num="1" 
+                      data-swiper-arrow="off" 
+                      data-swiper-nav="on" 
+                      data-swiper-nav-name=".banner-slider-pagination"
+                      data-swiper-autoplay="on" 
+                      data-swiper-effect="fade"
+                      data-swiper-breakpoints="{1024: { direction: 'vertical' }}")
+                      .swiper-wrapper
+                        //這邊跑迴圈
+                        //請將欄位串在swiper-slide的data上
+                        //標題 - data-title, 描述 - data-description
+                        each slider in news_slider
+                          .swiper-slide(data-swiper-autoplay="5000" data-title= slider.title data-description= slider.description)
+                            a.content(href="./news.html")
+                              .img-box
+                                img(src= slider.img, alt="")
+                    .swiper-pagination.banner-slider-pagination.home-news-slider-ID
+                  //輪播文字區塊
+                  .slider-textarea
+                    //.text-mask 寫背景色
+                    .text-mask
+                    .info
+                      .title
+                      .description.innertext
+                .decor-img.section4-decor1(data-animate="zoomIn" data-duration="0.3s" data-delay="0.4s")
+                  img(src="../../../uploads/home/decor/flower5.png", alt="")
+
+          //Closer to MING
+          section.section5
+            .container
+              h2.section-unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Closer to MING
+              h3.section-title(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.6s") Innovative spirit<br>with endless way
+              .closeToMing-wrap(data-show-index="0")
+                .about-top
+                  .large-wrap
+                    //.large-mask 寫背景色
+                    .large-mask
+                    each data,index in about
+                      img(src= data.lgImg, alt="")
+                .about-bottom
+                  .small-wrap
+                    each data,index in about
+                      .about-info(class= (index == 0 ? 'show' : ''))
+                        .small-img
+                          img(src= data.smImg, alt="")
+                        .about-title= data.title
+                        .about-description.innertext= data.description
+                        a.section-link(href="javascript:;")
+                          span.text GET CLOSER
+                          i.icon-right
+                  ul.about-menu
+                    each data,index in about
+                      li(class= (index == 0 ? 'active' : ''))
+                        span= data.type
+          //Follow Ming and Join Ming
+          section.section6
+            .decor-img.section6-decor1(data-animate="fadeIn" data-duration="0.3s" data-delay="0.6s")
+              img(src="../../../uploads/home/decor/flower6.png", alt="")
+            .decor-img.section6-decor2(data-animate="zoomIn" data-duration="0.3s" data-delay="0.6s")
+              img(src="../../../uploads/home/decor/flower7.png", alt="")
+            .container
+              h2.section-unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Follow MING and Join MING
+              h3.section-title(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.6s") Be your wings<br>achieve your dreams
+              .follow-wrap
+                .row
+                  .grid(data-anchor-obj=".follow-wrap" data-animate="zoomIn" data-duration="0.3s" data-delay="0.2s")
+                    a.item(href="javascript:;")
+                      .cover
+                        .decor-box
+                          img(src="../../../uploads/home/decor/bird.png", alt="")
+                        i.icon-fb
+                      img(src="../../../uploads/home/follow01.jpg", alt="")
+                  .grid(data-anchor-obj=".follow-wrap" data-animate="zoomIn" data-duration="0.3s" data-delay="0.4s")
+                    a.item(href="javascript:;")
+                      .cover
+                        .decor-box
+                          img(src="../../../uploads/home/decor/bird.png", alt="")
+                        i.icon-ig
+                      img(src="../../../uploads/home/follow02.jpg", alt="")
+                  .grid(data-anchor-obj=".follow-wrap" data-animate="zoomIn" data-duration="0.3s" data-delay="0.6s")
+                    a.item(href="javascript:;")
+                      .cover
+                        .decor-box
+                          img(src="../../../uploads/home/decor/bird.png", alt="")
+                        i.icon-twitter
+                      img(src="../../../uploads/home/follow03.jpg", alt="")
+                  .grid(data-anchor-obj=".follow-wrap" data-animate="zoomIn" data-duration="0.3s" data-delay="0.8s")
+                    a.item(href="javascript:;")
+                      .cover
+                        .decor-box
+                          img(src="../../../uploads/home/decor/bird.png", alt="")
+                        i.icon-wechat
+                      img(src="../../../uploads/home/follow04.jpg", alt="")
+              .inline-wrap
+                p.section-description.innertext Check on our social media to see the latest news.
+                a.section-link(href="javascript:;")
+                  span.text BE MING'S MEMBER
+                  i.icon-right
+              .decor-area
+                .decor-img.section6-decor3(data-animate="fadeIn" data-duration="0.3s" data-delay="0.4s")
+                  img(src="../../../uploads/home/decor/flower8.png", alt="")
+
+          
+
+        // 頁尾
+        footer
+          .footer-top
+            .header For Dreamers
+            include ../layouts/_quick-link.pug
+          include ../layouts/_footer_bottom.pug
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

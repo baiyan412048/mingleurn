@@ -1,0 +1,166 @@
+.close-btn(data-ajax-route="./ajax_member_register_leave.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")
+  span
+.modal-scroll-wrap.scrollbar-macosx
+  .modal-dialog
+    .modal-content
+      .modal-header
+        .title MY PROFILE
+        .sub-title Edit Information
+        .extra-description Update information by pressing save after changing data
+      .modal-body
+        .form
+          .form-wrap
+            .form-grid
+              .form-group.required
+                p Name
+                input(type="text" placeholder="Name" value="Hailey Wang" required)
+            .form-grid
+              .form-group.birth.required
+                p Birth
+                .element-wrap
+                  .select-element(data-default="Year")
+                    .selected
+                      span.text 1997
+                      span.arrow.icon-arrow-up
+                    .dropdown
+                      ul.scrollbar-inner
+                        - for (var i = 1995; i <= 2020; i++)
+                          li= i
+                  .select-element(data-default="Month")
+                    .selected
+                      span.text 06
+                      span.arrow.icon-arrow-up
+                    .dropdown
+                      ul.scrollbar-inner
+                        - for (var i = 1; i <= 12 ; i++)
+                          if i < 10
+                            li= '0' + i
+                          else
+                            li= i
+                  .select-element(data-default="Date")
+                    .selected
+                      span.text 30
+                      span.arrow.icon-arrow-up
+                    .dropdown
+                      ul.scrollbar-inner
+                        - for (var i = 1; i <= 31 ; i++)
+                          if i < 10
+                            li= '0' + i
+                          else
+                            li= i
+            .form-grid
+              .form-group.community
+                p Community
+                .element-wrap
+                  .select-element(data-default="Select")
+                    .selected
+                      span.text Select
+                      span.arrow.icon-arrow-up
+                    .dropdown
+                      ul.scrollbar-inner
+                        li Line
+                        li Wechat
+                        li QQ
+                        li Whatsapp
+                  input(type="text" placeholder="ID number")
+            .form-grid
+              .form-group
+                p Phone Number
+                .readonly
+                  span +886
+                  span 912345678
+            .form-grid
+              .form-group.required
+                p E-mail
+                input(type="email" inputmode="email" placeholder="We will send important notifications by mail" required)
+          .form-wrap
+            .form-grid
+              .form-group
+                p Brand
+                input(type="text" placeholder="")
+            .form-grid
+              .form-group
+                p Company Name
+                input(type="text" placeholder="")
+            .form-grid
+              .form-group
+                p Title
+                input(type="text" placeholder="ex : Designer")
+            .form-grid
+              .form-group
+                p Website
+                input(type="text" placeholder="http://")
+          .form-wrap
+            .form-grid
+              .form-group.address.required
+                p Contact Address
+                .element-wrap
+                  .select-element(data-default="Region")
+                    .selected
+                      span.text Region
+                      span.arrow.icon-arrow-up
+                    .dropdown
+                      ul.scrollbar-inner
+                        li Asia
+                        li Europe
+                        li North America
+                        li South America
+                        li Africa
+                        li Oceania
+                        li Antarctica
+                  .select-element(data-default="Country")
+                    .selected
+                      span.text Country
+                      span.arrow.icon-arrow-up
+                    .dropdown
+                      ul.scrollbar-inner
+                        li Taiwan
+                        li Japan
+                  input(type="text" placeholder="Zip code")
+                .address-input
+                  input(type="text" placeholder="Please enter full address")
+            .form-grid
+              .form-group.address.has-checkbox
+                p Shipping Address
+                label.checkbox
+                  input(type="checkbox")
+                  .fake-checkbox
+                    span
+                  p Same as above
+                .element-wrap
+                  .select-element(data-default="Region")
+                    .selected
+                      span.text Region
+                      span.arrow.icon-arrow-up
+                    .dropdown
+                      ul.scrollbar-inner
+                        li Asia
+                        li Europe
+                        li North America
+                        li South America
+                        li Africa
+                        li Oceania
+                        li Antarctica
+                  .select-element(data-default="Country")
+                    .selected
+                      span.text Country
+                      span.arrow.icon-arrow-up
+                    .dropdown
+                      ul.scrollbar-inner
+                        li Taiwan
+                        li Japan
+                  input(type="text" placeholder="Zip code")
+                .address-input
+                  input(type="text" placeholder="Please enter full address")
+          .form-wrap
+            .form-grid
+              .form-group.verification
+                p Verification
+                .element-wrap
+                  input(type="text" placeholder="Please enter  verification code")
+                  img(src="../../../uploads/contact/code.jpg", alt="")
+                  a(href="javascript:;")
+                    span.icon-refresh
+          .modal-btn-group
+            a.modal-btn.btn-black(onclick="_common.closeAjax('.edit-profile-wrap')" href="javascript:;") Save
+        

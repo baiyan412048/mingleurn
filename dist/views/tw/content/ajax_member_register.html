@@ -1,0 +1,383 @@
+
+<div class="close-btn" data-ajax-route="./ajax_member_register_leave.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox"><span></span></div>
+<div class="modal-scroll-wrap scrollbar-macosx">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="register-wrap">
+        <div class="step-circle" data-step="1">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 35 35" xml:space="preserve">
+            <path stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 0 0 31.831 a 15.9155 15.9155 0 0 0 0 -31.831" stroke-linecap="butt" stroke-width="1"></path>
+            <path step="step" stroke-dasharray="25, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-linecap="butt" stroke-width="1"></path>
+          </svg>
+          <p><span class="now-step">1</span><span>4</span></p>
+        </div>
+        <p class="step-title">Membership</p>
+        <p class="step-subtitle">Registered member</p>
+        <!-- 切換步驟 _common.accountStepChange(步驟數,'back'(如果要回上一步才要帶))-->
+        <!-- 可參照第二步驟的用法-->
+        <div class="step-content active" data-step="1">
+          <p class="step-text">Please fill in your mobile phone or email address during registration and we will send the verification code.</p>
+          <div class="bookmark">
+            <div class="bookmark-switch">
+              <div class="active" data-bookmark="mobile">
+                <div class="icon-phone"></div>
+                <p>Mobile</p>
+              </div>
+              <div data-bookmark="email">
+                <div class="icon-email"></div>
+                <p>Email</p>
+              </div>
+            </div>
+            <div class="bookmark-block active" data-bookmark="mobile">
+              <div class="form-grid">
+                <div class="form-group mobile">
+                  <p>Phone Number</p>
+                  <div class="element-wrap">
+                    <div class="select-element" data-default="Area code">
+                      <div class="selected"><span class="text">Area code</span><span class="arrow icon-arrow-up"></span></div>
+                      <div class="dropdown">
+                        <ul class="scrollbar-inner">
+                          <li>+ 886</li>
+                          <li>+ 86</li>
+                          <li>+ 852</li>
+                          <li>+ 62</li>
+                          <li>+ 81</li>
+                          <li>+ 82</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <input type="tel" inputmode="tel" placeholder="ex : 912345678"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group verification">
+                  <p>Verification</p>
+                  <div class="element-wrap">
+                    <input type="text" placeholder="Please enter  verification code"/><img src="../../../uploads/contact/code.jpg" alt=""/><a href="javascript:;"><span class="icon-refresh"></span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookmark-block" data-bookmark="email">
+              <div class="form-grid">
+                <div class="form-group">
+                  <p>Email</p>
+                  <input type="email" inputmode="email"/>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group verification">
+                  <p>Verification</p>
+                  <div class="element-wrap">
+                    <input type="text" placeholder="Please enter  verification code"/><img src="../../../uploads/contact/code.jpg" alt=""/><a href="javascript:;"><span class="icon-refresh"></span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-btn-group"><a class="modal-btn btn-black ajax_open" href="javascript:;" data-ajax-route="./ajax_member_rights_statement.html" data-ajax-container=".member-statement-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">Next</a></div>
+        </div>
+        <div class="step-content" data-step="2">
+          <p class="step-text">Enter the verification code of your phone</p>
+          <div class="form-grid">
+            <div class="form-group sms">
+              <input type="number" inputmode="numeric" placeholder="Six-digit verification code" required="required"/>
+            </div>
+          </div>
+          <div class="tip-box">
+            <p>Send Again!<a class="resend" href="javascript:;">Resend</a><span class="countdown" data-seconds="300"></span></p><span>or</span>
+            <p>Still Not Receive?<a href="./contact.html">CONTACT US</a></p>
+          </div>
+          <div class="modal-btn-group"><a class="modal-btn btn-black" onclick="_common.accountStepChange(4,'back')" href="javascript:;">Back</a><a class="modal-btn btn-gold" onclick="_common.accountStepChange(4)" href="javascript:;">Next</a></div>
+        </div>
+        <div class="step-content" data-step="3">
+          <p class="step-text">We will review the information, please make sure that the information you filled in is correct.</p>
+          <div class="form">
+            <div class="form-wrap">
+              <p class="form-title">Part1 . Account Setting</p>
+              <div class="form-grid">
+                <div class="form-group required">
+                  <p>Account</p>
+                  <input type="text" placeholder="account name" required="required"/>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group required">
+                  <p>Password</p>
+                  <input type="password" placeholder="More than eight digits including numbers and letters" required="required"/>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group required">
+                  <p>Password Confirm</p>
+                  <input type="password" placeholder="Enter the password again" required="required"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-wrap">
+              <p class="form-title">Part2 . Basic Information</p>
+              <div class="form-grid">
+                <div class="form-group required">
+                  <p>Name</p>
+                  <input type="text" placeholder="" required="required"/>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group birth required">
+                  <p>Birth</p>
+                  <div class="element-wrap">
+                    <div class="select-element" data-default="Year">
+                      <div class="selected"><span class="text">Year</span><span class="arrow icon-arrow-up"></span></div>
+                      <div class="dropdown">
+                        <ul class="scrollbar-inner">
+                          <li>1995</li>
+                          <li>1996</li>
+                          <li>1997</li>
+                          <li>1998</li>
+                          <li>1999</li>
+                          <li>2000</li>
+                          <li>2001</li>
+                          <li>2002</li>
+                          <li>2003</li>
+                          <li>2004</li>
+                          <li>2005</li>
+                          <li>2006</li>
+                          <li>2007</li>
+                          <li>2008</li>
+                          <li>2009</li>
+                          <li>2010</li>
+                          <li>2011</li>
+                          <li>2012</li>
+                          <li>2013</li>
+                          <li>2014</li>
+                          <li>2015</li>
+                          <li>2016</li>
+                          <li>2017</li>
+                          <li>2018</li>
+                          <li>2019</li>
+                          <li>2020</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="select-element" data-default="Month">
+                      <div class="selected"><span class="text">Month</span><span class="arrow icon-arrow-up"></span></div>
+                      <div class="dropdown">
+                        <ul class="scrollbar-inner">
+                          <li>01</li>
+                          <li>02</li>
+                          <li>03</li>
+                          <li>04</li>
+                          <li>05</li>
+                          <li>06</li>
+                          <li>07</li>
+                          <li>08</li>
+                          <li>09</li>
+                          <li>10</li>
+                          <li>11</li>
+                          <li>12</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="select-element" data-default="Date">
+                      <div class="selected"><span class="text">Date</span><span class="arrow icon-arrow-up"></span></div>
+                      <div class="dropdown">
+                        <ul class="scrollbar-inner">
+                          <li>01</li>
+                          <li>02</li>
+                          <li>03</li>
+                          <li>04</li>
+                          <li>05</li>
+                          <li>06</li>
+                          <li>07</li>
+                          <li>08</li>
+                          <li>09</li>
+                          <li>10</li>
+                          <li>11</li>
+                          <li>12</li>
+                          <li>13</li>
+                          <li>14</li>
+                          <li>15</li>
+                          <li>16</li>
+                          <li>17</li>
+                          <li>18</li>
+                          <li>19</li>
+                          <li>20</li>
+                          <li>21</li>
+                          <li>22</li>
+                          <li>23</li>
+                          <li>24</li>
+                          <li>25</li>
+                          <li>26</li>
+                          <li>27</li>
+                          <li>28</li>
+                          <li>29</li>
+                          <li>30</li>
+                          <li>31</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group community">
+                  <p>Community</p>
+                  <div class="element-wrap">
+                    <div class="select-element" data-default="Select">
+                      <div class="selected"><span class="text">Select</span><span class="arrow icon-arrow-up"></span></div>
+                      <div class="dropdown">
+                        <ul class="scrollbar-inner">
+                          <li>Line</li>
+                          <li>Wechat</li>
+                          <li>QQ</li>
+                          <li>Whatsapp</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <input type="text" placeholder="ID number"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <p>Phone Number</p>
+                  <div class="readonly"><span>+886</span><span>912345678</span></div>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group required">
+                  <p>E-mail</p>
+                  <input type="email" inputmode="email" placeholder="We will send important notifications by mail" required="required"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-wrap">
+              <div class="form-grid">
+                <div class="form-group">
+                  <p>Brand</p>
+                  <input type="text" placeholder=""/>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <p>Company Name</p>
+                  <input type="text" placeholder=""/>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <p>Title</p>
+                  <input type="text" placeholder="ex : Designer"/>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <p>Website</p>
+                  <input type="text" placeholder="http://"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-wrap">
+              <div class="form-grid">
+                <div class="form-group address required">
+                  <p>Contact Address</p>
+                  <div class="element-wrap">
+                    <div class="select-element" data-default="Region">
+                      <div class="selected"><span class="text">Region</span><span class="arrow icon-arrow-up"></span></div>
+                      <div class="dropdown">
+                        <ul class="scrollbar-inner">
+                          <li>Asia</li>
+                          <li>Europe</li>
+                          <li>North America</li>
+                          <li>South America</li>
+                          <li>Africa</li>
+                          <li>Oceania</li>
+                          <li>Antarctica</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="select-element" data-default="Country">
+                      <div class="selected"><span class="text">Country</span><span class="arrow icon-arrow-up"></span></div>
+                      <div class="dropdown">
+                        <ul class="scrollbar-inner">
+                          <li>Taiwan</li>
+                          <li>Japan</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <input type="text" placeholder="Zip code"/>
+                  </div>
+                  <div class="address-input">
+                    <input type="text" placeholder="Please enter full address"/>
+                  </div>
+                </div>
+              </div>
+              <div class="form-grid">
+                <div class="form-group address has-checkbox">
+                  <p>Shipping Address</p>
+                  <label class="checkbox">
+                    <input type="checkbox"/>
+                    <div class="fake-checkbox"><span></span></div>
+                    <p>Same as above</p>
+                  </label>
+                  <div class="element-wrap">
+                    <div class="select-element" data-default="Region">
+                      <div class="selected"><span class="text">Region</span><span class="arrow icon-arrow-up"></span></div>
+                      <div class="dropdown">
+                        <ul class="scrollbar-inner">
+                          <li>Asia</li>
+                          <li>Europe</li>
+                          <li>North America</li>
+                          <li>South America</li>
+                          <li>Africa</li>
+                          <li>Oceania</li>
+                          <li>Antarctica</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="select-element" data-default="Country">
+                      <div class="selected"><span class="text">Country</span><span class="arrow icon-arrow-up"></span></div>
+                      <div class="dropdown">
+                        <ul class="scrollbar-inner">
+                          <li>Taiwan</li>
+                          <li>Japan</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <input type="text" placeholder="Zip code"/>
+                  </div>
+                  <div class="address-input">
+                    <input type="text" placeholder="Please enter full address"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-wrap">
+              <div class="form-grid">
+                <div class="form-group verification">
+                  <p>Verification</p>
+                  <div class="element-wrap">
+                    <input type="text" placeholder="Please enter  verification code"/><img src="../../../uploads/contact/code.jpg" alt=""/><a href="javascript:;"><span class="icon-refresh"></span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-btn-group"><a class="modal-btn btn-black" onclick="_common.accountStepChange(4)" href="javascript:;">Next</a></div>
+        </div>
+        <div class="step-content" data-step="4">
+          <div class="icon-diamond"></div>
+          <p class="title">Success</p>
+          <p class="subtitle">Congratulations on becoming a friend of<br>MINGLEURN</p>
+          <p class="text">
+            Please wait a bit for the review by MINGLEURN Genie. Genie will activate your VIP qualifications as soon as possible, and send you an exclusive Genie to customize your needs for you.
+            <br>
+            After becoming the VIP member of MINGLEURN, you can enjoy the latest design of MINGLEURN every season, and purchase products with preferential prices. Let's start the infinity design journey! 
+          </p>
+          <div class="modal-btn-group"><a class="modal-btn btn-black" onclick="_common.closeAjax('.register-lbox')" href="javascript:;">Login</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

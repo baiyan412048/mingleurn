@@ -1,0 +1,549 @@
+-
+  colorPalettes = [
+    '#000000','#434343','#666666','#b7b7b7','#efefef','#462696','#741b47','#880015','#ed1c24','#ff7f27','#ffff00','#3eb160','#4986e7','#3f48cc','#a349a4','#b97a57','#ea9999','#f6b26b','#fff2cc','#c3e755','#99d9ea','#7092be','#ae9ee5',
+  ]
+-
+  remarks = [
+    {
+      hasCancel: false,
+      title: 'Backing',
+      options:[
+        {
+          option: 'Modify',
+          placeholder: 'ex : Pantone color number 19-4045 TPG or Mingleurn N44-4',
+        }
+      ]
+    },
+    {
+      hasCancel: true,
+      title: 'Embroidery thread',
+      options:[
+        {
+          option: 'Color',
+          placeholder: 'ex : Pantone color number 19-4045 TPG',
+        }
+      ]
+    },
+    {
+      hasCancel: true,
+      title: 'Sequins',
+      options:[
+        {
+          option: 'Color',
+          placeholder: 'ex : Pantone color number 19-4045 TPG',
+        },
+        {
+          option: 'Addition',
+          placeholder: 'Please mark your desired location or fill in the reference number',
+        },
+      ]
+    },
+    {
+      hasCancel: true,
+      title: 'Bead',
+      options:[
+        {
+          option: 'Color',
+          placeholder: 'ex : Pantone color number 19-4045 TPG',
+        },
+        {
+          option: 'Addition',
+          placeholder: 'Please mark your desired location or fill in the reference number',
+        },
+      ]
+    },
+    {
+      hasCancel: true,
+      title: 'Bone thread & Strap',
+      options:[
+        {
+          option: 'Color',
+          placeholder: 'ex : Pantone color number 19-4045 TPG',
+        },
+        {
+          option: 'Addition',
+          placeholder: 'Please mark your desired location or fill in the reference number',
+        },
+      ]
+    },
+    {
+      hasCancel: true,
+      title: '3D decals',
+      options:[
+        {
+          option: 'Addition',
+          placeholder: 'Please mark your desired location or fill in the reference number',
+        },
+      ]
+    },
+    {
+      hasCancel: false,
+      title: 'Reshape',
+      options:[
+        {
+          option: 'Reshape',
+          placeholder: 'Please elaborate as much as possible. Mark the flower shape you want on the drawing board',
+        },
+      ]
+    },
+    {
+      hasCancel: false,
+      title: 'Other',
+      options:[
+        {
+          option: 'Supplementary explanation',
+          placeholder: 'Please tell us other needs',
+        },
+      ]
+    },
+  ]
+
+-
+  products = [
+    {
+      tag: '',
+      img: '../../../uploads/product/list01.jpg',
+      number: 'M7702',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: 'New',
+      img: '../../../uploads/product/list02.jpg',
+      number: 'ER14486AG8',
+      name: 'Red&Green Flower',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list03.jpg',
+      number: 'M7704',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list04.jpg',
+      number: 'M7705',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list05.jpg',
+      number: 'ER14486AG5',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list06.jpg',
+      number: 'J15104A2',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list07.jpg',
+      number: 'J15104A4',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list08.jpg',
+      number: 'ER14486AG7',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list09.jpg',
+      number: 'M7703',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list10.jpg',
+      number: 'BJME500938T',
+      name: 'Red Flower with Green Leaf Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list11.jpg',
+      number: 'ER14486AG6',
+      name: 'Yellow Flying Bee Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: 'Hot',
+      img: '../../../uploads/product/list12.jpg',
+      number: 'J15104A3',
+      name: 'Horizontal Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list13.jpg',
+      number: 'BJME500938T',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list14.jpg',
+      number: 'J15104A1',
+      name: 'Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list15.jpg',
+      number: 'BJME500938T',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list16.jpg',
+      number: 'BJME500938T',
+      name: 'Yellow Flying Bee Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list17.jpg',
+      number: 'BJME500938T',
+      name: 'Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list18.jpg',
+      number: 'M7706',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+  ]
+
+-
+  var collect = [
+    'Default',
+    'Summer2020',
+    'Company material',
+    'Project A',
+    'Project B',
+    'Proposal - 0608',
+    'Exhibition',
+    'Texword',
+    'Project C',
+    'Project D',
+    'Project E',
+  ]
+
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/customized.css")
+  body.customized.show-tips(data-page="customized")
+    .opacity-mask
+      .skip-btn
+        .text Skip Guiding
+        .icon.icon-right
+    .loading-page
+      .icon-box
+        .icon
+          img(src="../../../assets/img/loading.svg", alt="")
+        .loading-text Loading
+        p.description Please wait for the page
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .mobile-text-input
+          .nav
+            .cancel-input
+              span.icon
+            .header Edit Text
+            .confirm-input OK
+          textarea.text-input
+        .menu-mask
+        a.close-remark(href="javascript:;")
+          i.icon-right
+        a.close-favorite(href="javascript:;")
+          i.icon-right
+        a.menu-btn(href="javascript:;")
+          i.icon-menu-switch
+          .function-tips More options for edit
+        nav.customized-nav
+          .close-menu
+            span.icon
+          ul.function-bar
+            li.remark
+              i.icon-remark
+              span.text Notes
+            li.preview(href="javascript:;" data-ajax-route="./ajax_customized_preview.html" data-ajax-container=".preview-wrap" data-ajax-callback="_ajaxCallback.preview")
+              i.icon-preview
+              span.text Preview
+            li.tool-guide.ajax_open(href="javascript:;" data-ajax-route="./ajax_tool_guide.html" data-ajax-container=".tool-guide-wrap" data-ajax-callback="_ajaxCallback.guide")
+              i.icon-tool-guide
+              span.text Guide
+            li.complete.ajax_open(href="javascript:;" data-ajax-route="./ajax_customized_submit.html" data-ajax-container=".customized-submit-wrap" data-ajax-callback="_ajaxCallback.normalLightbox")
+              i.icon-complete
+              span.text Submit
+            li.function-tips Guide For Customized
+          a.close-btn.ajax_open(href="javascript:;" data-ajax-route="./ajax_leave_check.html" data-ajax-container=".leave-check-wrap" data-ajax-callback="_ajaxCallback.normalLightbox")
+            span.icon
+            span.text Leave
+        // 主要內容
+        main
+          .customized-wrap
+            .tool-guide-mask
+              .right
+                .text
+                  .line1 Remarks area
+                  .line2 Needs can be supplemented in detail here
+            .artboard-block
+              .toolbar-top
+                ul.bg-select.mobile
+                  li.item.selected.active(data-page="default" style="background-image: url('../../../uploads/product/pic1.jpg')")
+                    .add-new
+                  li.item(data-page="attached1")
+                    .delete-paper Delete
+                    .add-new
+                  li.item(data-page="attached2")
+                    .delete-paper Delete
+                    .add-new
+                  li.function-tips Add files
+                //data-default 帶產品名稱
+                .product-name
+                  span Name
+                  span(data-default="M7703-N44-1") M7703-N44-1
+                .maximize
+                  span.max Maximize
+                  span.min Minimize
+                  i.icon-open_web
+                  i.icon-close-cart
+                  .function-tips Full screen
+              .toolbar-left
+                a.select.tool-btn.active(href="javascript:;" data-tool="select")
+                  i.icon-select
+                a.move.tool-btn(href="javascript:;" data-tool="move")
+                  i.icon-move
+                //data-alert 之後多語系文字要串在這
+                a.zoom(href="javascript:;" data-option="zoom-in" data-alert="Maximum limit")
+                a.zoom(href="javascript:;" data-option="zoom-out" data-alert="Minimum limit")
+                .function-tips Select & Drag & Zoom
+              .toolbar-bottom
+                ul.bg-select
+                  li.item.selected.active(data-page="default" style="background-image: url('../../../uploads/product/pic1.jpg')")
+                    .add-new
+                  li.item(data-page="attached1")
+                    .delete-paper Delete
+                    .add-new
+                  li.item(data-page="attached2")
+                    .delete-paper Delete
+                    .add-new
+                  li.function-tips Add files
+                .draw-tool(data-select-tool="")
+                  .tool-btn(data-tool="brush")
+                    i.icon-brush
+                    .tool-setting
+                      .setting-wrap
+                        .setting-btn.brush-size.size-L(data-size="10")
+                        .setting-btn.brush-size.size-M.default.active(data-size="5")
+                        .setting-btn.brush-size.size-S(data-size="3")
+                  .tool-btn(data-tool="text")
+                    i.icon-text
+                  .tool-btn(data-tool="shape")
+                    i.icon-shape
+                    .tool-setting
+                      .setting-wrap
+                        .setting-btn.shape-btn.default.active(data-option="circle")
+                        .setting-btn.shape-btn(data-option="rect")
+                  .tool-btn(data-tool="line")
+                    i.icon-draw-line
+                    .tool-setting
+                      .setting-wrap
+                        .setting-btn.line-btn.default.active(data-option="straight-line")
+                          i.icon-draw-line
+                        .setting-btn.line-btn(data-option="arrow")
+                          i.icon-draw-arrow
+                  .tool-btn(data-tool="color")
+                    .color-box(data-option="fill")
+                      .display.fill-color
+                    .color-box.disabled(data-option="stroke")
+                      .display.stroke-color
+                  .color-select
+                    .color-wrap
+                      .status
+                        .now-color
+                          .display.fill-color
+                          .display.stroke-color
+                        .type-select
+                          .type-box.active(data-option="fill")
+                            .fill-color
+                          .type-box.disabled(data-option="stroke")
+                            .stroke-color
+                      .color-palettes
+                        .row
+                          .grid
+                            .colorBox.disabled
+                          each data in colorPalettes
+                            .grid
+                              .colorBox(style=`background-color: ${data}`)
+                  .function-tips Texting & Drawing tools
+                .draw-step
+                  //data-alert 之後多語系文字要串在這
+                  .icon-prev-step.step-btn(data-option="undo" data-alert="No Prev Step")
+                  .icon-next-step.step-btn(data-option="redo" data-alert="No Next Step")
+                  .function-tips Previous & Next
+                .function-tips Tools bar for add files, texting, drawing, and previous & next steps.
+              //可視範圍
+              .visual-range
+                .guide-mask
+                  .text
+                    .line1 Painting Area
+                    .line2 Using the tools below for drawing here
+                //選擇背景圖
+                .select-background
+                  .content
+                    .content-head Select file from
+                    .select-from
+                      .item.upload
+                        input#uploadBG(type="file")
+                        .icon.icon-photo
+                        .text Upload
+                      .or
+                        .text or
+                      .item.favorite
+                        .icon.icon-collect
+                        .text Favorite
+                    .back-btn Back
+                //確認刪除畫布
+                .paper-delete-check
+                  .check-wrap
+                    .icon.icon-delete2
+                    .title Delete <span class="paper-name" data-name="Attached file-1"></span> ?
+                    .description Any actions you made will be cleared after deleting.
+                    .btn-group
+                      a.btn.no(href="javascript:;") No
+                      a.btn.yes(href="javascript:;") Yes
+
+                //畫布
+                .drawing-paper.show(data-page="default" data-src="../../../uploads/product/pic1.jpg")
+                  .artboard-background
+                    .bg-box
+                  canvas#default
+                  canvas#default-cursor
+                .drawing-paper(data-page="attached1")
+                  .artboard-background
+                    .bg-box
+                  canvas#attached1
+                  canvas#attached1-cursor
+                .drawing-paper(data-page="attached2")
+                  .artboard-background
+                    .bg-box
+                  canvas#attached2
+                  canvas#attached2-cursor
+
+            .other-wrap
+              .block
+                .from-favorite
+                  .content
+                    .content-head Select file from
+                    .select-from
+                      .item
+                        .icon.icon-collect
+                        .text Favorite
+              .block
+                .remark-block
+                  .content
+                    .title Remarks column
+                    .description Please add your needs in the field below
+                    .form
+                      each data in remarks
+                        .form-group
+                          .field-title= data.title
+                          .option-wrap
+                            if data.hasCancel
+                              .cancel-option
+                                label.checkbox
+                                  input(type="checkbox")
+                                  .fake-checkbox
+                                    span
+                                  p Cancel
+                            .option
+                              each options in data.options
+                                .option-group
+                                  label.checkbox
+                                    input(type="checkbox")
+                                    .fake-checkbox
+                                      span
+                                    p= options.option
+                                  input(type="text" placeholder= options.placeholder)
+                    a.backTop(href="javascript:;")
+                      i.icon-top
+                .favorite-block
+                  .content
+                    .title Favorite
+                    .description Please select product below
+                    ul.mobile-filter-tabs
+                      li.filter-product.active Product Categories
+                      li.filter-collect Collect Categories
+                    .filter-type-select
+                      .item.product.active
+                        .type Product Categories
+                        .categories-select(data-default="ALL")
+                          .selected 
+                            .text ALL
+                            .arrow.icon-arrow-up
+                          .dropdown
+                            ul.scrollbar-inner
+                              li New Arrival
+                              li Lace
+                              li Beading
+                              li Embroidery
+                              li Accessories
+                              li Wedding
+                      .or OR
+                      .item.collect
+                        .type Collect Categories
+                        .categories-select(data-default="Default")
+                          .selected 
+                            .text Default
+                            .arrow.icon-arrow-up
+                          .dropdown
+                            ul.scrollbar-inner
+                              each data,index in collect
+                                li= data
+                    .product-list
+                      .row
+                        each data in products
+                          .grid
+                            a.item(href="javascript:;")
+                              .img-wrapper
+                                //客戶自行設定標籤的 文字 / 顏色
+                                //一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot
+                                if data.tag == 'New'
+                                  .tag(style="background-color: #26ae8c")= data.tag
+                                else if data.tag == 'Hot'
+                                  .tag(style="background-color: #5e50b5")= data.tag
+                                .shadow
+                                .img-box(style="background-image: url('" + data.img + "')")
+                              .number= data.number
+                              .name= data.name
+                    .load-more
+                      .icon
+                        img(src="../../../assets/img/loading.svg", alt="")
+                      .text Loading
+
+          
+    
+  //引入的script
+  include ../layouts/_script.pug
+  script(src="../../../assets/js/plugins/fabric/fabric_4.1.0.min.js")
+  script(src="../../../assets/js/customized-dist.js")

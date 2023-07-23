@@ -1,0 +1,94 @@
+.change-photo-success-wrap
+  position: fixed
+  width: 100%
+  top: 0
+  bottom: 0
+  left: 0
+  background-color: rgba(0,0,0,0.6)
+  opacity: 0
+  transition: opacity 0.4s
+  z-index: 99
+  &.show
+    opacity: 1
+    .close-btn
+      opacity: 1
+    .modal-scroll-wrap
+      .modal-contain
+        .modal-dialog
+          opacity: 1
+          transform: scale(1)
+
+  .modal-scroll-wrap
+    width: 100%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    .modal-contain
+      display: table-cell
+      vertical-align: middle
+      width: 100vw
+      height: 100vh
+      padding: 80px 20px
+      +rwdmax(575)
+        padding: 9.0375vh 20px
+      .modal-dialog
+        position: relative
+        max-width: 900px
+        width: 100%
+        margin: 0 auto
+        padding: 12px
+        background-color: white
+        opacity: 0
+        transform: scale(0.7)
+        transition: transform 0.6s, opacity 0.6s
+        .modal-content
+          width: 100%
+          height: 100%
+          padding: 64px 0
+          border: 1px solid #a88438
+          text-align: center
+          .modal-header
+            margin-bottom: 28px
+            .title
+              margin-bottom: 8px
+              +fontSetBold($font: $LBB, $size: px(20))
+            .description
+              +fontSet($size: px(13))
+          .modal-body
+            margin-bottom: 48px
+            .member-photo
+              position: relative
+              display: block
+              width: 130px
+              height: 130px
+              border-radius: 50%
+              margin: 0 auto 10px auto
+              background-repeat: no-repeat
+              background-size: cover
+              background-position: center
+              overflow: hidden
+            .text-area
+              padding: 0 20px
+              +maxWidth($maxw: 375px)
+              .line1
+                margin-bottom: 20px
+                +fontSetBold($font: $LBB, $size: px(20))
+              .line2
+                +fontSet($size: px(13), $lh: 25px, $color: #555555)
+          .modal-footer
+            .modal-btn-group
+              +flex
+              +rwdmax(575)
+                flex-direction: column
+              .modal-btn
+                width: 160px
+                height: 50px
+                border-radius: 10rem
+                +fontSetBold($font: $LBB, $size: px(13), $lh: 50px, $color: white)
+                &:not(:first-child)
+                  margin-left: 20px
+                  +rwdmax(575)
+                    margin-left: 0
+                    margin-top: 20px
+

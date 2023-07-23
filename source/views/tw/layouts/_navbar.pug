@@ -1,0 +1,240 @@
+-
+  var navLink = [
+    {
+      page: "CLOSER TO MING",
+      href: "./about.html",
+    },
+    {
+      page: "MING TO TELL",
+      href: "./news.html",
+    },
+    {
+      page: "PICK MING UP",
+      href: "./product.html",
+    },
+    {
+      page: "LET MING HELP",
+      href: "./contact.html",
+    },
+  ]
+
+  var menuList = [
+    {
+      p: 'New Arrival',
+      ul: [
+        'Cellection',
+        'Popular Series',
+        'Top50',
+        'Weekly Rank',
+        'Inspiration',
+        'Designer Special',
+      ],
+    },
+    {
+      p: 'Lace',
+      ul: [
+        'Cellection',
+        'Popular Series',
+        'Top50',
+        'Weekly Rank',
+        'Inspiration',
+        'Designer Special'
+      ],
+    },
+    {
+      p: 'Fabric',
+      ul: [
+        'Cellection',
+        'Popular Series',
+        'Top50',
+        'Weekly Rank',
+        'Inspiration',
+        'Designer Special'
+      ],
+    },
+    {
+      p: 'Beading',
+      ul: [
+        'Cellection',
+        'Popular Series',
+        'Top50',
+        'Weekly Rank',
+        'Inspiration',
+        'Designer Special'
+      ],
+    },
+    {
+      p: 'Embroidery',
+      ul: [
+        'Cellection',
+        'Popular Series',
+        'Top50',
+        'Weekly Rank',
+        'Inspiration',
+        'Designer Special'
+      ],
+    },
+    {
+      p: 'Accessories',
+      ul: [
+        'Cellection',
+        'Popular Series',
+        'Top50',
+        'Weekly Rank',
+        'Inspiration',
+        'Designer Special'
+      ],
+    },
+  ]
+//原本畫面上的導覽列
+nav
+  .header
+    a.logo(href="./index.html")
+      img.logo-black(src="../../../assets/img/logo-black.svg", alt="LOGO")
+      img.logo-white(src="../../../assets/img/logo-white.svg", alt="LOGO")
+    .function-bar
+      a.function-btn.member(href="javascript:;")
+        i.icon-member
+      .function-btn.language
+        i.icon-language
+        p
+          a(href="javascript:;") 繁
+          a(href="javascript:;") EN
+      a.function-btn.shop(onclick="_shoppingCart.openCart()" href="javascript:;" data-count="1")
+        i.icon-shop
+      a.function-btn.search(href="./product_search.html")
+        i.icon-search
+      .menu-switch MENU
+  .menubar(data-animate="fadeIn" data-duration="0.3s" data-delay="0.4s")
+    ul.menu
+      each data in navLink
+        li
+          a(href= data.href)= data.page
+//視窗往上滾動後固定在上方的導覽列
+//這邊也要和body寫一樣的顏色
+nav.sticky
+  .header
+    a.logo(href="./index.html")
+      img.logo-black(src="../../../assets/img/logo-black.svg", alt="LOGO")
+      img.logo-white(src="../../../assets/img/logo-white.svg", alt="LOGO")
+    .function-bar
+      a.function-btn.member(href="javascript:;")
+        i.icon-member
+      .function-btn.language
+        i.icon-language
+        p
+          a(href="javascript:;") 繁
+          a(href="javascript:;") EN
+      a.function-btn.shop(onclick="_shoppingCart.openCart()"  href="javascript:;" data-count="1")
+        i.icon-shop
+      a.function-btn.search(href="./product_search.html")
+        i.icon-search
+      .menu-switch MENU
+  .menubar
+    ul.menu
+      each data in navLink
+        li
+          a(href= data.href)= data.page
+// 主選單
+section.menulbox
+  .menu-wrap
+    .menu-closebtn
+    .menu-status
+      .photo-wrap
+        // 未登入 導向至登入頁 / div的background-image: url('') 留空，裡面要有 <i class="icon-member-status"></i>
+        // 登入後 導向至會員中心 / div的background-image: url('') 換上圖片路徑，裡面的 <i class="icon-member-status"></i> 刪除
+        a(href="./member.html")
+          div(style="background-image: url('../../../uploads/member/default-photo10-200x200.png')")
+            // i.icon-member-status
+          //登入前文字 Login Now ! / 登入後文字 Hello,xxxxx
+          p Hello,Hailey
+      // 固定左下功能
+      .fixed-left-function.innerMenu
+        a.function-btn.search(href="./product_search.html")
+          i.icon-search
+        a.function-btn.shop(onclick="_shoppingCart.openCart()"  href="javascript:;" data-count="1")
+          i.icon-shop
+        .function-btn.language
+          i.icon-language
+          p
+            a(href="javascript:;") 繁
+            a(href="javascript:;") EN
+        // 此為登入前的結構↓↓
+        // a.function-btn.member(href="javascript:;")
+        //   i.icon-member
+        // 此為登入後的結構↓↓
+        a.function-btn.member.ajax_open(href="javascript:;" data-ajax-route="./ajax_member_logout.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")
+          i.icon-member-logout
+    .menu-list.scrollbar-macosx.scroll-wrap(data-scrollbar)
+      ul.list
+        each list,key in menuList
+          li(class=key==0?'active':'')
+            p=list.p
+            ul(style=key==0?"display: block":'')
+              each p in list.ul
+                li
+                  a(href="javascript:;")=p
+    .menu-block
+      ul.unit
+        li
+          a(href="./product.html") Pick MING Up
+        li
+          a(href="./about.html") Closer To MING
+        li
+          a(href="./news.html") MING To Tell
+        li
+          a(href="./contact.html") Let MING Help
+        li
+          a(href="./member.html") Member Of MING
+        li
+          a(href="./qa.html") MING's service
+      .control
+        .wrap
+          div
+            p
+              a(href="javascript:;") Recruit
+            p
+              a.ajax_open(href="javascript:;" data-ajax-route="./ajax_privacy_policy.html" data-ajax-container=".privacy-lbox" data-ajax-callback="_ajaxCallback.privacyPolicy") Privacy Policy
+          ul.social-link
+            li
+              a(href="javascript:;")
+                i.icon-ig
+            li
+              a(href="javascript:;")
+                i.icon-fb
+            li
+              a(href="javascript:;")
+                i.icon-twitter
+            li
+              a(href="javascript:;")
+                i.icon-line
+            li
+              a(href="javascript:;")
+                i.icon-wechat
+            li
+              a(href="javascript:;")
+                i.icon-youtube
+  .menu-photo
+    .decor1
+      img(src="../../../assets/img/menu-decor01.png", alt="")
+    .decor2
+      img(src="../../../assets/img/menu-decor02.png", alt="")
+    .swiper-container.swiper-no-swiping(
+      data-swiper-name="menu-banner"
+      data-swiper-num="1"
+      data-swiper-nav="off"
+      data-swiper-arrow="off"
+      data-swiper-autoplay="on"
+      data-swiper-breakpoints="{767: { slidePerview: 1 }}")
+      // 圖片尺寸 (650*1080)
+      .swiper-wrapper
+        .swiper-slide(data-line1="Hot Series", data-line2="Mysterious Tiger")
+          // 可自訂連結，沒有連結時加上 .default
+          a.content.default(href="javascript:;" style="background-image: url('../../../uploads/home/menu_banner.jpg')")
+        .swiper-slide(data-line1="Hot Series", data-line2="Mysterious Tiger")
+          // 可自訂連結，沒有連結時加上 .default
+          a.content.default(href="javascript:;" style="background-image: url('../../../uploads/home/menu_banner.jpg')")
+    // 文字可選黑白兩色 .white .black
+    .text-box.white
+      .text1 
+      .text2 

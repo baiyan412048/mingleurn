@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/checkout_confirm.css")
+  body.checkout_confirm(data-page="checkout_confirm")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .header
+            h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Self-checkout
+            p.section-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Dear customer, welcome to use online Self-checkout service. Please confirm the payment information to completed payment, thank you!
+
+          .container
+            .content(style="background-image: url('../../../uploads/shopping/checkout-form-success.jpg')")
+              //- .result-circle.success
+              //-   .line1 Confirm
+              //-   .line2 Submit successful !
+              //-   .brush-img
+              //-     img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/shopping/result-decor.png", alt="")
+              section.form
+                .form-row
+                  .form-grid
+                    label.form-group.required
+                      p Name
+                      input(type="text" value="ming wang" readonly)
+                .form-row
+                  .form-grid
+                    label.form-group.required
+                      p Amount
+                      input.enter-amount(type="number" value="300" readonly)
+              p.description Please confirm the payment information.
+              .btn-group
+                a.btn.btn-black(href="./checkout_amount.html") Back to Self-checkout
+                a.btn.btn-gold(href="javascript:;") Submit
+
+        // 頁尾
+        footer
+          .footer-top
+            .header Achieve Now
+            include ../layouts/_quick-link.pug
+          include ../layouts/_footer_bottom.pug
+
+  //引入的script
+  include ../layouts/_script.pug

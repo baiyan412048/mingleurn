@@ -1,0 +1,149 @@
+-
+  var map = [
+    {
+      position: 'up',
+      mark:{
+        x: '22.8%',
+        y: '20.8%',
+      },
+      info:{
+        place: 'TAIPEI',
+        phone: '+886-2-29512727',
+        email: 'mingleurn1987@gmail.com',
+        address: '9F, NO. 156, Sec.1, Zhongshan Rd., Banqiao Dist., New Taipei City 22065',
+        description: 'Please contact us directly for further info'
+      }
+    },
+    {
+      position: 'up',
+      mark:{
+        x: '27.7%',
+        y: '42.5%',
+      },
+      info:{
+        place: 'DONGGUAN',
+        phone: '+886-2-29512727',
+        email: 'mingleurn1987@gmail.com',
+        address: '9F, NO. 156, Sec.1, Zhongshan Rd., Banqiao Dist., New Taipei City 22065',
+        description: 'Please contact us directly for further info'
+      }
+    },
+    {
+      position: 'up',
+      mark:{
+        x: '21.2%',
+        y: '56%',
+      },
+      info:{
+        place: 'SHANGHAI',
+        phone: '+886-2-29512727',
+        email: 'mingleurn1987@gmail.com',
+        address: '9F, NO. 156, Sec.1, Zhongshan Rd., Banqiao Dist., New Taipei City 22065',
+        description: 'Please contact us directly for further info'
+      }
+    },
+    {
+      position: 'down',
+      mark:{
+        x: '37.2%',
+        y: '66%',
+      },
+      info:{
+        place: 'YANGON',
+        phone: '+886-2-29512727',
+        email: 'mingleurn1987@gmail.com',
+        address: '9F, NO. 156, Sec.1, Zhongshan Rd., Banqiao Dist., New Taipei City 22065',
+        description: 'Please contact us directly for further info'
+      }
+    },
+    {
+      position: 'down',
+      mark:{
+        x: '40.3%',
+        y: '85.4%',
+      },
+      info:{
+        place: 'NEW YORK',
+        phone: '+886-2-29512727',
+        email: 'mingleurn1987@gmail.com',
+        address: '9F, NO. 156, Sec.1, Zhongshan Rd., Banqiao Dist., New Taipei City 22065',
+        description: 'Please contact us directly for further info'
+      }
+    },
+    {
+      position: 'down',
+      mark:{
+        x: '11.2%',
+        y: '96.4%',
+      },
+      info:{
+        place: 'LOS ANGELES',
+        phone: '+886-2-29512727',
+        email: 'mingleurn1987@gmail.com',
+        address: '9F, NO. 156, Sec.1, Zhongshan Rd., Banqiao Dist., New Taipei City 22065',
+        description: 'Please contact us directly for further info'
+      }
+    },
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/about_location.css")
+  body.about_location(data-page="about_location")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .header
+              a.back-overview(href="./about.html") BACK
+              h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Global Location
+              .unit-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") MINGLEURN has been adhering to the sustainable operation for many years. The products are favored by designers. Innovative design, professional service and reasonable prices, the products are sold worldwide.
+            .location-section
+              .map
+                picture
+                  source(media="(min-width: 1025px)", data-srcset="../../../uploads/about/location_en.png")
+                  source(media="(min-width: 768px)", data-srcset="../../../uploads/about/location_en_tablet.png")
+                  img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../uploads/about/location_en_mobile.png", alt="")
+                .marker-wrap
+                  each data,index in map
+                    .location-point(style=`top: ${data.mark.y};left: ${data.mark.x};`)
+                      .custom-mark(data-place= 'place' + (index+1))
+                        img(src="../../../assets/img/about/map-mark.png", alt="")
+              .location-info-wrap
+                each data,index in map
+                  .location-info(id= 'place' + (index+1) class= data.position)
+                    h2.place= data.info.place
+                    ul.contact-info
+                      li
+                        span.key Phone
+                        span.value= data.info.phone
+                      li.email
+                        span.key E-mail
+                        a.value(href="mailto:kevin@wddgrop.com")= data.info.email
+                      li.address
+                        span.key Address
+                        a.value(href="https://www.google.com.tw/maps/place/%E5%A8%81%E5%BE%B7%E7%B6%B2%E9%A0%81%E8%A8%AD%E8%A8%88/@24.1546593,120.6631086,17z/data=!3m1!4b1!4m5!3m4!1s0x34693d9f1d1ee119:0x9d235559e0bbc032!8m2!3d24.1546544!4d120.6652973" target="_blank")= data.info.address
+                    p.extra-description= data.info.description
+
+
+
+
+        .footer
+          a.backTop(href="javascript:;" data-anchor-container=".main-wrapper")
+            i.icon-top
+
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

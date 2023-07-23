@@ -1,0 +1,152 @@
+-
+  var cartList = [
+    {
+      customized: false,
+      smallUnit: true,
+      img: '../../../uploads/product/list01.jpg',
+      name: 'Chantilly Lace',
+      set: '50Y',
+      unitPrice: '3.00 / Y',
+      count: '1',
+      setPrice: '250',
+    },
+    {
+      customized: true,
+      smallUnit: false,
+      img: '../../../uploads/product/list01.jpg',
+      name: 'Chantilly Lace',
+      set: '50Y',
+      unitPrice: '5.00 / Y',
+      count: '1',
+      setPrice: '250',
+    },
+    {
+      customized: false,
+      smallUnit: false,
+      img: '../../../uploads/product/list02.jpg',
+      name: 'Chantilly Lace',
+      set: '50PRS',
+      unitPrice: '3.00 / PRS',
+      count: '30',
+      setPrice: '4,500',
+    },
+    {
+      customized: false,
+      smallUnit: false,
+      img: '../../../uploads/product/list03.jpg',
+      name: 'Chantilly Lace',
+      set: '50PRS',
+      unitPrice: '0.80 / PRS',
+      count: '50',
+      setPrice: '2,000',
+    },
+    {
+      customized: false,
+      smallUnit: false,
+      img: '../../../uploads/product/list04.jpg',
+      name: 'Chantilly Lace',
+      set: '50Y',
+      unitPrice: '5.00 / Y',
+      count: '1',
+      setPrice: '250',
+    },
+    {
+      customized: false,
+      smallUnit: false,
+      img: '../../../uploads/product/list05.jpg',
+      name: 'Chantilly Lace',
+      set: '50PRS',
+      unitPrice: '3.00 / PRS',
+      count: '30',
+      setPrice: '4,500',
+    },
+    {
+      customized: false,
+      smallUnit: false,
+      img: '../../../uploads/product/list06.jpg',
+      name: 'Chantilly Lace',
+      set: '50PRS',
+      unitPrice: '0.80 / PRS',
+      count: '50',
+      setPrice: '2,000',
+    },
+  ]
+  
+.cart-background.close-cart
+  //購物車沒有商品時加上 empty 這個 Class
+  .cart-wrapper
+    .cart-top
+      .top-left
+        .count 6
+        .cart-header
+          .title MY SHOPPING BAG
+          .description Item is only kept for 30 days
+      .top-right
+        a.close.close-cart(href="javascript:;")
+          i.icon-close-cart
+          i.icon-open_web
+      .select-all
+        .all-checkbox
+          input#select-all(type="checkbox" checked)
+          .fake-checkbox
+        label.text(for="select-all") Select All
+    .cart-middle
+      .cart-list-wrapper.scrollbar-inner
+        ul
+          //如果已經完成客製化 li 請加上 customized 這個 Class
+          each data in cartList
+            li(class= (data.customized ? 'customized' : ''))
+              .product-checkbox
+                input(type="checkbox" checked)
+                .fake-checkbox
+              .thumbnail(style="background-image: url('" + data.img + "')")
+              .product-info
+                if data.smallUnit
+                  .sm-unit Small Unit
+                .name= data.name
+                .unit-price
+                  if !data.smallUnit
+                    span= '1 SET = ' + data.set
+                  span= 'USD ' + data.unitPrice
+                .price
+                  p customized
+                  //data-inventories 裡面請填庫存數量
+                  .buy-count(data-inventories="50")
+                    span.minus
+                    .count-wrap
+                      input.count(type="text" value= data.count)
+                      span.unit set
+                    span.plus
+                  .total-price
+                    span.unit USD
+                    span.number= data.setPrice
+              .product-option
+                //如果商品已經下架，顯示下面這個結構
+                a.option-btn.removed(href="javascript:;" style="display: none")
+                  .text Removed
+                a.option-btn.edit.ajax_open(href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")
+                  .text Customzied
+                  .icon
+                    i.icon-edit
+                a.option-btn.detail(href="javascript:;")
+                  .text See Detail
+                  .icon
+                    i.icon-detail
+                a.option-btn.delete.ajax_open(href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")
+                  .text Delete items
+                  .icon
+                    i
+      .empty-content
+        .icon-box
+          .icon.icon-shop
+          .text List is empty
+        p.description You haven’t  added any item.
+    .cart-bottom
+      .final-total
+        .text Total
+        .price
+          span.number 21,250
+          span.unit USD
+        .without-customize ( Without customized )
+      //結帳連結串到 data-href
+      .next-step(data-href="./checkout.html" data-ajax-route="./ajax_select_remind.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox") Next

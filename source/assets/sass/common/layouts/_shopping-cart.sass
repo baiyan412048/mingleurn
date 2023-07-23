@@ -1,0 +1,524 @@
+.cart-background
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+  height: calc(var(--vh, 1vh) * 100)
+  padding-top: 11.5vh
+  padding-left: 175px
+  z-index: 1000
+  cursor: default
+  +rwdmax(1024)
+    padding-top: 8.8vh
+    padding-left: 0
+  +rwdmax(575)
+    padding-top: 0
+  .cart-wrapper
+    max-width: 700px
+    width: 100%
+    height: 82.4vh
+    border-radius: 10px
+    background-color: white
+    padding: 42px
+    user-select:  none
+    +rwdmax(1024)
+      margin: 0 auto
+    +rwdmax(767)
+      max-width: 90%
+    +rwdmax(575)
+      max-width: 100%
+      height: 100%
+      border-radius: 0
+      padding: 0
+    &.empty
+      .cart-top
+        .select-all
+          display: none
+      .cart-middle
+        height: calc(100% - 152px)
+        +rwdmax(767)
+          height: calc(100% - 149px)
+        >.cart-list-wrapper
+          display: none
+        >.empty-content
+          +flex($direction: column)
+      .cart-bottom
+        .next-step
+          background-color: rgba(0,0,0,0.3)
+          cursor: not-allowed
+    .cart-top
+      width: 100%
+      padding: 18px 8px 0 8px
+      flex-shrink: 0
+      +flex($wrap: wrap, $x: flex-start, $y: flex-start)
+      +rwdmax(575)
+        padding: 18px 0 0 0
+      .top-left
+        padding-left: 12px
+        +flex($x: flex-start)
+        +rwdmax(575)
+          padding-left: 20px
+        .count
+          width: 50px
+          height: 50px
+          border-radius: 50%
+          background-color: #a88438
+          margin-right: 20px
+          +flex
+          +fontSetBold($font: $LBB, $size: px(16), $color: white)
+          +rwdmax(767)
+            width: 40px
+            height: 40px
+            margin-right: 12px
+        .cart-header
+          .title
+            margin-bottom: 8px
+            +fontSetBold($font: $LBB, $size: px(20))
+            +rwdmax(767)
+              font-size: px(16)
+          .description
+            +fontSet($size: px(13))
+            +rwdmax(767)
+              font-size: px(12)
+      .top-right
+        margin-left: auto
+        +rwdmax(575)
+          margin: 0 14px 18px auto
+        .close
+          .icon-close-cart,.icon-open_web
+            display: block
+            font-size: 26px
+            +rwdmax(767)
+              font-size: 19px
+          .icon-close-cart
+            display: block
+            +rwdmax(1024)
+              display: none
+          .icon-open_web
+            display: none
+            +rwdmax(1024)
+              display: block
+      .select-all
+        width: 100%
+        padding: 34px 5px 12px 5px
+        border-bottom: 3px solid #000
+        +flex($x: flex-start)
+        +rwdmax(575)
+          padding: 20px 20px 12px 20px
+        .all-checkbox
+          position: relative
+          width: 20px
+          height: 20px
+          flex-shrink: 0
+          input
+            position: relative
+            width: 100%
+            height: 100%
+            margin: 0
+            opacity: 0
+            z-index: 1
+            cursor: pointer
+            &:checked ~ .fake-checkbox
+              border: 1px solid #a88438
+              &::before
+                opacity: 1
+          .fake-checkbox
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            border-radius: 5px
+            border: 1px solid rgba(0,0,0,0.5)
+            transition: border 0.2s linear
+            +flex
+            &::before
+              content: ''
+              width: 14px
+              height: 14px
+              border-radius: 3px
+              background-color: #a88438
+              opacity: 0
+              transition: opacity 0.2s linear
+        .text
+          padding-left: 12px
+          cursor: pointer
+          +fontSetBold($font: $LBB, $size: px(15))
+    .cart-middle
+      width: 100%
+      height: calc(100% - 225px)
+      +rwdmax(767)
+        height: calc(100% - 218px)
+      +rwdmax(575)
+        height: calc(100% - 204px)
+      .scrollbar-inner>.scroll-element .scroll-bar
+        background-color: #dddddd
+      .cart-list-wrapper
+        height: 100%
+        overflow: auto
+        ul
+          padding: 0 8px
+          +rwdmax(767)
+            padding: 0 10px
+          >li
+            padding: 32px 0 32px 5px
+            +flex($x: flex-start, $y: center)
+            +rwdmin(768)
+              &:hover
+                .product-option
+                  .option-btn
+                    opacity: 1
+            +rwdmax(767)
+              position: relative
+              padding: 18px 0 18px 5px
+            +rwdmax(575)
+              align-items: flex-start
+              padding: 18px 0 18px 10px
+            &:not(:first-child)
+              border-top: 1px solid rgba(0,0,0,0.3)
+            &.customized
+              .product-info
+                .price
+                  p
+                    display: block
+                  .buy-count,.total-price
+                    display: none
+              .product-option
+                .option-btn
+                  &.edit
+                    display: none
+                  &.detail
+                    display: flex
+                    opacity: 1
+            .product-checkbox
+              position: relative
+              width: 20px
+              height: 20px
+              margin-right: 20px
+              flex-shrink: 0
+              +rwdmax(575)
+                margin-top: 20px
+              input
+                position: relative
+                width: 100%
+                height: 100%
+                margin: 0
+                opacity: 0
+                z-index: 1
+                cursor: pointer
+                &:checked ~ .fake-checkbox
+                  border: 1px solid #a88438
+                  &::before
+                    opacity: 1
+              .fake-checkbox
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                border-radius: 5px
+                border: 1px solid rgba(0,0,0,0.5)
+                transition: border 0.2s linear
+                +flex
+                &::before
+                  content: ''
+                  width: 14px
+                  height: 14px
+                  border-radius: 3px
+                  background-color: #a88438
+                  opacity: 0
+                  transition: opacity 0.2s linear
+            .thumbnail
+              width: 80px
+              height: 80px
+              border-radius: 50%
+              flex-shrink: 0
+              margin-top: 8px
+              background-repeat: no-repeat
+              background-position: center
+              background-size: cover
+              +rwdmax(767)
+                width: 60px
+                height: 60px
+                margin: 0 15px 0 0
+              +rwdmax(575)
+                position: absolute
+                left: 50px
+            .product-info
+              width: 100%
+              padding: 0 38px
+              +rwdmax(767)
+                padding: 0 20px 0 0
+              +rwdmax(575)
+                padding: 0
+              .sm-unit
+                display: inline-block
+                background-color: #000
+                border-radius: 10rem
+                padding: 5px 12px
+                margin-bottom: 6px
+                +fontSetBold($font: $LBB, $size: px(12), $color: #fff)
+                +rwdmax(575)
+                  margin-left: 75px
+              .name
+                text-align: left
+                margin-bottom: 6px
+                +fontSetBold($font: $LBB, $size: px(14))
+                +rwdmax(575)
+                  margin-left: 75px
+              .unit-price
+                margin-bottom: 28px
+                +flex($x: flex-start)
+                +rwdmax(575)
+                  flex-direction: column
+                  align-items: flex-start
+                  margin-left: 75px
+                span
+                  margin-bottom: 8px
+                  +fontSet($size: px(12), $lh: 16px)
+                  &:nth-child(1)
+                    padding-right: 8px
+                    +rwdmax(575)
+                      padding-right: 0
+                  &:nth-child(2)
+                    padding-left: 8px
+                    border-left: 1px solid rgba(0,0,0,0.3)
+                    +rwdmax(575)
+                      padding-left: 0
+                      border: none
+              .price
+                +flex($x: flex-start)
+                p
+                  display: none
+                  width: 120px
+                  height: 35px
+                  background-color: #a88438
+                  border-radius: 10rem
+                  text-align: center
+                  flex-shrink: 0
+                  +fontSet($size: px(14), $lh: 35px, $color: white)
+                .buy-count
+                  width: 120px
+                  height: 20px
+                  margin-right: 54px
+                  +flex($y: baseline)
+                  +rwdmax(767)
+                    width: 105px
+                    margin-right: 20px
+                  .minus,.plus
+                    position: relative
+                    width: 16px
+                    height: 16px
+                    flex-shrink: 0
+                    cursor: pointer
+                    align-self: center
+                    +flex
+                    &:active
+                      &::before,&::after
+                        background-color: black
+                  .minus
+                    &::before
+                      content: ''
+                      position: absolute
+                      top: 50%
+                      left: 50%
+                      width: 16px
+                      height: 2px
+                      background-color: #878787
+                      transition: 0.3s
+                      margin: -1px 0 0 -8px
+                  .plus
+                    &::before
+                      content: ''
+                      position: absolute
+                      top: 50%
+                      left: 50%
+                      width: 16px
+                      height: 2px
+                      background-color: #878787
+                      margin: -1px 0 0 -8px
+                    &::after
+                      content: ''
+                      position: absolute
+                      top: 50%
+                      left: 50%
+                      width: 2px
+                      height: 16px
+                      background-color: #878787
+                      margin: -8px 0 0 -1px
+                  .count-wrap
+                    width: 100%
+                    height: 20px
+                    +flex($y: flex-end)
+                    .count
+                      width: calc(100% - 31px)
+                      height: 20px
+                      background: none
+                      border: none
+                      text-align: right
+                      padding: 0 4px
+                      flex-shrink: 0
+                      +fontSetBold($font: $LBB, $size: px(16), $lh: 1)
+                      +rwdmax(767)
+                        padding: 0 2.5px
+                    .unit
+                      padding: 0 4px
+                      white-space: nowrap
+                      margin-right: 4px
+                      user-select: none
+                      flex-shrink: 0
+                      +fontSet($size: px(13),$color: #666666, $lh: 16px)
+                      +rwdmax(767)
+                        padding: 0 2.5px
+                .total-price
+                  .unit
+                    margin-right: 4px
+                    +fontSetBold($font: $LBB, $size: px(12))
+                  .number
+                    +fontSetBold($font: $LBB, $size: px(16))
+            .product-option
+              width: 128px
+              flex-shrink: 0
+              margin-left: auto
+              +rwdmax(767)
+                width: 30px
+                +flex($direction: column)
+              .option-btn
+                width: 100%
+                height: 35px
+                padding: 0 8px
+                border-radius: 10rem
+                border: 1px solid #cccccc
+                opacity: 0
+                transition: 0.3s
+                +flex($x: flex-start)
+                +rwdmax(767)
+                  opacity: 1
+                  height: 30px
+                  padding: 0
+                  justify-content: center
+                &:hover
+                  border: 1px solid transparent
+                  background-color: #f0f0f0
+                .text
+                  width: 100%
+                  text-align: center
+                  +fontSetBold($font: $LBB, $size: px(12))
+                  +rwdmax(767)
+                    display: none
+                .icon
+                  width: 18px
+                  height: 18px
+                  flex-shrink: 0
+                  +flex
+                  +rwdmax(767)
+                    width: 14px
+                    height: 14px
+                  >i
+                    display: block
+                &:not(:first-child)
+                  margin-top: 8px
+                  +rwdmax(767)
+                    margin-top: 4px
+                &.removed
+                  border: none
+                  background-color: rgba(0,0,0,0.5)
+                  .text
+                    color: white
+                &.edit
+                  .icon
+                    i
+                      font-size: 17px
+                      +rwdmax(767)
+                        font-size: 14px
+                &.detail
+                  display: none
+                  .icon
+                    i
+                      font-size: 16px
+                      +rwdmax(767)
+                        font-size: 14px
+                &.delete
+                  .icon
+                    i
+                      position: relative
+                      width: 16px
+                      height: 16px
+                      transform: rotate(45deg)
+                      +rwdmax(767)
+                        width: 14px
+                        height: 14px
+                      &::before,&::after
+                        content: ''
+                        background-color: black
+                        +posCenter
+                      &::before
+                        width: 100%
+                        height: 2px
+                      &::after
+                        width: 2px
+                        height: 100%
+      .empty-content
+        display: none
+        width: 100%
+        height: 100%
+        .icon-box
+          text-align: center
+          margin-bottom: 34px
+          .icon
+            font-size: 58px
+            margin-bottom: 15px
+          .text
+            +fontSetBold($font: $LBB, $size: px(20))
+        .description
+          +fontSet($size: px(14), $lh: 25px, $color: rgba(0,0,0,0.8))
+    .cart-bottom
+      width: calc(100% - 16px)
+      padding-top: 28px
+      border-top: 3px solid black
+      flex-shrink: 0
+      margin: 0 auto
+      +flex($x: space-between)
+      +rwdmax(767)
+        width: 100%
+        padding: 20px 15px
+      .final-total
+        +rwdmax(767)
+          +flex($wrap: wrap, $x: flex-start, $y: baseline)
+        .text
+          margin-bottom: 4px
+          +fontSetBold($font: $LBB, $size: px(13))
+          +rwdmax(767)
+            font-size: px(12)
+            margin-bottom: 0
+            margin-right: 10px
+        .price
+          display: inline-block
+          .number
+            margin-right: 6px
+            +fontSetBold($font: $LBB, $size: px(26))
+            +rwdmax(767)
+              font-size: px(20)
+          .unit
+            +fontSetBold($font: $LBB, $size: px(12))
+        .without-customize
+          display: inline-block
+          margin-left: 6px
+          +fontSet($size: px(12), $color: rgba(0,0,0,0.6))
+          +rwdmax(767)
+            width: 100%
+            margin-left: 0
+            margin-top: 6px
+      .next-step
+        width: 140px
+        height: 50px
+        background-color: black
+        border-radius: 10rem
+        cursor: pointer
+        +flex
+        +fontSetBold($font: $LBB, $size: px(13), $color: white)
+        +rwdmax(767)
+          width: 100px
+          height: 40px

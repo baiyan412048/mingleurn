@@ -1,0 +1,19 @@
+.modal-scroll-wrap.scrollbar-macosx
+  .modal-contain
+    .modal-dialog
+      .modal-content
+        .step.create
+          .content-wrapper
+            .modal-header
+              .title CREATE NEW
+              .description Naming category name
+            .modal-body
+              .naming-area
+                i.icon-add-category
+                input(type="text" placeholder="Please enter name")
+                .text Create a name for your category!
+            .modal-footer
+              .modal-btn-group
+                a.modal-btn.delete.btn-gold.ajax_close(href="javascript:;") Cancel
+                // ↓↓↓ 後端可把 .ajax_close 拿掉 跑完你們的js再執行 _common.closeAjax('.add-collect-wrap') ↓↓↓
+                a.modal-btn.save.btn-black.ajax_close(href="javascript:;") Finish

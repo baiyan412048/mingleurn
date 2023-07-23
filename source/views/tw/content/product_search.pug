@@ -1,0 +1,453 @@
+-
+  products = [
+    {
+      tag: '',
+      img: '../../../uploads/product/list01.jpg',
+      number: 'M7702',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: 'New',
+      img: '../../../uploads/product/list02.jpg',
+      number: 'ER14486AG8',
+      name: 'Red&Green Flower',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list03.jpg',
+      number: 'M7704',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list04.jpg',
+      number: 'M7705',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list05.jpg',
+      number: 'ER14486AG5',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list06.jpg',
+      number: 'J15104A2',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list07.jpg',
+      number: 'J15104A4',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list08.jpg',
+      number: 'ER14486AG7',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list09.jpg',
+      number: 'M7703',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list10.jpg',
+      number: 'BJME500938T',
+      name: 'Red Flower with Green Leaf Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list11.jpg',
+      number: 'ER14486AG6',
+      name: 'Yellow Flying Bee Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: 'Hot',
+      img: '../../../uploads/product/list12.jpg',
+      number: 'J15104A3',
+      name: 'Horizontal Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list13.jpg',
+      number: 'BJME500938T',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list14.jpg',
+      number: 'J15104A1',
+      name: 'Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list15.jpg',
+      number: 'BJME500938T',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list16.jpg',
+      number: 'BJME500938T',
+      name: 'Yellow Flying Bee Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list17.jpg',
+      number: 'BJME500938T',
+      name: 'Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list18.jpg',
+      number: 'M7706',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+  ]
+
+-
+  categoryList = [
+    'Spring',
+    'Floral',
+    'Handmadeflower',
+    'MultipleColor',
+    'FasionLace',
+    'Comination',
+    'Applique',
+    'ColorfulLace',
+    'WhiteLace',
+    'Fabric'
+  ]
+
+-
+  colorList = [
+    {
+      color: 'White',
+      colorNumber: '#ffffff'
+    },
+    {
+      color: 'Ivory',
+      colorNumber: '#fff6b8'
+    },
+    {
+      color: 'Nude',
+      colorNumber: '#e9d6e4'
+    },
+    {
+      color: 'Navy',
+      colorNumber: '#375291'
+    },
+    {
+      color: 'Fuchsia',
+      colorNumber: '#994d88'
+    },
+    {
+      color: 'Green',
+      colorNumber: '#78caa0'
+    },
+    {
+      color: 'Red',
+      colorNumber: '#e71945'
+    },
+    {
+      color: 'Multiple Color',
+      colorNumber: ["#f4b5c7","#b5d4f1","#ffa366"]
+    },
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/product_search.css")
+  body.product_search(data-page="product_search")
+    a.sidebar-switch.sidebar-open(href="javascript:;")
+      .icon-right
+      .text Search
+    .search_sidebar
+      .sidebar-head
+        a.close(href="javascript:;")
+          i.icon-left
+        a.text.ajax_open(href="javascript:;" data-ajax-route="./ajax_mode_explain.html" data-ajax-container=".mode-explain-wrap" data-ajax-callback="_ajaxCallback.normalLightbox")
+          span Searching Guidelines
+          .tips ?
+      .search-mode
+        a.mode-item.selected(href="javascript:;")
+          .mode-icon.union-of
+        a.mode-item(href="javascript:;")
+          .mode-icon.intersection
+      .keyword-search
+        //搜尋時跑 _product_search.search() 這支，不管是按放大鏡或是在input按Enter
+        input(type="text" placeholder="Enter keywords...")
+        a.search-btn(href="javascript:;" onclick="_product_search.search()")
+          .icon-search
+      .search-range.scrollbar-macosx
+        .catagory-wrap
+          //預設第一個 .search-catagory 有active
+          .search-catagory.active
+            .catagory Hot Words
+            .option-collapse(style="display: block;")
+              ul.option-list
+                each data in categoryList
+                  li.option
+                    label.checkbox
+                      input(type="checkbox")
+                      .fake-checkbox
+                        span
+                      p= data
+            .arrow
+              i.icon-arrow-up
+          .search-catagory
+            .catagory Bridal
+            .option-collapse
+              ul.option-list
+                each data in categoryList
+                  li.option
+                    label.checkbox
+                      input(type="checkbox")
+                      .fake-checkbox
+                        span
+                      p= data
+            .arrow
+              i.icon-arrow-up
+          .search-catagory
+            .catagory Fashion
+            .option-collapse
+              ul.option-list
+                each data in categoryList
+                  li.option
+                    label.checkbox
+                      input(type="checkbox")
+                      .fake-checkbox
+                        span
+                      p= data
+            .arrow
+              i.icon-arrow-up
+          .search-catagory
+            .catagory Color
+            .option-collapse
+              ul.option-list
+                each data in colorList
+                  li.option
+                    label.checkbox
+                      input(type="checkbox")
+                      div.fake-checkbox
+                        span
+                      if data.color != 'Multiple Color'
+                        .colorBox(style=`background-color: ${data.colorNumber}`)
+                      else
+                        .colorBox(style=`background: linear-gradient(45deg, ${data.colorNumber[0]} 0%, ${data.colorNumber[1]} 50%, ${data.colorNumber[2]} 100%)`)
+                      p= data.color
+            .arrow
+              i.icon-arrow-up
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        // 主要內容
+        main
+          .result-wrap
+            .container
+              .header
+                a.back-overview(href="./product.html") BACK
+                .search-before-header
+                  .unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Popular Items
+                  .unit-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") View our popular products
+                .search-after-header
+                  .unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Product Search
+                  .unit-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Match all searching
+                  .function-bar(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s")
+                    .wrap
+                      .search-mode
+                        a.mode-item(href="javascript:;" data-text="The search results using this filter mode are as follows")
+                          .mode-icon.union-of
+                        a.mode-item(href="javascript:;" data-text="The search results using this filter mode are as follows2")
+                          .mode-icon.intersection
+                      a.icon-search.sidebar-open(href="javascript:;")
+                  .filter-text.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") The search results using this filter mode are as follows
+                  .search-keyword-container
+                    .content
+                      .clear-search Clear All
+                      .scrollbar-inner
+                        .inner-wrap
+                          .title You entered keyword <span class="keyword">12776-N44-2</span> and select items below
+                          .item-wrap
+                            .item
+                              .text Handmadeflower
+                              .remove
+                            .item
+                              .text MultipleColor
+                              .remove
+                            .item
+                              .text Comination
+                              .remove
+                            .item
+                              .text ColorfulLace
+                              .remove
+                            .item
+                              .text Custom label - 01
+                              .remove
+                            .item
+                              .text Custom label - 02
+                              .remove
+                            .item
+                              .text Custom label - 03
+                              .remove
+                            .item
+                              .text Custom label - 04
+                              .remove
+                            .item
+                              .text Custom label - 05
+                              .remove
+                            .item
+                              .text Custom label - 06
+                              .remove
+                            .item
+                              .text Handmadeflower
+                              .remove
+                            .item
+                              .text MultipleColor
+                              .remove
+                            .item
+                              .text Comination
+                              .remove
+                            .item
+                              .text ColorfulLace
+                              .remove
+                            .item
+                              .text Custom label - 01
+                              .remove
+                            .item
+                              .text Custom label - 02
+                              .remove
+                            .item
+                              .text Custom label - 03
+                              .remove
+                            .item
+                              .text Custom label - 04
+                              .remove
+                            .item
+                              .text Custom label - 05
+                              .remove
+                            .item
+                              .text Custom label - 06
+                              .remove
+                            .item
+                              .text Handmadeflower
+                              .remove
+                            .item
+                              .text MultipleColor
+                              .remove
+                            .item
+                              .text Comination
+                              .remove
+                            .item
+                              .text ColorfulLace
+                              .remove
+                            .item
+                              .text Custom label - 01
+                              .remove
+                            .item
+                              .text Custom label - 02
+                              .remove
+                            .item
+                              .text Custom label - 03
+                              .remove
+                            .item
+                              .text Custom label - 04
+                              .remove
+                            .item
+                              .text Custom label - 05
+                              .remove
+                            .item
+                              .text Custom label - 06
+                              .remove
+                            .item
+                              .text Handmadeflower
+                              .remove
+                            .item
+                              .text MultipleColor
+                              .remove
+                            .item
+                              .text Comination
+                              .remove
+                            .item
+                              .text ColorfulLace
+                              .remove
+                            .item
+                              .text Custom label - 01
+                              .remove
+                            .item
+                              .text Custom label - 02
+                              .remove
+                            .item
+                              .text Custom label - 03
+                              .remove
+                            .item
+                              .text Custom label - 04
+                              .remove
+                            .item
+                              .text Custom label - 05
+                              .remove
+                            .item
+                              .text Custom label - 06
+                              .remove
+                    .collapse-btn.open
+                      .text
+                      .icon
+                        .icon-arrow-up
+              .product-list.has-sidebar
+                .row
+                  each data in products
+                    .grid
+                      a.item(href="./product_detail.html")
+                        .img-wrapper
+                          //客戶自行設定標籤的 文字 / 顏色
+                          //一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot
+                          if data.tag == 'New'
+                            .tag(style="background-color: #26ae8c")= data.tag
+                          else if data.tag == 'Hot'
+                            .tag(style="background-color: #5e50b5")= data.tag
+                          .shadow
+                          .img-box.b-lazy(data-src= data.img)
+                        .number= data.number
+                        .name= data.name
+                        .price= data.price
+              //如果沒有搜尋結果則輸出以下結構
+              //display: none要拿掉
+              .no-result(style="display: none;")
+                .container
+                  .notice-content
+                    .icon.icon-notification
+                    .text No Result
+                    p.notice.innertext The keywords and years you entered have no matching results.Please re-adjust the data you are searching for.
+              .load-more
+                .icon
+                  img(src="../../../assets/img/loading.svg", alt="")
+                .text Loading
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

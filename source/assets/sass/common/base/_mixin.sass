@@ -1,0 +1,849 @@
+//函式
+  
+//RWD
+@mixin rwdmax($max)
+	@media only screen and (max-width: $max + px)  
+		@content
+
+@mixin rwdmin($min)
+	@media only screen and (min-width: $min + px)  
+		@content
+
+//文字大小像素轉rem
+@mixin font-size($size: 16) 
+	font-size: ($size/16) + rem
+
+//背景圖
+@mixin bg($url,$size,$repeat,$pos)
+	background-image: url($url)
+	background-size: $size
+	background-repeat: $repeat
+	background-position: $pos
+
+//IE專用
+@mixin ie11hack
+	@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none)
+		@content
+		
+@function px($px)
+	@return $px / 16 * 1rem
+
+//文字大小像素轉vw/vh
+@function pxTovw($px)
+	@return $px / 1920 * 100vw
+
+@function pxTovh($px)
+	@return $px / 1080 * 100vh
+
+// 字體
+$basic: 'LibreBaskerville-Regular', "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif
+$JhengHei: "微軟正黑體修正", "Microsoft JhengHei", "微軟正黑體", sans-serif
+$JhengHeiBold: "微軟正黑體修正", "Microsoft-JhengHei-Bold", sans-serif
+$LBB: 'LibreBaskerville-Bold', $JhengHeiBold
+$RL: 'Roboto-Light', $JhengHei
+$RB: 'Roboto-Bold', $JhengHeiBold
+$MP: 'MyriadPro-Regular', $JhengHei
+
+=fontSet($font: $basic, $fw: normal, $size: px(16), $lh: normal, $color: inherit, $ls: normal)
+	font-family: $font
+	font-weight: $fw
+	font-size: $size
+	line-height: $lh
+	color: $color
+	letter-spacing: $ls
+	
+=fontSetBold($font: $basic, $fw: normal, $size: px(16), $lh: normal, $color: inherit, $ls: normal)
+	font-family: $font
+	font-weight: $fw
+	font-size: $size
+	line-height: $lh
+	color: $color
+	letter-spacing: $ls
+
+// flex
+=flex($display: flex, $wrap: nowrap, $direction: row, $x: center, $y: center)
+	display: $display
+	flex-wrap: $wrap
+	flex-direction: $direction
+	justify-content: $x
+	align-items: $y
+
+// absolute-center
+=posCenter
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+// 文字溢出加省略號 ...
+=ellipsis($line: 2, $lh: 32px, $height: $line * $lh)
+	display: block
+	overflow: hidden
+	display: -webkit-box
+	-webkit-box-orient: vertical
+	-webkit-line-clamp: $line
+	line-height: $lh
+	max-height: $line * $lh
+	height: $height
+
+//最大寬度
+=maxWidth($maxw, $margin: 0 auto)
+	max-width: $maxw
+	width: 100%
+	margin: $margin
+
+//分隔線
+=hr($margin: 0, $color: rgba(0,0,0,0.2))
+	width: 100%
+	height: 1px
+	background-color: $color
+	margin: $margin
+
+//input 提示文字
+=placeholder($font: $basic, $color: black, $size: px(16))
+	&::placeholder /* Chrome, Firefox, Opera, Safari 10.1+ */
+		font-family: $font
+		font-size: $size
+		color: $color
+		opacity: 1 /* Firefox */
+		letter-spacing: normal
+
+	&:-ms-input-placeholder /* Internet Explorer 10-11 */
+		font-family: $font
+		font-size: $size
+		color: $color
+
+	&::-ms-input-placeholder /* Microsoft Edge */
+		font-family: $font
+		font-size: $size
+		color: $color
+
+
+=mainBanner($ratio, $dotW)
+	text-align: right
+	+rwdmax(1024)
+		text-align: center
+	.slider-wrapper
+		position: relative
+		width: 100%
+		padding-bottom: $ratio
+		+rwdmax(767)
+			padding-bottom: 0
+		.swiper-container
+			+posCenter
+			+rwdmax(767)
+				position: static
+				transform: none
+			.swiper-wrapper
+				.swiper-slide
+					.content
+						width: 100%
+						height: 100%
+						.img-box,.video-box
+							position: relative
+							width: 100%
+							height: 100%
+							+rwdmax(767)
+								height: 0
+								padding-bottom: $ratio
+							img
+								+posCenter
+		.banner-slider-pagination
+			position: absolute
+			width: $dotW
+			height: 100%
+			right: 0
+			display: flex
+			flex-direction: column
+			transform: translate(100%,0)
+			align-items: center
+			justify-content: center
+			+swiperBullet
+			+rwdmax(767)
+				position: static
+				width: 100% !important
+				transform: none
+				flex-direction: row
+				padding: 10px 0
+				margin-bottom: 8px
+
+=sliderInfo($maxW: 100%, $textColor: rgba(0,0,0,0.8), $mask: #f4f4f4)
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		width: 0
+		height: 100%
+		background-color: $mask
+		transition: 0.4s
+	&.changing
+		&::before
+			width: 100%
+	.news-date
+		margin-right: 60px
+		padding: 0 6px
+		white-space: nowrap
+		+flex($direction: column)
+		+rwdmax(575)
+			margin-right: 0
+			margin-bottom: 24px
+		.day
+			+fontSetBold($font: $LBB, $size: px(30))
+		.month_year
+			+fontSet($size: px(14))
+	.info
+		max-width: $maxW
+		width: 100%
+		.title
+			margin-bottom: 10px
+			+fontSetBold($font: $LBB, $size: px(20), $lh: 36px)
+			+ellipsis($line: 1, $lh: 36px, $height: auto)
+			+rwdmax(1024)
+				font-size: px(18)
+				+ellipsis($line: 2, $lh: 30px, $height: auto)
+		.description
+			+fontSet($size: px(13), $lh: 25px, $color: $textColor)
+			+ellipsis($line: 2, $lh: 25px, $height: auto)
+			+rwdmax(767)
+				font-size: px(12)
+
+=swiperBullet
+	.swiper-pagination-bullet
+		display: inline-flex
+		flex-direction: column
+		width: 10px
+		height: 12px
+		border-radius: 0
+		margin: 12px
+		background-color: transparent
+		opacity: 1
+		&::before
+			content: ''
+			display: block
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 5px 6px 5px
+			border-color: transparent transparent rgba(0,0,0,0.3) transparent
+		&::after
+			content: ''
+			display: block
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 6px 5px 0 5px
+			border-color: rgba(0,0,0,0.3) transparent transparent transparent
+		&-active
+			&::before
+				border-color: transparent transparent rgba(0,0,0,1) transparent
+			&::after
+				border-color: rgba(0,0,0,1) transparent transparent transparent
+
+=newsDecor
+	.decor-layer
+		position: fixed
+		width: 100vw
+		height: 100vh
+		z-index: -1
+		>div
+			position: absolute
+			opacity: 0
+			&.decor1
+				width: 10.2083%
+				left: 30%
+				top: 40px
+				height: 0
+				overflow: hidden
+				transition: opacity 0.6s, height 0.3s
+				+rwdmax(1024)
+					display: none
+			&.decor2
+				width: 11.667vw
+				min-width: 150px
+				top: 150px
+				right: 18%
+				transition: opacity 0.3s linear 0s
+				+rwdmax(767)
+					display: none
+			&.decor3
+				width: 23.333vw
+				min-width: 300px
+				left: 0
+				bottom: 0
+				transition: opacity 0.3s linear 0s
+				+rwdmax(767)
+					display: none
+			&.decor4
+				width: 14.635vw
+				right: 9.53125%
+				top: 57vh
+				height: 0
+				overflow: hidden
+				transition: opacity 0.6s, height 0.3s
+				+rwdmax(1024)
+					display: none
+		&.show
+			>div
+				opacity: 1
+				&.decor1
+					height: 245px
+					transition: opacity 0.6s, height 0.3s
+				&.decor2
+					transition: opacity 0.3s linear 0.6s
+				&.decor3
+					transition: opacity 0.3s linear 0.6s
+				&.decor4
+					height: 265px
+					transition: opacity 0.6s, height 0.3s
+
+=newsList
+	.news-list
+		+maxWidth($maxw: 906px, $margin: 92px 0 0 0)
+		+rwdmax(767)
+			max-width: 100%
+			margin-top: 45px
+		.news-card
+			&:not(:last-child)
+				margin-bottom: 60px
+			&:nth-child(odd)
+				text-align: left
+				+rwdmax(767)
+					text-align: center
+				.card-img
+					margin-right: auto
+					+rwdmax(900)
+						margin: 0 auto
+				.card-text
+					justify-content: flex-start
+			&:nth-child(even)
+				text-align: right
+				+rwdmax(767)
+					text-align: center
+				.card-img
+					margin-left: auto
+					+rwdmax(900)
+						margin: 0 auto
+				.card-text
+					justify-content: flex-end
+			&.has-img
+				.custom-hr
+					display: none
+				.card-img
+					max-width: 51.8764%
+					min-width: 300px
+					width: 100%
+					text-align: center
+					margin-bottom: 26px
+					+rwdmax(900)
+						margin-bottom: 15px
+					+rwdmax(767)
+						max-width: 64.65%
+						min-width: auto
+					.img-box
+						position: relative
+						display: inline-block
+						&:hover
+							.cover
+								opacity: 1
+								.icon-right
+									opacity: 1
+									transform: translateX(0)
+						.cover
+							width: 100%
+							height: 100%
+							background-color: rgba(0,0,0,0.5)
+							opacity: 0
+							transition: 0.3s linear
+							+flex
+							+posCenter
+							.text
+								+fontSetBold($font: $LBB, $size: px(14), $color: white)
+							.icon-right
+								position: absolute
+								color: white
+								font-size: 16px
+								right: 24px
+								bottom: 25px
+								opacity: 0
+								transform: translateX(-10px)
+								transition: 0.3s linear 0.3s
+						img
+							max-width: 100%
+							width: auto
+				.card-text
+					display: inline-flex
+					align-items: center
+					padding: 0 40px
+					+rwdmax(1024)
+						padding: 0 20px
+					+rwdmax(900)
+						padding: 0
+						display: flex
+						flex-direction: column
+						max-width: 470px
+						width: 100%
+						margin: 0 auto
+					.news-date
+						margin-right: 55px
+						white-space: nowrap
+						+flex($direction: column)
+						+rwdmax(1024)
+							margin-right: 24px
+						+rwdmax(900)
+							margin-right: 0
+							margin-bottom: 20px
+						.day
+							+fontSetBold($font: $LBB, $size: px(30))
+						.month_year
+							+fontSet($size: px(14))
+					.news-info
+						max-width: 385px
+						width: 100%
+						text-align: left
+						+rwdmax(767)
+							max-width: 100%
+						.news-title
+							margin-bottom: 12px
+							+fontSetBold($font: $LBB, $size: px(20), $lh: 36px)
+							+ellipsis($line: 2, $lh: 36px, $height: auto)
+							+rwdmax(1024)
+								font-size: px(18)
+							+rwdmax(767)
+								font-size: px(16)
+								+ellipsis($line: 2, $lh: 30px, $height: auto)
+						.news-description
+							+ellipsis($line: 2, $lh: 25px, $height: auto)
+			&.no-img
+				max-width: 470px
+				width: 100%
+				+rwdmax(900)
+					max-width: 400px
+					margin: 0 auto
+					&:not(:last-child)
+						margin-bottom: 60px
+				+rwdmax(767)
+					max-width: 470px
+				&:nth-child(even)
+					margin-left: auto
+				.custom-hr
+					display: block
+					+hr($margin: 30px 0, $color: rgba(255,255,255,0.3))
+				.card-img
+					display: none
+				.card-text
+					height: 470px
+					padding: 0 42px
+					+flex($direction: column)
+					+rwdmax(900)
+						height: 400px
+					+rwdmax(767)
+						height: 470px
+					.news-date
+						padding-bottom: 34px
+						+flex($direction: column)
+						.day
+							+fontSetBold($font: $LBB, $size: px(30), $color: white)
+						.month_year
+							+fontSet($size: px(14), $color: white)
+					.news-info
+						width: 100%
+						.news-title
+							margin-bottom: 32px
+							+fontSetBold($font: $LBB, $size: px(24), $lh: 36px, $color: white)
+							+ellipsis($line: 2, $lh: 36px)
+							+rwdmax(767)
+								font-size: px(16)
+								+ellipsis($line: 2, $lh: 30px)
+						.news-description
+							color: rgba(255,255,255,0.8)
+							+ellipsis($line: 2, $lh: 25px)
+
+=newsSearch
+	+flex
+	+rwdmax(1024)
+		flex-direction: column
+	.search-style
+		width: 400px
+		height: 70px
+		background-color: white
+		border-radius: 10rem
+		border: none
+		padding: 0 36px
+		box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+		+rwdmax(767)
+			width: 285px
+			height: 40px
+			padding: 0 20px
+	input
+		margin-right: 64px
+		+fontSetBold($font: $LBB, $size: px(16), $color: black)
+		+rwdmax(1024)
+			margin-right: 0
+			margin-bottom: 22px
+			text-align: center
+		+rwdmax(767)
+			font-size: px(13)
+		&::placeholder
+			opacity: 1
+			+fontSetBold($font: $LBB, $size: px(16), $lh: 70px, $color: #9a9a9a)
+			+rwdmax(767)
+				font-size: px(13)
+		&:-ms-input-placeholder
+			+fontSetBold($font: $LBB, $size: px(16), $lh: 70px, $color: #9a9a9a)
+			+rwdmax(767)
+				font-size: px(13)
+		&::-ms-input-placeholder
+			+fontSetBold($font: $LBB, $size: px(16), $lh: 70px, $color: #9a9a9a)
+			+rwdmax(767)
+				font-size: px(13)
+	.search-year
+		position: relative
+		z-index: 1
+		&.active
+			.selected
+				.arrow
+					transform: translate(0,-50%) rotateX(0deg)
+		.selected
+			position: relative
+			padding: 0 36px
+			cursor: pointer
+			user-select: none
+			z-index: 1
+			+flex
+			+rwdmax(767)
+				margin: 0 auto
+			.text
+				text-align: center
+				+fontSetBold($font: $LBB, $size: px(16), $color: black)
+				+rwdmax(767)
+					font-size: px(13)
+			.arrow
+				position: absolute
+				top: 50%
+				right: 36px
+				transition: transform 0.3s
+				transform: translate(0,-50%) rotateX(180deg)
+				+rwdmax(767)
+					right: 12px
+		.dropdown
+			display: none
+			position: absolute
+			width: 100%
+			top: 40px
+			left: 0
+			padding: 54px 0 24px 0
+			border-bottom-left-radius: 40px
+			border-bottom-right-radius: 40px
+			box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+			background-color: #eeeeee
+			overflow: hidden
+			z-index: 0
+			+rwdmax(767)
+				top: 20px
+				padding: 28px 0 8px 0
+			ul
+				max-height: 168px !important
+				margin: 0 !important
+				height: 100%
+				overflow: auto
+				&::-webkit-scrollbar
+					display: none
+				>li
+					text-align: center
+					height: 42px
+					cursor: pointer
+					user-select: none
+					transition: 0.3s
+					+fontSetBold($font: $LBB, $size: px(16), $lh: 42px, $color: black)
+					+rwdmax(767)
+						font-size: px(13)
+					&:hover,&:active
+						background-color: #a88438
+						color: white
+			.scrollbar-inner > .scroll-element.scroll-y
+				right: 41px
+				+rwdmax(767)
+					right: 17px
+
+//訂單清單
+=orderList
+	.order-list
+		padding: 0 40px
+		+maxWidth($maxw: 1130px)
+		+rwdmax(767)
+			padding: 0 10px
+		>li
+			padding: 30px 0
+			+flex($x: flex-start)
+			+rwdmax(767)
+				position: relative
+				flex-wrap: wrap
+				align-items: flex-start
+				padding: 45px 0 15px 0
+			&:not(:first-child)
+				border-top: 1px solid #dedede
+			&.customized
+				.buy-count,.total-price
+					display: none
+				.is-customized
+					display: block
+				.detail
+					+flex($x: flex-start)
+					+rwdmax(767)
+						justify-content: center
+				.product-option
+					.option-btn
+						&.edit
+							display: none
+			.thumbnail
+				width: 80px
+				height: 80px
+				border-radius: 50%
+				flex-shrink: 0
+				background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+				+rwdmax(767)
+					width: 60px
+					height: 60px
+					margin-right: 15px
+			.product-info
+				max-width: 275px
+				width: 100%
+				padding: 0 20px 0 45px
+				text-align: left
+				+rwdmax(991)
+					max-width: 230px
+					padding: 0 10px
+				+rwdmax(767)
+					max-width: calc(100% - 75px)
+					padding: 14px 0 0 0
+					margin-bottom: 36px
+				.sm-unit
+					display: inline-block
+					background-color: #000
+					border-radius: 10rem
+					padding: 5px 12px
+					margin-bottom: 6px
+					+fontSetBold($font: $LBB, $size: px(12), $color: #fff)
+				.name
+					text-align: left
+					margin-bottom: 6px
+					+fontSetBold($font: $LBB, $size: px(14))
+				.unit-price
+					+flex($x: flex-start)
+					span
+						+fontSet($size: px(12), $lh: 16px)
+						&:nth-child(1)
+							padding-right: 8px
+						&:nth-child(2)
+							padding-left: 8px
+							border-left: 1px solid rgba(0,0,0,0.3)
+			.buy-count
+				width: 120px
+				height: 20px
+				margin-left: auto
+				margin-right: 15px
+				flex-shrink: 0
+				+flex($y: baseline)
+				+rwdmax(767)
+					width: 105px
+					margin: 0 0 0 75px
+				.minus,.plus
+					position: relative
+					width: 16px
+					height: 16px
+					flex-shrink: 0
+					cursor: pointer
+					align-self: center
+					+flex
+					&:active
+						&::before,&::after
+							background-color: black
+				.minus
+					&::before
+						content: ''
+						position: absolute
+						top: 50%
+						left: 50%
+						width: 16px
+						height: 2px
+						background-color: #878787
+						transition: 0.3s
+						margin: -1px 0 0 -8px
+				.plus
+					&::before
+						content: ''
+						position: absolute
+						top: 50%
+						left: 50%
+						width: 16px
+						height: 2px
+						background-color: #878787
+						margin: -1px 0 0 -8px
+					&::after
+						content: ''
+						position: absolute
+						top: 50%
+						left: 50%
+						width: 2px
+						height: 16px
+						background-color: #878787
+						margin: -8px 0 0 -1px
+				.count-wrap
+					width: 100%
+					height: 20px
+					+flex($y: flex-end)
+					.count
+						width: calc(100% - 31px)
+						background: none
+						border: none
+						text-align: right
+						padding: 0 4px
+						+fontSetBold($font: $LBB, $size: px(16), $lh: 1)
+						+rwdmax(767)
+							padding: 0 2.5px
+					.unit
+						padding: 0 4px
+						white-space: nowrap
+						margin-right: 4px
+						user-select: none
+						+fontSet($size: px(13), $color: #666666, $lh: 16px)
+						+rwdmax(767)
+							padding: 0 2.5px
+			.is-customized
+				display: none
+				width: 120px
+				height: 35px
+				background-color: #a88438
+				border-radius: 10rem
+				margin: 0 15px 0 auto
+				text-align: center
+				flex-shrink: 0
+				+fontSet($size: px(14), $lh: 35px, $color: white)
+				+rwdmax(767)
+					margin: 0 0 0 75px
+			.total-price
+				width: 128px
+				text-align: left
+				margin-left: auto
+				margin-right: 15px
+				flex-shrink: 0
+				+rwdmax(767)
+					width: calc(100% - 200px)
+					margin: 0 0 0 20px
+				.unit
+					margin-right: 4px
+					+fontSetBold($font: $LBB, $size: px(12))
+				.number
+					+fontSetBold($font: $LBB, $size: px(16))
+			.detail
+				display: none
+				width: 128px
+				height: 35px
+				padding: 0 8px
+				border-radius: 10rem
+				border: 1px solid #cccccc
+				margin-left: auto
+				margin-right: 15px
+				flex-shrink: 0
+				+rwdmax(767)
+					position: absolute
+					width: 30px
+					height: 30px
+					padding: 0
+					top: 15px
+					right: 34px
+					margin: 0
+					z-index: 1
+				&:hover
+					border: 1px solid transparent
+					background-color: #f0f0f0
+				.text
+					width: 100%
+					text-align: center
+					margin-right: 10px
+					+fontSetBold($font: $LBB, $size: px(12))
+					+rwdmax(767)
+						display: none
+				.icon
+					width: 18px
+					height: 18px
+					flex-shrink: 0
+					+flex
+					>i
+						display: block
+			.product-option
+				width: 98px
+				flex-shrink: 0
+				margin-left: auto
+				+flex($x: flex-end)
+				+rwdmax(767)
+					position: absolute
+					width: 64px
+					top: 15px
+					right: 0
+				.option-btn
+					width: 50%
+					height: 20px
+					padding: 0 15px
+					+flex($x: flex-start)
+					+rwdmax(767)
+						width: 30px
+						height: 30px
+						padding: 0
+						border-radius: 50%
+						border: 1px solid #eeeeee
+						justify-content: center
+						&:hover
+							border: 1px solid transparent
+							background-color: #f0f0f0
+					&:not(:last-child)
+						border-right: 1px solid black
+						+rwdmax(767)
+							border-right: none
+							margin-right: 4px
+					.icon
+						width: 18px
+						height: 18px
+						flex-shrink: 0
+						+flex
+						+rwdmax(767)
+							width: 14px
+							height: 14px
+						>i
+							display: block
+					&.edit
+						.icon
+							i
+								font-size: 17px
+								+rwdmax(767)
+									font-size: 14px
+					&.detail
+						display: none
+						.icon
+							i
+								font-size: 16px
+								+rwdmax(767)
+									font-size: 14px
+					&.delete
+						.icon
+							i
+								position: relative
+								width: 16px
+								height: 16px
+								transform: rotate(45deg)
+								+rwdmax(767)
+									width: 14px
+									height: 14px
+								&::before,&::after
+									content: ''
+									background-color: black
+									+posCenter
+								&::before
+									width: 100%
+									height: 2px
+								&::after
+									width: 2px
+									height: 100%

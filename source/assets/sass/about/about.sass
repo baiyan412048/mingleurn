@@ -1,0 +1,138 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.about
+  .all-wrapper
+    .decor-layer
+      position: fixed
+      width: 100vw
+      height: 100vh
+      z-index: -1
+      overflow: hidden
+      >div
+        position: absolute
+        opacity: 0
+        &.decor1
+          width: 17.7083vw
+          left: 15.52%
+          top: 0
+          height: 0
+          overflow: hidden
+          transition: opacity 0.3s, height 0.3s
+          +rwdmax(1024)
+            display: none
+        &.decor2
+          width: 25.8333vw
+          min-width: 150px
+          top: 0
+          right: 0
+          transition: opacity 0.3s linear 0.6s
+          +rwdmax(767)
+            display: none
+        &.decor3
+          width: 17.1875vw
+          min-width: 250px
+          left: 0
+          bottom: 7.47vh
+          transition: opacity 0.3s linear 0.6s
+          +rwdmax(767)
+            display: none
+        &.decor4
+          width: 9.1145vw
+          right: 9.375%
+          top: 68vh
+          height: 0
+          overflow: hidden
+          transition: opacity 0.3s, height 0.3s
+          +rwdmax(1024)
+            display: none
+      &.show
+        >div
+          opacity: 1
+          &.decor1
+            height: 257px
+          &.decor4
+            height: 146px
+  main
+    .container
+      +maxWidth($maxw: 1570px)
+    .header
+      text-align: center
+      margin-bottom: 9.6815%
+      +rwdmax(767)
+        margin-bottom: 50px
+      .unit-name
+        padding: 42px 0
+        +fontSet($size: px(13))
+        +rwdmax(767)
+          padding: 10px 0
+      .unit-alias
+        +fontSetBold($font: $LBB, $size: px(54))
+        +rwdmax(1024)
+          font-size: px(48)
+        +rwdmax(767)
+          font-size: px(32)
+      .unit-description
+        +maxWidth($maxw: 680px, $margin: 40px auto 0 auto)
+        +rwdmax(767)
+          display: none
+    .about-list
+      overflow: hidden
+      min-width: 600px
+      +maxWidth($maxw: 47.65625vw, $margin: 0 auto 15.2866% auto)
+      +rwdmax(1024)
+        min-width: auto
+        max-width: 600px
+        padding: 0 20px
+      +rwdmax(767)
+        max-width: 500px
+        margin-bottom: 130px
+      .row
+        margin: 0 -45px
+        +flex($wrap: wrap, $x: flex-start, $y: flex-start)
+        +rwdmax(1024)
+          margin: 0 -25px
+        +rwdmax(767)
+          margin: 0 -5px
+        .grid
+          width: calc(100% / 3)
+          padding: 0 45px
+          +rwdmax(1024)
+            padding: 0 25px
+          +rwdmax(767)
+            padding: 0 5px
+          &:not(:nth-child(-n+3))
+            .flip-card
+              margin-top: 80px
+              +rwdmax(1024)
+                margin-top: 50px
+              +rwdmax(767)
+                margin-top: 10px
+          .flip-card
+            display: block
+            background-color: transparent
+            perspective: 1000px
+            +rwdmin(1025)
+              &:hover,&:focus
+                .flip-card-inner
+                  animation: flip linear 4s infinite
+            .flip-card-inner
+              position: relative
+              width: 100%
+              height: 0
+              padding-bottom: 100%
+              text-align: center
+              transform-style: preserve-3d
+              .flip-card-front,.flip-card-back
+                position: absolute
+                width: 100%
+                height: 100%
+                backface-visibility: hidden
+              .flip-card-front
+                transform: rotateY(0deg)
+                z-index: 2
+              .flip-card-back
+                transform: rotateY(180deg)
+                z-index: 1
+
+      

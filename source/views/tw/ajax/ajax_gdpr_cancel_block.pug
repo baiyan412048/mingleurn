@@ -1,0 +1,11 @@
+.modal-scroll-wrap.scrollbar-macosx
+  .modal-contain
+    .modal-dialog
+      .modal-content
+        .remind-wrap
+          .icon-rocket
+          p.remind-title Reboot Account ?
+          p.remind-text  Sure to reboot account?<br>we will suspend your current actions.
+          .modal-btn-group
+            a.modal-btn.btn-black.ajax_close(href="javascript:;") No
+            a.modal-btn.btn-gold.ajax_close(href="javascript:;" onclick="_gdpr.stepChange('block', 1)") Yes

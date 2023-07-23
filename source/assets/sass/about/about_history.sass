@@ -1,0 +1,74 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.about_history
+  main
+    .container
+      +maxWidth($maxw: 1570px)
+    .header
+      text-align: center
+      padding: 0 20px
+      .back-overview
+        display: inline-block
+        transform: translateY(-50px)
+        margin-bottom: 80px
+        +fontSet($size: px(13), $color: rgba(0,0,0,0.8))
+        +rwdmax(767)
+          transform: translateY(-22px)
+          margin-bottom: 8px
+      .unit-alias
+        +fontSetBold($font: $LBB, $size: px(54))
+        +rwdmax(1024)
+          font-size: px(48)
+        +rwdmax(767)
+          font-size: px(32)
+      .unit-description
+        margin-top: 14px
+        +maxWidth($maxw: 725px, $margin: 20px auto 0 auto)
+        +rwdmax(767)
+          margin-top: 8px
+    .history-section
+      position: relative
+      overflow: hidden
+      .history-content
+        padding: 220px 70px
+        +maxWidth($maxw: 1400px)
+        +rwdmax(1024)
+          max-width: 700px
+          padding: 100px 20px
+        +rwdmax(767)
+          padding: 50px 20px
+        picture
+          display: block
+        .top-motorcycle
+          position: absolute
+          top: 40px
+          left: -200px
+          width: 180px
+          +rwdmax(1024)
+            display: none
+          img
+            transform: rotateY(180deg)
+        .bottom-motorcycle
+          position: absolute
+          bottom: 20px
+          left: -200px
+          width: 180px
+          transform-origin: center bottom
+          +rwdmax(1024)
+            display: none
+          &.reverse
+            img
+              transform: rotateY(0deg)
+          img
+            transform: rotateY(180deg)
+
+  .footer
+    text-align: center
+    padding: 104px 0 120px 0
+    +rwdmax(1024)
+      padding: 60px 0
+    +rwdmax(767)
+      padding: 40px 0 100px 0
+
+      

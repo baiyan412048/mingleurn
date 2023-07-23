@@ -1,0 +1,166 @@
+-
+  newsCard = [
+    {
+      type: 'New Arrival',
+      noImg: false,
+      bgColor: '',
+      day: '06',
+      monthYear: 'Jan.2020',
+      img: '../../../uploads/news/news-img01.jpg',
+      title: 'Georges Hobeika Autumn and Winter Series Lace',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'Exhibitions',
+      noImg: false,
+      bgColor: '',
+      day: '25',
+      monthYear: 'Dec.2019',
+      img: '../../../uploads/news/news-img02.jpg',
+      title: '2020 New Lace Is On The Market, Welcome To Discover More',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'Design Trand',
+      noImg: false,
+      bgColor: '',
+      day: '14',
+      monthYear: 'Dec.2019',
+      img: '../../../uploads/news/news-img03.jpg',
+      title: 'Texworld NYC Winter 19th - 21th Jan., 2020',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'New Arrival',
+      noImg: false,
+      bgColor: '',
+      day: '09',
+      monthYear: 'Jan.2020',
+      img: '../../../uploads/news/news-img04.jpg',
+      title: 'Mingleurn Elegant Wedding Veil Series for you',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'Exhibitions',
+      noImg: true,
+      bgColor: '#7982ab',
+      day: '23',
+      monthYear: 'Nov.2019',
+      img: '',
+      title: 'Texworld NYC Winter 19th - 21th Jan., 2020',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'Exhibitions',
+      noImg: false,
+      bgColor: '',
+      day: '17',
+      monthYear: 'Nov.2019',
+      img: '../../../uploads/news/news-img05.jpg',
+      title: '30th Anniversary of Mingleurn, a Professional and Popular Brand',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+    {
+      type: 'New Arrival',
+      noImg: true,
+      bgColor: '#b74c4c',
+      day: '08',
+      monthYear: 'Oct.2019',
+      img: '../../../uploads/news/news-img05.jpg',
+      title: 'The International Trade Fair : Fabrics, Trims, Accessories',
+      description: 'Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......'
+    },
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/search_result.css")
+  body.search_result(data-page="search_result")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/news/decor03.png", alt="")
+          .decor2
+            img(src="../../../assets/img/news/decor04.png", alt="")
+          .decor3
+            img(src="../../../assets/img/news/decor05.png", alt="")
+          .decor4
+            img(src="../../../assets/img/news/decor06.png", alt="")
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .content
+              .header
+                a.back-list(href="./news.html" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") BACK TO NEWS LIST
+                h1.page-head(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Search Result
+              .searchbar
+                input.search-style(type="text" placeholder="Enter the keywords...")
+                .search-year
+                  .selected.search-style
+                    .text Select the year of news
+                    .arrow.icon-arrow-up
+                  .dropdown
+                    ul.scrollbar-inner
+                      li 2020
+                      li 2019
+                      li 2018
+                      li 2017
+                      li 2016
+                      li 2015
+              a.search-btn(href="javascript:;")
+                i.icon-search
+            .result-wrap
+              .news-list
+                //這邊跑迴圈
+                //分兩種形式 .news-card上有兩種class 有圖 .has-img 無圖 .no-img
+                each data in newsCard
+                  .news-card(class= (data.noImg == true ? 'no-img' : 'has-img') data-animate="fadeIn" data-duration="0.4s" data-delay="0.4s")
+                    .card-img
+                      .img-box.ajax_open(data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail")
+                        .cover
+                          .text= data.type
+                          i.icon-right
+                        img.b-lazy(src="../../../assets/img/blazy.gif" data-src= data.img alt="")
+                    //如果沒有圖就把顏色洗到card-text上
+                    .card-text.ajax_open(style= (data.noImg == true ? `background-color: ${data.bgColor}` : '') data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail")
+                      .news-date
+                        span.day= data.day
+                        span.month_year= data.monthYear
+                      .custom-hr
+                      .news-info
+                        .news-title= data.title
+                        .news-description.innertext= data.description
+
+            //如果沒有搜尋結果則輸出以下結構
+            //display: none要拿掉
+            .no-result(style="display: none;")
+              .container
+                .notice-content
+                  .icon.icon-notification
+                  .text No Result
+                  p.notice.innertext The keywords and years you entered have no matching results.Please re-adjust the data you are searching for.
+
+          
+
+        // 頁尾
+        footer
+          .footer-top
+            .header Be Your Wings
+            include ../layouts/_quick-link.pug
+                                                
+          include ../layouts/_footer_bottom.pug
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

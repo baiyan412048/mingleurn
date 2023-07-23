@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <!--共用設定-->
+    <!-- 網站語系及語言宣告-->
+    <meta http-equiv="content-language" content="zh-TW"/>
+    <meta charset="UTF-8"/>
+    <!-- RWD設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 瀏覽器設定-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- 網站關鍵字-->
+    <meta name="keywords" content="網站關鍵字"/>
+    <!-- 網頁內容描述-->
+    <meta name="description" content="網頁內容描述，中文 80 個字元、英文 160 個字元"/>
+    <!-- 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="robots" content="noindex"/>
+    <!-- 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="googlebot" content="noindex"/>
+    <!-- Open Graph Protocol for facebook-->
+    <meta property="og:title" content="網頁Title"/>
+    <meta property="og:description" content="網頁內容描述"/>
+    <meta property="og:url" content="主要網址"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="網頁內容描述"/>
+    <!-- Open Graph Protocol for google plus-->
+    <meta itemprop="name" content="網站名稱或標題"/>
+    <meta itemprop="image" content="分享的影像位址"/>
+    <meta itemprop="description" content="網頁描述"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="分享的影像位址"/>
+    <meta name="twitter:site" content="網站名稱"/>
+    <meta name="twitter:title" content="網頁標題"/>
+    <meta name="twitter:description" content="網頁描述 200 個字元以內"/>
+    <meta name="twitter:creator" content="客戶公司或品牌名稱"/>
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content=" http://www.example.com/image.html"/>
+    <title>Mingleurn</title>
+    <!-- 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中-->
+    <link rel="canonical" href="主要網址" itemprop="url"/>
+    <link rel="shortcut icon" href="../../../assets/img/favicon.ico" type="image/x-icon"/>
+    <!-- 以下script 後端自行打開-->
+    <!-- Google Tag Manager-->
+    <!-- script.-->
+    <!--   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+    <!--   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+    <!--   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+    <!--   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+    <!--   })(window,document,'script','dataLayer','GTM編號');-->
+    <!--全站共用CSS-->
+    <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
+    <!--獨立CSS-->
+    <link rel="stylesheet" href="../../../assets/css/product_detail.css"/>
+  </head>
+  <body class="product_detail" data-page="product_detail" data-zoom="1">
+    <div class="main-wrapper scrollbar-macosx" data-fake-body="">
+      <div class="all-wrapper">
+        <!-- 導覽列-->
+        <!--原本畫面上的導覽列-->
+        <nav>
+          <div class="header"><a class="logo" href="./index.html"><img class="logo-black" src="../../../assets/img/logo-black.svg" alt="LOGO"/><img class="logo-white" src="../../../assets/img/logo-white.svg" alt="LOGO"/></a>
+            <div class="function-bar"><a class="function-btn member" href="javascript:;"><i class="icon-member"></i></a>
+              <div class="function-btn language"><i class="icon-language"></i>
+                <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+              </div><a class="function-btn shop" onclick="_shoppingCart.openCart()" href="javascript:;" data-count="1"><i class="icon-shop"></i></a><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a>
+              <div class="menu-switch">MENU</div>
+            </div>
+          </div>
+          <div class="menubar" data-animate="fadeIn" data-duration="0.3s" data-delay="0.4s">
+            <ul class="menu">
+              <li><a href="./about.html">CLOSER TO MING</a></li>
+              <li><a href="./news.html">MING TO TELL</a></li>
+              <li><a href="./product.html">PICK MING UP</a></li>
+              <li><a href="./contact.html">LET MING HELP</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!--視窗往上滾動後固定在上方的導覽列-->
+        <!--這邊也要和body寫一樣的顏色-->
+        <nav class="sticky">
+          <div class="header"><a class="logo" href="./index.html"><img class="logo-black" src="../../../assets/img/logo-black.svg" alt="LOGO"/><img class="logo-white" src="../../../assets/img/logo-white.svg" alt="LOGO"/></a>
+            <div class="function-bar"><a class="function-btn member" href="javascript:;"><i class="icon-member"></i></a>
+              <div class="function-btn language"><i class="icon-language"></i>
+                <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+              </div><a class="function-btn shop" onclick="_shoppingCart.openCart()" href="javascript:;" data-count="1"><i class="icon-shop"></i></a><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a>
+              <div class="menu-switch">MENU</div>
+            </div>
+          </div>
+          <div class="menubar">
+            <ul class="menu">
+              <li><a href="./about.html">CLOSER TO MING</a></li>
+              <li><a href="./news.html">MING TO TELL</a></li>
+              <li><a href="./product.html">PICK MING UP</a></li>
+              <li><a href="./contact.html">LET MING HELP</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!-- 主選單-->
+        <section class="menulbox">
+          <div class="menu-wrap">
+            <div class="menu-closebtn"></div>
+            <div class="menu-status">
+              <div class="photo-wrap">
+                <!-- 未登入 導向至登入頁 / div的background-image: url('') 留空，裡面要有 <i class="icon-member-status"></i>-->
+                <!-- 登入後 導向至會員中心 / div的background-image: url('') 換上圖片路徑，裡面的 <i class="icon-member-status"></i> 刪除--><a href="./member.html">
+                  <div style="background-image: url('../../../uploads/member/default-photo10-200x200.png')">
+                    <!-- i.icon-member-status-->
+                  </div>
+                  <!--登入前文字 Login Now ! / 登入後文字 Hello,xxxxx-->
+                  <p>Hello,Hailey</p></a>
+              </div>
+              <!-- 固定左下功能-->
+              <div class="fixed-left-function innerMenu"><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a><a class="function-btn shop" onclick="_shoppingCart.openCart()" href="javascript:;" data-count="1"><i class="icon-shop"></i></a>
+                <div class="function-btn language"><i class="icon-language"></i>
+                  <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+                </div>
+                <!-- 此為登入前的結構↓↓-->
+                <!-- a.function-btn.member(href="javascript:;")-->
+                <!--   i.icon-member-->
+                <!-- 此為登入後的結構↓↓--><a class="function-btn member ajax_open" href="javascript:;" data-ajax-route="./ajax_member_logout.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox"><i class="icon-member-logout"></i></a>
+              </div>
+            </div>
+            <div class="menu-list scrollbar-macosx scroll-wrap" data-scrollbar="data-scrollbar">
+              <ul class="list">
+                <li class="active">
+                  <p>New Arrival</p>
+                  <ul style="display: block">
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Lace</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Fabric</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Beading</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Embroidery</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Accessories</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-block">
+              <ul class="unit">
+                <li><a href="./product.html">Pick MING Up</a></li>
+                <li><a href="./about.html">Closer To MING</a></li>
+                <li><a href="./news.html">MING To Tell</a></li>
+                <li><a href="./contact.html">Let MING Help</a></li>
+                <li><a href="./member.html">Member Of MING</a></li>
+                <li><a href="./qa.html">MING's service</a></li>
+              </ul>
+              <div class="control">
+                <div class="wrap">
+                  <div>
+                    <p><a href="javascript:;">Recruit</a></p>
+                    <p><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_privacy_policy.html" data-ajax-container=".privacy-lbox" data-ajax-callback="_ajaxCallback.privacyPolicy">Privacy Policy</a></p>
+                  </div>
+                  <ul class="social-link">
+                    <li><a href="javascript:;"><i class="icon-ig"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-fb"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-twitter"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-line"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-wechat"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-youtube"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-photo">
+            <div class="decor1"><img src="../../../assets/img/menu-decor01.png" alt=""/></div>
+            <div class="decor2"><img src="../../../assets/img/menu-decor02.png" alt=""/></div>
+            <div class="swiper-container swiper-no-swiping" data-swiper-name="menu-banner" data-swiper-num="1" data-swiper-nav="off" data-swiper-arrow="off" data-swiper-autoplay="on" data-swiper-breakpoints="{767: { slidePerview: 1 }}">
+              <!-- 圖片尺寸 (650*1080)-->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" data-line1="Hot Series" data-line2="Mysterious Tiger">
+                  <!-- 可自訂連結，沒有連結時加上 .default--><a class="content default" href="javascript:;" style="background-image: url('../../../uploads/home/menu_banner.jpg')"></a>
+                </div>
+                <div class="swiper-slide" data-line1="Hot Series" data-line2="Mysterious Tiger">
+                  <!-- 可自訂連結，沒有連結時加上 .default--><a class="content default" href="javascript:;" style="background-image: url('../../../uploads/home/menu_banner.jpg')"></a>
+                </div>
+              </div>
+            </div>
+            <!-- 文字可選黑白兩色 .white .black-->
+            <div class="text-box white">
+              <div class="text1"> </div>
+              <div class="text2"> </div>
+            </div>
+          </div>
+        </section>
+        <!-- 購物車-->
+        <div class="cart-background close-cart">
+          <!--購物車沒有商品時加上 empty 這個 Class-->
+          <div class="cart-wrapper">
+            <div class="cart-top">
+              <div class="top-left">
+                <div class="count">6</div>
+                <div class="cart-header">
+                  <div class="title">MY SHOPPING BAG</div>
+                  <div class="description">Item is only kept for 30 days</div>
+                </div>
+              </div>
+              <div class="top-right"><a class="close close-cart" href="javascript:;"><i class="icon-close-cart"></i><i class="icon-open_web"></i></a></div>
+              <div class="select-all">
+                <div class="all-checkbox">
+                  <input id="select-all" type="checkbox" checked="checked"/>
+                  <div class="fake-checkbox"></div>
+                </div>
+                <label class="text" for="select-all">Select All</label>
+              </div>
+            </div>
+            <div class="cart-middle">
+              <div class="cart-list-wrapper scrollbar-inner">
+                <ul>
+                  <!--如果已經完成客製化 li 請加上 customized 這個 Class-->
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list01.jpg')"></div>
+                    <div class="product-info">
+                      <div class="sm-unit">Small Unit</div>
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>USD 3.00 / Y</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="1"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li class="customized">
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list01.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50Y</span><span>USD 5.00 / Y</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="1"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list02.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 3.00 / PRS</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="30"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">4,500</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list03.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 0.80 / PRS</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="50"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">2,000</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list04.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50Y</span><span>USD 5.00 / Y</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="1"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list05.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 3.00 / PRS</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="30"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">4,500</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list06.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 0.80 / PRS</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="50"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">2,000</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="empty-content">
+                <div class="icon-box">
+                  <div class="icon icon-shop"></div>
+                  <div class="text">List is empty</div>
+                </div>
+                <p class="description">You haven’t  added any item.</p>
+              </div>
+            </div>
+            <div class="cart-bottom">
+              <div class="final-total">
+                <div class="text">Total</div>
+                <div class="price"><span class="number">21,250</span><span class="unit">USD</span></div>
+                <div class="without-customize">( Without customized )</div>
+              </div>
+              <!--結帳連結串到 data-href-->
+              <div class="next-step" data-href="./checkout.html" data-ajax-route="./ajax_select_remind.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">Next</div>
+            </div>
+          </div>
+        </div>
+        <!-- 固定左下功能-->
+        <div class="fixed-left-function"><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a>
+          <div class="function-btn shop" onclick="_shoppingCart.openCart()" data-count="1"><i class="icon-shop"></i></div>
+          <div class="function-btn language"><i class="icon-language"></i>
+            <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+          </div><a class="function-btn member" href="./login.html"><i class="icon-member"></i></a>
+          <!-- 此為登入後的結構↓↓-->
+          <!-- a.function-btn.member.ajax_open(href="javascript:;" data-ajax-route="./ajax_member_logout.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")-->
+          <!--   i.icon-member-logout-->
+          <div class="scroll-tips">Scroll down</div>
+        </div>
+        <!-- 主要內容-->
+        <main>
+          <div class="header"><a class="back-overview" href="./product_list.html">BACK</a></div>
+          <div class="content-wrapper">
+            <div class="section section1">
+              <div class="container">
+                <div class="block-wrap">
+                  <div class="block left">
+                    <div class="product-info tablet">
+                      <div class="number">M7703</div>
+                      <div class="name">B16406A4ABCDEFGHIJ</div>
+                      <div class="sub-name">Subtitle placement</div>
+                    </div>
+                    <div class="product-slider">
+                      <div class="swiper-container" data-swiper-id="product-slider-ID" data-swiper-name="product-swiper" data-swiper-direction="horizontal" data-swiper-num="1" data-swiper-arrow="off" data-swiper-nav="on" data-swiper-nav-name=".product-slider-pagination" data-swiper-autoplay="on" data-swiper-effect="fade">
+                        <div class="swiper-wrapper">
+                          <!--這邊跑迴圈-->
+                          <div class="swiper-slide" data-swiper-autoplay="5000">
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/pic1.jpg" alt=""/></div>
+                          </div>
+                          <div class="swiper-slide" data-swiper-autoplay="5000">
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/pic2.jpg" alt=""/></div>
+                          </div>
+                          <div class="swiper-slide" data-swiper-autoplay="5000">
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/pic3.jpg" alt=""/></div>
+                          </div>
+                          <div class="swiper-slide" data-swiper-autoplay="5000">
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/pic4.jpg" alt=""/></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination product-slider-pagination product-slider-ID"></div>
+                    </div>
+                  </div>
+                  <div class="block right">
+                    <div class="image-detail"></div>
+                    <ul class="option-bar">
+                      <li><a class="collect" href="javascript:;"><i class="icon-collect"></i></a>
+                        <div class="collect-category">
+                          <div class="category-wrap">
+                            <ul class="scrollbar-inner">
+                              <li class="default-option">
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="default"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="default">Default</label>
+                              </li>
+                              <li>
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="category1"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="category1">Summer2020</label>
+                                <div class="edit"><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect"><i class="icon-edit"></i></a></div>
+                              </li>
+                              <li>
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="category2"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="category2">Company material</label>
+                                <div class="edit"><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect"><i class="icon-edit"></i></a></div>
+                              </li>
+                              <li>
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="category3"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="category3">Project A</label>
+                                <div class="edit"><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect"><i class="icon-edit"></i></a></div>
+                              </li>
+                              <li>
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="category4"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="category4">Project B</label>
+                                <div class="edit"><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect"><i class="icon-edit"></i></a></div>
+                              </li>
+                              <li>
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="category5"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="category5">Proposal - 0608</label>
+                                <div class="edit"><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect"><i class="icon-edit"></i></a></div>
+                              </li>
+                              <li>
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="category6"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="category6">Exhibition</label>
+                                <div class="edit"><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect"><i class="icon-edit"></i></a></div>
+                              </li>
+                              <li>
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="category7"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="category7">Texword</label>
+                                <div class="edit"><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect"><i class="icon-edit"></i></a></div>
+                              </li>
+                              <li>
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="category8"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="category8">Project C</label>
+                                <div class="edit"><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect"><i class="icon-edit"></i></a></div>
+                              </li>
+                              <li>
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="category9"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="category9">Project D</label>
+                                <div class="edit"><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect"><i class="icon-edit"></i></a></div>
+                              </li>
+                              <li>
+                                <div class="custom-checkbox">
+                                  <input type="checkbox" id="category10"/>
+                                  <div class="fake-input"></div>
+                                </div>
+                                <label for="category10">Project E</label>
+                                <div class="edit"><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect"><i class="icon-edit"></i></a></div>
+                              </li>
+                            </ul>
+                            <div class="bottom-function"><a class="create ajax_open" href="javascript:;" data-ajax-route="./ajax_add_collect.html" data-ajax-container=".add-collect-wrap" data-ajax-callback="_ajaxCallback.addCollect">
+                                <div class="icon"></div>
+                                <div class="text">Create new</div></a><a class="confirm" href="javascript:;">Save</a></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li><a class="share" href="javascript:;"><i class="icon-share"></i></a>
+                        <div class="social-share-bar">
+                          <ul>
+                            <li><a href="javascript:;"><i class="icon-twitter"></i></a></li>
+                            <li><a href="javascript:;"><i class="icon-line"></i></a></li>
+                            <li><a href="javascript:;"><i class="icon-fb"></i></a></li>
+                            <li><a class="copy_url" href="javascript:;"><i class="icon-copylink"></i></a></li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_custom_guide.html" data-ajax-container=".guide-wrap" data-ajax-callback="_ajaxCallback.guide"><i class="icon-guide"></i></a></li>
+                    </ul>
+                    <div class="product-info">
+                      <div class="number">M7703</div>
+                      <div class="name">B16406A4ABCDEFGHIJ</div>
+                      <div class="sub-name">Subtitle placement</div>
+                      <ul class="detail-info">
+                        <li>
+                          <div class="key">Number</div>
+                          <div class="value">M7703-N44-1</div>
+                        </li>
+                        <li>
+                          <div class="key">Weight</div>
+                          <div class="value">1g / SET</div>
+                        </li>
+                        <li>
+                          <div class="key">Color</div>
+                          <div class="value color-wrap">
+                            <!--客戶自行設定顏色最多四色--><a class="colorBox" href="javascript:;" style="background: #faf9b0"></a><a class="colorBox" href="javascript:;" style="background: #b4daca"></a><a class="colorBox" href="javascript:;" style="background: #decff4"></a><a class="colorBox" href="javascript:;" style="background: linear-gradient(45deg, #f4b5c7 0%, #b5d4f1 50%, #ffa366 100%)"></a><a class="colorBox" href="javascript:;" style="background: linear-gradient(45deg, #1eb4ec 0%, #47ffcd 33.33%, #98f167 66.67%, #ffff45 100%)"></a><a class="colorBox" href="javascript:;" style="background: linear-gradient(45deg, #716e9e 0%, #c46cc1 33.33%, #4c2f67 66.67%, #b7a1c6 100%)"></a><a class="colorBox" href="javascript:;" style="background: linear-gradient(45deg, #ff8a2c 0%, #d2ff47 50%, #a9bc2d 100%)"></a><a class="colorBox" href="javascript:;" style="background: linear-gradient(45deg, #f6adad 0%, #678bf1 50%, #adede5 100%)"></a><a class="colorBox" href="javascript:;" style="background: linear-gradient(45deg, #f6adad 0%, #678bf1 50%, #adede5 100%)"></a><a class="colorBox" href="javascript:;" style="background: linear-gradient(45deg, #f6adad 0%, #678bf1 50%, #adede5 100%)"></a><a class="colorBox" href="javascript:;" style="background: linear-gradient(45deg, #f6adad 0%, #678bf1 50%, #adede5 100%)"></a><a class="colorBox" href="javascript:;" style="background: linear-gradient(45deg, #f6adad 0%, #678bf1 50%, #adede5 100%)"></a>
+                          </div>
+                          <div class="more-btn">
+                            <div class="icon">
+                              <div class="icon-arrow-up"></div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="unit-select">
+                        <div class="arrow-btn">
+                          <div class="arrow-icon">
+                            <div class="icon-arrow-up"></div>
+                          </div>
+                        </div>
+                        <div class="item-wrap">
+                          <label class="item" data-index="0" data-text="If item is currently out of stock, please contact your exclusive business or email to">
+                            <div class="unit">
+                              <div class="unit-radio">
+                                <input type="radio" name="unit" checked="checked"/>
+                                <div class="fake-radio"></div>
+                              </div>
+                              <div class="text">Standard Unit</div>
+                            </div>
+                            <div class="price">USD 9.4 / Y</div>
+                          </label>
+                          <!--小量單位 data-small-unit=""-->
+                          <label class="item" data-index="1" data-small-unit="y" data-text="If item is currently out of stock, please contact your exclusive business or email to">
+                            <div class="unit">
+                              <div class="unit-radio">
+                                <input type="radio" name="unit"/>
+                                <div class="fake-radio"></div>
+                              </div>
+                              <div class="text">Small Unit</div>
+                            </div>
+                            <div class="price">USD 12.7 / Y</div>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="shop-control">
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="1"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <!--added-tips 這邊之後改中文語系要改成 已加入購物袋--><a class="add-order" href="javascript:;" added-tips="Added">ADD TO ORDER</a>
+                      </div>
+                      <ul class="notes">
+                        <li>
+                          <div class="key">MOQ</div>
+                          <div class="value">1 SET = 1000PRS</div>
+                        </li>
+                        <li>
+                          <div class="key">TIPS</div>
+                          <div class="value">Price does NOT include shipping</div>
+                          <div class="tips">?
+                            <div class="tips-box">
+                              <p class="text"><span>If item is currently out of stock, please contact your exclusive business or email to</span><a class="e-mail nocg" href="mailto:kevin@wddgrop.com"> mingleurn.flora@gmail.com</a></p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section section2">
+              <div class="container">
+                <div class="sec-title">SPECIFICATION</div>
+                <div class="sec-subtitle">input subtitle here</div>
+                <div class="specification">
+                  <div class="item-wrap">
+                    <div class="item">
+                      <div class="key">Part No</div>
+                      <div class="value">M7703-N44-1</div>
+                    </div>
+                    <div class="item">
+                      <div class="key">Color</div>
+                      <div class="value">White</div>
+                    </div>
+                    <div class="item">
+                      <div class="key">Width</div>
+                      <div class="value">140 cm</div>
+                    </div>
+                    <div class="item">
+                      <div class="key">Available</div>
+                      <div class="value">Make to Order</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="composition">
+                  <div class="title">Composition</div>
+                  <div class="item-wrap">
+                    <div class="item">
+                      <div class="img-box">
+                        <div class="percent">22%</div><img src="../../../uploads/product/detail02.jpg" alt=""/>
+                      </div>
+                      <div class="text">Nylon</div>
+                    </div>
+                    <div class="item">
+                      <div class="img-box">
+                        <div class="percent">78%</div><img src="../../../uploads/product/detail03.jpg" alt=""/>
+                      </div>
+                      <div class="text">Polyester</div>
+                    </div>
+                    <div class="item">
+                      <div class="img-box">
+                        <div class="percent">78%</div><img src="../../../uploads/product/detail04.jpg" alt=""/>
+                      </div>
+                      <div class="text">Renjuan(Beige)</div>
+                    </div>
+                    <div class="item">
+                      <div class="img-box">
+                        <div class="percent">56%</div><img src="../../../uploads/product/detail05.jpg" alt=""/>
+                      </div>
+                      <div class="text">Ryan</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section section3">
+              <div class="container">
+                <div class="sec-title">KEYWORD</div>
+                <div class="sec-subtitle">input subtitle here</div>
+                <div class="keyword-wrap"><a class="keyword-label" href="javascript:;">#Fabric</a><a class="keyword-label" href="javascript:;">#Handmadeflower</a><a class="keyword-label" href="javascript:;">#Tulle</a><a class="keyword-label" href="javascript:;">#Veil</a><a class="keyword-label" href="javascript:;">#Applique</a><a class="keyword-label" href="javascript:;">#FashionLace</a><a class="keyword-label" href="javascript:;">#Cording</a><a class="keyword-label" href="javascript:;">#Combination</a><a class="keyword-label" href="javascript:;">#Floral</a><a class="keyword-label" href="javascript:;">#Spring</a><a class="keyword-label" href="javascript:;">#MultipleColor</a><a class="keyword-label" href="javascript:;">#Cording</a><a class="keyword-label" href="javascript:;">#MultipleColor</a><a class="keyword-label" href="javascript:;">#Spring</a><a class="keyword-label" href="javascript:;">#Floral</a><a class="keyword-label" href="javascript:;">#Combination</a><a class="keyword-label" href="javascript:;">#Cording</a><a class="keyword-label" href="javascript:;">#FashionLace</a><a class="keyword-label" href="javascript:;">#Applique</a><a class="keyword-label" href="javascript:;">#Veil</a><a class="keyword-label" href="javascript:;">#Tulle</a><a class="keyword-label" href="javascript:;">#Fabric</a><a class="see-all" href="javascript:;">SEE ALL</a>
+                </div>
+              </div>
+            </div>
+            <div class="section section4">
+              <div class="container">
+                <div class="sec-title">FEATURES</div>
+                <div class="sec-subtitle">input subtitle here</div>
+                <!--主圖輪播-->
+                <div class="mainBanner-slider">
+                  <div class="slider-wrapper">
+                    <div class="swiper-container" data-swiper-id="detail-banner-slider-ID" data-swiper-name="detail-banner-slider" data-swiper-direction="horizontal" data-swiper-num="1" data-swiper-arrow="off" data-swiper-nav="on" data-swiper-nav-name=".banner-slider-pagination" data-swiper-autoplay="on" data-swiper-effect="fade" data-swiper-breakpoints="{1024: { direction: 'vertical' }}">
+                      <div class="swiper-wrapper">
+                        <!--這邊跑迴圈-->
+                        <!--請將欄位串在swiper-slide的data上-->
+                        <!--描述 - data-description-->
+                        <div class="swiper-slide" data-description="Here is to put some describes about pictur or video.">
+                          <div class="content">
+                            <!--影片-->
+                            <div class="video-box" video-id="zBU4R1Jm46k" video-type="youtube">
+                              <!--影片封面圖--><img src="../../../uploads/product/detail06.jpg" alt=""/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide" data-description="Here is to put some describes about pictur or video.">
+                          <div class="content">
+                            <!--圖片-->
+                            <div class="img-box"><img src="https://picsum.photos/1100/620" alt=""/></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination banner-slider-pagination detail-banner-slider-ID"></div>
+                  </div>
+                  <!--輪播文字區塊-->
+                  <div class="slider-textarea">
+                    <div class="info">
+                      <div class="description"></div>
+                    </div>
+                  </div>
+                </div>
+                <!--段落編輯器-->
+                <div class="_articleBlock">
+                  <article class="_articleU" img-row="x2" img-merge="on" h-align="left" subh-align="left" button-align="left" button-textalign="center" button-textcolor="#fff" button-color="#fff">
+                    <div class="_contentWrap">
+                      <div class="_imgCover">
+                        <div class="_cover">
+                          <div class="_photo"><img src="../../../uploads/product/detail07.jpg" alt="圖片描述"/></div><span class="_description">Description</span>
+                        </div>
+                        <div class="_cover">
+                          <div class="_photo"><img src="../../../uploads/product/detail08.jpg" alt="圖片描述"/></div><span class="_description">Description</span>
+                        </div>
+                        <div class="_cover">
+                          <div class="_photo"><img src="../../../uploads/product/detail09.jpg" alt="圖片描述"/></div><span class="_description">Description</span>
+                        </div>
+                        <div class="_cover">
+                          <div class="_photo"><img src="../../../uploads/product/detail10.jpg" alt="圖片描述"/></div><span class="_description">Description</span>
+                        </div>
+                      </div>
+                      <div class="_wordWrap">
+                        <!-- h4._H This is the title of the Article, A satirical title generator for designers...-->
+                        <h5 class="_subH">Beautiful Lines of Outstanding Women</h5>
+                        <p class="_P">This season tailors the beautiful lines of outstanding women, and gives the image of women who love fashion. This is achieved through exquisite embroidery, such as owls made with colorful embroidery threads, which are perfectly integrated into other designs. The work also features simple fabric or large color patchwork, attractive cuts, lace details, high slits and a shoulderless design.
+                          <!-- span._buttonCover-->
+                          <!--   a._button(href='javascript:;') Button Description-->
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="_article -typeSwiper-L" h-align="left" subh-align="left">
+                    <div class="_contentWrap">
+                      <div class="swiper-container" data-swiper-num="1" data-swiper-autoplay="on" data-swiper-loop="off">
+                        <div class="swiper-wrapper">
+                          <div class="_cover swiper-slide">
+                            <div class="_wordWrap">
+                              <!--h4._H This is the title of the Article, A satirical title generator for designers...-->
+                              <h5 class="_subH">Beautiful Lines of Outstanding Women</h5>
+                              <div class="_P">This season tailors the beautiful lines of outstanding women, and gives the image of women who love fashion. This is achieved through exquisite embroidery, such as owls made with colorful embroidery threads, which are perfectly integrated into other designs. The work also features simple fabric or large color patchwork, attractive cuts, lace details, high slits and a shoulderless design.</div>
+                            </div>
+                            <div class="_photoWrap">
+                              <div class="_photo"><img src="../../../uploads/product/detail11.jpg" alt="圖片描述"/></div>
+                            </div>
+                          </div>
+                          <div class="_cover swiper-slide">
+                            <div class="_wordWrap">
+                              <!--h4._H This is the title of the Article, A satirical title generator for designers...-->
+                              <h5 class="_subH">Beautiful Lines of Outstanding Women</h5>
+                              <div class="_P">This season tailors the beautiful lines of outstanding women, and gives the image of women who love fashion. This is achieved through exquisite embroidery, such as owls made with colorful embroidery threads, which are perfectly integrated into other designs. The work also features simple fabric or large color patchwork, attractive cuts, lace details, high slits and a shoulderless design.</div>
+                            </div>
+                            <div class="_photoWrap">
+                              <div class="_photo"><img src="https://picsum.photos/495/340" alt="圖片描述"/></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="section section5">
+              <div class="container">
+                <div class="sec-title">RECOMMEND</div>
+                <div class="sec-subtitle">input subtitle here</div>
+                <div class="recommend-product">
+                  <div class="slider-arrow-Prev recommend-slider-ID"><i class="icon-arrow-up"></i></div>
+                  <div class="slider-arrow-Next recommend-slider-ID"><i class="icon-arrow-up"></i></div>
+                  <div class="swiper-container recommend-swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list01.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">M7702</div>
+                          <div class="name">Chantilly Lace</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="tag" style="background-color: #26ae8c">New</div>
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list02.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">ER14486AG8</div>
+                          <div class="name">Red&amp;Green Flower</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list03.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">M7704</div>
+                          <div class="name">Chantilly Lace</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list04.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">M7705</div>
+                          <div class="name">Chantilly Lace</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list05.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">ER14486AG5</div>
+                          <div class="name">Blue Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list06.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">J15104A2</div>
+                          <div class="name">Blue Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list07.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">J15104A4</div>
+                          <div class="name">Pink Flower Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list08.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">ER14486AG7</div>
+                          <div class="name">Pink Flower Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list09.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">M7703</div>
+                          <div class="name">Chantilly Lace</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list10.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">BJME500938T</div>
+                          <div class="name">Red Flower with Green Leaf Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list11.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">ER14486AG6</div>
+                          <div class="name">Yellow Flying Bee Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="tag" style="background-color: #5e50b5">Hot</div>
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list12.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">J15104A3</div>
+                          <div class="name">Horizontal Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list13.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">BJME500938T</div>
+                          <div class="name">Pink Flower Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list14.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">J15104A1</div>
+                          <div class="name">Flower Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list15.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">BJME500938T</div>
+                          <div class="name">Blue Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list16.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">BJME500938T</div>
+                          <div class="name">Yellow Flying Bee Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list17.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">BJME500938T</div>
+                          <div class="name">Flower Sequin</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                      <div class="swiper-slide"><a class="item" href="./product_detail.html">
+                          <div class="img-wrapper">
+                            <!--客戶自行設定標籤的 文字 / 顏色-->
+                            <!--一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot-->
+                            <div class="shadow"></div>
+                            <div class="img-box"><img class="swiper-lazy" data-src="../../../uploads/product/list18.jpg" alt=""/>
+                              <div class="swiper-lazy-preloader"></div>
+                            </div>
+                          </div>
+                          <div class="number">M7706</div>
+                          <div class="name">Chantilly Lace</div>
+                          <div class="price">US$ 9.40 / Y</div></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- 頁尾-->
+        <footer>
+          <div class="footer-top">
+            <div class="header">Dream with Us</div>
+            <div class="quick-link">
+              <ul class="main-unit">
+                <li><a href="./about.html">CLOSER TO MING</a></li>
+                <li><a href="./news.html">MING TO TELL</a></li>
+                <li><a href="./product.html">PICK MING UP</a></li>
+                <li><a href="./contact.html">LET MING HELP</a></li>
+              </ul>
+              <ul class="sub-unit">
+                <li><a href="./qa.html">MING's service</a></li>
+                <li><a href="./member.html">Member of MING</a></li>
+                <li><a href="javascript:;">Recruit</a></li>
+                <li><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_privacy_policy.html" data-ajax-container=".privacy-lbox" data-ajax-callback="_ajaxCallback.privacyPolicy">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom"><a class="backTop" href="javascript:;"><i class="icon-top"></i></a>
+            <div class="company-info">
+              <div class="block">
+                <div class="area">TAIPEI, TAIWAN</div>
+                <ul class="contact-info">
+                  <li><span class="key">Tel</span><span class="value">+886-2-29512727</span></li>
+                  <li><span class="key">Fax</span><span class="value">+886-2-29515988  </span></li>
+                  <li><span class="key">Add</span><span class="value">9F, NO. 156, SEC.1, ZHONGSHAN RD.,<br>BANQIAO DIST., NEW TAIPEI CITY 22065</span></li>
+                </ul>
+              </div>
+              <div class="block">
+                <ul class="social-link">
+                  <li><a href="javascript:;"><i class="icon-ig"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-fb"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-twitter"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-line"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-wechat"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-youtube"></i></a></li>
+                </ul>
+                <div class="copyright">COPYRIGHT © MINGLEURN ALL RIGHTS RESERVED.  DESIGN BY <a class="wdd" href="https://www.wddgroup.com/">WDD</a>.</div>
+              </div>
+              <div class="block">
+                <div class="area">DONG GUAN, CHINA</div>
+                <ul class="contact-info">
+                  <li><span class="key">Tel</span><span class="value">+86-769-88326496  </span></li>
+                  <li><span class="key">Fax</span><span class="value"> +86-769-88326495</span></li>
+                  <li><span class="key">Add</span><span class="value">NO. 6, SHIN WEN 1ST. STREET,<br>SHIN WEN INDUSTRY ZONE,<br>DAO JIAO TOWN, DONG GUAN CITY, 523170</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <!--引入的script-->
+  <script>document.createElement( "picture" );</script>
+  <script src="../../../assets/js/plugins/picturefill/picturefill.min.js" async="async"></script>
+  <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
+  <script src="../../../assets/js/plugins-dist.js"></script>
+  <script src="../../../assets/js/fesdDB.1.0-dist.js"></script>
+  <script src="../../../assets/js/fesd.1.1-dist.js"></script>
+  <script src="../../../assets/js/methods-dist.js"></script>
+  <script src="../../../assets/js/main-dist.js"></script><!-- microdata : professional service -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "ProfessionalService",
+      "name": "網站名子",
+      "email": "mailto:email",
+      "url": "本站網址",
+      "image": "favicon logo路徑",
+      "priceRange":"商品價格區間",
+      "telephone": "電話",
+      "logo": "logo路徑",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "地址",
+        "addressLocality": "區",
+        "addressRegion": "成市",
+        "postalCode": "郵遞區號",
+        "addressCountry": "中華民國 (台灣)"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.619435",
+        "longitude": "120.296034"
+      },
+      "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+      "openingHours": [
+        "Mo-Th 11:00-22:00",
+        "Fr 11:00-22:30",
+        "Sa 10:30-22:30",
+        "Su 10:30-22:00"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+886-00-12345678"
+      },
+      "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+    }
+    
+    
+  </script><!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://example.com/dresses",
+            "name": "Dresses"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "https://example.com/dresses/real",
+            "name": "Real Dresses"
+          }
+        }
+      ]
+    }
+  </script>
+</html>

@@ -1,0 +1,126 @@
+-
+  about = [
+    {
+      href: './about_history.html',
+      front: '../../../assets/img/about/about-card01-A.png',
+      back: '../../../assets/img/about/about-card01-B.png',
+      frontMobile: '../../../assets/img/about/about-card01-mobile.png',
+    },
+    {
+      href: './contact.html',
+      front: '../../../assets/img/about/about-card02-A.png',
+      back: '../../../assets/img/about/about-card02-B.png',
+      frontMobile: '../../../assets/img/about/about-card02-mobile.png',
+    },
+    {
+      href: './news.html',
+      front: '../../../assets/img/about/about-card03-A.png',
+      back: '../../../assets/img/about/about-card03-B.png',
+      frontMobile: '../../../assets/img/about/about-card03-mobile.png',
+    },
+    {
+      href: './product.html',
+      front: '../../../assets/img/about/about-card04-A.png',
+      back: '../../../assets/img/about/about-card04-B.png',
+      frontMobile: '../../../assets/img/about/about-card04-mobile.png',
+    },
+    {
+      href: '',
+      front: '../../../assets/img/about/about-card05-A.png',
+      back: '../../../assets/img/about/about-card05-B.png',
+      frontMobile: '../../../assets/img/about/about-card05-mobile.png',
+    },
+    {
+      href: './about_feature.html',
+      front: '../../../assets/img/about/about-card06-A.png',
+      back: '../../../assets/img/about/about-card06-B.png',
+      frontMobile: '../../../assets/img/about/about-card06-mobile.png',
+    },
+    {
+      href: './member.html',
+      front: '../../../assets/img/about/about-card07-A.png',
+      back: '../../../assets/img/about/about-card07-B.png',
+      frontMobile: '../../../assets/img/about/about-card07-mobile.png',
+    },
+    {
+      href: './about_fabric.html',
+      front: '../../../assets/img/about/about-card08-A.png',
+      back: '../../../assets/img/about/about-card08-B.png',
+      frontMobile: '../../../assets/img/about/about-card08-mobile.png',
+    },
+    {
+      href: './about_location.html',
+      front: '../../../assets/img/about/about-card09-A.png',
+      back: '../../../assets/img/about/about-card09-B.png',
+      frontMobile: '../../../assets/img/about/about-card09-mobile.png',
+    },
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/about.css")
+  body.about(data-page="about")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/about/decor01.png", alt="")
+          .decor2
+            img(src="../../../assets/img/about/decor02.png", alt="")
+          .decor3
+            img(src="../../../assets/img/about/decor03.png", alt="")
+          .decor4
+            img(src="../../../assets/img/about/decor04.png", alt="")
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .header
+              .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") ABOUT US
+              h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Closer to MING
+              .unit-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Inheriting a long history of embroidery craftsmanship, integrating the latest contemporary design and technology, accurately grasping the trend of the trend and driving the trend, new development that keeps pace with the times, meets your fast-changing needs of popular products.
+            .about-list
+              .row
+                each data in about
+                  .grid
+                    if data.href == ''
+                      .flip-card
+                        .flip-card-inner
+                          .flip-card-front
+                            picture
+                              source(media="(min-width: 1025px)", srcset= data.front)
+                              img(src= data.frontMobile, alt="")
+                          .flip-card-back
+                            img(src= data.back, alt="")
+                    else
+                      a.flip-card(href= data.href)
+                        .flip-card-inner
+                          .flip-card-front
+                            picture
+                              source(media="(min-width: 1025px)", srcset= data.front)
+                              img(src= data.frontMobile, alt="")
+                          .flip-card-back
+                            img(src= data.back, alt="")
+
+
+
+        // 頁尾
+        footer
+          .footer-top
+            .header Blossom in 1987
+            include ../layouts/_quick-link.pug
+                                                
+          include ../layouts/_footer_bottom.pug
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

@@ -1,0 +1,30 @@
+//函式
+  
+//RWD
+@mixin rwdmax($max)
+    @media only screen and (max-width: $max + px)  
+        @content
+
+@mixin rwdmin($min)
+    @media only screen and (min-width: $min + px)  
+        @content
+
+//文字大小像素轉rem
+@mixin font-size($size: 16) 
+    font-size: ($size/16) + rem
+
+@function px($px)
+    @return $px / 16 * 1rem
+
+//文字大小像素轉vw/vh
+@function pxTovw($px)
+    @return $px / 1920 * 100vw
+@function pxTovh($px)
+    @return $px / 1080 * 100vh
+
+//背景圖
+@mixin bg($url,$size,$repeat,$pos)
+    background-image: url($url)
+    background-size: $size
+    background-repeat: $repeat
+    background-position: $pos

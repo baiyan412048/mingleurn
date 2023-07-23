@@ -1,0 +1,1729 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/layouts/_form.sass
+@import ../common/ajax/_ajax_leave_check.sass
+@import ../common/ajax/_ajax_customized_submit.sass
+@import ../common/ajax/_ajax_tool_guide.sass
+@import ../common/ajax/_ajax_customized_preview.sass
+
+.customized
+  &.show-tips
+    .opacity-mask
+      display: block
+    .all-wrapper
+      .function-tips
+        display: block
+      .close-btn
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background-color: rgba(0,0,0,0.8)
+          z-index: 1
+      .menu-btn
+        z-index: 11
+      .customized-nav
+        background-color: transparent
+        z-index: 6
+        +rwdmax(1365)
+          z-index: 11
+        .function-bar
+          >li
+            &:not(.function-tips)
+              i
+                color: white
+    main
+      .customized-wrap
+        .tool-guide-mask
+          display: block
+          z-index: 5
+        .artboard-block
+          z-index: 10
+          .toolbar-top
+            .product-name
+              opacity: 0.2
+          .toolbar-left
+            border-left: 1px dashed white
+            +rwdmax(767)
+              border: none
+          .toolbar-bottom
+            >.function-tips
+              +rwdmax(575)
+                display: block
+          .bg-select
+            .item
+              &.active
+                &:after
+                  display: none
+          .visual-range
+            .guide-mask
+              display: flex
+  .opacity-mask
+    display: none
+    position: fixed
+    width: 100%
+    height: 100vh
+    z-index: 99
+    .skip-btn
+      position: absolute
+      right: 0
+      bottom: 0
+      width: 200px
+      height: 72px
+      background-color: #a88438
+      cursor: pointer
+      +flex
+      +rwdmax(1365)
+        top: 73px
+        right: auto
+        bottom: auto
+        left: 36px
+      +rwdmax(767)
+        width: 170px
+        height: 65px
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+      .text
+        +fontSetBold($font: $LBB, $size: px(13), $color: white)
+      .icon
+        color: white
+        margin-left: 16px
+  .loading-page
+    background-color: rgba(0, 0, 0, 0.9)
+    z-index: 9999
+    .icon-box
+      .icon
+        width: 50px
+        margin: 0 auto 20px auto
+  .all-wrapper
+    &.extend
+      .customized-nav
+        left: auto
+        right: 0
+        width: auto
+        background-color: transparent
+        .function-bar
+          &::before
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            width: 1px
+            height: 30px
+            background-color: rgba(255,255,255,0.2)
+            margin: -15px 0 0 0
+            +rwdmax(1365)
+              display: none
+          >li
+            &:not(.function-tips)
+              &.remark
+                display: flex
+              i
+                color: white
+      main
+        .customized-wrap
+          .artboard-block
+            width: 100%
+            padding: 72px 72px 72px 35px
+            .toolbar-top
+              padding: 0 395px 0 35px
+              .maximize
+                span
+                  &.max
+                    display: none
+                  &.min
+                    display: block
+                i
+                  &.icon-open_web
+                    display: none
+                  &.icon-close-cart
+                    display: block
+            .toolbar-bottom
+              max-width: 898px
+              padding: 0
+              left: 50%
+              transform: translate(calc(-50%),0)
+              +rwdmax(1024)
+                max-width: 100%
+                width: calc(100% - 107px)
+                left: 35px
+                transform: translate(0, 0)
+              .draw-step
+                width: 148px
+                justify-content: flex-start
+                .function-tips
+                  left: 30px
+                  +rwdmax(767)
+                    left: -5px
+                  +rwdmax(575)
+                    left: -30px
+          .other-wrap
+            height: 100vh
+            overflow: hidden
+            .block
+              &:nth-child(1)
+                transition: opacity 0.3s linear 0.2s
+              &:nth-child(2)
+                transform: translateX(100%)
+                transition: transform 0.3s linear 0.2s
+    .function-tips
+      display: none
+      position: absolute
+      padding: 7px 20px
+      background-color: white
+      border-radius: 10px
+      white-space: nowrap
+      +fontSet($size: px(13), $lh: 26px, $color: black)
+      &::before
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        border-style: solid
+    .mobile-text-input
+      position: fixed
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 100vh
+      height: calc(var(--vh, 1vh) * 100)
+      background-color: #383838
+      opacity: 0
+      transform: translateY(100%)
+      transition: opacity 0.4s, transform 0.4s
+      z-index: 20
+      &.open
+        opacity: 1
+        transform: translateY(0)
+      .nav
+        height: 60px
+        background-color: black
+        +flex($x: space-between)
+        .cancel-input
+          width: 60px
+          height: 60px
+          +flex
+          .icon
+            position: relative
+            display: block
+            width: 14px
+            height: 14px
+            transform: rotate(45deg)
+            &::before,&::after
+              content: ''
+              background-color: white
+              +posCenter
+            &::before
+              width: 2px
+              height: 14px
+            &::after
+              width: 14px
+              height: 2px
+        .header
+          +fontSetBold($font: $LBB, $size: px(13), $color: white)
+        .confirm-input
+          width: 60px
+          height: 60px
+          background-color: #a88438
+          +flex
+          +fontSetBold($font: $LBB, $size: px(13), $color: white)
+      .text-input
+        width: 100%
+        height: calc(100% - 60px)
+        border: none
+        background-color: transparent
+        padding: 24px 28px
+        +fontSet($size: px(20), $lh: 30px, $color: white)
+    .menu-mask
+      display: none
+      position: fixed
+      width: 100%
+      height: 100vh
+      top: 0
+      left: 0
+      background-color: rgba(0,0,0,0.8)
+      z-index: 4
+      +rwdmin(768)
+        display: none !important
+    .close-btn
+      width: 72px
+      height: 72px
+      background-color: #a88438
+      +flex
+      +rwdmax(767)
+        width: 50%
+        height: 55px
+        margin-right: auto
+        background-color: black
+        border-bottom-left-radius: 20px
+        .icon
+          width: 14px
+          height: 14px
+          &::before
+            width: 2px
+            height: 14px
+          &::after
+            width: 14px
+            height: 2px
+      .icon
+        position: relative
+        display: block
+        width: 20px
+        height: 20px
+        transform: rotate(45deg)
+        &::before,&::after
+          content: ''
+          background-color: white
+          +posCenter
+        &::before
+          width: 2px
+          height: 20px
+        &::after
+          width: 20px
+          height: 2px
+      .text
+        display: none
+        margin-left: 10px
+        +fontSet($size: px(14), $color: white)
+        +rwdmax(767)
+          display: block
+    .close-remark,.close-favorite
+        position: fixed
+        width: 72px
+        height: 72px
+        top: 0
+        left: calc(100vw - 72px)
+        z-index: -1
+        +flex
+    .menu-btn
+      display: none
+      width: 30px
+      height: 30px
+      position: absolute
+      top: 22.5px
+      right: 20px
+      z-index: 3
+      +rwdmax(767)
+        display: block
+      +rwdmax(575)
+        top: 15px
+        right: 10px
+      i
+        font-size: 30px
+        color: white
+      .function-tips
+        bottom: -18px
+        right: -10px
+        transform: translate(0,100%)
+        +rwdmax(575)
+          right: 0
+        &::before
+          top: 1px
+          right: 18px
+          border-width: 0 7px 8px 7px
+          border-color: transparent transparent #ffffff transparent
+          transform: translate(0,-100%)
+          +rwdmax(575)
+            right: 8px
+    .customized-nav
+      position: fixed
+      width: 50vw
+      height: 72px
+      top: 0
+      left: 50vw
+      background-color: #f4f4f4
+      z-index: 5
+      +flex($x: flex-end)
+      +rwdmax(1365)
+        width: auto
+        background-color: transparent
+        left: auto
+        right: 0
+      +rwdmax(767)
+        display: none
+        top: 50%
+        left: 50%
+        right: auto
+        width: 285px
+        height: auto
+        transform: translate(-50%,-50%)
+        flex-direction: column
+        &::after
+          content: ''
+          position: absolute
+          width: 100%
+          height: 100%
+          background-color: #f4f4f4
+          border-radius: 20px
+          box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+          z-index: -1
+          overflow: hidden
+      .close-menu
+        display: none
+        position: absolute
+        top: 0
+        left: 50%
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        background-color: #a88438
+        transform: translate(-50%,-50%)
+        cursor: pointer
+        justify-content: center
+        align-items: center
+        +rwdmax(767)
+          display: flex
+        .icon
+          position: relative
+          display: block
+          width: 10px
+          height: 10px
+          transform: rotate(45deg)
+          &::before,&::after
+            content: ''
+            background-color: white
+            +posCenter
+          &::before
+            width: 2px
+            height: 10px
+          &::after
+            width: 10px
+            height: 2px
+      .function-bar
+        position: relative
+        +flex
+        +rwdmax(767)
+          position: static
+          width: 100%
+          flex-direction: column
+          padding: 30px 0 8px 0
+        >li
+          &:not(.function-tips)
+            width: 72px
+            height: 72px
+            cursor: pointer
+            +flex
+            +rwdmax(767)
+              width: 100%
+              height: 60px
+            &.remark,&.preview
+              +rwdmax(767)
+                border-bottom: 1px solid rgba(0,0,0,0.1)
+            &.remark
+              display: none
+              +rwdmax(1365)
+                display: flex
+            &.complete
+              +rwdmax(767)
+                position: absolute
+                width: 50%
+                height: 55px
+                right: 0
+                bottom: 0
+                background-color: #a88438
+                border-bottom-right-radius: 20px
+                i
+                  color: white
+                .text
+                  color: white
+                  margin-left: 10px
+            i
+              display: block
+              color: black
+              +rwdmax(1365)
+                color: white
+              +rwdmax(767)
+                color: black
+                width: 21px
+                height: 15px
+                +flex
+              &.icon-remark
+                font-size: 15px
+              &.icon-preview
+                font-size: 12px
+              &.icon-tool-guide
+                font-size: 15px
+              &.icon-complete
+                font-size: 13px
+            .text
+              display: none
+              width: 58px
+              margin-left: 16px
+              white-space: nowrap
+              +fontSet($size: px(14), $color: black)
+              +rwdmax(767)
+                display: block
+        .function-tips
+          bottom: 9px
+          left: 50%
+          transform: translate(-50%,100%)
+          &::before
+            top: 1px
+            left: 50%
+            border-width: 0 7px 8px 7px
+            border-color: transparent transparent #ffffff transparent
+            transform: translate(-50%,-100%)
+  main
+    .customized-wrap
+      width: 100%
+      .tool-guide-mask
+        display: none
+        position: fixed
+        width: 100%
+        height: 100vh
+        background-color: rgba(0,0,0,0.8)
+        z-index: 21
+        .right
+          width: 50%
+          height: 100%
+          margin-left: auto
+          +flex
+          .text
+            text-align: center
+            .line1
+              margin-bottom: 10px
+              +fontSetBold($font: $LBB, $size: px(16), $color: white)
+            .line2
+              +fontSet($size: px(13), $color: white)
+      .artboard-block
+        position: fixed
+        top: 0
+        left: 0
+        width: 50vw
+        height: 100vh
+        height: calc(var(--vh, 1vh) * 100)
+        padding: 72px 35px
+        background-color: #191919
+        z-index: 2
+        +rwdmax(1365)
+          width: 100%
+          padding: 72px 72px 72px 35px
+        +rwdmax(767)
+          padding: 72px 0
+        +rwdmax(575)
+          padding: 60px 0
+        .bg-select
+          position: relative
+          +flex
+          &.mobile
+            display: none
+            +rwdmax(767)
+              display: flex
+            .item
+              &.active
+                &::after
+                  top: 55px
+                  border-width: 8px 7.5px 0 7.5px
+                  border-color: #191919 transparent transparent transparent
+                  +rwdmax(575)
+                    top: 46px
+              .delete-paper
+                top: 60px
+          &:not(.mobile)
+            +rwdmax(767)
+              display: none
+          .item
+            position: relative
+            width: 40px
+            height: 40px
+            border-radius: 50%
+            border: 1px solid rgba(255,255,255,0.3)
+            background-position: center
+            background-repeat: no-repeat
+            background-size: cover
+            cursor: pointer
+            +flex
+            +rwdmax(575)
+              width: 35px
+              height: 35px
+            &:not(:first-child)
+              margin-left: 14px
+            &.active
+              border: 1px solid transparent
+              &::before
+                content: ''
+                width: calc(100% + 2px)
+                height: calc(100% + 2px)
+                border-radius: 50%
+                border: 4px solid #e9e9e9
+                +posCenter
+              &::after
+                content: ''
+                position: absolute
+                top: -24px
+                left: 50%
+                width: 0
+                height: 0
+                border-style: solid
+                border-width: 0 7.5px 8px 7.5px
+                transform: translate(-50%,0)
+                border-color: transparent transparent #191919 transparent
+                z-index: 1
+              .delete-paper
+                display: block
+            &.selected
+              border: none
+              .add-new
+                display: none
+            .delete-paper
+              display: none
+              position: absolute
+              top: -45px
+              white-space: nowrap
+              +fontSet($size: px(12), $color: #ffffff)
+            .add-new
+              position: relative
+              width: 12px
+              height: 12px
+              &::before,&::after
+                content: ''
+                position: absolute
+                top: 50%
+                left: 50%
+                background-color: rgba(255,255,255,0.6)
+              &::before
+                width: 12px
+                height: 1px
+                margin: -0.5px 0 0 -6px
+              &::after
+                width: 1px
+                height: 12px
+                margin: -6px 0 0 -0.5px
+          .function-tips
+            top: -14px
+            left: 50%
+            transform: translate(-50%,-100%)
+            +rwdmax(767)
+              top: auto
+              bottom: -14px
+              left: 50%
+              transform: translate(-50%,100%)
+            &::before
+              bottom: 1px
+              left: 50%
+              border-width: 8px 7px 0 7px
+              border-color: #ffffff transparent transparent transparent
+              transform: translate(-50%,100%)
+              +rwdmax(767)
+                bottom: auto
+                top: -15px
+                border-width: 0 7px 8px 7px
+                border-color: transparent transparent #ffffff transparent
+        .toolbar-top
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 72px
+          padding: 0 35px
+          z-index: 10
+          +flex($x: space-between)
+          +rwdmax(1365)
+            padding: 0 395px 0 35px
+          +rwdmax(767)
+            padding: 0 70px 0 20px
+            justify-content: flex-start
+          +rwdmax(575)
+            height: 60px
+            padding: 0 50px 0 10px
+          .product-name
+            +flex($x: flex-start)
+            +rwdmax(767)
+              width: calc(100% - 162px)
+              margin-left: 14px
+            +rwdmax(575)
+              width: calc(100% - 147px)
+            span
+              &:nth-child(1)
+                margin-right: 14px
+                flex-shrink: 0
+                +fontSet($size: px(12), $color: #666666)
+              &:nth-child(2)
+                +fontSetBold($font: $LBB, $size: px(13), $color: white)
+                +rwdmax(767)
+                  text-overflow: ellipsis
+                  white-space: nowrap
+                  overflow: hidden
+          .maximize
+            position: relative
+            cursor: pointer
+            +flex
+            +rwdmax(1365)
+              display: none
+            span
+              margin-right: 8px
+              +fontSetBold($font: $LBB, $size: px(13), $color: white)
+              &.max
+                display: block
+                +rwdmax(1365)
+                  display: none
+              &.min
+                display: none
+                +rwdmax(1365)
+                  display: block
+            i
+              display: block
+              font-size: 15px
+              color: white
+              &.icon-close-cart
+                display: none
+            .function-tips
+              bottom: -18px
+              left: 50%
+              transform: translate(-50%,100%)
+              &::before
+                top: 1px
+                left: 50%
+                border-width: 0 7px 8px 7px
+                border-color: transparent transparent #ffffff transparent
+                transform: translate(-50%,-100%)
+        .toolbar-left
+          position: absolute
+          top: 50%
+          left: 35px
+          transform: translate(0,-50%)
+          width: 50px
+          padding: 18px 10px
+          background-color: #191919
+          z-index: 10
+          +rwdmax(767)
+            left: 0
+          +rwdmax(575)
+            width: 45px
+          a
+            display: block
+          .select
+            text-align: center
+            &:active,&.active
+              .icon-select
+                color: white
+            .icon-select
+              display: block
+              font-size: 27px
+              color: rgba(255,255,255,0.3)
+              margin-bottom: 16px
+              +rwdmax(575)
+                font-size: 20px
+          .move
+            text-align: center
+            border-bottom: 1px solid rgba(255,255,255,0.2)
+            padding-bottom: 14px
+            &:active,&.active
+              .icon-move
+                color: white
+            .icon-move
+              display: block
+              font-size: 23px
+              color: rgba(255,255,255,0.3)
+              +rwdmax(575)
+                font-size: 20px
+          .zoom
+            &[data-option="zoom-in"],&[data-option="zoom-out"]
+              position: relative
+              width: 20px
+              height: 20px
+              margin: 0 auto
+              +rwdmax(575)
+                width: 16px
+                height: 16px
+              &:active
+                &::before,&::after
+                  background-color: white
+            &[data-option="zoom-in"]
+              margin: 19px auto 16px auto
+              &::before,&::after
+                content: ''
+                position: absolute
+                top: 50%
+                left: 50%
+                background-color: rgba(255,255,255,0.3)
+              &::before
+                width: 20px
+                height: 2px
+                margin: -1px 0 0 -10px
+                +rwdmax(575)
+                  width: 16px
+                  margin: -1px 0 0 -8px
+              &::after
+                width: 2px
+                height: 20px
+                margin: -10px 0 0 -1px
+                +rwdmax(575)
+                  height: 16px
+                  margin: -8px 0 0 -1px
+            &[data-option="zoom-out"]
+              &::before
+                content: ''
+                position: absolute
+                top: 50%
+                left: 50%
+                width: 20px
+                height: 2px
+                margin: -1px 0 0 -10px
+                background-color: rgba(255,255,255,0.3)
+                +rwdmax(575)
+                  width: 16px
+                  margin: -1px 0 0 -8px
+          .function-tips
+            top: -30px
+            left: 77px
+            +rwdmax(575)
+              left: 60px
+            &::before
+              content: ''
+              top: 50%
+              left: -7px
+              border-width: 7px 8px 7px 0
+              border-color: transparent #ffffff transparent transparent
+              transform: translate(0,-50%)
+        .toolbar-bottom
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 72px
+          padding: 0 35px
+          z-index: 10
+          +flex($x: space-between)
+          +rwdmax(1365)
+            max-width: 898px
+            padding: 0
+            left: 50%
+            transform: translate(calc(-50%),0)
+          +rwdmax(1024)
+            max-width: 100%
+            width: calc(100% - 107px)
+            left: 35px
+            transform: translate(0, 0)
+          +rwdmax(767)
+            width: 100%
+            left: 0
+            padding: 0 20px 0 50px
+          +rwdmax(575)
+            height: 60px
+            padding: 0 45px
+          +rwdmax(320)
+            padding: 0 10px
+          .draw-tool
+            +posCenter
+            +flex
+            +rwdmax(767)
+              position: relative
+              transform: none
+              top: 0
+              left: 0
+            .tool-btn
+              position: relative
+              width: 25px
+              height: 25px
+              cursor: pointer
+              +flex
+              +rwdmax(575)
+                width: 16px
+                height: 16px
+              &::before
+                content: ''
+                position: absolute
+                top: -39px
+                left: 50%
+                width: 0
+                height: 0
+                border-style: solid
+                border-width: 8px 7.5px 0 7.5px
+                transform: translate(-50%,0)
+                border-color: #191919 transparent transparent transparent
+                opacity: 0
+                transition: opacity 0.3s
+                z-index: 1
+              &.active
+                [class^="icon-"], [class*=" icon-"]
+                  color: white
+              &.open
+                &::before
+                  opacity: 1
+              &:not(:first-child)
+                margin-left: 40px
+                +rwdmax(767)
+                  margin-left: 25px
+              i
+                &[class^="icon-"], &[class*=" icon-"]
+                  display: block
+                  color: rgba(255,255,255,0.3)
+              .tool-setting
+                display: none
+                position: absolute
+                left: 50%
+                border-radius: 10px
+                background-color: #191919
+                transform: translate(-50%,0)
+                justify-content: center
+                align-items: center
+                .setting-wrap
+                  padding: 20px 30px
+                  +flex
+                  .brush-size
+                    position: relative
+                    width: 14px
+                    height: 14px
+                    cursor: pointer
+                    &.active
+                      &::before
+                        background-color: white
+                    &::before
+                      content: ''
+                      border-radius: 50%
+                      background-color: rgba(255,255,255,0.3)
+                      +posCenter
+                    &.size-L
+                      margin-right: 24px
+                      &::before
+                        width: 14px
+                        height: 14px
+                    &.size-M
+                      margin-right: 16px
+                      &::before
+                        width: 10px
+                        height: 10px
+                    &.size-S
+                      &::before
+                        width: 6px
+                        height: 6px
+                  .shape-btn
+                    margin: 0 auto
+                    border: 2px solid rgba(255,255,255,0.3)
+                    cursor: pointer
+                    &.active
+                      border: 1px solid white
+                    &[data-option="circle"]
+                      width: 24px
+                      height: 24px
+                      border-radius: 50%
+                      margin-right: 24px
+                    &[data-option="rect"]
+                      width: 22px
+                      height: 22px
+                  .line-btn
+                    width: 20px
+                    height: 20px
+                    &:nth-child(1)
+                      margin-right: 24px
+                    i
+                      font-size: 20px
+                      color: rgba(255,255,255,0.3)
+                    &.active
+                      i
+                        color: white
+              &[data-tool="brush"]
+                .tool-setting
+                  top: -92px
+                  +rwdmax(767)
+                    left: 48px
+                  +rwdmax(575)
+                    left: 43px
+              &[data-tool="shape"]
+                .tool-setting
+                  top: -102px
+              &[data-tool="line"]
+                .tool-setting
+                  top: -98px
+              &:not([data-tool="color"])
+                .icon-brush
+                  font-size: 23px
+                  +rwdmax(575)
+                    font-size: 16px
+                .icon-text
+                  font-size: 21px
+                  +rwdmax(575)
+                    font-size: 16px
+                .icon-shape
+                  font-size: 25px
+                  +rwdmax(575)
+                    font-size: 16px
+                .icon-draw-line
+                  font-size: 25px
+                  +rwdmax(575)
+                    font-size: 16px
+              &[data-tool="color"]
+                position: relative
+                width: 28px
+                +rwdmax(575)
+                  width: 20px
+                  height: 20px
+                .color-box
+                  position: absolute
+                  width: 18px
+                  height: 18px
+                  border: 1px solid rgba(255,255,255,0.3)
+                  +rwdmax(575)
+                    width: 14px
+                    height: 14px
+                  &:nth-child(1)
+                    top: 0
+                    left: 0
+                    z-index: 1
+                  &:nth-child(2)
+                    bottom: 0
+                    right: 0
+                  .display
+                    width: 100%
+                    height: 100%
+                    &.fill-color
+                      background-color: #ffffff
+                    &.stroke-color
+                      border: 4px solid transparent
+                  &.disabled
+                    overflow: hidden
+                    &::before
+                      content: ''
+                      position: absolute
+                      top: 50%
+                      left: 50%
+                      width: 200%
+                      height: 2px
+                      background-color: #ff0000
+                      transform: translate(-50%, -50%) rotate(-45deg)
+                    .fill-color
+                      background-color: #ffffff !important
+                    .stroke-color
+                      border-color: #ffffff !important
+            .color-select
+              display: none
+              position: absolute
+              top: -172px
+              left: 50%
+              width: 426px
+              border-radius: 10px
+              background-color: #191919
+              transform: translate(-50%,0)
+              justify-content: center
+              align-items: center
+              +rwdmax(767)
+                width: 344px
+                top: -242px
+                left: 42px
+                transform: translate(0,0)
+              +rwdmax(575)
+                width: 268px
+                top: -280px
+                left: calc(50vw - 179px)
+              .color-wrap
+                width: 100%
+                height: 100%
+                padding: 20px 30px
+                +flex($x: flex-start)
+                +rwdmax(767)
+                  flex-direction: column
+                .status
+                  margin-right: 32px
+                  flex-shrink: 0
+                  +rwdmax(767)
+                    margin-right: 0
+                    margin-bottom: 20px
+                    +flex
+                  .now-color
+                    position: relative
+                    width: 50px
+                    height: 50px
+                    .display
+                      width: 100%
+                      height: 100%
+                      border-radius: 50%
+                      +posCenter
+                      &.fill-color
+                        background-color: white
+                      &.stroke-color
+                        border: 4px solid transparent
+                        z-index: 1
+                  .type-select
+                    width: 50px
+                    margin-top: 15px
+                    padding: 0 5px
+                    +flex($x: space-between)
+                    +rwdmax(767)
+                      width: 70px
+                      margin-top: 0
+                      margin-left: 25px
+                    .type-box
+                      width: 15px
+                      height: 15px
+                      border: 1px solid rgba(255, 255, 255, 0.2)
+                      opacity: 0.3
+                      cursor: pointer
+                      +rwdmax(767)
+                        width: 20px
+                        height: 20px
+                      &.active
+                        opacity: 1
+                      &.disabled
+                        position: relative
+                        overflow: hidden
+                        &::before
+                          content: ''
+                          position: absolute
+                          top: 50%
+                          left: 50%
+                          width: 200%
+                          height: 2px
+                          background-color: #ff0000
+                          transform: translate(-50%, -50%) rotate(-45deg)
+                        .fill-color
+                          background-color: white !important
+                        .stroke-color
+                          border-color: white !important
+                      .fill-color,.stroke-color
+                        width: 100%
+                        height: 100%
+                      .fill-color
+                        background-color: white
+                      .stroke-color
+                        border: 3px solid black
+                .color-palettes
+                  max-width: 284px
+                  width: 100%
+                  +rwdmax(575)
+                    max-width: 208px
+                  .row
+                    margin: 0 -10px
+                    +flex($wrap: wrap, $x: flex-start)
+                    .grid
+                      width: 12.5%
+                      padding: 0 10px
+                      +rwdmax(575)
+                        width: calc(100% / 6)
+                        &:not(:nth-child(-n+6))
+                          margin-top: 20px
+                      +rwdmin(576)
+                        &:not(:nth-child(-n+8))
+                          margin-top: 20px
+                      .colorBox
+                        width: 100%
+                        height: 0
+                        padding-bottom: 100%
+                        border-radius: 50%
+                        cursor: pointer
+                        &.disabled
+                          position: relative
+                          background-color: #ffffff
+                          overflow: hidden
+                          &::before
+                            content: ''
+                            position: absolute
+                            width: 200%
+                            height: 2px
+                            background-color: #ff0000
+                            top: 50%
+                            left: 50%
+                            transform: translate(-50%,-50%) rotate(-45deg)
+            .function-tips
+              top: -22px
+              left: 50%
+              transform: translate(-50%,-100%)
+              +rwdmax(575)
+                display: none
+              &::before
+                bottom: 1px
+                left: 50%
+                border-width: 8px 7px 0 7px
+                border-color: #ffffff transparent transparent transparent
+                transform: translate(-50%,100%)
+          .draw-step
+            position: relative
+            +flex
+            +rwdmax(1365)
+              width: 148px
+              justify-content: flex-start
+            +rwdmax(1024)
+              width: auto
+              justify-content: flex-end
+            [class^="icon-"], [class*=" icon-"]
+              font-size: 19px
+              color: rgba(255,255,255,0.3)
+              cursor: pointer
+              +rwdmax(575)
+                font-size: 16px
+              &:active
+                color: white
+              &:not(:first-child)
+                margin-left: 15px
+            .function-tips
+              top: -24px
+              left: 50%
+              transform: translate(-50%,-100%)
+              +rwdmax(1365)
+                left: 30px
+              +rwdmax(767)
+                left: -5px
+              +rwdmax(575)
+                display: none
+              &::before
+                bottom: 1px
+                left: 50%
+                border-width: 8px 7px 0 7px
+                border-color: #ffffff transparent transparent transparent
+                transform: translate(-50%,100%)
+                +rwdmax(767)
+                  left: auto
+                  right: 25px
+                +rwdmax(575)
+                  right: 8px
+          >.function-tips
+            display: none
+            max-width: calc(100vw - 40px)
+            width: 100%
+            top: -22px
+            left: 50%
+            transform: translate(-50%,-100%)
+            white-space: normal
+            &::before
+              bottom: 1px
+              left: 50%
+              border-width: 8px 7px 0 7px
+              border-color: #ffffff transparent transparent transparent
+              transform: translate(-50%,100%)
+        .visual-range
+          position: relative
+          width: 100%
+          height: 100%
+          background-color: #383838
+          overflow: hidden
+          .guide-mask
+            display: none
+            position: absolute
+            width: 100%
+            height: 100%
+            background-color: rgba(0,0,0,0.8)
+            border: 1px dashed white
+            z-index: 2
+            justify-content: center
+            align-items: center
+            +rwdmax(767)
+              border: none
+            .text
+              text-align: center
+              +rwdmax(767)
+                display: none
+              .line1
+                margin-bottom: 10px
+                +fontSetBold($font: $LBB, $size: px(16), $color: white)
+              .line2
+                +fontSet($size: px(13), $color: white)
+          .select-background
+            display: none
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: rgba(0,0,0,0.9)
+            z-index: 10
+            justify-content: center
+            align-items: center
+            .content
+              text-align: center
+              .content-head
+                margin-bottom: 32px
+                +fontSetBold($font: $LBB, $size: px(13), $color: white)
+              .select-from
+                +flex($y: stretch)
+                .item
+                  position: relative
+                  padding: 18px 40px
+                  cursor: pointer
+                  #uploadBG
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    top: 0
+                    left: 0
+                    opacity: 0
+                    cursor: pointer
+                  .icon
+                    color: white
+                    height: 24px
+                    margin-bottom: 12px
+                    +flex
+                    &.icon-photo
+                      font-size: 23px
+                    &.icon-collect
+                      font-size: 19px
+                  .text
+                    +fontSet($size: px(12), $color: white)
+                .or
+                  +flex($direction: column)
+                  .text
+                    +fontSet($size: px(13), $lh: 20px, $color: rgba(255,255,255,0.3))
+                  &::before,&::after
+                    content: ''
+                    width: 1px
+                    height: 100%
+                    background-color: rgba(255,255,255,0.2)
+              .back-btn
+                width: 180px
+                height: 50px
+                text-align: center
+                border-radius: 10rem
+                background-color: white
+                margin: 58px auto 0 auto
+                cursor: pointer
+                +fontSetBold($font: $LBB, $size: px(13), $lh: 50px, $color: black)
+          .paper-delete-check
+            display: none
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: rgba(0,0,0,0.9)
+            z-index: 10
+            .check-wrap
+              width: 100%
+              height: 100%
+              +flex($direction: column)
+              .icon
+                font-size: 46px
+                color: white
+              .title
+                margin-top: 27px
+                +fontSetBold($font: $LBB, $size: px(13), $color: white)
+                .paper-name
+                  &::before
+                    content: '\00a0'attr(data-name)'\00a0'
+              .description
+                margin-top: 10px
+                +fontSet($size: px(13), $lh: 20px, $color: white)
+                +rwdmax(575)
+                  max-width: 250px
+                  text-align: center
+              .btn-group
+                margin-top: 32px
+                +flex
+                .btn
+                  height: 30px
+                  padding: 0 25px
+                  +fontSet($size: px(12), $lh: 30px, $color: white)
+                  &:not(:first-child)
+                    border-left: 1px solid rgba(255,255,255,0.2)
+          .drawing-paper
+            width: 2000px
+            height: 2000px
+            transform-origin: 50% 50%
+            background-color: #383838
+            z-index: -1
+            +posCenter
+            +rwdmax(1024)
+              width: 100vh
+              width: calc(var(--vh, 1vh) * 110)
+              height: 100vh
+              height: calc(var(--vh, 1vh) * 110)
+            &[data-page="default"]
+              z-index: 1
+            &.text,&.move,&.moving
+              canvas
+                cursor: inherit !important
+            &.text
+              cursor: text
+            &.move
+              cursor: grab
+            &.moving
+              cursor: grabbing
+            .artboard-background
+              width: 57.689%
+              z-index: -1
+              pointer-events: none
+              +posCenter
+              .bg-box
+                width: 100%
+                height: 0
+                padding-bottom: 133.34%
+            canvas
+              position: absolute
+              width: 100%
+              height: 100%
+              top: 0
+              left: 0
+              &#default,&#attached1,&#attached2
+                &-cursor
+                  pointer-events: none !important
+            .object-control
+              position: absolute
+              transform-origin: top left
+              pointer-events: none
+              z-index: 0
+              &.isTextBox
+                .editBtn
+                  display: block
+              .deleteBtn
+                position: absolute
+                width: 30px
+                height: 30px
+                top: 0
+                right: 0
+                pointer-events: auto
+                cursor: pointer
+              .editBtn
+                display: none
+                position: absolute
+                width: 30px
+                height: 30px
+                top: 42px
+                right: 0
+                pointer-events: auto
+                cursor: pointer
+      .other-wrap
+        position: relative
+        width: 100vw
+        background-color: rgba(0,0,0,0)
+        transition: 0.3s linear 0.2s
+        +flex($y: flex-start)
+        +rwdmax(1365)
+          height: 100vh
+          overflow: hidden
+        &.overlay
+          height: auto !important
+          overflow: auto !important
+          background-color: rgba(0,0,0,0.9)
+          &.select-product
+            .block
+              &:nth-child(1)
+                opacity: 1 !important
+          .block
+            &:nth-child(2)
+              transform: translateX(0) !important
+        .block
+          width: 50vw
+          min-height: 100vh
+          &:nth-child(1)
+            position: fixed
+            top: 0
+            left: 0
+            opacity: 0
+            transition: opacity 0.3s linear 0.2s
+            +rwdmax(1200)
+              width: 40%
+            +rwdmax(1024)
+              display: none
+          &:nth-child(2)
+            margin-left: auto
+            background-color: #f4f4f4
+            overflow: hidden
+            +rwdmax(1365)
+              max-width: 800px
+              width: 100%
+              transform: translateX(100%)
+              transition: transform 0.3s linear 0.2s
+          .from-favorite
+            width: 100%
+            height: 100vh
+            // background-color: rgba(0,0,0,0.9)
+            +flex
+            .content
+              text-align: center
+              .content-head
+                margin-bottom: 32px
+                +fontSetBold($font: $LBB, $size: px(13), $color: white)
+              .select-from
+                +flex($y: stretch)
+                .item
+                  position: relative
+                  padding: 18px 40px
+                  cursor: pointer
+                  .icon
+                    color: white
+                    height: 24px
+                    margin-bottom: 12px
+                    +flex
+                    &.icon-collect
+                      font-size: 19px
+                  .text
+                    +fontSet($size: px(12), $color: white)
+          .remark-block
+            width: 100%
+            padding: 0 95px
+            +rwdmax(767)
+              padding: 0 20px
+            .content
+              padding: 168px 0 93px 0
+              text-align: center
+              +rwdmax(767)
+                padding: 78px 0 48px 0
+              .title
+                +fontSetBold($font: $LBB, $size: px(26), $color: black)
+              .description
+                +fontSet($size: px(13), $lh: 25px, $color: rgba(0,0,0,0.8))
+              .form
+                max-width: 770px
+                width: 100%
+                padding-top: 100px
+                margin: 0 auto 120px auto
+                text-align: left
+                +rwdmax(767)
+                  padding-top: 48px
+                  margin: 0 auto 75px auto
+                .checkbox
+                  .fake-checkbox
+                    border: 1px solid #b3b3b3
+                .form-group
+                  +flex($y: flex-start)
+                  +rwdmax(767)
+                    flex-direction: column
+                  &:not(:first-child)
+                    margin-top: 80px
+                    +rwdmax(767)
+                      margin-top: 30px
+                  .field-title
+                    width: 105px
+                    flex-shrink: 0
+                    +fontSetBold($font: $LBB, $size: px(16), $lh: 20px, $color: black)
+                    +rwdmax(767)
+                      width: 100%
+                  .option-wrap
+                    width: 100%
+                    margin-left: 35px
+                    +rwdmax(767)
+                      margin-top: 18px
+                      margin-left: 0
+                    .checkbox
+                      p
+                        font-family: $basic
+                        font-weight: normal
+                    input
+                      width: calc(100% - 22px)
+                      margin: -8px 0 0 22px
+                      padding: 10px 0
+                      border-top: none
+                      border-right: none
+                      border-bottom: 1px solid #dedede
+                      border-left: none
+                      background-color: transparent
+                      +fontSet($size: px(13), $color: black)
+                      +placeholder($color: rgba(0,0,0,0.6), $size: px(13))
+                      +rwdmax(767)
+                        margin: 0 0 0 22px
+                      &.error
+                        border-bottom: 1px solid #c50909
+                    .cancel-option
+                      width: 100%
+                      margin-bottom: 22px
+                    .option
+                      .option-group
+                        width: 100%
+                        +flex($direction: column, $y: flex-start)
+                        &:not(:first-child)
+                          margin-top: 60px
+                        .checkbox
+                          margin-bottom: 20px
+                          +rwdmax(767)
+                            margin-bottom: 0
+          .favorite-block
+            display: none
+            .content
+              padding: 168px 20px 0 20px
+              text-align: center
+              +rwdmax(767)
+                padding: 78px 20px 0 20px
+              .title
+                +fontSetBold($font: $LBB, $size: px(26), $color: black)
+              .description
+                +fontSet($size: px(13), $lh: 25px, $color: rgba(0,0,0,0.8))
+                +rwdmax(767)
+                  margin-bottom: 30px
+              .mobile-filter-tabs
+                margin-bottom: 24px
+                +flex
+                display: none
+                +rwdmax(767)
+                  display: flex
+                >li
+                  padding: 0 18px
+                  cursor: pointer
+                  transition: color 0.3s
+                  +fontSet($size: px(13), $lh: 18px, $color: rgba(0,0,0,0.6))
+                  &.active
+                    color: black
+                  &:not(:last-child)
+                    border-right: 1px solid rgba(0,0,0,0.3)
+              .filter-type-select
+                margin-top: 54px
+                margin-bottom: 100px
+                +flex($y: flex-start)
+                +rwdmax(767)
+                  flex-direction: column
+                  align-items: center
+                  margin-top: 24px
+                  margin-bottom: 52px
+                .item
+                  max-width: 250px
+                  width: 100%
+                  +rwdmax(767)
+                    &:not(.active)
+                      display: none
+                  .type
+                    +fontSet($size: px(13), $lh: 26px, $color: rgba(0,0,0,0.8))
+                    +rwdmax(767)
+                      display: none
+                  .categories-select
+                    position: relative
+                    &.active
+                      .selected
+                        .arrow
+                          transform: rotateX(0deg)
+                    .selected
+                      position: relative
+                      padding: 10px 20px
+                      border-bottom: 1px solid black
+                      cursor: pointer
+                      +flex
+                      .text
+                        +fontSetBold($font: $LBB, $size: px(13), $color: black)
+                      .arrow
+                        position: absolute
+                        top: 50%
+                        right: 0
+                        margin-top: -7px
+                        font-size: 14px
+                        transform: rotateX(180deg)
+                        transition: transform 0.3s
+                    .dropdown
+                      display: none
+                      position: absolute
+                      top: 100%
+                      left: 50%
+                      transform: translate(-50%,4px)
+                      min-width: 235px
+                      padding: 15px 0
+                      border-radius: 20px
+                      border: solid 1px #cdcdcd
+                      background-color: #f4f4f4
+                      overflow: hidden
+                      z-index: 2
+                      &.shadow
+                        box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+                      &::after
+                        content: ''
+                        width: 100%
+                        height: 100%
+                        background-color: #f4f4f4
+                        z-index: -1
+                        +posCenter
+                      ul
+                        max-height: 252px!important
+                        height: 100%
+                        overflow: auto
+                        >li
+                          padding: 0 22px
+                          height: 42px
+                          white-space: nowrap
+                          transition: 0.3s
+                          text-align: left
+                          user-select: none
+                          cursor: pointer
+                          +fontSetBold($font: $LBB, $size: px(13), $lh: 42px, $color: #666666)
+                          &:hover
+                            background-color: #a88438
+                            color: white
+                .or
+                  flex-shrink: 0
+                  align-self: center
+                  padding: 0 50px
+                  +fontSetBold($font: $LBB, $size: px(16), $color: black)
+                  +rwdmax(767)
+                    display: none
+              .product-list
+                +maxWidth($maxw: 800px, $margin: 0 auto)
+                +rwdmax(1600)
+                  max-width: 600px
+                +rwdmax(575)
+                  max-width: 360px
+                .row
+                  margin: 0 -24px
+                  +flex($wrap: wrap, $y: flex-start)
+                  +rwdmax(575)
+                    margin: 0 -20px
+                  .grid
+                    width: 25%
+                    padding: 0 24px
+                    +rwdmin(1601)
+                      &:not(:nth-child(-n+4))
+                        margin-top: 50px
+                    +rwdmax(1600)
+                      width: calc(100% / 3)
+                      &:not(:nth-child(-n+3))
+                        margin-top: 50px
+                    +rwdmax(575)
+                      width: 50%
+                      padding: 0 20px
+                      &:not(:nth-child(-n+2))
+                        margin-top: 50px
+                    .item
+                      display: block
+                      width: 100%
+                      text-align: center
+                      &:hover
+                        .img-wrapper
+                          .shadow
+                            opacity: 0
+                          .option-mask
+                            opacity: 1
+                          .img-box
+                            box-shadow: 5px 8.7px 14px 6px rgba(0, 0, 0, 0.25)
+                      .img-wrapper
+                        position: relative
+                        max-width: 120px
+                        margin: 0 auto 16px auto
+                        z-index: 1
+                        .tag
+                          position: absolute
+                          right: -10px
+                          bottom: 0
+                          width: 60px
+                          height: 60px
+                          border-radius: 50%
+                          text-align: center
+                          z-index: 2
+                          transition: opacity 0.3s
+                          +fontSet($size: px(12), $lh: 60px, $color: white)
+                        .shadow
+                          width: 100%
+                          height: 100%
+                          border-radius: 50%
+                          box-shadow: inset 5px 8.7px 14px 6px rgba(0, 0, 0, 0.65)
+                          z-index: 1
+                          transition: opacity 0.3s
+                          +posCenter
+                        .img-box
+                          position: relative
+                          width: 100%
+                          padding-bottom: 100%
+                          border-radius: 50%
+                          overflow: hidden
+                          transition: 0.2s
+                          background-repeat: no-repeat
+                          background-position: center
+                          background-size: cover
+                      a
+                        display: block
+                      .number
+                        +fontSetBold($font: $LBB, $size: px(13), $lh: 22px)
+                        +rwdmax(767)
+                          font-size: px(12)
+                      .name
+                        margin-bottom: 10px
+                        +fontSetBold($font: $LBB, $size: px(14), $lh: 22px)
+                        +rwdmax(767)
+                          +ellipsis($line: 1, $lh: 22px)
+              .load-more
+                display: none
+                margin-top: 130px
+                +rwdmax(767)
+                  margin-top: 60px
+                .icon
+                  width: 40px
+                  margin: 0 auto
+                .text
+                  margin-top: 10px
+                  +fontSetBold($font: $LBB, $size: px(14), $color: black)

@@ -1,0 +1,26 @@
+nav
+  position: fixed
+  width: 100%
+  z-index: 1001
+  transition: all .5s
+  opacity: 0
+  top: -80px
+  &.show
+    top: 0
+    opacity: 1
+  .desktop
+    display: block
+    +rwdmax(768)
+      display: none
+  .tablet
+    display: none
+    +rwdmax(768)
+      display: block
+    +rwdmax(500)
+      display: none
+  .mobile
+    display: none
+    +rwdmax(768)
+      display: none
+    +rwdmax(500)
+      display: block

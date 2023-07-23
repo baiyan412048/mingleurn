@@ -1,0 +1,162 @@
+.tool-guide-wrap
+  position: fixed
+  width: 100%
+  top: 0
+  bottom: 0
+  left: 0
+  background-color: #f4f4f4
+  opacity: 0
+  transition: opacity 0.4s
+  z-index: 99
+  &.show
+    opacity: 1
+    .modal-scroll-wrap
+      .modal-dialog
+        .close-btn
+          opacity: 1
+        .modal-content
+          opacity: 1
+  .modal-scroll-wrap
+    width: 100%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    +rwdmax(767)
+      padding: 0
+    .modal-dialog
+      position: relative
+      width: 100%
+      padding-top: 145px
+      +rwdmax(767)
+        padding-top: 80px
+      .close-btn
+        position: absolute
+        top: 38px
+        right: 20px
+        width: 64px
+        height: 64px
+        background-color: #a88438
+        border-radius: 50%
+        cursor: pointer
+        z-index: 1
+        opacity: 0
+        transition: opacity 0.3s linear 0.6s
+        +flex
+        +rwdmax(1024)
+          top: 42px
+          width: 55px
+          height: 55px
+          left: auto
+          right: 50px
+          transform: none
+          transition: none
+        +rwdmax(767)
+          width: 30px
+          height: 30px
+          top: 14px
+          right: 14px
+        span
+          position: relative
+          display: block
+          width: 20px
+          height: 20px
+          transform: rotate(45deg)
+          +rwdmax(1024)
+            width: 18px
+            height: 18px
+          +rwdmax(767)
+            width: 10px
+            height: 10px
+          &::before,&::after
+            content: ''
+            background-color: white
+            +posCenter
+          &::before
+            width: 2px
+            height: 20px
+            +rwdmax(1024)
+              height: 18px
+            +rwdmax(767)
+              height: 10px
+          &::after
+            width: 20px
+            height: 2px
+            +rwdmax(1024)
+              width: 18px
+            +rwdmax(767)
+              width: 10px
+      .modal-content
+        position: relative
+        max-width: 81.77083%
+        min-width: 960px
+        width: 100%
+        min-height: calc(100vh - 320px)
+        margin: 0 auto 0 auto
+        padding: 100px 0 110px 0
+        background-color: white
+        opacity: 0
+        transition: transform 0.6s, opacity 0.6s
+        +rwdmax(1024)
+          margin: 0 auto
+          max-width: 100%
+          min-width: auto
+        +rwdmax(767)
+          padding: 40px 0 24px 0
+        .container
+          max-width: 960px
+          width: 100%
+          height: 100%
+          padding: 0 80px
+          margin: 0 auto
+          +rwdmax(767)
+            padding: 0 20px
+          .modal-header
+            text-align: center
+            margin-bottom: 56px
+            +fontSetBold($font: $LBB, $size: px(30), $lh: 40px)
+            +rwdmax(767)
+              font-size: px(20)
+              line-height: 30px
+              margin-bottom: 40px
+          .modal-body
+            .mainBanner-slider
+              margin-bottom: 75px
+              +mainBanner($ratio: 56.364%, $dotW: 80px)
+              +rwdmax(767)
+                margin: 0 -20px 75px -20px
+              .slider-textarea
+                position: relative
+                width: 100%
+                padding: 13px 28px
+                text-align: center
+                +rwdmax(767)
+                  max-width: 100%
+                  height: auto
+                  padding: 0 20px
+                +rwdmax(575)
+                  flex-direction: column
+                +sliderInfo($textColor: rgba(0,0,0,0.6), $mask: white)
+            ._articleBlock article
+              margin-bottom: 30px
+              &._article.-typeFull-Box ._contentWrap
+                width: 100%
+                padding: 90px 56px 100px 56px
+            ._articleBlock .typeF+.basic
+              margin-top: 0 !important
+            ._articleBlock article._article.-typeFull, ._articleBlock article._article.-typeFull-Box, ._articleBlock article._article.-typeFull-Box-L, ._articleBlock article._article.-typeFull-Box-R, ._articleBlock article._article.-typeFull-BoxSlice, ._articleBlock article._article.-typeFull-BoxSlice-L, ._articleBlock article._article.-typeFull-BoxSlice-R, ._articleBlock article._article.-typeFull-L, ._articleBlock article._article.-typeFull-R
+              padding: 35px !important
+              +rwdmax(767)
+                padding: 0 !important
+            ._articleBlock article ._contentWrap ._wordWrap ._subH
+              padding: 0
+            ._articleBlock article ._contentWrap ._wordWrap ._P
+              padding: 0
+            ._articleBlock article._article.-typeFull-Box-L[typeFull-img] ._typeFullImgCover_Rwd ._H, ._articleBlock article._article.-typeFull-Box-R[typeFull-img] ._typeFullImgCover_Rwd ._H, ._articleBlock article._article.-typeFull-Box[typeFull-img] ._typeFullImgCover_Rwd ._H, ._articleBlock article._article.-typeFull-BoxSlice-L[typeFull-img] ._typeFullImgCover_Rwd ._H, ._articleBlock article._article.-typeFull-BoxSlice-R[typeFull-img] ._typeFullImgCover_Rwd ._H, ._articleBlock article._article.-typeFull-BoxSlice[typeFull-img] ._typeFullImgCover_Rwd ._H, ._articleBlock article._article.-typeFull-L[typeFull-img] ._typeFullImgCover_Rwd ._H, ._articleBlock article._article.-typeFull-R[typeFull-img] ._typeFullImgCover_Rwd ._H, ._articleBlock article._article.-typeFull[typeFull-img] ._typeFullImgCover_Rwd ._H
+              +rwdmax(767)
+                width: 100% !important
+      .footer
+        height: 160px
+        +flex
+        +rwdmax(767)
+          height: 136px

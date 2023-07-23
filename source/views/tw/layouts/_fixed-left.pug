@@ -1,0 +1,16 @@
+.fixed-left-function
+  a.function-btn.search(href="./product_search.html")
+    i.icon-search
+  .function-btn.shop(onclick="_shoppingCart.openCart()" data-count="1")
+    i.icon-shop
+  .function-btn.language
+    i.icon-language
+    p
+      a(href="javascript:;") 繁
+      a(href="javascript:;") EN
+  a.function-btn.member(href="./login.html")
+    i.icon-member
+  // 此為登入後的結構↓↓
+  // a.function-btn.member.ajax_open(href="javascript:;" data-ajax-route="./ajax_member_logout.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")
+  //   i.icon-member-logout
+  .scroll-tips Scroll down

@@ -1,0 +1,82 @@
+@import ../common/base/_mixin
+
+.search_result
+  .all-wrapper
+    +newsDecor
+    .decor-layer
+      position: absolute
+      >div
+        position: fixed
+        &.decor1
+          position: absolute
+        &.decor4
+          position: absolute
+  .content
+    +flex($direction: column)
+    .header
+      text-align: center
+      margin-bottom: 40px
+      +rwdmax(1024)
+        margin-bottom: 24px
+      .back-list
+        display: inline-block
+        margin: 42px 0
+        +fontSet($size: px(13))
+        +rwdmax(767)
+          margin: 10px 0
+      .page-head
+        +fontSetBold($font: $LBB, $size: px(54), $lh: 50px)
+        +rwdmax(1024)
+          font-size: px(48)
+        +rwdmax(767)
+          font-size: px(32)
+    .searchbar
+      margin-bottom: 21px
+      +newsSearch
+    .search-btn
+      width: 90px
+      height: 90px
+      border-radius: 50%
+      background-color: black
+      +flex
+      +rwdmax(767)
+        width: 40px
+        height: 40px
+      .icon-search
+        color: white
+        font-size: 21px
+        +rwdmax(767)
+          font-size: 16px
+  .result-wrap
+    padding: 104px 0 160px 0
+    +rwdmax(1024)
+      padding: 0 0 160px 0
+    +rwdmax(767)
+      padding: 0 20px 160px 20px
+    +newsList
+    .news-list
+      margin: 92px auto 0 auto
+      +rwdmax(767)
+        margin-top: 45px
+  .no-result
+    padding: 48px 0 190px 0
+    .container
+      +maxWidth($maxw: 860px)
+      +rwdmax(1024)
+        padding: 0 40px
+      +rwdmax(767)
+        padding: 0 18px
+      .notice-content
+        border: 2px solid #a88438
+        padding: 80px 18px
+        +flex($direction: column)
+        .icon
+          font-size: 42px
+          color: #a88438
+          margin-bottom: 16px
+        .text
+          margin-bottom: 30px
+          +fontSetBold($font: $LBB, $size: px(20), $color: black)
+        .notice
+          max-width: 480px
+          text-align: center

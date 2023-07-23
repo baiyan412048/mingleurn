@@ -1,0 +1,243 @@
+-
+  products = [
+    {
+      tag: '',
+      img: '../../../uploads/product/list01.jpg',
+      number: 'M7702',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: 'New',
+      img: '../../../uploads/product/list02.jpg',
+      number: 'ER14486AG8',
+      name: 'Red&Green Flower',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list03.jpg',
+      number: 'M7704',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list04.jpg',
+      number: 'M7705',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list05.jpg',
+      number: 'ER14486AG5',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list06.jpg',
+      number: 'J15104A2',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list07.jpg',
+      number: 'J15104A4',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list08.jpg',
+      number: 'ER14486AG7',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list09.jpg',
+      number: 'M7703',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list10.jpg',
+      number: 'BJME500938T',
+      name: 'Red Flower with Green Leaf Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list11.jpg',
+      number: 'ER14486AG6',
+      name: 'Yellow Flying Bee Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: 'Hot',
+      img: '../../../uploads/product/list12.jpg',
+      number: 'J15104A3',
+      name: 'Horizontal Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list13.jpg',
+      number: 'BJME500938T',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list14.jpg',
+      number: 'J15104A1',
+      name: 'Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list15.jpg',
+      number: 'BJME500938T',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list16.jpg',
+      number: 'BJME500938T',
+      name: 'Yellow Flying Bee Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list17.jpg',
+      number: 'BJME500938T',
+      name: 'Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list18.jpg',
+      number: 'M7706',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+    link(rel="stylesheet", href="../../../assets/css/product_list.css")
+  body.product_list(data-page="product_list")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/product/list-decor01.png", alt="")
+          .decor2
+            img(src="../../../assets/img/product/list-decor02.png", alt="")
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .header
+              a.back-overview(href="./product.html") BACK
+              h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Lace
+              .unit-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Every trace we focus on quality control in order to show you high-quality products, where you have a lot of inspiration to explore and unleash.
+            .type-filter
+              .type-dropdown
+                .selected
+                  .text All News
+                  .arrow.icon-arrow-up
+                .dropdown
+                  ul.scrollbar-inner
+                    li.active ALL
+                    li Lace
+                    li Sequin
+                    li Cording
+                    li Beading
+              .float-back
+                .divider
+                .filter-option
+                  .filter-btn
+                    i.icon-filter
+                    .filter-menu
+                      ul
+                        li
+                          span.sort-option Style No.
+                          i.icon-triangleFull
+                          span.remarks ( A-Z )
+                        li
+                          span.sort-option Style No.
+                          i.icon-triangle
+                          span.remarks ( Z-A )
+                        li
+                          span.sort-option Price
+                          i.icon-triangleFull
+                          span.remarks ( low to high )
+                        li
+                          span.sort-option Price
+                          i.icon-triangle
+                          span.remarks ( high to low )
+                        li
+                          span.sort-option Date
+                          i.icon-triangleFull
+                          span.remarks ( new to old )
+                        li
+                          span.sort-option Date
+                          i.icon-triangle
+                          span.remarks ( old to new )
+                        li
+                          span.sort-option Hot
+                          i.icon-triangleFull
+                          span.remarks ( high to low )
+                        li
+                          span.sort-option Hot
+                          i.icon-triangle
+                          span.remarks ( low to high )
+                  .selected-filter
+            .product-list
+              .row
+                each data in products
+                  .grid
+                    a.item(href="./product_detail.html")
+                      .img-wrapper
+                        //客戶自行設定標籤的 文字 / 顏色
+                        //一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot
+                        if data.tag == 'New'
+                          .tag(style="background-color: #26ae8c")= data.tag
+                        else if data.tag == 'Hot'
+                          .tag(style="background-color: #5e50b5")= data.tag
+                        .shadow
+                        .img-box(style="background-image: url('" + data.img + "')")
+                      .number= data.number
+                      .name= data.name
+                      .price= data.price
+            .load-more
+                .icon
+                  img(src="../../../assets/img/loading.svg", alt="")
+                .text Loading
+
+        // 頁尾
+        footer
+          .footer-top
+            .header Dream with Us
+            include ../layouts/_quick-link.pug
+                                                
+          include ../layouts/_footer_bottom.pug
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

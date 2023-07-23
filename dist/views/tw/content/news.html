@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- head標籤 & 網站設定-->
+  <head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+    <!--共用設定-->
+    <!-- 網站語系及語言宣告-->
+    <meta http-equiv="content-language" content="zh-TW"/>
+    <meta charset="UTF-8"/>
+    <!-- RWD設定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 瀏覽器設定-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <!-- 網站關鍵字-->
+    <meta name="keywords" content="網站關鍵字"/>
+    <!-- 網頁內容描述-->
+    <meta name="description" content="網頁內容描述，中文 80 個字元、英文 160 個字元"/>
+    <!-- 禁止搜尋引擎建立該網頁的索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="robots" content="noindex"/>
+    <!-- 禁止 Google 該網頁建立索引，請於專案尚未上正式上架前保留這個設定，也請後端工程師把此設定放進後端管理中-->
+    <meta name="googlebot" content="noindex"/>
+    <!-- Open Graph Protocol for facebook-->
+    <meta property="og:title" content="網頁Title"/>
+    <meta property="og:description" content="網頁內容描述"/>
+    <meta property="og:url" content="主要網址"/>
+    <meta property="og:locale" content="zh_TW"/>
+    <meta property="og:image" content="分享的影像位址，大小8m以內，長方形尺寸:600px * 315px，正方形尺寸:600px * 600px"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="網頁內容描述"/>
+    <!-- Open Graph Protocol for google plus-->
+    <meta itemprop="name" content="網站名稱或標題"/>
+    <meta itemprop="image" content="分享的影像位址"/>
+    <meta itemprop="description" content="網頁描述"/>
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="分享的影像位址"/>
+    <meta name="twitter:site" content="網站名稱"/>
+    <meta name="twitter:title" content="網頁標題"/>
+    <meta name="twitter:description" content="網頁描述 200 個字元以內"/>
+    <meta name="twitter:creator" content="客戶公司或品牌名稱"/>
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content=" http://www.example.com/image.html"/>
+    <title>Mingleurn</title>
+    <!-- 重複網址的導向設定 : 被認定為主要網址的宣告，如不須禁止則全部刪除，請後端工程師把此設定放進後端管理中-->
+    <link rel="canonical" href="主要網址" itemprop="url"/>
+    <link rel="shortcut icon" href="../../../assets/img/favicon.ico" type="image/x-icon"/>
+    <!-- 以下script 後端自行打開-->
+    <!-- Google Tag Manager-->
+    <!-- script.-->
+    <!--   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
+    <!--   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
+    <!--   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
+    <!--   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
+    <!--   })(window,document,'script','dataLayer','GTM編號');-->
+    <!--全站共用CSS-->
+    <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
+    <!--獨立CSS-->
+    <link rel="stylesheet" href="../../../assets/css/news.css"/>
+  </head>
+  <body class="news" data-page="news">
+    <!--搜尋燈箱-->
+    <div class="search_lightbox">
+      <div class="content-wrap">
+        <div class="content">
+          <div class="close-search"><span></span></div>
+          <div class="header">Search News</div>
+          <div class="searchbar">
+            <input class="search-style" type="text" placeholder="Enter the keywords..."/>
+            <div class="search-year">
+              <div class="selected search-style">
+                <div class="text">Select the year of news</div>
+                <div class="arrow icon-arrow-up"></div>
+              </div>
+              <div class="dropdown">
+                <ul class="scrollbar-inner">
+                  <li>2020</li>
+                  <li>2019</li>
+                  <li>2018</li>
+                  <li>2017</li>
+                  <li>2016</li>
+                  <li>2015</li>
+                </ul>
+              </div>
+            </div>
+          </div><a class="search-btn" href="./search_result.html"><i class="icon-search"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="main-wrapper scrollbar-macosx" data-fake-body="">
+      <div class="all-wrapper">
+        <div class="decor-layer">
+          <div class="decor2"><img src="../../../assets/img/news/decor04.png" alt=""/></div>
+          <div class="decor3"><img src="../../../assets/img/news/decor05.png" alt=""/></div>
+        </div>
+        <!-- 導覽列-->
+        <!--原本畫面上的導覽列-->
+        <nav>
+          <div class="header"><a class="logo" href="./index.html"><img class="logo-black" src="../../../assets/img/logo-black.svg" alt="LOGO"/><img class="logo-white" src="../../../assets/img/logo-white.svg" alt="LOGO"/></a>
+            <div class="function-bar"><a class="function-btn member" href="javascript:;"><i class="icon-member"></i></a>
+              <div class="function-btn language"><i class="icon-language"></i>
+                <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+              </div><a class="function-btn shop" onclick="_shoppingCart.openCart()" href="javascript:;" data-count="1"><i class="icon-shop"></i></a><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a>
+              <div class="menu-switch">MENU</div>
+            </div>
+          </div>
+          <div class="menubar" data-animate="fadeIn" data-duration="0.3s" data-delay="0.4s">
+            <ul class="menu">
+              <li><a href="./about.html">CLOSER TO MING</a></li>
+              <li><a href="./news.html">MING TO TELL</a></li>
+              <li><a href="./product.html">PICK MING UP</a></li>
+              <li><a href="./contact.html">LET MING HELP</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!--視窗往上滾動後固定在上方的導覽列-->
+        <!--這邊也要和body寫一樣的顏色-->
+        <nav class="sticky">
+          <div class="header"><a class="logo" href="./index.html"><img class="logo-black" src="../../../assets/img/logo-black.svg" alt="LOGO"/><img class="logo-white" src="../../../assets/img/logo-white.svg" alt="LOGO"/></a>
+            <div class="function-bar"><a class="function-btn member" href="javascript:;"><i class="icon-member"></i></a>
+              <div class="function-btn language"><i class="icon-language"></i>
+                <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+              </div><a class="function-btn shop" onclick="_shoppingCart.openCart()" href="javascript:;" data-count="1"><i class="icon-shop"></i></a><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a>
+              <div class="menu-switch">MENU</div>
+            </div>
+          </div>
+          <div class="menubar">
+            <ul class="menu">
+              <li><a href="./about.html">CLOSER TO MING</a></li>
+              <li><a href="./news.html">MING TO TELL</a></li>
+              <li><a href="./product.html">PICK MING UP</a></li>
+              <li><a href="./contact.html">LET MING HELP</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!-- 主選單-->
+        <section class="menulbox">
+          <div class="menu-wrap">
+            <div class="menu-closebtn"></div>
+            <div class="menu-status">
+              <div class="photo-wrap">
+                <!-- 未登入 導向至登入頁 / div的background-image: url('') 留空，裡面要有 <i class="icon-member-status"></i>-->
+                <!-- 登入後 導向至會員中心 / div的background-image: url('') 換上圖片路徑，裡面的 <i class="icon-member-status"></i> 刪除--><a href="./member.html">
+                  <div style="background-image: url('../../../uploads/member/default-photo10-200x200.png')">
+                    <!-- i.icon-member-status-->
+                  </div>
+                  <!--登入前文字 Login Now ! / 登入後文字 Hello,xxxxx-->
+                  <p>Hello,Hailey</p></a>
+              </div>
+              <!-- 固定左下功能-->
+              <div class="fixed-left-function innerMenu"><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a><a class="function-btn shop" onclick="_shoppingCart.openCart()" href="javascript:;" data-count="1"><i class="icon-shop"></i></a>
+                <div class="function-btn language"><i class="icon-language"></i>
+                  <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+                </div>
+                <!-- 此為登入前的結構↓↓-->
+                <!-- a.function-btn.member(href="javascript:;")-->
+                <!--   i.icon-member-->
+                <!-- 此為登入後的結構↓↓--><a class="function-btn member ajax_open" href="javascript:;" data-ajax-route="./ajax_member_logout.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox"><i class="icon-member-logout"></i></a>
+              </div>
+            </div>
+            <div class="menu-list scrollbar-macosx scroll-wrap" data-scrollbar="data-scrollbar">
+              <ul class="list">
+                <li class="active">
+                  <p>New Arrival</p>
+                  <ul style="display: block">
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Lace</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Fabric</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Beading</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Embroidery</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Accessories</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-block">
+              <ul class="unit">
+                <li><a href="./product.html">Pick MING Up</a></li>
+                <li><a href="./about.html">Closer To MING</a></li>
+                <li><a href="./news.html">MING To Tell</a></li>
+                <li><a href="./contact.html">Let MING Help</a></li>
+                <li><a href="./member.html">Member Of MING</a></li>
+                <li><a href="./qa.html">MING's service</a></li>
+              </ul>
+              <div class="control">
+                <div class="wrap">
+                  <div>
+                    <p><a href="javascript:;">Recruit</a></p>
+                    <p><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_privacy_policy.html" data-ajax-container=".privacy-lbox" data-ajax-callback="_ajaxCallback.privacyPolicy">Privacy Policy</a></p>
+                  </div>
+                  <ul class="social-link">
+                    <li><a href="javascript:;"><i class="icon-ig"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-fb"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-twitter"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-line"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-wechat"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-youtube"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-photo">
+            <div class="decor1"><img src="../../../assets/img/menu-decor01.png" alt=""/></div>
+            <div class="decor2"><img src="../../../assets/img/menu-decor02.png" alt=""/></div>
+            <div class="swiper-container swiper-no-swiping" data-swiper-name="menu-banner" data-swiper-num="1" data-swiper-nav="off" data-swiper-arrow="off" data-swiper-autoplay="on" data-swiper-breakpoints="{767: { slidePerview: 1 }}">
+              <!-- 圖片尺寸 (650*1080)-->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" data-line1="Hot Series" data-line2="Mysterious Tiger">
+                  <!-- 可自訂連結，沒有連結時加上 .default--><a class="content default" href="javascript:;" style="background-image: url('../../../uploads/home/menu_banner.jpg')"></a>
+                </div>
+                <div class="swiper-slide" data-line1="Hot Series" data-line2="Mysterious Tiger">
+                  <!-- 可自訂連結，沒有連結時加上 .default--><a class="content default" href="javascript:;" style="background-image: url('../../../uploads/home/menu_banner.jpg')"></a>
+                </div>
+              </div>
+            </div>
+            <!-- 文字可選黑白兩色 .white .black-->
+            <div class="text-box white">
+              <div class="text1"> </div>
+              <div class="text2"> </div>
+            </div>
+          </div>
+        </section>
+        <!-- 購物車-->
+        <div class="cart-background close-cart">
+          <!--購物車沒有商品時加上 empty 這個 Class-->
+          <div class="cart-wrapper">
+            <div class="cart-top">
+              <div class="top-left">
+                <div class="count">6</div>
+                <div class="cart-header">
+                  <div class="title">MY SHOPPING BAG</div>
+                  <div class="description">Item is only kept for 30 days</div>
+                </div>
+              </div>
+              <div class="top-right"><a class="close close-cart" href="javascript:;"><i class="icon-close-cart"></i><i class="icon-open_web"></i></a></div>
+              <div class="select-all">
+                <div class="all-checkbox">
+                  <input id="select-all" type="checkbox" checked="checked"/>
+                  <div class="fake-checkbox"></div>
+                </div>
+                <label class="text" for="select-all">Select All</label>
+              </div>
+            </div>
+            <div class="cart-middle">
+              <div class="cart-list-wrapper scrollbar-inner">
+                <ul>
+                  <!--如果已經完成客製化 li 請加上 customized 這個 Class-->
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list01.jpg')"></div>
+                    <div class="product-info">
+                      <div class="sm-unit">Small Unit</div>
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>USD 3.00 / Y</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="1"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li class="customized">
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list01.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50Y</span><span>USD 5.00 / Y</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="1"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list02.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 3.00 / PRS</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="30"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">4,500</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list03.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 0.80 / PRS</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="50"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">2,000</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list04.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50Y</span><span>USD 5.00 / Y</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="1"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list05.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 3.00 / PRS</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="30"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">4,500</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="product-checkbox">
+                      <input type="checkbox" checked="checked"/>
+                      <div class="fake-checkbox"></div>
+                    </div>
+                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list06.jpg')"></div>
+                    <div class="product-info">
+                      <div class="name">Chantilly Lace</div>
+                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 0.80 / PRS</span>
+                      </div>
+                      <div class="price">
+                        <p>customized</p>
+                        <!--data-inventories 裡面請填庫存數量-->
+                        <div class="buy-count" data-inventories="50"><span class="minus"></span>
+                          <div class="count-wrap">
+                            <input class="count" type="text" value="50"/><span class="unit">set</span>
+                          </div><span class="plus"></span>
+                        </div>
+                        <div class="total-price"><span class="unit">USD</span><span class="number">2,000</span></div>
+                      </div>
+                    </div>
+                    <div class="product-option">
+                      <!--如果商品已經下架，顯示下面這個結構--><a class="option-btn removed" href="javascript:;" style="display: none">
+                        <div class="text">Removed</div></a><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Customzied</div>
+                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
+                        <div class="text">See Detail</div>
+                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
+                        <div class="text">Delete items</div>
+                        <div class="icon"><i></i></div></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="empty-content">
+                <div class="icon-box">
+                  <div class="icon icon-shop"></div>
+                  <div class="text">List is empty</div>
+                </div>
+                <p class="description">You haven’t  added any item.</p>
+              </div>
+            </div>
+            <div class="cart-bottom">
+              <div class="final-total">
+                <div class="text">Total</div>
+                <div class="price"><span class="number">21,250</span><span class="unit">USD</span></div>
+                <div class="without-customize">( Without customized )</div>
+              </div>
+              <!--結帳連結串到 data-href-->
+              <div class="next-step" data-href="./checkout.html" data-ajax-route="./ajax_select_remind.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">Next</div>
+            </div>
+          </div>
+        </div>
+        <!-- 固定左下功能-->
+        <div class="fixed-left-function"><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a>
+          <div class="function-btn shop" onclick="_shoppingCart.openCart()" data-count="1"><i class="icon-shop"></i></div>
+          <div class="function-btn language"><i class="icon-language"></i>
+            <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+          </div><a class="function-btn member" href="./login.html"><i class="icon-member"></i></a>
+          <!-- 此為登入後的結構↓↓-->
+          <!-- a.function-btn.member.ajax_open(href="javascript:;" data-ajax-route="./ajax_member_logout.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")-->
+          <!--   i.icon-member-logout-->
+          <div class="scroll-tips">Scroll down</div>
+        </div>
+        <!-- 主要內容-->
+        <main>
+          <div class="container">
+            <div class="header">
+              <div class="unit-name" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">NEWSROOM</div>
+              <h1 class="unit-alias" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">MING to Tell</h1>
+            </div>
+            <div class="top-news">
+              <div class="brush-img brush1"><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="../../../assets/img/news/decor01.png" alt=""/></div>
+              <div class="brush-img brush2"><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="../../../assets/img/news/decor02.png" alt=""/></div>
+              <div class="mainBanner-slider" data-anchor-obj=".top-news" data-animate="fadeInUp" data-duration="0.8s" data-delay="0.8s">
+                <div class="slider-wrapper">
+                  <div class="swiper-container" data-swiper-id="top-news-slider-ID" data-swiper-name="top-news-slider" data-swiper-direction="horizontal" data-swiper-num="1" data-swiper-arrow="off" data-swiper-nav="on" data-swiper-nav-name=".banner-slider-pagination" data-swiper-autoplay="on" data-swiper-effect="fade" data-swiper-breakpoints="{1025: { direction: 'vertical' }}">
+                    <div class="swiper-wrapper">
+                      <!--這邊跑迴圈-->
+                      <!--請將欄位串在swiper-slide的data上-->
+                      <!--日期(天) - data-day, 日期(年月) - data-month-year, 標題 - data-title, 描述 - data-description, ajax路徑 - data-href-->
+                      <div class="swiper-slide" data-swiper-autoplay="5000" data-day="06" data-month-year="Jan. 2020" data-title="Texworld NYC Winter 19th - 21th Jan., 2020" data-description="Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute couture and fashion grasp the trend" data-href="./ajax_news_detail.html">
+                        <div class="content">
+                          <div class="img-box ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail"><img src="../../../uploads/news/top-news01.jpg" alt=""/></div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide" data-swiper-autoplay="5000" data-day="06" data-month-year="Jan. 2020" data-title="The title only show one line here" data-description="The description only show two line here" data-href="./ajax_news_detail.html">
+                        <div class="content">
+                          <div class="img-box ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail"><img src="https://via.placeholder.com/940x570" alt=""/></div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide" data-swiper-autoplay="5000" data-day="06" data-month-year="Jan. 2020" data-title="The title only show one line here" data-description="The description only show two line here" data-href="./ajax_news_detail.html">
+                        <div class="content">
+                          <div class="img-box ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail"><img src="https://via.placeholder.com/940x570" alt=""/></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination banner-slider-pagination top-news-slider-ID"></div>
+                </div>
+                <!--輪播文字區塊-->
+                <div class="slider-textarea ajax_open" data-ajax-route="" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                  <div class="news-date"><span class="day"></span><span class="month_year"></span></div>
+                  <div class="info">
+                    <div class="title"></div>
+                    <div class="description"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="custom-hr"></div>
+            <div class="bottom-news">
+              <div class="news-type">
+                <div class="type-select">
+                  <div class="head">TYPES FOR YOU </div>
+                  <div class="type-dropdown">
+                    <div class="selected">
+                      <div class="text">All News</div>
+                      <div class="arrow icon-arrow-up"></div>
+                    </div>
+                    <div class="dropdown">
+                      <ul class="scrollbar-inner">
+                        <li class="active">All News</li>
+                        <li>Design Trend</li>
+                        <li>New Arrival</li>
+                        <li>Exhibitions</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="news-search">Search</div>
+                </div>
+              </div>
+              <div class="news-list">
+                <!--這邊跑迴圈-->
+                <!--分兩種形式 .news-card上有兩種class 有圖 .has-img 無圖 .no-img-->
+                <div class="news-card has-img" data-animate="fadeIn" data-duration="0.4s" data-delay="0.4s">
+                  <div class="card-img">
+                    <div class="img-box ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                      <div class="cover">
+                        <div class="text">New Arrival</div><i class="icon-right"></i>
+                      </div><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="../../../uploads/news/news-img01.jpg" alt=""/>
+                    </div>
+                  </div>
+                  <!--如果沒有圖就把顏色洗到card-text上-->
+                  <div class="card-text ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                    <div class="news-date"><span class="day">06</span><span class="month_year">Jan. 2020</span></div>
+                    <div class="custom-hr"></div>
+                    <div class="news-info">
+                      <div class="news-title">Georges Hobeika Autumn and Winter Series Lace</div>
+                      <div class="news-description innertext">Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card has-img" data-animate="fadeIn" data-duration="0.4s" data-delay="0.4s">
+                  <div class="card-img">
+                    <div class="img-box ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                      <div class="cover">
+                        <div class="text">Exhibitions</div><i class="icon-right"></i>
+                      </div><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="../../../uploads/news/news-img02.jpg" alt=""/>
+                    </div>
+                  </div>
+                  <!--如果沒有圖就把顏色洗到card-text上-->
+                  <div class="card-text ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                    <div class="news-date"><span class="day">25</span><span class="month_year">Dec. 2019</span></div>
+                    <div class="custom-hr"></div>
+                    <div class="news-info">
+                      <div class="news-title">2020 New Lace Is On The Market, Welcome To Discover More</div>
+                      <div class="news-description innertext">Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card has-img" data-animate="fadeIn" data-duration="0.4s" data-delay="0.4s">
+                  <div class="card-img">
+                    <div class="img-box ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                      <div class="cover">
+                        <div class="text">Design Trand</div><i class="icon-right"></i>
+                      </div><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="../../../uploads/news/news-img03.jpg" alt=""/>
+                    </div>
+                  </div>
+                  <!--如果沒有圖就把顏色洗到card-text上-->
+                  <div class="card-text ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                    <div class="news-date"><span class="day">14</span><span class="month_year">Dec. 2019</span></div>
+                    <div class="custom-hr"></div>
+                    <div class="news-info">
+                      <div class="news-title">Texworld NYC Winter 19th - 21th Jan., 2020</div>
+                      <div class="news-description innertext">Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card has-img" data-animate="fadeIn" data-duration="0.4s" data-delay="0.4s">
+                  <div class="card-img">
+                    <div class="img-box ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                      <div class="cover">
+                        <div class="text">New Arrival</div><i class="icon-right"></i>
+                      </div><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="../../../uploads/news/news-img04.jpg" alt=""/>
+                    </div>
+                  </div>
+                  <!--如果沒有圖就把顏色洗到card-text上-->
+                  <div class="card-text ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                    <div class="news-date"><span class="day">09</span><span class="month_year">Jan. 2020</span></div>
+                    <div class="custom-hr"></div>
+                    <div class="news-info">
+                      <div class="news-title">Mingleurn Elegant Wedding Veil Series for you</div>
+                      <div class="news-description innertext">Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card no-img" data-animate="fadeIn" data-duration="0.4s" data-delay="0.4s">
+                  <div class="card-img">
+                    <div class="img-box ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                      <div class="cover">
+                        <div class="text">Exhibitions</div><i class="icon-right"></i>
+                      </div><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="" alt=""/>
+                    </div>
+                  </div>
+                  <!--如果沒有圖就把顏色洗到card-text上-->
+                  <div class="card-text ajax_open" style="background-color: #7982ab" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                    <div class="news-date"><span class="day">23</span><span class="month_year">Nov. 2019</span></div>
+                    <div class="custom-hr"></div>
+                    <div class="news-info">
+                      <div class="news-title">Texworld NYC Winter 19th - 21th Jan., 2020</div>
+                      <div class="news-description innertext">Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card has-img" data-animate="fadeIn" data-duration="0.4s" data-delay="0.4s">
+                  <div class="card-img">
+                    <div class="img-box ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                      <div class="cover">
+                        <div class="text">Exhibitions</div><i class="icon-right"></i>
+                      </div><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="../../../uploads/news/news-img05.jpg" alt=""/>
+                    </div>
+                  </div>
+                  <!--如果沒有圖就把顏色洗到card-text上-->
+                  <div class="card-text ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                    <div class="news-date"><span class="day">17</span><span class="month_year">Nov. 2019</span></div>
+                    <div class="custom-hr"></div>
+                    <div class="news-info">
+                      <div class="news-title">30th Anniversary of Mingleurn, a Professional and Popular Brand</div>
+                      <div class="news-description innertext">Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card no-img" data-animate="fadeIn" data-duration="0.4s" data-delay="0.4s">
+                  <div class="card-img">
+                    <div class="img-box ajax_open" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                      <div class="cover">
+                        <div class="text">New Arrival</div><i class="icon-right"></i>
+                      </div><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="../../../uploads/news/news-img05.jpg" alt=""/>
+                    </div>
+                  </div>
+                  <!--如果沒有圖就把顏色洗到card-text上-->
+                  <div class="card-text ajax_open" style="background-color: #b74c4c" data-ajax-route="./ajax_news_detail.html" data-ajax-container=".news_detail" data-ajax-callback="_ajaxCallback.newsDetail">
+                    <div class="news-date"><span class="day">08</span><span class="month_year">Oct. 2019</span></div>
+                    <div class="custom-hr"></div>
+                    <div class="news-info">
+                      <div class="news-title">The International Trade Fair : Fabrics, Trims, Accessories</div>
+                      <div class="news-description innertext">Specialise in the design and production of all types of lace, embroidery and fabrics for wedding dresses, haute ......</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- 頁尾-->
+        <footer>
+          <div class="footer-top">
+            <div class="header">Be Your Wings</div>
+            <div class="quick-link">
+              <ul class="main-unit">
+                <li><a href="./about.html">CLOSER TO MING</a></li>
+                <li><a href="./news.html">MING TO TELL</a></li>
+                <li><a href="./product.html">PICK MING UP</a></li>
+                <li><a href="./contact.html">LET MING HELP</a></li>
+              </ul>
+              <ul class="sub-unit">
+                <li><a href="./qa.html">MING's service</a></li>
+                <li><a href="./member.html">Member of MING</a></li>
+                <li><a href="javascript:;">Recruit</a></li>
+                <li><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_privacy_policy.html" data-ajax-container=".privacy-lbox" data-ajax-callback="_ajaxCallback.privacyPolicy">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom"><a class="backTop" href="javascript:;"><i class="icon-top"></i></a>
+            <div class="company-info">
+              <div class="block">
+                <div class="area">TAIPEI, TAIWAN</div>
+                <ul class="contact-info">
+                  <li><span class="key">Tel</span><span class="value">+886-2-29512727</span></li>
+                  <li><span class="key">Fax</span><span class="value">+886-2-29515988  </span></li>
+                  <li><span class="key">Add</span><span class="value">9F, NO. 156, SEC.1, ZHONGSHAN RD.,<br>BANQIAO DIST., NEW TAIPEI CITY 22065</span></li>
+                </ul>
+              </div>
+              <div class="block">
+                <ul class="social-link">
+                  <li><a href="javascript:;"><i class="icon-ig"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-fb"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-twitter"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-line"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-wechat"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-youtube"></i></a></li>
+                </ul>
+                <div class="copyright">COPYRIGHT © MINGLEURN ALL RIGHTS RESERVED.  DESIGN BY <a class="wdd" href="https://www.wddgroup.com/">WDD</a>.</div>
+              </div>
+              <div class="block">
+                <div class="area">DONG GUAN, CHINA</div>
+                <ul class="contact-info">
+                  <li><span class="key">Tel</span><span class="value">+86-769-88326496  </span></li>
+                  <li><span class="key">Fax</span><span class="value"> +86-769-88326495</span></li>
+                  <li><span class="key">Add</span><span class="value">NO. 6, SHIN WEN 1ST. STREET,<br>SHIN WEN INDUSTRY ZONE,<br>DAO JIAO TOWN, DONG GUAN CITY, 523170</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <!--引入的script-->
+  <script>document.createElement( "picture" );</script>
+  <script src="../../../assets/js/plugins/picturefill/picturefill.min.js" async="async"></script>
+  <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
+  <script src="../../../assets/js/plugins-dist.js"></script>
+  <script src="../../../assets/js/fesdDB.1.0-dist.js"></script>
+  <script src="../../../assets/js/fesd.1.1-dist.js"></script>
+  <script src="../../../assets/js/methods-dist.js"></script>
+  <script src="../../../assets/js/main-dist.js"></script><!-- microdata : professional service -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "ProfessionalService",
+      "name": "網站名子",
+      "email": "mailto:email",
+      "url": "本站網址",
+      "image": "favicon logo路徑",
+      "priceRange":"商品價格區間",
+      "telephone": "電話",
+      "logo": "logo路徑",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "地址",
+        "addressLocality": "區",
+        "addressRegion": "成市",
+        "postalCode": "郵遞區號",
+        "addressCountry": "中華民國 (台灣)"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "22.619435",
+        "longitude": "120.296034"
+      },
+      "hasMap": "https://www.google.com.tw/maps/place/據點地圖",
+      "openingHours": [
+        "Mo-Th 11:00-22:00",
+        "Fr 11:00-22:30",
+        "Sa 10:30-22:30",
+        "Su 10:30-22:00"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+886-00-12345678"
+      },
+      "sameAs": [ "https://www.facebook.com/xxxxxxxx" ]
+    }
+    
+    
+  </script><!-- microdata : breadcrumbList 必須隨著不同頁面要有不同的階層產生-->
+  <script type="application/ld+json">
+    {
+      "@context": "http://www.schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "https://example.com/dresses",
+            "name": "Dresses"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item":
+          {
+            "@id": "https://example.com/dresses/real",
+            "name": "Real Dresses"
+          }
+        }
+      ]
+    }
+  </script>
+</html>

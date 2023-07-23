@@ -1,0 +1,461 @@
+-
+  products = [
+    {
+      tag: '',
+      img: '../../../uploads/product/list01.jpg',
+      number: 'M7702',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: 'New',
+      img: '../../../uploads/product/list02.jpg',
+      number: 'ER14486AG8',
+      name: 'Red&Green Flower',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list03.jpg',
+      number: 'M7704',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list04.jpg',
+      number: 'M7705',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list05.jpg',
+      number: 'ER14486AG5',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list06.jpg',
+      number: 'J15104A2',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list07.jpg',
+      number: 'J15104A4',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list08.jpg',
+      number: 'ER14486AG7',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list09.jpg',
+      number: 'M7703',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list10.jpg',
+      number: 'BJME500938T',
+      name: 'Red Flower with Green Leaf Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list11.jpg',
+      number: 'ER14486AG6',
+      name: 'Yellow Flying Bee Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: 'Hot',
+      img: '../../../uploads/product/list12.jpg',
+      number: 'J15104A3',
+      name: 'Horizontal Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list13.jpg',
+      number: 'BJME500938T',
+      name: 'Pink Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list14.jpg',
+      number: 'J15104A1',
+      name: 'Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list15.jpg',
+      number: 'BJME500938T',
+      name: 'Blue Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list16.jpg',
+      number: 'BJME500938T',
+      name: 'Yellow Flying Bee Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list17.jpg',
+      number: 'BJME500938T',
+      name: 'Flower Sequin',
+      price: 'US$ 9.40 / Y',
+    },
+    {
+      tag: '',
+      img: '../../../uploads/product/list18.jpg',
+      number: 'M7706',
+      name: 'Chantilly Lace',
+      price: 'US$ 9.40 / Y',
+    },
+  ]
+
+-
+  var collect = [
+    'Summer2020',
+    'Company material',
+    'Project A',
+    'Project B',
+    'Proposal - 0608',
+    'Exhibition',
+    'Texword',
+    'Project C',
+    'Project D',
+    'Project E',
+  ]
+
+-
+  var tableData = [
+    {
+      hasNew: false,
+      cancelled: false,
+      number: '20010001',
+      date: '2020.03.24',
+      total: 'USD 6,870',
+      status: 'Receiving',
+    },
+    {
+      hasNew: true,
+      cancelled: false,
+      number: '20010006',
+      date: '2020.03.08',
+      total: 'USD 9,530',
+      status: 'In stock',
+    },
+    {
+      hasNew: false,
+      cancelled: false,
+      number: '20010012',
+      date: '2020.02.22',
+      total: 'USD 4,260',
+      status: 'Shipped',
+    },
+    {
+      hasNew: false,
+      cancelled: false,
+      number: '20010050',
+      date: '2020.02.22',
+      total: 'Evaluating',
+      status: 'Demand form',
+    },
+    {
+      hasNew: false,
+      cancelled: false,
+      number: '20010050',
+      date: '2020.02.22',
+      total: 'USD 3,580',
+      status: 'Demand form',
+    },
+    {
+      hasNew: false,
+      cancelled: true,
+      number: '20010050',
+      date: '2020.02.22',
+      total: 'USD 3,580',
+      status: 'Cancel',
+    },
+  ]
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/member.css")
+  body.member(data-page="member")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        .brush-img.brush1
+          img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/member/overview-decor01.png", alt="")
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .container
+            .header
+              a.logout.ajax_open(href="javascript:;" data-ajax-route="./ajax_member_logout.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox") LOGOUT
+            .overview-section
+              .welcome(data-desktop="../../../uploads/member/welcome-bg-1320x500.jpg" data-mobile="../../../uploads/member/welcome-bg-565x340.png")
+                .brush-img.brush2
+                  img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/member/overview-decor02.png", alt="")
+                .content
+                  .hello Hi , Hailey
+                  .today
+                    span.month
+                    span.day
+                    span.year
+                  a.member-photo.ajax_open(href="javascript:;" data-ajax-route="./ajax_change_photo.html" data-ajax-container=".change-photo-wrap" data-ajax-callback="_ajaxCallback.changePhoto")
+                    .edit-mask
+                      span Edit
+              ul.sub-unit-navbar.nav-tabs(data-id="member-tabs")
+                li.tab-btn.active(data-page="overview") Overview
+                li.tab-btn(data-page="account") Account
+                li.tab-btn(data-page="orderlist") Order List
+                li.tab-btn(data-page="favorite") Favorite
+              .tab-content#member-tabs
+                //總覽
+                .tab-pane#overview
+                  .overview-wrap.nav-tabs(data-id="member-tabs")
+                    .row
+                      .grid
+                        a.item.tab-btn(href="javascript:;" data-page="account")
+                          .unit-icon.icon-member
+                          .unit-name Account
+                          .unit-description Here you can manage account permissions and basic member information
+                      .grid
+                        a.item.tab-btn(href="javascript:;" data-page="orderlist")
+                          .unit-icon.icon-shop
+                          .unit-name Order List
+                          .unit-description Here you can check all order records and track status at anytime
+                      .grid
+                        a.item.tab-btn(href="javascript:;" data-page="favorite")
+                          .unit-icon.icon-favorite
+                          .unit-name Favorite
+                          .unit-description Here you can manage your favorites in different categories
+                      .grid
+                        a.item(href="./qa.html")
+                          .unit-icon.icon-qa
+                          .unit-name Q&A
+                          .unit-description Here you can find solutions of common problems
+                      .grid
+                        a.item.ajax_open(href="javascript:;" data-ajax-route="./ajax_member_regulation.html" data-ajax-container=".regulation-wrap" data-ajax-callback="_ajaxCallback.memberRegulation")
+                          .unit-icon.icon-regulation
+                          .unit-name Regulation
+                          .unit-description Here you can read the description of membership benefits
+                      .grid
+                        a.item(href="./contact.html")
+                          .unit-icon.icon-send2
+                          .unit-name Contact
+                          .unit-description If you have any questions welcome to fill out the form to contact us
+                //帳戶
+                .tab-pane#account
+                  .pane-header
+                    .title Account
+                    .sub-title Edit Member Information
+                    .extra-info Here you can manage account permissions and basic member information.
+                  .account-option
+                    .item
+                      .title Account Management
+                      .sub-title Manage account information
+                      .extra-info You can change your account settings. To keep your account secure, we recommend that you change your password every three months.
+                      ul.function-bar
+                        li
+                          a.ajax_open(href="javascript:;" data-ajax-route="./ajax_change_account.html" data-ajax-container=".change-account-wrap" data-ajax-callback="_ajaxCallback.accountStep") Change Account
+                        li
+                          a.ajax_open(href="javascript:;" data-ajax-route="./ajax_change_password.html" data-ajax-container=".change-password-wrap" data-ajax-callback="_ajaxCallback.accountStep") Change Password
+                        li
+                          a(href="./gdpr.html") Authority
+                    .item
+                      .title Member Information
+                      .sub-title Edit your profile
+                      .extra-info Edit your basic information and if you want to update your mobile number, we will send a mobile phone message for verification.
+                      .phone
+                        span.number +886 912345678
+                        span.icon.icon-verified
+                      ul.function-bar
+                        li
+                          a.ajax_open(href="javascript:;" data-ajax-route="./ajax_change_phone.html" data-ajax-container=".change-phone-wrap" data-ajax-callback="_ajaxCallback.accountStep") Change Phone Number
+                        li
+                          a.ajax_open(href="javascript:;" data-ajax-route="./ajax_edit_profile.html" data-ajax-container=".edit-profile-wrap" data-ajax-callback="_ajaxCallback.accountStep") Edit My Profile
+                //訂單
+                //這邊後端要判斷 tab-pane 要加哪個 class 有3種情況
+                //一般有資料時 - 不用加
+                //沒資料時 - no-item
+                //篩選後沒有結果時 - no-result
+                .tab-pane#orderlist
+                  .pane-header
+                    .title Order List
+                    .sub-title The order content is as follows
+                    .extra-info You can check the processing status and details of the order
+                  .filter-type-select
+                    .item
+                      .categories-select(data-default="Show by time")
+                        .selected 
+                          .text Show by time
+                          .arrow.icon-arrow-up
+                        .dropdown
+                          ul.scrollbar-inner
+                            li All time
+                            li Within 3 months
+                            li Within 6 months
+                            li Within 1 year
+                            li Within 3 years
+                    .item
+                      .categories-select(data-default="Show by status")
+                        .selected 
+                          .text Show by status
+                          .arrow.icon-arrow-up
+                        .dropdown
+                          ul.scrollbar-inner
+                            li All status
+                            li Receving
+                            li In stock
+                            li Demand form
+                            li Cancel
+                  .table-wrap
+                    .thead
+                      .tr
+                        .th Order No
+                        .th Date
+                        .th Total
+                        .th Status
+                        .th Order List
+                        .th Attachments
+                    .no-item
+                      .title No Items
+                      .description You currently do not have any order records
+                    .tbody
+                      each data,index in tableData
+                        .tr(class= (data.cancelled ? 'cancelled' : ''), class= (data.hasNew ? 'has-new' : ''), class= (index == 0 ? 'open' : ''))
+                          .td
+                            .content(data-th="Order No")= data.number
+                          .td
+                            .content(data-th="Date")= data.date
+                          .td
+                            .content(data-th="Total")= data.total
+                          .td
+                            .content(data-th="Status")= data.status
+                          .td
+                            a.content(href="./orderlist.html" data-th="Orderlist")
+                              i.icon-regulation
+                          .td
+                            a.content(href="./orderlist.html")
+                              i.icon-attachment
+                          .td.collapse-btn
+                            a.content(href="javascript:;")
+                              span
+                              span
+                  .no-result
+                    .icon.icon-notification
+                    .title No Items
+                    .description There are no matching items in your order list.
+                //收藏
+                .tab-pane#favorite
+                  .pane-header
+                    .title Favorite
+                    .sub-title You have 30 products collections
+                  ul.mobile-filter-tabs
+                    li.filter-product.active Product Categories
+                    li.filter-collect Collect Categories
+                  .filter-type-select
+                    .item.product.active
+                      .type Product Categories
+                      .categories-select(data-default="ALL")
+                        .selected 
+                          .text ALL
+                          .arrow.icon-arrow-up
+                        .dropdown
+                          ul.scrollbar-inner
+                            li New Arrival
+                            li Lace
+                            li Beading
+                            li Embroidery
+                            li Accessories
+                            li Wedding
+                    .or OR
+                    .item.collect
+                      .type Collect Categories
+                      .categories-select(data-default="Default")
+                        .selected 
+                          .text Default
+                          .arrow.icon-arrow-up
+                        .dropdown
+                          .category-wrap
+                            ul.scrollbar-inner
+                              li.default-option
+                                .option Default
+                              each data,index in collect
+                                li
+                                  label.option= data
+                                  .edit
+                                    a.ajax_open(href="javascript:;" data-ajax-route="./ajax_edit_collect.html" data-ajax-container=".edit-collect-wrap" data-ajax-callback="_ajaxCallback.editCollect")
+                                      i.icon-edit
+                            .bottom-function
+                              a.create.ajax_open(href="javascript:;" data-ajax-route="./ajax_add_collect.html" data-ajax-container=".add-collect-wrap" data-ajax-callback="_ajaxCallback.addCollect")
+                                .icon
+                                .text Create new
+                              a.confirm(href="javascript:;") Save
+
+                  .product-list
+                    .row
+                      each data in products
+                        .grid
+                          .item
+                            .img-wrapper
+                              //客戶自行設定標籤的 文字 / 顏色
+                              //一種顏色只會有一種字 ex: 綠色就是 New 紫色就是 Hot
+                              if data.tag == 'New'
+                                .tag(style="background-color: #26ae8c")= data.tag
+                              else if data.tag == 'Hot'
+                                .tag(style="background-color: #5e50b5")= data.tag
+                              .shadow
+                              .option-mask
+                                .option
+                                  a.ajax_open(data-ajax-route="./ajax_delete_collect.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox")
+                                    .icon-delete
+                                  a(href="./product_detail.html")
+                                    .icon-open_web
+                                .option
+                              .img-box(style="background-image: url('" + data.img + "')")
+                            a(href="./product_detail.html")
+                              .number= data.number
+                              .name= data.name
+                              .price= data.price
+                  .load-more
+                    .icon
+                      img(src="../../../assets/img/loading.svg", alt="")
+                    .text Loading
+        // 頁尾
+        footer
+          .footer-top
+            .header Achieve Now
+            include ../layouts/_quick-link.pug
+                                                
+          include ../layouts/_footer_bottom.pug
+          
+    
+  //引入的script
+  include ../layouts/_script.pug

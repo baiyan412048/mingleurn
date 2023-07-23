@@ -1,0 +1,296 @@
+.checkbox
+  cursor: pointer
+  +flex($display: inline-flex)
+  input[type="checkbox"]
+    display: none
+  input[type="radio"]
+    display: none
+  .fake-checkbox
+    margin-right: 10px
+    width: 12px
+    height: 12px
+    border: 1px solid black
+    transition: .3s
+    +flex
+    span
+      display: block
+      width: 6px
+      height: 6px
+      transition: .3s
+  p
+    user-select: none
+    +fontSetBold($font: $LBB, $size: px(13))
+  input[type="checkbox"]:checked,input[type="radio"]:checked
+    & + div
+      border: 1px solid #a88438
+      span
+        background-color: #a88438
+
+.form-row
+  margin: 0 -15px
+  +flex
+  +rwdmax(575)
+    flex-wrap: wrap
+  .form-grid
+    padding: 0 15px
+.form-grid
+  width: 100%
+  .form-group
+    display: block
+    width: 100%
+    padding: 22px 0
+    border-bottom: 1px solid black
+    text-align: left
+    +flex($x: flex-start)
+    +rwdmax(767)
+      flex-wrap: wrap
+      padding: 22px 0 14px 0
+    &.error
+      &.required
+        >p
+          &::before
+            color: #c50909
+      >p
+        color: #c50909
+    &.nowrap
+      +rwdmax(767)
+        flex-wrap: nowrap !important
+      >p
+        +rwdmax(767)
+          width: auto
+          margin-bottom: 0
+    &.wrap
+      flex-wrap: wrap
+      >p
+        padding: 0
+        margin-bottom: 20px
+    &.has-checkbox
+      >p
+        +rwdmax(767)
+          width: auto
+          margin-bottom: 0
+      .checkbox
+        margin-left: auto
+      .element-wrap
+        width: 100% !important
+        margin-top: 22px
+        padding: 22px 20px 0 20px
+        border-top: 1px solid black
+        +rwdmax(767)
+          padding: 22px 12px 0 12px
+        .select-element
+          padding-right: 20px
+          .selected
+            .text
+              text-align: left
+    &.required
+      >p
+        position: relative
+        &::before
+          content: '*'
+          position: absolute
+          top: 50%
+          left: 0
+          transform: translate(0,-6px)
+          +fontSetBold($font: $LBB, $size: px(14), $color: black)
+    &.message
+      flex-direction: column
+      align-items: flex-start
+      >p
+        margin-bottom: 20px
+    &.attachment
+      .file-name
+        width: 100%
+        text-align: left
+        padding-right: 20px
+        cursor: text
+        +fontSet($color: #555555, $size: px(13))
+        &.uploaded
+          color: black
+    &.verification
+      input
+        padding-right: 20px
+        +rwdmax(767)
+          padding: 0 20px 0 0
+      img
+        max-width: 95px
+        width: auto
+      .icon-refresh
+        font-size: 22px
+        margin: 0 6px 0 10px
+    &.birth
+      .select-element
+        width: calc(100% / 3)
+        padding-right: 20px
+    &.address
+      flex-wrap: wrap
+      .element-wrap
+        width: calc(100% - 160px)
+        +rwdmax(767)
+          width: 100%
+        .select-element,input
+          width: calc(100% / 3)
+          padding-right: 20px
+        .readonly
+          width: auto
+          padding-right: 20px
+      .address-input
+        width: 100%
+        margin-top: 22px
+        padding: 22px 20px 0 20px
+        border-top: 1px solid black
+        +rwdmax(767)
+          padding: 22px 12px 0 12px
+        input
+          +rwdmax(767)
+            padding: 0
+    &.community
+      .select-element
+        width: 100px
+    .element-wrap
+      width: 100%
+      +flex($x: flex-start)
+      +rwdmax(767)
+        padding: 0 12px
+    >p
+      padding: 0 20px
+      flex-shrink: 0
+      +fontSetBold($font: $LBB, $size: px(14), $color: black)
+      +rwdmax(767)
+        width: 100%
+        padding: 0 12px
+        margin-bottom: 20px
+    .select-element
+      position: relative
+      width: 100%
+      flex-shrink: 0
+      cursor: pointer
+      & + input
+        padding-left: 20px
+      &.active
+        .selected
+          .arrow
+            transform: rotateX(0deg)
+      .selected
+        +flex($x: flex-start)
+        &.isChange
+          .text
+            color: black
+        .text
+          width: 100%
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+          text-align: center
+          +fontSet($size: px(13), $color: #555555)
+          +rwdmax(767)
+            text-align: left
+        .arrow
+          display: block
+          font-size: 14px
+          flex-shrink: 0
+          margin-left: 15px
+          transform: rotateX(180deg)
+          transition: transform 0.3s
+      .dropdown
+        display: none
+        position: absolute
+        top: 100%
+        left: 50%
+        transform: translate(-50%,8px)
+        min-width: 100%
+        padding: 15px 0
+        border-radius: 20px
+        border: solid 1px #cdcdcd
+        background-color: #f4f4f4
+        overflow: hidden
+        z-index: 1
+        +rwdmax(575)
+          left: 0
+          transform: translate(0,8px)
+          margin-bottom: 7vh
+        &.shadow
+          box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+        &::after
+          content: ''
+          width: 100%
+          height: 100%
+          background-color: #f4f4f4
+          z-index: -1
+          +posCenter
+        ul
+          max-height: 210px!important
+          height: 100%
+          overflow: auto
+          >li
+            padding: 0 26px
+            height: 42px
+            white-space: nowrap
+            transition: 0.3s
+            text-align: center
+            user-select: none
+            cursor: pointer
+            +fontSetBold($font: $LBB, $size: px(13), $lh: 42px, $color: #666666)
+            &:hover
+              background-color: #a88438
+              color: white
+    input,textarea,.readonly
+      width: 100%
+      background-color: transparent
+      border: none
+      +fontSet($size: px(13), $lh: 25px, $color: black)
+      +placeholder($color: rgba(0,0,0,0.6), $size: px(13))
+      &:focus
+        &:-moz-placeholder
+          color: transparent
+        &:-ms-input-placeholder
+          color: transparent
+        &::-moz-placeholder
+          color: transparent
+        &::-webkit-input-placeholder
+          color: transparent
+    input
+      padding: 0
+      +rwdmax(767)
+        padding: 0 0 0 12px
+      &:invalid
+        box-shadow: none
+      &[type="password"]
+        letter-spacing: 8px
+        &:-moz-placeholder
+          letter-spacing: normal
+        &:-ms-input-placeholder
+          letter-spacing: normal
+        &::-moz-placeholder
+          letter-spacing: normal
+        &::-webkit-input-placeholder
+          letter-spacing: normal
+    textarea
+      height: 215px
+      padding: 0 20px
+      resize: none
+      line-height: 25px
+      +rwdmax(767)
+        padding: 0 12px
+    .readonly
+      +rwdmax(767)
+        padding: 0 12px
+      span
+        &:not(:first-child)
+          margin-left: 15px
+    .scroll-textarea
+      width: 100%
+      height: 215px
+      background-color: transparent
+      border: none
+    .custom-file-input
+      flex-shrink: 0
+      width: 34px
+      height: 34px
+      border-radius: 50%
+      border: 1px solid #c2c2c2
+      cursor: pointer
+      +flex
+      input[type="file"]
+        display: none
+

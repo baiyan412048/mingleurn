@@ -1,0 +1,49 @@
+
+<div class="modal-scroll-wrap scrollbar-macosx">
+  <div class="modal-contain">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!--更改名稱-->
+        <div class="step rename">
+          <div class="content-wrapper">
+            <div class="modal-header">
+              <div class="title">EDIT CATEGORY</div>
+              <div class="description">Rename or delete</div>
+            </div>
+            <div class="modal-body">
+              <div class="naming-area"><i class="icon-edit"></i>
+                <div class="text">Rename</div>
+                <input type="text"/>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-btn-group"><a class="modal-btn delete btn-black" href="javascript:;">Delete</a>
+                <!--↓↓↓ 後端可把 .ajax_close 拿掉 跑完你們的js再執行 _common.closeAjax('.edit-collect-wrap') ↓↓↓--><a class="modal-btn btn-gold ajax_close" href="javascript:;">Save</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--刪除確認-->
+        <div class="step delete-check">
+          <div class="content-wrapper">
+            <div class="modal-header">
+              <div class="icon-delete"></div>
+              <div class="title">Delete Category ?</div>
+            </div>
+            <div class="modal-body">
+              <div class="naming-area">
+                <input type="text" readonly="readonly"/>
+                <div class="text">Sure to delete category?<br>All items in this list will be cleared.</div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-btn-group"><a class="modal-btn no btn-gold" href="javascript:;">No</a>
+                <!--↓↓↓ 後端可把 .ajax_close 拿掉 跑完你們的js再執行 _common.closeAjax('.edit-collect-wrap') ↓↓↓--><a class="modal-btn yes btn-black ajax_close" href="javascript:;">Yes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

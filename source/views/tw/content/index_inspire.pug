@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+  // head標籤 & 網站設定
+  include ../layouts/_head.pug
+  body.home_inspire(data-page="home_inspire")
+    .main-wrapper
+      // 導覽列
+      //- include ../layouts/_navbar.pug
+
+      // 主要內容
+      main#main
+        //電腦
+        .desktop
+          img(src="../../../assets/img/index_demo_inspire.jpg", alt="", usemap="#desktopMap")
+          map#desktopMap(name='desktopMap')
+            area(shape='rect' coords='559,341,614,395' href='javascript:history.back();')
+        //平板
+        .tablet
+          img(src="../../../assets/img/index_inspire_pad.jpg", alt="", usemap="#tabletMap")
+          map#tabletMap(name='tabletMap')
+            area(shape='rect' coords='181,152,216,192' href='javascript:history.back();')
+        //手機
+        .mobile
+          img(src="../../../assets/img/index_inspire_phone.jpg", alt="", usemap="#mobileMap")
+          map#mobileMap(name='mobileMap')
+            area(shape='rect' coords='20,43,55,83' href='javascript:history.back();')
+
+      // 頁尾
+      //- include ../layouts/_footer.pug
+    
+  //引入的script
+  include ../layouts/_script.pug

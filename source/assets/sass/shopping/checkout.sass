@@ -1,0 +1,754 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/layouts/_form
+
+.checkout
+  .all-wrapper
+    padding-bottom: 200px
+    +rwdmax(767)
+      padding-bottom: 65px
+    nav
+      .header
+        .function-bar
+          .close-btn
+            width: 64px
+            height: 64px
+            background-color: #a88438
+            border-radius: 50%
+            cursor: pointer
+            +flex
+            +rwdmax(1024)
+              width: 55px
+              height: 55px
+            +rwdmax(767)
+              width: 30px
+              height: 30px
+            span
+              position: relative
+              display: block
+              width: 20px
+              height: 20px
+              transform: rotate(45deg)
+              +rwdmax(1024)
+                width: 18px
+                height: 18px
+              +rwdmax(767)
+                width: 10px
+                height: 10px
+              &::before,&::after
+                content: ''
+                background-color: white
+                +posCenter
+              &::before
+                width: 2px
+                height: 20px
+                +rwdmax(1024)
+                  height: 18px
+                +rwdmax(767)
+                  height: 10px
+              &::after
+                width: 20px
+                height: 2px
+                +rwdmax(1024)
+                  width: 18px
+                +rwdmax(767)
+                  width: 10px
+    .fixed-left-function
+      display: none
+  main
+    .form
+      .form-grid
+        .form-group
+          border-bottom: 1px solid #dedede
+          &.has-checkbox
+            border-bottom: none
+            >p
+              +rwdmax(320)
+                width: 100%
+                margin-bottom: 10px
+            .checkbox
+              +rwdmax(320)
+                margin-left: 0
+            .element-wrap
+              border-top: none
+          &.address
+            .element-wrap
+              width: 100%
+              padding: 22px 0 0 0
+              .select-element
+                width: auto
+              input
+                width: 100%
+                padding: 0
+            .address-input
+              padding: 22px 0
+              border-top: 1px solid #dedede
+              border-bottom: 1px solid #dedede
+          >p
+            padding: 0 20px 0 0
+          input,.readonly
+            +rwdmax(767)
+              padding: 0
+          
+    &[data-step="1"]
+      .content
+        .step-wrap
+            &::before
+              width: 33.33%
+    &[data-step="2"]
+      .content
+        .step-wrap
+            &::before
+              width: 66.67%
+    &[data-step="3"]
+      .content
+        .step-wrap
+            &::before
+              width: 100%
+    &[data-step="4"]
+      .content
+        .step-wrap
+          display: none
+      .header
+        .step4-header
+          display: block
+    .container
+      text-align: center
+      +maxWidth($maxw: 1320px)
+    .header
+      text-align: center
+      margin-bottom: 102px
+      +rwdmax(767)
+        margin-bottom: 40px
+      .back
+        transform: translateY(-50px)
+        margin-bottom: 25px
+        +flex($display: inline-flex)
+        +rwdmax(767)
+          transform: translateY(0)
+          margin-top: 4px
+        .icon
+          font-size: 14px
+          margin-right: 10px
+        .text
+          +fontSet($size: px(13), $color: rgba(0,0,0,0.8))
+      .step4-header
+        display: none
+        margin-top: 36px
+        .line1
+          margin-bottom: 10px
+          +fontSetBold($font: $LBB, $size: px(26))
+          +rwdmax(767)
+            font-size: px(24)
+        .line2
+          +fontSet($size: px(13))
+    .content
+      position: relative
+      .brush-img
+        position: fixed
+        &.brush1
+          max-width: 269px
+          width: 14vw
+          top: 20.5vh
+          right: 7.1875vw
+          transition: opacity 0.6s ease-in-out 0.6s, height 0.6s ease-in-out 0.6s
+          +rwdmax(1024)
+            display: none
+          &.show
+            opacity: 1
+            height: 311px
+        &.brush2
+          max-width: 177px
+          width: 9.21875vw
+          top: calc(100vh - 200px)
+          left: 7.5vw
+          transition: opacity 0.6s ease-in-out 1s, height 0.6s ease-in-out 1s
+          +rwdmax(1024)
+            display: none
+          &.show
+            opacity: 1
+            height: 200px
+      .step-wrap
+        +flex
+        +rwdmax(767)
+          position: relative
+          &::before
+            content: ''
+            position: absolute
+            width: 0
+            height: 4px
+            background-color: black
+            left: 0
+            bottom: 0
+            z-index: 1
+            transition: 0.4s
+        >li
+          position: relative
+          width: 100%
+          padding: 24px 0
+          border-bottom: 4px solid #d3d3d3
+          color: rgba(0,0,0,0.3)
+          transition: 0.4s
+          +flex
+          +rwdmax(767)
+            padding: 16px 0
+            &:not(.active)
+              display: none
+          &:last-child
+            display: none
+          &.active
+            color: black
+            &::after
+              width: 100%
+              left: 0
+              right: auto
+          &::after
+            content: ''
+            position: absolute
+            width: 0
+            height: 4px
+            background-color: black
+            left: auto
+            right: 0
+            bottom: 0
+            transform: translateY(100%)
+            transition: 0.4s
+            +rwdmax(767)
+              background-color: #d3d3d3
+          .step
+            margin-right: 28px
+            +fontSetBold($font: $LBB, $size: px(54))
+            +rwdmax(767)
+              margin-right: 20px
+          .text
+            text-align: left
+            .line1
+              margin-bottom: 6px
+              +fontSetBold($font: $LBB, $size: px(20))
+            .line2
+              +fontSet($size: px(13))
+      .step-content
+        display: none
+        width: 100%
+        background-color: white
+        border-bottom-left-radius: 10px
+        border-bottom-right-radius: 10px
+        box-shadow: 4px 6.9px 30px 0 rgba(0, 0, 0, 0.05)
+        +rwdmax(767)
+          border-radius: 0
+        &.step1
+          display: block
+          padding: 70px 0
+          +rwdmax(767)
+            padding: 30px 0 55px 0
+          &.empty
+            .order-list
+              display: none
+            .empty-content
+              +flex($direction: column)
+          +orderList
+          .empty-content
+            display: none
+            width: 100%
+            height: 100%
+            .icon-box
+              text-align: center
+              margin-bottom: 34px
+              .icon
+                font-size: 58px
+                margin-bottom: 15px
+              .text
+                +fontSetBold($font: $LBB, $size: px(20))
+            .description
+              +fontSet($size: px(14), $lh: 25px, $color: rgba(0,0,0,0.8))
+        &.step2
+          padding: 100px 0 0 0
+          +rwdmax(767)
+            padding: 58px 0 0 0
+          .tab-pane
+            &#type1
+              .form
+                .form-wrap
+                  &:not(:first-child)
+                    margin-top: 90px
+              .form-extra-description
+                display: none
+            &#type2
+              .form
+                .form-wrap
+                  &:nth-child(1)
+                    margin-bottom: 26px
+                  &:nth-child(2)
+                    margin-bottom: 78px
+                  &:nth-child(3)
+                    margin-bottom: 68px
+          .shipping-wrap
+            .shipping-head
+              margin-bottom: 62px
+              +fontSetBold($font: $LBB, $size: px(16))
+              +rwdmax(767)
+                margin-bottom: 30px
+            .shipping-select
+              margin-bottom: 94px
+              +flex($y: flex-start)
+              +rwdmax(767)
+                margin-bottom: 45px
+              .item
+                min-width: 140px
+                +rwdmax(767)
+                  min-width: auto
+                  width: 82px
+                &.active
+                  .icon,.text
+                    color: #a88438
+                .icon
+                  height: 65px
+                  margin-bottom: 16px
+                  color: black
+                  +flex
+                  +rwdmax(767)
+                    height: 48px
+                  .icon-airplane
+                    font-size: 65px
+                    +rwdmax(767)
+                      font-size: 48px
+                  .icon-shipping
+                    font-size: 65px
+                    +rwdmax(767)
+                      font-size: 48px
+                .text
+                  +fontSetBold($font: $LBB, $size: px(14))
+              .or
+                padding: 0 40px
+                align-self: center
+                +fontSet($size: px(13))
+                +rwdmax(767)
+                  padding: 0 30px
+            .form
+              padding: 0 20px 80px 20px
+              +maxWidth($maxw: 880px)
+            .form-extra-description
+              padding: 0 20px
+              .content
+                width: 100%
+                height: 120px
+                border-top: 1px solid black
+                +flex
+                .text
+                  +fontSetBold($font: $LBB, $size: px(14))
+                .amount
+                  padding: 0 12px
+                  +fontSetBold($font: $LBB, $size: px(26), $color: #a88438)
+                .unit
+                  +fontSetBold($font: $LBB, $size: px(12), $color: #a88438)
+        &.step3
+          padding-top: 124px
+          +rwdmax(767)
+            padding-top: 60px
+          .payable-block,.non-payable-block
+            .step-header
+              margin-bottom: 14px
+              padding: 0 20px
+              +fontSetBold($font: $LBB, $size: px(26))
+            .step-description
+              padding: 0 20px
+              +maxWidth($maxw: 695px)
+              +fontSet($size: px(13), $lh: 25px, $color: rgba(0,0,0,0.8))
+              span
+                font-family: $LBB
+                font-weight: bold
+                color: #c50909
+          .payable-block
+            .type-select
+              padding: 0 20px 100px 20px
+          .non-payable-block
+            .step-description
+              padding-bottom: 100px
+          .type-select
+            margin-top: 44px
+            +flex
+            .item
+              width: 180px
+              height: 50px
+              border-radius: 10rem
+              border: 1px solid rgba(0,0,0,0.3)
+              text-align: center
+              transition: 0.3s
+              +fontSetBold($font: $LBB, $size: px(13), $lh: 50px)
+              &:not(:first-child)
+                margin-left: 12px
+              &.active
+                border: 1px solid #a88438
+                background-color: #a88438
+                color: white
+          .tab-pane
+            .payment-content
+              text-align: left
+              padding: 0 20px 100px 20px
+              +rwdmax(767)
+                padding: 0 20px 30px 20px
+              .payment-header
+                padding: 16px 0
+                border-bottom: 1px solid #dedede
+                margin-bottom: 35px
+                +fontSetBold($font: $LBB, $size: px(14))
+              .credit-card
+                width: auto
+                margin: 35px 0
+              p
+                +fontSet($size: px(13), $lh: 25px)
+                &.notice
+                  font-family: $LBB
+                  font-weight: bold
+          .panel-container
+            +maxWidth($maxw: 840px)
+          .remark-content
+            padding: 92px 20px 88px 20px
+            border-top: 1px solid black
+            +rwdmax(767)
+              padding: 42px 20px 55px 20px
+            .icon-box
+              color: #a88438
+              margin-bottom: 25px
+              .icon
+                font-size: 56px
+                margin-bottom: 22px
+              .text
+                +fontSetBold($font: $LBB, $size: px(14))
+            .remark-description
+              +maxWidth($maxw: 655px, $margin: 0 auto 40px auto)
+              +fontSet($size: px(13), $lh: 25px)
+            .scroll-textarea
+              border-radius: 10px
+              border: 1px solid #dedede
+            textarea
+              display: block
+              width: 100%
+              min-height: 180px
+              border-radius: 10px
+              border: 1px solid #dedede
+              padding: 20px
+              resize: none
+              +fontSet($size: px(13), $lh: 25px, $color: black)
+              +placeholder($font: $basic, $color: rgba(0,0,0,0.6), $size: px(13))
+          .payment-wrap
+            padding-top: 100px
+            border-top: 1px solid black
+            +rwdmax(767)
+              padding-top: 62px
+            .payment-select-head
+              margin-bottom: 62px
+              +fontSetBold($font: $LBB, $size: px(16))
+              +rwdmax(767)
+                margin-bottom: 36px
+            .payment-select
+              margin-bottom: 94px
+              +rwdmax(767)
+                margin-bottom: 36px
+              +flex
+              .item
+                min-width: 140px
+                +rwdmax(767)
+                  min-width: 90px
+                &.active
+                  .icon,.text
+                    color: #a88438
+                .icon
+                  height: 65px
+                  margin-bottom: 16px
+                  color: black
+                  +flex
+                  +rwdmax(767)
+                    height: 38px
+                  .icon-credit-card
+                    font-size: 65px
+                    +rwdmax(767)
+                      font-size: 38px
+                  .icon-paypal
+                    font-size: 65px
+                    +rwdmax(767)
+                      font-size: 38px
+                .text
+                  +fontSetBold($font: $LBB, $size: px(14))
+              .or
+                padding: 0 40px
+                +fontSet($size: px(13))
+                +rwdmax(767)
+                  padding: 0 30px
+        &.step4
+          .step-section
+            &:not(:first-child)
+              border-top: 1px solid black
+            .step-box
+              width: 100%
+              padding: 24px 0
+              color: black
+              margin-bottom: 30px
+              +flex
+              +rwdmax(767)
+                padding: 60px 0 15px 0
+                margin-bottom: 0
+              .step
+                margin-right: 28px
+                +fontSetBold($font: $LBB, $size: px(54))
+              .text
+                text-align: left
+                .line1
+                  margin-bottom: 6px
+                  +fontSetBold($font: $LBB, $size: px(20))
+                .line2
+                  +fontSet($size: px(13))
+            &.step1
+              padding: 42px 0 74px 0
+              +rwdmax(767)
+                padding: 0
+              +orderList
+              .order-list
+                >li
+                  .buy-count
+                    justify-content: flex-start
+                    +rwdmax(767)
+                      width: auto
+                    .count
+                      width: auto
+                    .minus,.plus
+                      display: none
+                  .total-price
+                    margin-left: 10%
+                    +rwdmax(767)
+                      margin-left: 10px
+                  .detail
+                    margin-left: 10%
+                    +rwdmax(767)
+                      margin-left: 0
+                      right: 0
+            &.step2
+              padding: 64px 0 75px 0
+              +rwdmax(767)
+                padding: 0 0 50px 0
+              .form
+                .form-grid
+                  .form-group
+                    &.address
+                      .element-wrap
+                        .select-element
+                          cursor: text
+              &[data-select="type1"]
+                .shipping-content.type1
+                  display: block
+                  .form
+                    .form-wrap
+                      &:not(:first-child)
+                        margin-top: 90px
+                .shipping-content.type2
+                  display: none
+              &[data-select="type2"]
+                .shipping-content.type1
+                  display: none
+                .shipping-content.type2
+                  display: block
+                  .form-wrap
+                   &:nth-child(1)
+                    margin-bottom: 26px
+                    &:nth-child(2)
+                      margin-bottom: 78px
+                    &:nth-child(3)
+                      margin-bottom: 68px
+              .shipping-content
+                display: none
+                .icon-box
+                  margin-bottom: 60px
+                  .icon
+                    height: 65px
+                    margin-bottom: 16px
+                    color: #a88438
+                    +rwdmax(767)
+                      height: 48px
+                      margin-top: 45px
+                    +flex
+                    .icon-airplane
+                      font-size: 65px
+                      +rwdmax(767)
+                        font-size: 48px
+                    .icon-shipping
+                      font-size: 65px
+                      +rwdmax(767)
+                        font-size: 48px
+                  .text
+                    +fontSetBold($font: $LBB, $size: px(14), $color: #a88438)
+                .form
+                  padding: 0 20px 55px 20px
+                  +maxWidth($maxw: 880px)
+                  +rwdmax(767)
+                    padding: 0 20px 50px 20px
+                .form-extra-description
+                  .content
+                    width: 100%
+                    +flex
+                    .text
+                      +fontSetBold($font: $LBB, $size: px(14))
+                    .amount
+                      padding: 0 12px
+                      +fontSetBold($font: $LBB, $size: px(26), $color: #a88438)
+                    .unit
+                      +fontSetBold($font: $LBB, $size: px(12), $color: #a88438)
+            &.step3
+              padding: 76px 0 0 0
+              +rwdmax(767)
+                padding: 0
+              &[data-select="credit-card"]
+                .payment-content.credit-card-content
+                  display: block
+                .remark-content
+                  padding: 92px 20px 88px 20px
+                  +rwdmax(767)
+                    padding: 42px 20px 65px 20px
+              &[data-select="paypal"]
+                .payment-content.paypal-content
+                  display: block
+                .remark-content
+                  padding: 92px 20px 88px 20px
+                  +rwdmax(767)
+                    padding: 42px 20px 65px 20px
+              &[data-select="form"]
+                .step-box
+                  display: none
+                .remark-content
+                  .icon-box
+                    margin-top: 42px
+              .panel-container
+                +maxWidth($maxw: 840px)
+              .payment-content
+                display: none
+                text-align: left
+                padding-bottom: 100px
+                border-bottom: 1px solid black
+                +rwdmax(767)
+                  padding: 0 20px 30px 20px
+                .icon-box
+                  color: #a88438
+                  text-align: center
+                  margin-bottom: 25px
+                  +rwdmax(767)
+                    margin-top: 45px
+                  .icon
+                    font-size: 56px
+                    margin-bottom: 22px
+                    +rwdmax(767)
+                      font-size: 38px
+                  .text
+                    +fontSetBold($font: $LBB, $size: px(14))
+                .payment-header
+                  padding: 16px 0
+                  border-bottom: 1px solid #dedede
+                  margin-bottom: 35px
+                  +fontSetBold($font: $LBB, $size: px(14))
+                .credit-card
+                  width: auto
+                  margin: 35px 0
+                p
+                  +fontSet($size: px(13), $lh: 25px)
+                  &.notice
+                    display: block
+                    font-family: $LBB
+                    font-weight: bold
+              .remark-content
+                padding: 0 20px 88px 20px
+                .icon-box
+                  color: #a88438
+                  margin-bottom: 25px
+                  .icon
+                    font-size: 56px
+                    margin-bottom: 22px
+                    +rwdmax(767)
+                      font-size: 46px
+                  .text
+                    +fontSetBold($font: $LBB, $size: px(14))
+                .remark-description
+                  +maxWidth($maxw: 655px, $margin: 0 auto 40px auto)
+                  +fontSet($size: px(13), $lh: 25px)
+                .scroll-textarea
+                  border-radius: 10px
+                  border: 1px solid #dedede
+                textarea
+                  display: block
+                  width: 100%
+                  height: 180px
+                  border-radius: 10px
+                  border: 1px solid #dedede
+                  padding: 20px
+                  resize: none
+                  +fontSet($size: px(13), $lh: 25px, $color: black)
+                  +placeholder($font: $basic, $color: rgba(0,0,0,0.6), $size: px(13))
+
+    .footer
+      position: fixed
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 100px
+      border-top-left-radius: 20px
+      border-top-right-radius: 20px
+      background-color: black
+      z-index: 1
+      +rwdmax(767)
+        height: 80px
+      .container
+        position: relative
+        height: 100%
+        max-width: 1360px
+        padding: 0 20px
+        +flex($x: space-between)
+      .middle
+        +posCenter
+        .total-amount
+          color: white
+          +flex($y: baseline)
+          .text
+            +fontSetBold($font: $LBB, $size: px(13))
+          .amount
+            padding: 0 12px
+            +fontSetBold($font: $LBB, $size: px(26))
+            +rwdmax(767)
+              font-size: px(20)
+              padding: 0 6px
+          .unit
+            +fontSetBold($font: $LBB, $size: px(12))
+        .exceed-tips
+          margin-top: 10px
+          +fontSet($size: px(12), $color: rgba(255,255,255,0.3))
+          +rwdmax(767)
+            margin-top: 6px
+      .step-change
+        +flex
+        &.prev
+          .step-btn
+            border: 2px solid #a88438
+            &.disabled
+              border: 2px solid rgba(255,255,255, 0.3)
+        &.next
+          .step-btn
+            background-color: #a88438
+            &.disabled
+              background-color: rgba(255,255,255, 0.3)
+        .step-btn
+          width: 50px
+          height: 50px
+          border-radius: 50%
+          +flex
+          +rwdmax(767)
+            width: 40px
+            height: 40px
+          >i
+            font-size: 14px
+            color: white
+            +rwdmax(767)
+              font-size: 12px
+        .step-text
+          padding: 0 20px
+          user-select: none
+          +fontSet( $size: px(14), $color: white)
+          +rwdmax(575)
+            display: none
+

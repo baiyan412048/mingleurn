@@ -1,0 +1,297 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+
+.news
+  .search_lightbox
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    background-color: rgba(0,0,0,0.6)
+    z-index: 999
+    .content-wrap
+      width: 100%
+      height: 100%
+      +flex
+      +rwdmax(767)
+        padding-top: 56px
+        align-items: flex-start
+      .content
+        +flex($direction: column)
+        .close-search
+          width: 60px
+          height: 60px
+          background-color: #a88438
+          border-radius: 50%
+          margin-bottom: 20px
+          cursor: pointer
+          z-index: 1
+          +flex
+          +rwdmax(767)
+            width: 30px
+            height: 30px
+          span
+            position: relative
+            display: block
+            width: 20px
+            height: 20px
+            transform: rotate(45deg)
+            +rwdmax(767)
+              width: 10px
+              height: 10px
+            &::before,&::after
+              content: ''
+              background-color: white
+              +posCenter
+            &::before
+              width: 2px
+              height: 100%
+            &::after
+              width: 100%
+              height: 2px
+        .header
+          margin-bottom: 48px
+          +fontSet($size: px(40), $color: white)
+          +rwdmax(1024)
+            font-size: px(40)
+            margin-bottom: 50px
+          +rwdmax(767)
+            font-size: px(26)
+        .searchbar
+          margin-bottom: 68px
+          +rwdmax(1024)
+            margin-bottom: 22px
+          +newsSearch
+        .search-btn
+          width: 90px
+          height: 90px
+          border-radius: 50%
+          background-color: black
+          +flex
+          +rwdmax(767)
+            width: 40px
+            height: 40px
+          .icon-search
+            color: white
+            font-size: 21px
+            +rwdmax(767)
+              font-size: 16px
+  +newsDecor
+  main
+    .container
+      +maxWidth($maxw: 1570px)
+    .custom-hr
+      +hr($margin: 22px 0)
+      +rwdmax(767)
+        margin: 50px 0
+    .header
+      text-align: center
+      margin-bottom: 90px
+      +rwdmax(1024)
+        margin-bottom: 50px
+      +rwdmax(767)
+        margin-bottom: 20px
+      .unit-name
+        padding: 42px 0
+        +fontSet($size: px(13))
+        +rwdmax(767)
+          padding: 10px 0
+      .unit-alias
+        +fontSetBold($font: $LBB, $size: px(54))
+        +rwdmax(1024)
+          font-size: px(48)
+        +rwdmax(767)
+          font-size: px(32)
+    .top-news
+      position: relative
+      padding: 0 120px
+      +maxWidth($maxw: 1180px)
+      +rwdmax(1024)
+        padding: 0 70px
+      +rwdmax(767)
+        padding: 0
+      .brush-img
+        &.brush1
+          width: 9.1145vw
+          top: -236px
+          right: 45px
+          transition: opacity 0.6s ease-in-out 0.6s, height 0.6s ease-in-out 0.6s
+          +rwdmax(1024)
+            display: none
+          &.show
+            opacity: 1
+            height: 146px
+        &.brush2
+          width: 17.76vw
+          top: 96px
+          left: 170px
+          transform: translateX(-100%)
+          transition: opacity 0.6s ease-in-out 1s, height 0.6s ease-in-out 1s
+          +rwdmax(1024)
+            display: none
+          &.show
+            opacity: 1
+            height: 351px
+      .mainBanner-slider
+        +mainBanner($ratio: 60.6383%, $dotW: 120px)
+        .slider-wrapper
+          .banner-slider-pagination
+            +rwdmax(1024)
+              width: 70px
+        .slider-textarea
+          position: relative
+          height: 178px
+          padding: 40px 0
+          text-align: left
+          transform: translateX(60px)
+          display: inline-flex
+          align-items: center
+          +rwdmax(1024)
+            height: 158px
+            padding: 30px 0
+            transform: none
+          +rwdmax(767)
+            max-width: 100%
+            height: auto
+            padding: 0 20px
+          +rwdmax(575)
+            flex-direction: column
+          +sliderInfo($maxW: 560px)
+    .bottom-news
+      padding: 0 70px 12.5% 180px
+      +flex($x: flex-start, $y: flex-start)
+      +rwdmax(1024)
+        padding: 0 8% 12.5% 8%
+      +rwdmax(767)
+        flex-direction: column
+        padding: 0 20px 12.5% 20px
+      .news-type
+        position: relative
+        min-width: 200px
+        margin-right: 60px
+        +rwdmax(767)
+          width: 100%
+          height: auto !important
+          margin-right: 0
+        .type-select
+          position: absolute
+          width: 100%
+          top: 0
+          left: 0
+          padding: 0 5px
+          margin-top: 110px
+          +rwdmax(767)
+            position: static !important
+            width: 100% !important
+            top: auto !important
+            left: auto !important
+            bottom: auto !important
+            transition: none !important
+            text-align: center
+            margin-top: 0
+          .head
+            margin-bottom: 40px
+            +fontSetBold($font: $LBB, $size: px(17))
+            +rwdmax(767)
+              font-size: px(15)
+              margin-bottom: 10px
+          .type-dropdown
+            width: 100%
+            margin-bottom: 60px
+            +rwdmax(767)
+              position: relative
+              max-width: 250px
+              margin: 0 auto 25px auto
+              text-align: center
+            &.active
+              .selected
+                .arrow
+                  transform: translate(0,-50%) rotateX(0deg)
+            .selected
+              display: none
+              +rwdmax(767)
+                position: relative
+                padding: 15px 0
+                border-bottom: 1px solid black
+                cursor: pointer
+                user-select: none
+                margin-bottom: 5px
+                +flex
+              .text
+                font-size: px(14)
+              .arrow
+                position: absolute
+                right: 0
+                top: 50%
+                transform: translate(0,-50%) rotateX(180deg)
+                transition: transform 0.3s
+            .dropdown
+              +rwdmax(767)
+                display: none
+                position: absolute
+                width: 100%
+                padding: 8px 0
+                border-radius: 20px
+                border: 1px solid #cdcdcd
+                background-color: #f4f4f4
+                box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+                overflow: hidden
+                z-index: 2
+              ul
+                +flex($direction: column, $y: flex-start)
+                +rwdmax(767)
+                  height: 100%
+                  max-height: 168px !important
+                  display: block
+                li
+                  position: relative
+                  cursor: pointer
+                  user-select: none
+                  +fontSet($size: px(16), $color: #555555)
+                  +rwdmax(767)
+                    width: 100%
+                    height: 42px
+                    +fontSetBold($font: $LBB, $size: px(14), $lh:42px, $color: #666666)
+                  &:not(:last-child)
+                    margin-bottom: 20px
+                    +rwdmax(767)
+                      margin-bottom: 0
+                  &::after
+                    content: ''
+                    position: absolute
+                    top: 50%
+                    left: -5px
+                    width: 0
+                    height: 1px
+                    background-color: #a88438
+                    margin: -0.5px 0 0 0
+                    transition: width 0.3s
+                    z-index: -1
+                    +rwdmax(767)
+                      display: none
+                  +rwdmin(768)
+                    &.active
+                      color: #a88438
+                      &::after
+                        width: calc(100% + 10px)
+                  +rwdmax(767)
+                    &:hover,&:active
+                      background-color: #a88438
+                      color: white
+                
+          .news-search
+            display: inline-block
+            padding: 9px 28px
+            border-radius: 10rem
+            background-color: #d7d7d7
+            cursor: pointer
+            user-select: none
+            +fontSetBold($font: $LBB, $size: px(15), $color: #010101)
+      +newsList
+
+
+
+
+
