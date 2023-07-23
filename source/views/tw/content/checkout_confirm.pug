@@ -18,6 +18,7 @@ html(lang="en")
         // 主要內容
         main
           .header
+            .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") subtitle
             h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Self-checkout
             p.section-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Dear customer, welcome to use online Self-checkout service. Please confirm the payment information to completed payment, thank you!
 
@@ -29,6 +30,11 @@ html(lang="en")
               //-   .brush-img
               //-     img.b-lazy(src="../../../assets/img/blazy.gif" data-src="../../../assets/img/shopping/result-decor.png", alt="")
               section.form
+                .form-row
+                  .form-grid
+                    label.form-group.required
+                      p Serial Number
+                      input(type="text" value="20010001" readonly)
                 .form-row
                   .form-grid
                     label.form-group.required
