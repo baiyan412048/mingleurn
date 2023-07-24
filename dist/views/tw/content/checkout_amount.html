@@ -53,31 +53,193 @@
     <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
     <!--獨立CSS-->
   </head>
-  <link rel="stylesheet" href="../../../assets/css/checkout.css"/>
-  <body class="checkout" data-page="checkout">
-    <!-- 結帳Loading畫面-->
-    <div class="loading-page">
-      <div class="icon-box">
-        <div class="icon">
-          <div class="icon-checkout-loading"></div>
-          <div class="dot-wrap">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-        </div>
-        <div class="loading-text">Convert...</div>
-        <p class="description">Page will go to new screen</p>
-      </div>
-    </div>
+  <link rel="stylesheet" href="../../../assets/css/checkout_amount.css"/>
+  <body class="checkout_amount" data-page="checkout_amount">
     <div class="main-wrapper scrollbar-macosx" data-fake-body="">
       <div class="all-wrapper">
         <!-- 導覽列-->
+        <!--原本畫面上的導覽列-->
         <nav>
-          <div class="header"><a class="logo" href="./index.html"><img src="../../../assets/img/logo-black.svg" alt="LOGO"/></a>
-            <div class="function-bar"><a class="close-btn" href="javascript:;" onclick="history.back()"><span></span></a></div>
+          <div class="header"><a class="logo" href="./index.html"><img class="logo-black" src="../../../assets/img/logo-black.svg" alt="LOGO"/><img class="logo-white" src="../../../assets/img/logo-white.svg" alt="LOGO"/></a>
+            <div class="function-bar"><a class="function-btn member" href="javascript:;"><i class="icon-member"></i></a>
+              <div class="function-btn language"><i class="icon-language"></i>
+                <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+              </div><a class="function-btn shop" onclick="_shoppingCart.openCart()" href="javascript:;" data-count="1"><i class="icon-shop"></i></a><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a>
+              <div class="menu-switch">MENU</div>
+            </div>
+          </div>
+          <div class="menubar" data-animate="fadeIn" data-duration="0.3s" data-delay="0.4s">
+            <ul class="menu">
+              <li><a href="./about.html">CLOSER TO MING</a></li>
+              <li><a href="./news.html">MING TO TELL</a></li>
+              <li><a href="./product.html">PICK MING UP</a></li>
+              <li><a href="./contact.html">LET MING HELP</a></li>
+            </ul>
           </div>
         </nav>
+        <!--視窗往上滾動後固定在上方的導覽列-->
+        <!--這邊也要和body寫一樣的顏色-->
+        <nav class="sticky">
+          <div class="header"><a class="logo" href="./index.html"><img class="logo-black" src="../../../assets/img/logo-black.svg" alt="LOGO"/><img class="logo-white" src="../../../assets/img/logo-white.svg" alt="LOGO"/></a>
+            <div class="function-bar"><a class="function-btn member" href="javascript:;"><i class="icon-member"></i></a>
+              <div class="function-btn language"><i class="icon-language"></i>
+                <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+              </div><a class="function-btn shop" onclick="_shoppingCart.openCart()" href="javascript:;" data-count="1"><i class="icon-shop"></i></a><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a>
+              <div class="menu-switch">MENU</div>
+            </div>
+          </div>
+          <div class="menubar">
+            <ul class="menu">
+              <li><a href="./about.html">CLOSER TO MING</a></li>
+              <li><a href="./news.html">MING TO TELL</a></li>
+              <li><a href="./product.html">PICK MING UP</a></li>
+              <li><a href="./contact.html">LET MING HELP</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!-- 主選單-->
+        <section class="menulbox">
+          <div class="menu-wrap">
+            <div class="menu-closebtn"></div>
+            <div class="menu-status">
+              <div class="photo-wrap">
+                <!-- 未登入 導向至登入頁 / div的background-image: url('') 留空，裡面要有 <i class="icon-member-status"></i>-->
+                <!-- 登入後 導向至會員中心 / div的background-image: url('') 換上圖片路徑，裡面的 <i class="icon-member-status"></i> 刪除--><a href="./member.html">
+                  <div style="background-image: url('../../../uploads/member/default-photo10-200x200.png')">
+                    <!-- i.icon-member-status-->
+                  </div>
+                  <!--登入前文字 Login Now ! / 登入後文字 Hello,xxxxx-->
+                  <p>Hello,Hailey</p></a>
+              </div>
+              <!-- 固定左下功能-->
+              <div class="fixed-left-function innerMenu"><a class="function-btn search" href="./product_search.html"><i class="icon-search"></i></a><a class="function-btn shop" onclick="_shoppingCart.openCart()" href="javascript:;" data-count="1"><i class="icon-shop"></i></a>
+                <div class="function-btn language"><i class="icon-language"></i>
+                  <p><a href="javascript:;">繁</a><a href="javascript:;">EN</a></p>
+                </div>
+                <!-- 此為登入前的結構↓↓-->
+                <!-- a.function-btn.member(href="javascript:;")-->
+                <!--   i.icon-member-->
+                <!-- 此為登入後的結構↓↓--><a class="function-btn member ajax_open" href="javascript:;" data-ajax-route="./ajax_member_logout.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox"><i class="icon-member-logout"></i></a>
+              </div>
+            </div>
+            <div class="menu-list scrollbar-macosx scroll-wrap" data-scrollbar="data-scrollbar">
+              <ul class="list">
+                <li class="active">
+                  <p>New Arrival</p>
+                  <ul style="display: block">
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Lace</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Fabric</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Beading</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Embroidery</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Accessories</p>
+                  <ul>
+                    <li><a href="javascript:;">Cellection</a></li>
+                    <li><a href="javascript:;">Popular Series</a></li>
+                    <li><a href="javascript:;">Top50</a></li>
+                    <li><a href="javascript:;">Weekly Rank</a></li>
+                    <li><a href="javascript:;">Inspiration</a></li>
+                    <li><a href="javascript:;">Designer Special</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-block">
+              <ul class="unit">
+                <li><a href="./product.html">Pick MING Up</a></li>
+                <li><a href="./about.html">Closer To MING</a></li>
+                <li><a href="./news.html">MING To Tell</a></li>
+                <li><a href="./contact.html">Let MING Help</a></li>
+                <li><a href="./member.html">Member Of MING</a></li>
+                <li><a href="./qa.html">MING's service</a></li>
+              </ul>
+              <div class="control">
+                <div class="wrap">
+                  <div>
+                    <p><a href="javascript:;">Recruit</a></p>
+                    <p><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_privacy_policy.html" data-ajax-container=".privacy-lbox" data-ajax-callback="_ajaxCallback.privacyPolicy">Privacy Policy</a></p>
+                  </div>
+                  <ul class="social-link">
+                    <li><a href="javascript:;"><i class="icon-ig"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-fb"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-twitter"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-line"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-wechat"></i></a></li>
+                    <li><a href="javascript:;"><i class="icon-youtube"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-photo">
+            <div class="decor1"><img src="../../../assets/img/menu-decor01.png" alt=""/></div>
+            <div class="decor2"><img src="../../../assets/img/menu-decor02.png" alt=""/></div>
+            <div class="swiper-container swiper-no-swiping" data-swiper-name="menu-banner" data-swiper-num="1" data-swiper-nav="off" data-swiper-arrow="off" data-swiper-autoplay="on" data-swiper-breakpoints="{767: { slidePerview: 1 }}">
+              <!-- 圖片尺寸 (650*1080)-->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" data-line1="Hot Series" data-line2="Mysterious Tiger">
+                  <!-- 可自訂連結，沒有連結時加上 .default--><a class="content default" href="javascript:;" style="background-image: url('../../../uploads/home/menu_banner.jpg')"></a>
+                </div>
+                <div class="swiper-slide" data-line1="Hot Series" data-line2="Mysterious Tiger">
+                  <!-- 可自訂連結，沒有連結時加上 .default--><a class="content default" href="javascript:;" style="background-image: url('../../../uploads/home/menu_banner.jpg')"></a>
+                </div>
+              </div>
+            </div>
+            <!-- 文字可選黑白兩色 .white .black-->
+            <div class="text-box white">
+              <div class="text1"> </div>
+              <div class="text2"> </div>
+            </div>
+          </div>
+        </section>
         <!-- 購物車-->
         <div class="cart-background close-cart">
           <!--購物車沒有商品時加上 empty 這個 Class-->
@@ -361,815 +523,88 @@
           <div class="scroll-tips">Scroll down</div>
         </div>
         <!-- 主要內容-->
-        <main data-step="1">
+        <main>
+          <div class="header">
+            <div class="unit-name" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">subtitle</div>
+            <h1 class="unit-alias" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">Self-checkout</h1>
+            <p class="section-description innertext" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">Dear customer, welcome to use online Self-checkout service. Please enter the checkout amount and leave your contact information, we will have customer service staff to contact you further, thank you!</p>
+          </div>
           <div class="container">
-            <div class="header"><a class="back" href="javascript:;" onclick="history.back()">
-                <div class="icon icon-left"></div>
-                <div class="text">BACK TO MY SHOPPING BAG</div></a>
-              <div class="step4-header">
-                <div class="line1">Checkout Overview</div>
-                <div class="line2">Please confirm the order content</div>
-              </div>
-            </div>
-            <div class="content">
-              <div class="brush-img brush1"><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="../../../assets/img/shopping/checkout-decor01.png" alt=""/></div>
-              <div class="brush-img brush2"><img class="b-lazy" src="../../../assets/img/blazy.gif" data-src="../../../assets/img/shopping/checkout-decor02.png" alt=""/></div>
-              <ul class="step-wrap">
-                <li class="active">
-                  <div class="step">1</div>
-                  <div class="text">
-                    <div class="line1">Order List</div>
-                    <div class="line2">List items are as follows</div>
-                  </div>
-                </li>
-                <li>
-                  <div class="step">2</div>
-                  <div class="text">
-                    <div class="line1">Shipping</div>
-                    <div class="line2">Shipping Method</div>
-                  </div>
-                </li>
-                <li>
-                  <div class="step">3</div>
-                  <div class="text">
-                    <div class="line1">Payment</div>
-                    <div class="line2">Pay & Request</div>
-                  </div>
-                </li>
-                <li>
-                  <div class="step">4</div>
-                  <div class="text">
-                    <div class="line1">Overview</div>
-                    <div class="line2"></div>
-                  </div>
-                </li>
-              </ul>
-              <!--後端判斷完要換步驟請跑↓↓↓-->
-              <!--_checkout.stepChange() 兩種用法-->
-              <!--1.傳數字 ex: 第二步 _checkout.stepChange(2)-->
-              <!--2.傳字串 ex: 上一步 _checkout.stepChange('prev') / 下一步 _checkout.stepChange('next')-->
-              <!--進到第一步時或是跳到第二步之前要判斷是否符合線上結帳條件(金額超標或是含有客製化商品)-->
-              <!--如果不符合條件要跑-->
-              <!--1.擁有客製化權限者 _common.openAjax('./ajax_checkout_tips1.html','.checkout-tips-wrap')-->
-              <!--2.不擁有客製化權限者 _common.openAjax('./ajax_checkout_tips2.html','.checkout-tips-wrap')-->
-              <!--第一個值是Ajax Route-->
-              <!--第一步驟 - Order List-->
-              <!--如果沒有商品時，step-content 加上 empty 這個 Class-->
-              <div class="step-content step1">
-                <ul class="order-list">
-                  <li>
-                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list01.jpg')"></div>
-                    <div class="product-info">
-                      <div class="name">Chantilly Lace</div>
-                      <div class="unit-price"><span>1 SET = 50Y</span><span>USD 5.00 / Y</span></div>
-                    </div>
-                    <!--data-inventories 裡面請填庫存數量-->
-                    <div class="buy-count" data-inventories="50"><span class="minus"></span>
-                      <div class="count-wrap">
-                        <input class="count" type="text" value="1"/><span class="unit">set</span>
-                      </div><span class="plus"></span>
-                    </div>
-                    <p class="is-customized">customized</p>
-                    <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div><a class="detail" href="javascript:;">
-                      <div class="text">See Detail</div>
-                      <div class="icon"><i class="icon-detail"></i></div></a>
-                    <div class="product-option"><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
-                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i></i></div></a></div>
-                  </li>
-                  <li>
-                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list02.jpg')"></div>
-                    <div class="product-info">
-                      <div class="sm-unit">Small Unit</div>
-                      <div class="name">Multi Color Embroidery Trim</div>
-                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 3.00 / PRS</span></div>
-                    </div>
-                    <!--data-inventories 裡面請填庫存數量-->
-                    <div class="buy-count" data-inventories="50"><span class="minus"></span>
-                      <div class="count-wrap">
-                        <input class="count" type="text" value="30"/><span class="unit">set</span>
-                      </div><span class="plus"></span>
-                    </div>
-                    <p class="is-customized">customized</p>
-                    <div class="total-price"><span class="unit">USD</span><span class="number">4,500</span></div><a class="detail" href="javascript:;">
-                      <div class="text">See Detail</div>
-                      <div class="icon"><i class="icon-detail"></i></div></a>
-                    <div class="product-option"><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
-                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i></i></div></a></div>
-                  </li>
-                  <li>
-                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list03.jpg')"></div>
-                    <div class="product-info">
-                      <div class="name">Chantilly Lace</div>
-                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 0.80 / PRS</span></div>
-                    </div>
-                    <!--data-inventories 裡面請填庫存數量-->
-                    <div class="buy-count" data-inventories="50"><span class="minus"></span>
-                      <div class="count-wrap">
-                        <input class="count" type="text" value="50"/><span class="unit">set</span>
-                      </div><span class="plus"></span>
-                    </div>
-                    <p class="is-customized">customized</p>
-                    <div class="total-price"><span class="unit">USD</span><span class="number">2,000</span></div><a class="detail" href="javascript:;">
-                      <div class="text">See Detail</div>
-                      <div class="icon"><i class="icon-detail"></i></div></a>
-                    <div class="product-option"><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
-                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i></i></div></a></div>
-                  </li>
-                  <li class="customized">
-                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list04.jpg')"></div>
-                    <div class="product-info">
-                      <div class="name">Chantilly Lace</div>
-                      <div class="unit-price"><span>1 SET = 50Y</span><span>USD 5.00 / Y</span></div>
-                    </div>
-                    <!--data-inventories 裡面請填庫存數量-->
-                    <div class="buy-count" data-inventories="50"><span class="minus"></span>
-                      <div class="count-wrap">
-                        <input class="count" type="text" value="1"/><span class="unit">set</span>
-                      </div><span class="plus"></span>
-                    </div>
-                    <p class="is-customized">customized</p>
-                    <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div><a class="detail" href="javascript:;">
-                      <div class="text">See Detail</div>
-                      <div class="icon"><i class="icon-detail"></i></div></a>
-                    <div class="product-option"><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
-                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i></i></div></a></div>
-                  </li>
-                  <li>
-                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list05.jpg')"></div>
-                    <div class="product-info">
-                      <div class="name">Chantilly Lace</div>
-                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 3.00 / PRS</span></div>
-                    </div>
-                    <!--data-inventories 裡面請填庫存數量-->
-                    <div class="buy-count" data-inventories="50"><span class="minus"></span>
-                      <div class="count-wrap">
-                        <input class="count" type="text" value="30"/><span class="unit">set</span>
-                      </div><span class="plus"></span>
-                    </div>
-                    <p class="is-customized">customized</p>
-                    <div class="total-price"><span class="unit">USD</span><span class="number">4,500</span></div><a class="detail" href="javascript:;">
-                      <div class="text">See Detail</div>
-                      <div class="icon"><i class="icon-detail"></i></div></a>
-                    <div class="product-option"><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
-                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i></i></div></a></div>
-                  </li>
-                  <li>
-                    <div class="thumbnail" style="background-image: url('../../../uploads/product/list06.jpg')"></div>
-                    <div class="product-info">
-                      <div class="name">Chantilly Lace</div>
-                      <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 0.80 / PRS</span></div>
-                    </div>
-                    <!--data-inventories 裡面請填庫存數量-->
-                    <div class="buy-count" data-inventories="50"><span class="minus"></span>
-                      <div class="count-wrap">
-                        <input class="count" type="text" value="50"/><span class="unit">set</span>
-                      </div><span class="plus"></span>
-                    </div>
-                    <p class="is-customized">customized</p>
-                    <div class="total-price"><span class="unit">USD</span><span class="number">2,000</span></div><a class="detail" href="javascript:;">
-                      <div class="text">See Detail</div>
-                      <div class="icon"><i class="icon-detail"></i></div></a>
-                    <div class="product-option"><a class="option-btn edit ajax_open" href="javascript:;" data-ajax-route="./ajax_customize_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i class="icon-edit"></i></div></a><a class="option-btn detail" href="javascript:;">
-                        <div class="icon"><i class="icon-detail"></i></div></a><a class="option-btn delete ajax_open" href="javascript:;" data-ajax-route="./ajax_delete_check.html" data-ajax-container=".remind-lbox" data-ajax-callback="_ajaxCallback.normalLightbox">
-                        <div class="icon"><i></i></div></a></div>
-                  </li>
-                </ul>
-                <!--沒有商品時的結構-->
-                <div class="empty-content">
-                  <div class="icon-box">
-                    <div class="icon icon-shop"></div>
-                    <div class="text">List is empty</div>
-                  </div>
-                  <p class="description">You haven’t  added any item.</p>
-                </div>
-              </div>
-              <!--第二步驟 - Shipping-->
-              <div class="step-content step2">
-                <div class="shipping-wrap">
-                  <div class="shipping-head">Which one for shipping?</div>
-                  <div class="shipping-select nav-tabs" data-id="shipping-tabs"><a class="item tab-btn active" href="javascript:;" data-page="type1">
-                      <div class="icon"><i class="icon-airplane"></i></div>
-                      <div class="text">Mingleurn</div></a>
-                    <div class="or">or</div><a class="item tab-btn" href="javascript:;" data-page="type2">
-                      <div class="icon"><i class="icon-shipping"></i></div>
-                      <div class="text">Cooperate logistics</div></a>
-                  </div>
-                  <div class="tab-content" id="shipping-tabs">
-                    <div class="tab-pane" id="type1">
-                      <div class="form">
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group address has-checkbox">
-                              <p>Shipping Address</p>
-                              <label class="checkbox">
-                                <input type="checkbox"/>
-                                <div class="fake-checkbox"><span></span></div>
-                                <p>Same as above</p>
-                              </label>
-                              <div class="element-wrap">
-                                <div class="select-element" data-default="Region">
-                                  <div class="selected"><span class="text">Region</span><span class="arrow icon-arrow-up"></span></div>
-                                  <div class="dropdown">
-                                    <ul class="scrollbar-inner">
-                                      <li>Asia</li>
-                                      <li>Europe</li>
-                                      <li>North America</li>
-                                      <li>South America</li>
-                                      <li>Africa</li>
-                                      <li>Oceania</li>
-                                      <li>Antarctica</li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div class="select-element" data-default="Country">
-                                  <div class="selected"><span class="text">Country</span><span class="arrow icon-arrow-up"></span></div>
-                                  <div class="dropdown">
-                                    <ul class="scrollbar-inner">
-                                      <li>Taiwan</li>
-                                      <li>Japan</li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <input type="text" placeholder="Zip code"/>
-                              </div>
-                              <div class="address-input">
-                                <input type="text" placeholder="Please enter full address"/>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group address has-checkbox">
-                              <p>Recipient Information</p>
-                              <label class="checkbox">
-                                <input type="checkbox"/>
-                                <div class="fake-checkbox"><span></span></div>
-                                <p>Same as above</p>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Name</p>
-                              <input type="text" placeholder=""/>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Phone</p>
-                              <input type="tel" inputmode="tel" placeholder=""/>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>E-mail</p>
-                              <input type="email" inputmode="email" placeholder="We will send important notifications by mail"/>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Receipt</p>
-                              <div class="readonly">We will upload the receipt to your member center after the order is completed.</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--只要不符合結帳條件就不顯示下面結構-->
-                      <div class="form-extra-description">
-                        <div class="content">
-                          <div class="text">Your shipping fee is
-                            <!--這邊會根據使用者選擇不同州而有不同的運費--><span class="amount">190</span><span class="unit">USD</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab-pane" id="type2">
-                      <div class="form">
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group wrap">
-                              <p>Cooperate logistics</p>
-                              <input type="text" placeholder="Name of  logistics company , ex : DHL Express"/>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group wrap">
-                              <p>Manufacturer Number</p>
-                              <input type="text" placeholder="Number of  company"/>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group address has-checkbox">
-                              <p>Shipping Address</p>
-                              <label class="checkbox">
-                                <input type="checkbox"/>
-                                <div class="fake-checkbox"><span></span></div>
-                                <p>Same as above</p>
-                              </label>
-                              <div class="element-wrap">
-                                <div class="select-element" data-default="Region">
-                                  <div class="selected"><span class="text">Region</span><span class="arrow icon-arrow-up"></span></div>
-                                  <div class="dropdown">
-                                    <ul class="scrollbar-inner">
-                                      <li>Asia</li>
-                                      <li>Europe</li>
-                                      <li>North America</li>
-                                      <li>South America</li>
-                                      <li>Africa</li>
-                                      <li>Oceania</li>
-                                      <li>Antarctica</li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div class="select-element" data-default="Country">
-                                  <div class="selected"><span class="text">Country</span><span class="arrow icon-arrow-up"></span></div>
-                                  <div class="dropdown">
-                                    <ul class="scrollbar-inner">
-                                      <li>Taiwan</li>
-                                      <li>Japan</li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <input type="text" placeholder="Zip code"/>
-                              </div>
-                              <div class="address-input">
-                                <input type="text" placeholder="Please enter full address"/>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group address has-checkbox">
-                              <p>Recipient Information</p>
-                              <label class="checkbox">
-                                <input type="checkbox"/>
-                                <div class="fake-checkbox"><span></span></div>
-                                <p>Same as above</p>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Name</p>
-                              <input type="text" placeholder=""/>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Phone</p>
-                              <input type="tel" inputmode="tel" placeholder=""/>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>E-mail</p>
-                              <input type="email" inputmode="email" placeholder="We will send important notifications by mail"/>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Receipt</p>
-                              <div class="readonly">We will upload the receipt to your member center after the order is completed.</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--只要不符合結帳條件就不顯示下面結構-->
-                      <div class="form-extra-description">
-                        <div class="content">
-                          <div class="text">Your shipping fee will be notified separately</div>
-                        </div>
-                      </div>
-                    </div>
+            <div class="content" style="background-image: url('../../../uploads/shopping/checkout-form-success.jpg')">
+              <section class="form">
+                <div class="form-row">
+                  <div class="form-grid">
+                    <label class="form-group required">
+                      <p>Name</p>
+                      <input type="text"/>
+                    </label>
                   </div>
                 </div>
-              </div>
-              <!--第三步驟 - Pay & Request-->
-              <div class="step-content step3">
-                <!--後端判斷顯示哪個結構(可付款 / 不可付款)-->
-                <!--可付款-->
-                <div class="payable-block">
-                  <div class="step-header">Online checkout or submit request?</div>
-                  <div class="step-description">You can choose to checkout online , or send a request form, and the business staff will contact you.</div>
-                  <div class="type-select nav-tabs" data-id="type-tabs"><a class="item tab-btn" href="javascript:;" data-page="payment">
-                      <div class="text">Payment</div></a><a class="item tab-btn" href="javascript:;" data-page="form">
-                      <div class="text">Request</div></a></div>
-                  <div class="tab-content" id="type-tabs">
-                    <!--線上付款-->
-                    <div class="tab-pane" id="payment">
-                      <div class="payment-wrap">
-                        <div class="payment-select-head">Which one for payment?</div>
-                        <div class="payment-select nav-tabs" data-id="payment-tabs"><a class="item tab-btn active" href="javascript:;" data-page="credit-card">
-                            <div class="icon"><i class="icon-credit-card"></i></div>
-                            <div class="text">Credit Card</div></a>
-                          <div class="or">or</div><a class="item tab-btn" href="javascript:;" data-page="paypal">
-                            <div class="icon"><i class="icon-paypal"></i></div>
-                            <div class="text">Paypal</div></a>
-                        </div>
-                        <div class="tab-content" id="payment-tabs">
-                          <!--信用卡-->
-                          <div class="tab-pane" id="credit-card">
-                            <div class="payment-content">
-                              <div class="panel-container">
-                                <div class="payment-header">Support Type</div><img class="credit-card" src="../../../assets/img/credit-card.png" alt=""/>
-                                <p>It is not limited to domestic and international card issuers, and supports VISA / MASTER / JCB / UnionPay card issuers, allowing consumers to make quick payments.You will be redirected to a new screen to complete the payment transaction.</p><br/>
-                                <p class="notice">We do not offer installment service, please settle all expenses at once.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <!--paypal-->
-                          <div class="tab-pane" id="paypal">
-                            <div class="payment-content">
-                              <div class="panel-container">
-                                <div class="payment-header">Support Type</div><img class="credit-card" src="../../../assets/img/credit-card.png" alt=""/>
-                                <p>If you choose to pay with paypal, your screen will be redirected to a new screen to complete the payment transaction.</p><br/>
-                                <p class="notice">We do not offer installment service, please settle all expenses at once.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="remark-content">
-                            <div class="panel-container">
-                              <div class="icon-box">
-                                <div class="icon icon-checkout-remark"></div>
-                                <div class="text">Special Remark</div>
-                              </div>
-                              <p class="remark-description">If you have any questions about the content of this order, please feel free to let us know in the field below, and we will answer your questions when contacting.</p>
-                              <textarea class="scrollbar-inner" placeholder="If there are any remarks, please fill in here"></textarea>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!--表單-->
-                    <div class="tab-pane" id="form">
-                      <div class="remark-content">
-                        <div class="panel-container">
-                          <div class="icon-box">
-                            <div class="icon icon-checkout-remark"></div>
-                            <div class="text">Special Remark</div>
-                          </div>
-                          <p class="remark-description">If you have any questions about the content of this order, please feel free to let us know in the field below, and we will answer your questions when contacting.</p>
-                          <textarea class="scrollbar-inner" placeholder="If there are any remarks, please fill in here"></textarea>
-                        </div>
-                      </div>
-                    </div>
+                <div class="form-row">
+                  <div class="form-grid">
+                    <label class="form-group required">
+                      <p>Amount</p>
+                      <input class="enter-amount" type="number"/>
+                    </label>
                   </div>
                 </div>
-                <!--不可付款-->
-                <div class="non-payable-block" style="display: none">
-                  <div class="step-header">We will submit your request</div>
-                  <div class="step-description">Your order contains customized items, or the total amount of the order is over <span>USD 1,000</span> , we will set up a demand list, and the specialist will contact you to serve you.</div>
-                  <div class="remark-content">
-                    <div class="panel-container">
-                      <div class="icon-box">
-                        <div class="icon icon-checkout-remark"></div>
-                        <div class="text">Special Remark</div>
-                      </div>
-                      <p class="remark-description">If you have any questions about the content of this order, please feel free to let us know in the field below, and we will answer your questions when contacting.</p>
-                      <textarea class="scrollbar-inner" placeholder="If there are any remarks, please fill in here"></textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--第四步驟 - Overview-->
-              <div class="step-content step4">
-                <div class="overview-wrap">
-                  <!--4-1-->
-                  <div class="step-section step1">
-                    <div class="step-box">
-                      <div class="step">1</div>
-                      <div class="text">
-                        <div class="line1">Order List</div>
-                        <div class="line2">List items are as follows</div>
-                      </div>
-                    </div>
-                    <ul class="order-list">
-                      <li>
-                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list01.jpg')"></div>
-                        <div class="product-info">
-                          <div class="name">Chantilly Lace</div>
-                          <div class="unit-price"><span>1 SET = 50Y</span><span>USD 5.00 / Y</span></div>
-                        </div>
-                        <div class="buy-count" data-inventories=""><span class="minus"></span>
-                          <div class="count-wrap">
-                            <div class="count">1</div><span class="unit">set</span>
-                          </div><span class="plus"></span>
-                        </div>
-                        <p class="is-customized">customized</p>
-                        <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div><a class="detail" href="javascript:;">
-                          <div class="text">See Detail</div>
-                          <div class="icon"><i class="icon-detail"></i></div></a>
-                      </li>
-                      <li>
-                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list02.jpg')"></div>
-                        <div class="product-info">
-                          <div class="sm-unit">Small Unit</div>
-                          <div class="name">Multi Color Embroidery Trim</div>
-                          <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 3.00 / PRS</span></div>
-                        </div>
-                        <div class="buy-count" data-inventories=""><span class="minus"></span>
-                          <div class="count-wrap">
-                            <div class="count">30</div><span class="unit">set</span>
-                          </div><span class="plus"></span>
-                        </div>
-                        <p class="is-customized">customized</p>
-                        <div class="total-price"><span class="unit">USD</span><span class="number">4,500</span></div><a class="detail" href="javascript:;">
-                          <div class="text">See Detail</div>
-                          <div class="icon"><i class="icon-detail"></i></div></a>
-                      </li>
-                      <li>
-                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list03.jpg')"></div>
-                        <div class="product-info">
-                          <div class="name">Chantilly Lace</div>
-                          <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 0.80 / PRS</span></div>
-                        </div>
-                        <div class="buy-count" data-inventories=""><span class="minus"></span>
-                          <div class="count-wrap">
-                            <div class="count">50</div><span class="unit">set</span>
-                          </div><span class="plus"></span>
-                        </div>
-                        <p class="is-customized">customized</p>
-                        <div class="total-price"><span class="unit">USD</span><span class="number">2,000</span></div><a class="detail" href="javascript:;">
-                          <div class="text">See Detail</div>
-                          <div class="icon"><i class="icon-detail"></i></div></a>
-                      </li>
-                      <li class="customized">
-                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list04.jpg')"></div>
-                        <div class="product-info">
-                          <div class="name">Chantilly Lace</div>
-                          <div class="unit-price"><span>1 SET = 50Y</span><span>USD 5.00 / Y</span></div>
-                        </div>
-                        <div class="buy-count" data-inventories=""><span class="minus"></span>
-                          <div class="count-wrap">
-                            <div class="count">1</div><span class="unit">set</span>
-                          </div><span class="plus"></span>
-                        </div>
-                        <p class="is-customized">customized</p>
-                        <div class="total-price"><span class="unit">USD</span><span class="number">250</span></div><a class="detail" href="javascript:;">
-                          <div class="text">See Detail</div>
-                          <div class="icon"><i class="icon-detail"></i></div></a>
-                      </li>
-                      <li>
-                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list05.jpg')"></div>
-                        <div class="product-info">
-                          <div class="name">Chantilly Lace</div>
-                          <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 3.00 / PRS</span></div>
-                        </div>
-                        <div class="buy-count" data-inventories=""><span class="minus"></span>
-                          <div class="count-wrap">
-                            <div class="count">30</div><span class="unit">set</span>
-                          </div><span class="plus"></span>
-                        </div>
-                        <p class="is-customized">customized</p>
-                        <div class="total-price"><span class="unit">USD</span><span class="number">4,500</span></div><a class="detail" href="javascript:;">
-                          <div class="text">See Detail</div>
-                          <div class="icon"><i class="icon-detail"></i></div></a>
-                      </li>
-                      <li>
-                        <div class="thumbnail" style="background-image: url('../../../uploads/product/list06.jpg')"></div>
-                        <div class="product-info">
-                          <div class="name">Chantilly Lace</div>
-                          <div class="unit-price"><span>1 SET = 50PRS</span><span>USD 0.80 / PRS</span></div>
-                        </div>
-                        <div class="buy-count" data-inventories=""><span class="minus"></span>
-                          <div class="count-wrap">
-                            <div class="count">50</div><span class="unit">set</span>
-                          </div><span class="plus"></span>
-                        </div>
-                        <p class="is-customized">customized</p>
-                        <div class="total-price"><span class="unit">USD</span><span class="number">2,000</span></div><a class="detail" href="javascript:;">
-                          <div class="text">See Detail</div>
-                          <div class="icon"><i class="icon-detail"></i></div></a>
-                      </li>
-                    </ul>
-                  </div>
-                  <!--4-2-->
-                  <div class="step-section step2" data-select="type1">
-                    <div class="step-box">
-                      <div class="step">2</div>
-                      <div class="text">
-                        <div class="line1">Shipping</div>
-                        <div class="line2">Select the shipping</div>
-                      </div>
-                    </div>
-                    <div class="shipping-content type1">
-                      <div class="icon-box">
-                        <div class="icon"><i class="icon-airplane"></i></div>
-                        <div class="text">Mingleurn</div>
-                      </div>
-                      <div class="form">
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group address has-checkbox">
-                              <p>Shipping Address</p>
-                              <div class="element-wrap">
-                                <div class="readonly">Asia</div>
-                                <div class="readonly">Taiwan</div>
-                                <div class="readonly">407</div>
-                              </div>
-                              <div class="address-input">
-                                <div class="readonly">7F.-1, No. 90, Darong E. St., Xitun Dist., Taichung City</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group address has-checkbox">
-                              <p>Recipient Information</p>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Name</p>
-                              <div class="readonly">Huang Hailey</div>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Phone</p>
-                              <div class="readonly"><span>+886</span><span>912345678</span></div>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>E-mail</p>
-                              <div class="readonly">example@gmail.com</div>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Receipt</p>
-                              <div class="readonly">We will upload the receipt to your member center after the order is completed.</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--只要不符合結帳條件就不顯示下面結構-->
-                      <div class="form-extra-description">
-                        <div class="content">
-                          <div class="text">Your shipping fee is<span class="amount">190</span><span class="unit">USD</span></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="shipping-content type2">
-                      <div class="icon-box">
-                        <div class="icon"><i class="icon-shipping"></i></div>
-                        <div class="text">Cooperate logistics</div>
-                      </div>
-                      <div class="form">
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group wrap">
-                              <p>Cooperate logistics</p>
-                              <div class="readonly">DHL Express</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group wrap">
-                              <p>Manufacturer Number</p>
-                              <div class="readonly">0123456789</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group address has-checkbox">
-                              <p>Shipping Address</p>
-                              <div class="element-wrap">
-                                <div class="readonly">Asia</div>
-                                <div class="readonly">Taiwan</div>
-                                <div class="readonly">407</div>
-                              </div>
-                              <div class="address-input">
-                                <div class="readonly">7F.-1, No. 90, Darong E. St., Xitun Dist., Taichung City</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-wrap">
-                          <div class="form-grid">
-                            <div class="form-group address has-checkbox">
-                              <p>Recipient Information</p>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Name</p>
-                              <div class="readonly">Huang Hailey</div>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Phone</p>
-                              <div class="readonly"><span>+886</span><span>912345678</span></div>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>E-mail</p>
-                              <div class="readonly">example@gmail.com</div>
-                            </div>
-                          </div>
-                          <div class="form-grid">
-                            <div class="form-group">
-                              <p>Receipt</p>
-                              <div class="readonly">We will upload the receipt to your member center after the order is completed.</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--只要不符合結帳條件就不顯示下面結構-->
-                      <div class="form-extra-description">
-                        <div class="content">
-                          <div class="text">Your shipping fee will be notified separately</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!--4-3-->
-                  <div class="step-section step3" data-select="">
-                    <div class="step-box">
-                      <div class="step">3</div>
-                      <div class="text">
-                        <div class="line1">Payment</div>
-                        <div class="line2">Select the payment</div>
-                      </div>
-                    </div>
-                    <div class="payment-content credit-card-content">
-                      <div class="icon-box">
-                        <div class="icon"><i class="icon-credit-card"></i></div>
-                        <div class="text">Credit Card</div>
-                      </div>
-                      <div class="panel-container">
-                        <div class="payment-header">Support Type</div><img class="credit-card" src="../../../assets/img/credit-card.png" alt=""/>
-                        <p>It is not limited to domestic and international card issuers, and supports VISA / MASTER / JCB / UnionPay card issuers, allowing consumers to make quick payments.You will be redirected to a new screen to complete the payment transaction.</p><br/>
-                        <p class="notice">We do not offer installment service, please settle all expenses at once.</p>
-                      </div>
-                    </div>
-                    <div class="payment-content paypal-content">
-                      <div class="icon-box">
-                        <div class="icon"><i class="icon-paypal"></i></div>
-                        <div class="text">Paypal</div>
-                      </div>
-                      <div class="panel-container">
-                        <div class="payment-header">Support Type</div><img class="credit-card" src="../../../assets/img/credit-card.png" alt=""/>
-                        <p>p If you choose to pay with paypal, your screen will be redirected to a new screen to complete the payment transaction.</p><br/>
-                        <p class="notice">We do not offer installment service, please settle all expenses at once.</p>
-                      </div>
-                    </div>
-                    <div class="remark-content">
-                      <div class="panel-container">
-                        <div class="icon-box">
-                          <div class="icon icon-checkout-remark"></div>
-                          <div class="text">Special Remark</div>
-                        </div>
-                        <textarea class="scrollbar-inner" placeholder="If there are any remarks, please fill in here" readonly="readonly">The delivery time should be delivered between 9: 00 - 12: 00 in the morning , thank you!</textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="footer">
-              <div class="container"><a class="step-change prev" href="javascript:;" onclick="_checkout.stepChange('prev')" data-leave-text="Back" data-pay-text="Payment" data-form-text="Payment">
-                  <div class="step-btn"><i class="icon-left"></i></div>
-                  <div class="step-text">Back</div></a>
-                <div class="middle">
-                  <div class="total-amount">
-                    <div class="text">Total</div>
-                    <div class="amount">16,250</div>
-                    <div class="unit">USD</div>
-                  </div>
-                  <!--後端判斷如果不能結帳才顯示下面結構-->
-                  <div class="exceed-tips">Unable to pay,set up a request</div>
-                </div>
-                <!--付款或生成表單文字串在下一步按鈕上--><a class="step-change next" href="javascript:;" onclick="_checkout.stepChange('next')" data-pay-text="Pay" data-form-text="Submit">
-                  <div class="step-text">Shipping</div>
-                  <div class="step-btn"><i class="icon-right"></i></div></a>
-              </div>
+              </section>
+              <p class="description">Please confirm the payment amount with the service staff first.</p>
+              <div class="btn-group"><a class="btn btn-gold" href="javascript:;">Submit</a></div>
             </div>
           </div>
         </main>
+        <!-- 頁尾-->
+        <footer>
+          <div class="footer-top">
+            <div class="header">Achieve Now</div>
+            <div class="quick-link">
+              <ul class="main-unit">
+                <li><a href="./about.html">CLOSER TO MING</a></li>
+                <li><a href="./news.html">MING TO TELL</a></li>
+                <li><a href="./product.html">PICK MING UP</a></li>
+                <li><a href="./contact.html">LET MING HELP</a></li>
+              </ul>
+              <ul class="sub-unit">
+                <li><a href="./qa.html">MING's service</a></li>
+                <li><a href="./member.html">Member of MING</a></li>
+                <li><a href="javascript:;">Recruit</a></li>
+                <li><a class="ajax_open" href="javascript:;" data-ajax-route="./ajax_privacy_policy.html" data-ajax-container=".privacy-lbox" data-ajax-callback="_ajaxCallback.privacyPolicy">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom"><a class="backTop" href="javascript:;"><i class="icon-top"></i></a>
+            <div class="company-info">
+              <div class="block">
+                <div class="area">TAIPEI, TAIWAN</div>
+                <ul class="contact-info">
+                  <li><span class="key">Tel</span><span class="value">+886-2-29512727</span></li>
+                  <li><span class="key">Fax</span><span class="value">+886-2-29515988  </span></li>
+                  <li><span class="key">Add</span><span class="value">9F, NO. 156, SEC.1, ZHONGSHAN RD.,<br>BANQIAO DIST., NEW TAIPEI CITY 22065</span></li>
+                </ul>
+              </div>
+              <div class="block">
+                <ul class="social-link">
+                  <li><a href="javascript:;"><i class="icon-ig"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-fb"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-twitter"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-line"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-wechat"></i></a></li>
+                  <li><a href="javascript:;"><i class="icon-youtube"></i></a></li>
+                </ul>
+                <div class="copyright">COPYRIGHT © MINGLEURN ALL RIGHTS RESERVED.</div>
+              </div>
+              <div class="block">
+                <div class="area">DONG GUAN, CHINA</div>
+                <ul class="contact-info">
+                  <li><span class="key">Tel</span><span class="value">+86-769-88326496  </span></li>
+                  <li><span class="key">Fax</span><span class="value"> +86-769-88326495</span></li>
+                  <li><span class="key">Add</span><span class="value">NO. 6, SHIN WEN 1ST. STREET,<br>SHIN WEN INDUSTRY ZONE,<br>DAO JIAO TOWN, DONG GUAN CITY, 523170</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   </body>
