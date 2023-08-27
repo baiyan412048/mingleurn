@@ -23,18 +23,44 @@ html(lang="en")
             p.section-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Dear customer, welcome to use online Self-checkout service. Please enter the checkout amount and leave your contact information, we will have customer service staff to contact you further, thank you!
 
           .container
-            .content(style="background-image: url('../../../uploads/shopping/checkout-form-success.jpg')")
+            //- (style="background-image: url('../../../uploads/shopping/checkout-form-success.jpg')")
+            .content
               section.form
                 .form-row
                   .form-grid
                     label.form-group.required
-                      p Name
-                      input(type="text")
+                      p Customer Name
+                      input(type="text" placeholder="Please enter the customer name")
                 .form-row
                   .form-grid
                     label.form-group.required
-                      p Amount
-                      input.enter-amount(type="number")
+                      p Total Amount
+                      input.enter-amount(type="number" placeholder="Please enter the total amount")
+                .form-row
+                  .form-grid
+                    label.form-group.message
+                      p Total Amount Remark
+                      textarea.scrollbar-inner(placeholder="Please enter what you want to remark")
+                .form-row
+                  .form-grid
+                    label.form-group
+                      p Minimum Amount
+                      input.enter-amount(type="number" placeholder="Please enter the Minimum Amount")
+                .form-row
+                  .form-grid
+                    label.form-group.message
+                      p Minimum Amount Remark
+                      textarea.scrollbar-inner(placeholder="Please enter what you want to remark")
+                .form-row
+                  .form-grid
+                    label.form-group.message
+                      p Customize Amount Remark
+                      textarea.scrollbar-inner(placeholder="Please enter what you want to remark")
+                .form-row
+                  .form-grid
+                    label.form-group
+                      p Payment Time Limit (Minute)
+                      input(type="number" placeholder="Please enter the minute")
               p.description Please confirm the payment amount with the service staff first.
               .btn-group
                 a.btn.btn-gold(href="javascript:;") Submit

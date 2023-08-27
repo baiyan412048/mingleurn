@@ -551,15 +551,39 @@
                 <div class="form-row">
                   <div class="form-grid">
                     <label class="form-group required">
-                      <p>Amount</p>
-                      <input class="enter-amount" type="number" value="300" readonly="readonly"/>
+                      <p>Customize Amount</p>
+                      <!-- max 為總金額 min 為最低金額，若沒有設定則不輸出屬性-->
+                      <input class="enter-amount" type="number" value="300" min="100" max="300"/>
                     </label>
                   </div>
                 </div>
               </section>
               <p class="description">Please confirm the payment information.</p>
-              <div class="btn-group"><a class="btn btn-black" href="./checkout_amount.html">Back to Self-checkout</a><a class="btn btn-gold" href="javascript:;">Submit</a></div>
+              <div class="payment-group">
+                <!-- 最低金額-->
+                <!-- 無設定最低金額則不輸出結構-->
+                <div class="min">
+                  <div class="btn btn-gold">Minimum Amount</div>
+                  <!-- 無備註則不輸出結構-->
+                  <div class="tip">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                </div>
+                <div class="hr"></div>
+                <!-- 全額付款-->
+                <div class="max">
+                  <div class="btn btn-gold">Total Amount</div>
+                  <!-- 無備註則不輸出結構-->
+                  <div class="tip">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-group"><a class="btn btn-black qrcode" href="javascript:;">Create QRcode</a><a class="btn btn-gold" href="javascript:;">Submit</a></div>
             </div>
+          </div>
+          <div id="qrcdoe">
+            <div class="btn"><i></i></div>
           </div>
         </main>
         <!-- 頁尾-->
@@ -616,7 +640,7 @@
       </div>
     </div>
   </body>
-  <!--引入的script-->
+  <!-- 引入的script-->
   <script>document.createElement( "picture" );</script>
   <script src="../../../assets/js/plugins/picturefill/picturefill.min.js" async="async"></script>
   <script src="../../../assets/js/plugins/body-scroll-lock/js/body-scroll.js"></script>
@@ -693,4 +717,5 @@
       ]
     }
   </script>
+  <script src="../../../assets/js/plugins/jquery-qrcode/jquery.qrcode.min.js"></script>
 </html>

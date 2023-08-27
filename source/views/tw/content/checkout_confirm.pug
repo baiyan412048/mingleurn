@@ -38,13 +38,32 @@ html(lang="en")
                 .form-row
                   .form-grid
                     label.form-group.required
-                      p Amount
-                      input.enter-amount(type="number" value="300" readonly)
+                      p Customize Amount
+                      // max 為總金額 min 為最低金額，若沒有設定則不輸出屬性
+                      input.enter-amount(type="number" value="300" min="100" max="300")
               p.description Please confirm the payment information.
+              .payment-group
+                // 最低金額
+                // 無設定最低金額則不輸出結構
+                .min
+                  .btn.btn-gold Minimum Amount
+                  // 無備註則不輸出結構
+                  .tip
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .hr
+                // 全額付款
+                .max
+                  .btn.btn-gold Total Amount
+                  // 無備註則不輸出結構
+                  .tip
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               .btn-group
-                a.btn.btn-black(href="./checkout_amount.html") Back to Self-checkout
+                a.btn.btn-black.qrcode(href="javascript:;") Create QRcode
                 a.btn.btn-gold(href="javascript:;") Submit
 
+          #qrcdoe
+            .btn
+              i
         // 頁尾
         footer
           .footer-top
@@ -52,5 +71,6 @@ html(lang="en")
             include ../layouts/_quick-link.pug
           include ../layouts/_footer_bottom.pug
 
-  //引入的script
+  // 引入的script
   include ../layouts/_script.pug
+  script(src="../../../assets/js/plugins/jquery-qrcode/jquery.qrcode.min.js")

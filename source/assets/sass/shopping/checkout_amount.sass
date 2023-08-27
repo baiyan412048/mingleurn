@@ -35,61 +35,15 @@
         margin-top: 40px
         text-align: center
         border-radius: 10px
-        background-repeat: no-repeat
-        background-position: center
-        background-size: cover
         +rwdmax(1023)
           background: none !important
         +rwdmax(575)
           margin-top: 0
         .form
           display: block
-          +maxWidth($maxw: 395px, $margin: 0 auto 60px)
+          +maxWidth($maxw: 500px, $margin: 0 auto 60px)
           .enter-amount
             font-size: px(22)
-        .result-circle
-          position: relative
-          width: 280px
-          height: 280px
-          border-radius: 50%
-          box-shadow: 5px 8.7px 10px 0 rgba(0, 0, 0, 0.05)
-          margin: 0 auto 50px auto
-          +flex($direction: column)
-          +rwdmax(575)
-            width: 200px
-            height: 200px
-          &.fail
-            background-color: #343434
-            .line1,.line2
-              color: #ffffff
-          &.success
-            background-color: #ffffff
-            .line1,.line2
-              color: #000000
-          .line1
-            margin-bottom: 20px
-            +fontSetBold($font: $LBB, $size: px(44))
-            +rwdmax(575)
-              margin-bottom: 2px
-              font-size: px(32)
-          .line2
-            +fontSet($size: px(14))
-            +rwdmax(575)
-              font-size: px(13)
-          .brush-img
-            width: 136px
-            top: 157px
-            left: -27px
-            z-index: 1
-            transition: opacity 0.4s ease-in-out 0.3s, height 0.4s ease-in-out 0.3s
-            +rwdmax(575)
-              width: 89px
-              top: 114px
-            &.show
-              opacity: 1
-              height: 153px
-              +rwdmax(575)
-                height: 101px
         .description
           +maxWidth($maxw: 525px, $margin: 0 auto 60px auto)
           +fontSet($size: px(13), $lh: 25px)
@@ -109,34 +63,3 @@
               +rwdmax(575)
                 margin-left: 0
                 margin-top: 12px
-      .contact-box
-        text-align: center
-        margin-top: 34px
-        >p
-          padding: 15px 20px
-          +fontSetBold($font: $LBB, $size: px(15), $lh: 25px)
-          +rwdmax(767)
-            padding: 25px 20px
-        .info
-          padding: 15px 0
-          +flex
-          +rwdmax(767)
-            flex-direction: column
-          p
-            +fontSet($font: $basic, $size: px(14), $color: #555)
-            &:first-child
-              margin-right: 20px
-              padding-right: 20px
-              border-right: 1px solid #000
-              +rwdmax(767)
-                margin-bottom: 30px
-                margin-right: 0
-                padding-right: 0
-                border-right: none
-            span
-              margin-right: 15px
-              +fontSetBold($font: $LBB, $size: px(14), $color: black)
-              +rwdmax(767)
-                display: block
-                margin-right: 0
-                margin-bottom: 15px

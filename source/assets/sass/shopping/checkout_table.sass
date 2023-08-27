@@ -1,0 +1,120 @@
+@import ../common/base/_variable
+@import ../common/base/_mixin
+@import ../common/layouts/_form
+
+.checkout_table
+  main
+    padding-bottom: 15.287%
+    +rwdmax(767)
+      padding-bottom: 37.333%
+    .header
+      text-align: center
+      +rwdmax(767)
+        padding: 0 20px
+      .unit-name
+        padding: 42px 0
+        +fontSet($size: px(13))
+        +rwdmax(767)
+          padding: 10px 0
+      .unit-alias
+        +fontSetBold($font: $LBB, $size: px(54))
+        +rwdmax(1024)
+          font-size: px(48)
+        +rwdmax(767)
+          font-size: px(32)
+      .section-description
+        margin: 30px auto 0
+        max-width: 585px
+        width: 100%
+    .container
+      +maxWidth($maxw: 1320px)
+      .content
+        width: 100%
+        padding: 55px 20px
+        margin-top: 40px
+        text-align: center
+        border-radius: 10px
+        +rwdmax(1023)
+          background: none !important
+        +rwdmax(575)
+          margin-top: 0
+        .table
+          display: block
+          +maxWidth($maxw: 900px, $margin: 0 auto)
+          .thead
+            padding: 12px 10px
+            border-radius: 8px
+            background-color: #a88438
+            color: white
+          .tbody
+            margin-top: 10px
+          .th,
+          .tr
+            display: flex
+            align-items: center
+          .th
+            .td
+              &.rwd
+                display: none
+          .tr
+            padding: 12px 10px
+            .td.amount
+              text-align: right
+          .td
+            padding: 0 10px
+            flex: 1
+            text-align: left
+            min-width: 100px
+            &.amount
+              min-width: 140px
+            a
+              padding: 8px 12px
+              display: inline-block
+              border-radius: 500px
+              background-color: #a88438
+              color: #fff
+              font-size: px(12)
+              &[href^="javascript:;"]
+                background-color: #d31d1d
+                cursor: default
+          +rwdmax(575)
+            margin-top: 0
+            .th
+              .td
+                &:not(.rwd)
+                  display: none
+                &.rwd
+                  display: block
+            .tr
+              flex-direction: column
+              font-size: px(16)
+              &:not(:last-child)
+                border-bottom: 1px solid #666
+                padding-bottom: 20px
+                margin-bottom: 20px
+              .td
+                display: flex
+                align-items: center
+                justify-content: space-between
+                width: 100%
+                &:not(:last-child)
+                  margin-bottom: 12px
+                &::before
+                  display: block
+                  color: #666
+                  content: attr(rwd)
+        .btn-group
+          margin-bottom: 60px
+          +flex
+          +rwdmax(575)
+            flex-direction: column
+          .btn
+            width: 190px
+            height: 50px
+            border-radius: 10rem
+            +fontSetBold($font: $LBB, $size: px(13), $lh: 50px, $color: white)
+            &:not(:first-child)
+              margin-left: 12px
+              +rwdmax(575)
+                margin-left: 0
+                margin-top: 12px

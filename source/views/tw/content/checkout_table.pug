@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+html(lang="en")
+  head(itemscope='itemscope', itemtype='http://schema.org/WebSite')
+    //共用設定
+    include ../layouts/_head.pug
+    //獨立CSS
+  link(rel="stylesheet", href="../../../assets/css/checkout_table.css")
+  body.checkout_table(data-page="checkout_table")
+    .main-wrapper.scrollbar-macosx(data-fake-body="")
+      .all-wrapper
+        // 導覽列
+        include ../layouts/_navbar.pug
+        // 購物車
+        include ../layouts/_shopping-cart.pug
+        // 固定左下功能
+        include ../layouts/_fixed-left.pug
+
+        // 主要內容
+        main
+          .header
+            .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") subtitle
+            h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Self-checkout
+            p.section-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Dear customer, welcome to use online Self-checkout service. Please enter the checkout amount and leave your contact information, we will have customer service staff to contact you further, thank you!
+
+          .container
+            .content
+              .btn-group
+                a.btn.btn-gold(href="./checkout_amount.html") Create Payment Page
+              section.table
+                .thead
+                  .th
+                    .td
+                      p Name
+                    .td
+                      p Status
+                    .td.amount
+                      p Total
+                    .td.amount
+                      p Minimum
+                    .td.amount
+                      p Customize
+                    .td
+                      p Link
+                    .td.rwd
+                      p Payment List
+                .tbody
+                  .tr
+                    .td(rwd="Name")
+                      p Test
+                    .td(rwd="Status")
+                      p Paid
+                    .td.amount(rwd="Total")
+                      p 300
+                    .td.amount(rwd="Minimum")
+                      p 100
+                    .td.amount(rwd="Customize")
+                      p 300
+                    .td(rwd="Link")
+                      a(href="./checkout_confirm.html") Link
+                  .tr
+                    .td(rwd="Name")
+                      p Test
+                    .td(rwd="Status")
+                      p Unpaid
+                    .td.amount(rwd="Total")
+                      p 500
+                    .td.amount(rwd="Minimum")
+                      p 100
+                    .td.amount(rwd="Customize")
+                      p -
+                    .td(rwd="Link")
+                      a(href="javascript:;") Overtime
+        // 頁尾
+        footer
+          .footer-top
+            .header Achieve Now
+            include ../layouts/_quick-link.pug
+          include ../layouts/_footer_bottom.pug
+
+  //引入的script
+  include ../layouts/_script.pug

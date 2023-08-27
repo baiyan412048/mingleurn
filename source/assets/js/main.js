@@ -2164,6 +2164,32 @@ let _checkout = {
     })
     $('.remark-content textarea').scrollbar()
   },
+  confirm() {
+    const $number = $('.enter-amount')
+    const $max = $('.payment-group .max .btn.btn-gold')
+    const max = $number.attr('max')
+    const $min = $('.payment-group .min .btn.btn-gold')
+    const min = $number.attr('min')
+
+    $max.on('click', function() {
+      $number.val(max)
+    })
+    $min.on('click', function() {
+      $number.val(min)
+    })
+  },
+  qrcode() {
+    const $qrcode = $('#qrcdoe')
+    $('.btn.btn-black.qrcode').on('click', function() {
+      if (!$qrcode.find('canvas').length) {
+        $qrcode.qrcode(window.location.href)
+      }
+      $qrcode.addClass('open')
+      $qrcode.off().on('click', function() {
+        $(this).removeClass('open')
+      })
+    })
+  },
   all() {
     _common.countHandler('.all-wrapper')
     _common.dropdown('.form-group .select-element')
@@ -2695,6 +2721,10 @@ let readyFunction = {
   },
   checkout_result() {
     
+  },
+  checkout_confirm() {
+    _checkout.confirm()
+    _checkout.qrcode()
   },
   customized() {
     _customized.all()

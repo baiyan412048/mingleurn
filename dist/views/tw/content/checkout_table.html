@@ -53,8 +53,8 @@
     <link rel="stylesheet" href="../../../../dist/assets/css/style.css"/>
     <!--獨立CSS-->
   </head>
-  <link rel="stylesheet" href="../../../assets/css/checkout_amount.css"/>
-  <body class="checkout_amount" data-page="checkout_amount">
+  <link rel="stylesheet" href="../../../assets/css/checkout_table.css"/>
+  <body class="checkout_table" data-page="checkout_table">
     <div class="main-wrapper scrollbar-macosx" data-fake-body="">
       <div class="all-wrapper">
         <!-- 導覽列-->
@@ -531,66 +531,72 @@
           </div>
           <div class="container">
             <div class="content">
-              <section class="form">
-                <div class="form-row">
-                  <div class="form-grid">
-                    <label class="form-group required">
-                      <p>Customer Name</p>
-                      <input type="text" placeholder="Please enter the customer name"/>
-                    </label>
+              <div class="btn-group"><a class="btn btn-gold" href="./checkout_amount.html">Create Payment Page</a></div>
+              <section class="table">
+                <div class="thead">
+                  <div class="th">
+                    <div class="td">
+                      <p>Name</p>
+                    </div>
+                    <div class="td">
+                      <p>Status</p>
+                    </div>
+                    <div class="td amount">
+                      <p>Total</p>
+                    </div>
+                    <div class="td amount">
+                      <p>Minimum</p>
+                    </div>
+                    <div class="td amount">
+                      <p>Customize</p>
+                    </div>
+                    <div class="td">
+                      <p>Link</p>
+                    </div>
+                    <div class="td rwd">
+                      <p>Payment List</p>
+                    </div>
                   </div>
                 </div>
-                <div class="form-row">
-                  <div class="form-grid">
-                    <label class="form-group required">
-                      <p>Total Amount</p>
-                      <input class="enter-amount" type="number" placeholder="Please enter the total amount"/>
-                    </label>
+                <div class="tbody">
+                  <div class="tr">
+                    <div class="td" rwd="Name">
+                      <p>Test</p>
+                    </div>
+                    <div class="td" rwd="Status">
+                      <p>Paid</p>
+                    </div>
+                    <div class="td amount" rwd="Total">
+                      <p>300</p>
+                    </div>
+                    <div class="td amount" rwd="Minimum">
+                      <p>100</p>
+                    </div>
+                    <div class="td amount" rwd="Customize">
+                      <p>300</p>
+                    </div>
+                    <div class="td" rwd="Link"><a href="./checkout_confirm.html">Link</a></div>
                   </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-grid">
-                    <label class="form-group message">
-                      <p>Total Amount Remark</p>
-                      <textarea class="scrollbar-inner" placeholder="Please enter what you want to remark"></textarea>
-                    </label>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-grid">
-                    <label class="form-group">
-                      <p>Minimum Amount</p>
-                      <input class="enter-amount" type="number" placeholder="Please enter the Minimum Amount"/>
-                    </label>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-grid">
-                    <label class="form-group message">
-                      <p>Minimum Amount Remark</p>
-                      <textarea class="scrollbar-inner" placeholder="Please enter what you want to remark"></textarea>
-                    </label>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-grid">
-                    <label class="form-group message">
-                      <p>Customize Amount Remark</p>
-                      <textarea class="scrollbar-inner" placeholder="Please enter what you want to remark"></textarea>
-                    </label>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-grid">
-                    <label class="form-group">
-                      <p>Payment Time Limit (Minute)</p>
-                      <input type="number" placeholder="Please enter the minute"/>
-                    </label>
+                  <div class="tr">
+                    <div class="td" rwd="Name">
+                      <p>Test</p>
+                    </div>
+                    <div class="td" rwd="Status">
+                      <p>Unpaid</p>
+                    </div>
+                    <div class="td amount" rwd="Total">
+                      <p>500</p>
+                    </div>
+                    <div class="td amount" rwd="Minimum">
+                      <p>100</p>
+                    </div>
+                    <div class="td amount" rwd="Customize">
+                      <p>-</p>
+                    </div>
+                    <div class="td" rwd="Link"><a href="javascript:;">Overtime</a></div>
                   </div>
                 </div>
               </section>
-              <p class="description">Please confirm the payment amount with the service staff first.</p>
-              <div class="btn-group"><a class="btn btn-gold" href="javascript:;">Submit</a></div>
             </div>
           </div>
         </main>
