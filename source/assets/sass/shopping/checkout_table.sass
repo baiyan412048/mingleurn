@@ -183,6 +183,14 @@
             padding: 10px 20px
             border-radius: 10rem
             +fontSetBold($font: $LBB, $size: px(13), $color: white)
+          +rwdmax(575)
+            align-items: center
+            justify-content: center
+            flex-direction: column
+            .filter
+              margin-bottom: 20px
+            .name
+              margin-right: 20px
         .paging
           display: flex
           align-items: center
@@ -204,7 +212,6 @@
             .icon-right
               font-size: px(15)
           .paging-list
-            margin: 0 20px
             display: flex
             align-items: center
             li
