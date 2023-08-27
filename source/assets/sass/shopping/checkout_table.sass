@@ -45,7 +45,7 @@
             padding: 12px 10px
             border-radius: 8px
             background-color: #a88438
-            color: white
+            +fontSetBold($font: $LBB, $size: px(14), $color: white)
           .tbody
             margin-top: 10px
           .th,
@@ -103,18 +103,119 @@
                   display: block
                   color: #666
                   content: attr(rwd)
-        .btn-group
-          margin-bottom: 60px
-          +flex
-          +rwdmax(575)
-            flex-direction: column
+        .table-control
+          display: flex
+          justify-content: space-between
+          +maxWidth($maxw: 900px, $margin: 0 auto 20px)
+          .filter
+            display: flex
+            align-items: center
+          .name
+            margin-right: 40px
+            display: flex
+            align-items: center
+            p
+              margin-right: 12px
+              +fontSetBold($font: $LBB, $size: px(13), $color: black)
+            input
+              padding: 10px
+              outline: none
+              background: none
+              border: none
+              border-bottom: 1px solid black
+              width: 150px
+              +fontSetBold($font: $LBB, $size: px(13), $color: black)
+          .categories-select
+            position: relative
+            &.active
+              .selected
+                .arrow
+                  transform: rotateX(0deg)
+            .selected
+              position: relative
+              padding: 10px 20px 10px 10px
+              border-bottom: 1px solid black
+              width: 130px
+              cursor: pointer
+              +flex
+              .text
+                +fontSetBold($font: $LBB, $size: px(13), $color: black)
+              .arrow
+                position: absolute
+                top: 50%
+                right: 0
+                margin-top: -7px
+                font-size: 14px
+                transform: rotateX(180deg)
+                transition: transform 0.3s
+            .dropdown
+              display: none
+              position: absolute
+              top: 100%
+              left: 50%
+              transform: translate(-50%,4px)
+              min-width: 235px
+              padding: 15px 0
+              border-radius: 20px
+              border: solid 1px #cdcdcd
+              background-color: #f4f4f4
+              overflow: hidden
+              z-index: 20
+              &.shadow
+                box-shadow: 5px 8.7px 20px 0 rgba(0, 0, 0, 0.2)
+              ul
+                max-height: 252px !important
+                height: 100% !important
+                overflow: auto
+                >li
+                  padding: 0 22px
+                  height: 42px
+                  white-space: nowrap
+                  transition: 0.3s
+                  text-align: center
+                  user-select: none
+                  cursor: pointer
+                  +fontSetBold($font: $LBB, $size: px(13), $lh: 42px, $color: #666666)
+                  &:hover
+                    background-color: #a88438
+                    color: white
           .btn
-            width: 190px
-            height: 50px
+            padding: 10px 20px
             border-radius: 10rem
-            +fontSetBold($font: $LBB, $size: px(13), $lh: 50px, $color: white)
-            &:not(:first-child)
-              margin-left: 12px
-              +rwdmax(575)
-                margin-left: 0
-                margin-top: 12px
+            +fontSetBold($font: $LBB, $size: px(13), $color: white)
+        .paging
+          display: flex
+          align-items: center
+          justify-content: center
+          +maxWidth($maxw: 900px, $margin: 60px auto 0)
+          .paging-btn
+            margin: 0 10px
+            display: flex
+            align-items: center
+            justify-content: center
+            border-radius: 6px
+            width: 30px
+            height: 30px
+            cursor: pointer
+            .icon-left-end,
+            .icon-right-end
+              font-size: px(20)
+            .icon-left,
+            .icon-right
+              font-size: px(15)
+          .paging-list
+            margin: 0 20px
+            display: flex
+            align-items: center
+            li
+              margin: 0 10px
+              display: flex
+              align-items: center
+              justify-content: center
+              border-radius: 6px
+              width: 30px
+              height: 30px
+              cursor: pointer
+              &.active
+                color: #fff
+                background-color: #a88438

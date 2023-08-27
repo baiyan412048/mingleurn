@@ -2726,6 +2726,9 @@ let readyFunction = {
     _checkout.confirm()
     _checkout.qrcode()
   },
+  checkout_table() {
+    _common.dropdown('.categories-select')
+  },
   customized() {
     _customized.all()
   },

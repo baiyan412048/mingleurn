@@ -24,7 +24,21 @@ html(lang="en")
 
           .container
             .content
-              .btn-group
+              section.table-control
+                .filter
+                  .name
+                    p Show by Name
+                    input(type="text" placeholder="Show by Name")
+                  .status
+                    .categories-select(data-default="Show by status")
+                      .selected 
+                        .text Show by status
+                        .arrow.icon-arrow-up
+                      .dropdown
+                        ul.scrollbar-inner
+                          li All status
+                          li Paid
+                          li Unpaid
                 a.btn.btn-gold(href="./checkout_amount.html") Create Payment Page
               section.table
                 .thead
@@ -50,11 +64,11 @@ html(lang="en")
                     .td(rwd="Status")
                       p Paid
                     .td.amount(rwd="Total")
-                      p 300
+                      p $300
                     .td.amount(rwd="Minimum")
-                      p 100
+                      p $100
                     .td.amount(rwd="Customize")
-                      p 300
+                      p $300
                     .td(rwd="Link")
                       a(href="./checkout_confirm.html") Link
                   .tr
@@ -63,13 +77,28 @@ html(lang="en")
                     .td(rwd="Status")
                       p Unpaid
                     .td.amount(rwd="Total")
-                      p 500
+                      p $500
                     .td.amount(rwd="Minimum")
-                      p 100
+                      p $100
                     .td.amount(rwd="Customize")
                       p -
                     .td(rwd="Link")
                       a(href="javascript:;") Overtime
+              section.paging
+                .paging-btn
+                  i.icon-left-end
+                .paging-btn
+                  i.icon-left
+                ul.paging-list
+                  li.active 1
+                  li 2
+                  li 3
+                  li 4
+                  li 5
+                .paging-btn
+                  i.icon-right
+                .paging-btn
+                  i.icon-right-end
         // 頁尾
         footer
           .footer-top

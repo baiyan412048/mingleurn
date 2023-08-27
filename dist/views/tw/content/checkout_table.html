@@ -531,7 +531,29 @@
           </div>
           <div class="container">
             <div class="content">
-              <div class="btn-group"><a class="btn btn-gold" href="./checkout_amount.html">Create Payment Page</a></div>
+              <section class="table-control">
+                <div class="filter">
+                  <div class="name">
+                    <p>Show by Name</p>
+                    <input type="text" placeholder="Show by Name"/>
+                  </div>
+                  <div class="status">
+                    <div class="categories-select" data-default="Show by status">
+                      <div class="selected"> 
+                        <div class="text">Show by status</div>
+                        <div class="arrow icon-arrow-up"></div>
+                      </div>
+                      <div class="dropdown">
+                        <ul class="scrollbar-inner">
+                          <li>All status</li>
+                          <li>Paid</li>
+                          <li>Unpaid</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div><a class="btn btn-gold" href="./checkout_amount.html">Create Payment Page</a>
+              </section>
               <section class="table">
                 <div class="thead">
                   <div class="th">
@@ -567,13 +589,13 @@
                       <p>Paid</p>
                     </div>
                     <div class="td amount" rwd="Total">
-                      <p>300</p>
+                      <p>$300</p>
                     </div>
                     <div class="td amount" rwd="Minimum">
-                      <p>100</p>
+                      <p>$100</p>
                     </div>
                     <div class="td amount" rwd="Customize">
-                      <p>300</p>
+                      <p>$300</p>
                     </div>
                     <div class="td" rwd="Link"><a href="./checkout_confirm.html">Link</a></div>
                   </div>
@@ -585,10 +607,10 @@
                       <p>Unpaid</p>
                     </div>
                     <div class="td amount" rwd="Total">
-                      <p>500</p>
+                      <p>$500</p>
                     </div>
                     <div class="td amount" rwd="Minimum">
-                      <p>100</p>
+                      <p>$100</p>
                     </div>
                     <div class="td amount" rwd="Customize">
                       <p>-</p>
@@ -596,6 +618,19 @@
                     <div class="td" rwd="Link"><a href="javascript:;">Overtime</a></div>
                   </div>
                 </div>
+              </section>
+              <section class="paging">
+                <div class="paging-btn"><i class="icon-left-end"></i></div>
+                <div class="paging-btn"><i class="icon-left"></i></div>
+                <ul class="paging-list">
+                  <li class="active">1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                </ul>
+                <div class="paging-btn"><i class="icon-right"></i></div>
+                <div class="paging-btn"><i class="icon-right-end"></i></div>
               </section>
             </div>
           </div>
