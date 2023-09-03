@@ -83,6 +83,12 @@
           background: none !important
         +rwdmax(575)
           margin-top: 0
+        .create-link
+          display: inline-block
+          margin-bottom: 40px
+          padding: 10px 20px
+          border-radius: 10rem
+          +fontSetBold($font: $LBB, $size: px(13), $color: white)
         .table
           display: block
           +maxWidth($maxw: 900px, $margin: 0 auto)
@@ -148,7 +154,7 @@
                   content: attr(rwd)
         .table-control
           display: flex
-          justify-content: space-between
+          justify-content: center
           +maxWidth($maxw: 900px, $margin: 0 auto 20px)
           .filter
             display: flex
@@ -223,9 +229,11 @@
                     background-color: #a88438
                     color: white
           .btn
+            margin-left: 40px
             padding: 10px 20px
             border-radius: 10rem
             +fontSetBold($font: $LBB, $size: px(13), $color: white)
+            cursor: pointer
           +rwdmax(575)
             align-items: center
             justify-content: center
