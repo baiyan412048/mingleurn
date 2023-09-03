@@ -57,6 +57,10 @@
   <body class="checkout_table" data-page="checkout_table">
     <div class="main-wrapper scrollbar-macosx" data-fake-body="">
       <div class="all-wrapper">
+        <div class="decor-layer">
+          <div class="decor1"><img src="../../../assets/img/contact/decor01.png" alt=""/></div>
+          <div class="decor4"><img src="../../../assets/img/contact/decor04.png" alt=""/></div>
+        </div>
         <!-- 導覽列-->
         <!--原本畫面上的導覽列-->
         <nav>
@@ -525,97 +529,97 @@
         <!-- 主要內容-->
         <main>
           <div class="header">
-            <div class="unit-name" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">subtitle</div>
-            <h1 class="unit-alias" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">Self-checkout</h1>
-            <p class="section-description innertext" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">Dear customer, welcome to use online Self-checkout service. Please enter the checkout amount and leave your contact information, we will have customer service staff to contact you further, thank you!</p>
+            <div class="unit-name" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">副標題</div>
+            <h1 class="unit-alias" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">自訂付款總攬</h1>
+            <p class="section-description innertext" data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s">自訂付款描述</p>
           </div>
           <div class="container">
             <div class="content">
               <section class="table-control">
                 <div class="filter">
                   <div class="name">
-                    <p>Show by Name</p>
-                    <input type="text" placeholder="Show by Name"/>
+                    <p>依客戶名稱篩選</p>
+                    <input type="text" placeholder="依客戶名稱篩選"/>
                   </div>
                   <div class="status">
-                    <div class="categories-select" data-default="Show by status">
+                    <div class="categories-select" data-default="依付款狀態篩選">
                       <div class="selected"> 
-                        <div class="text">Show by status</div>
+                        <div class="text">依付款狀態篩選</div>
                         <div class="arrow icon-arrow-up"></div>
                       </div>
                       <div class="dropdown">
                         <ul class="scrollbar-inner">
-                          <li>All status</li>
-                          <li>Paid</li>
-                          <li>Unpaid</li>
+                          <li>全部狀態</li>
+                          <li>已付款</li>
+                          <li>未付款</li>
                         </ul>
                       </div>
                     </div>
                   </div>
-                </div><a class="btn btn-gold" href="./checkout_amount.html">Create Payment Page</a>
+                </div><a class="btn btn-gold" href="./checkout_amount.html">建立付款連結</a>
               </section>
               <section class="table">
                 <div class="thead">
                   <div class="th">
                     <div class="td">
-                      <p>Name</p>
+                      <p>客戶名稱</p>
                     </div>
                     <div class="td">
-                      <p>Status</p>
+                      <p>付款狀態</p>
                     </div>
                     <div class="td amount">
-                      <p>Total</p>
+                      <p>總金額</p>
                     </div>
                     <div class="td amount">
-                      <p>Minimum</p>
+                      <p>最小付款金額</p>
                     </div>
                     <div class="td amount">
-                      <p>Customize</p>
+                      <p>客戶自訂金額</p>
                     </div>
                     <div class="td">
-                      <p>Link</p>
+                      <p>付款連結</p>
                     </div>
                     <div class="td rwd">
-                      <p>Payment List</p>
+                      <p>自訂付款列表</p>
                     </div>
                   </div>
                 </div>
                 <div class="tbody">
                   <div class="tr">
-                    <div class="td" rwd="Name">
+                    <div class="td" rwd="客戶名稱">
                       <p>Test</p>
                     </div>
-                    <div class="td" rwd="Status">
-                      <p>Paid</p>
+                    <div class="td" rwd="付款狀態">
+                      <p>已付款</p>
                     </div>
-                    <div class="td amount" rwd="Total">
+                    <div class="td amount" rwd="總金額">
                       <p>$300</p>
                     </div>
-                    <div class="td amount" rwd="Minimum">
+                    <div class="td amount" rwd="最小付款金額">
                       <p>$100</p>
                     </div>
-                    <div class="td amount" rwd="Customize">
+                    <div class="td amount" rwd="客戶自訂金額">
                       <p>$300</p>
                     </div>
-                    <div class="td" rwd="Link"><a href="./checkout_confirm.html">Link</a></div>
+                    <div class="td" rwd="付款連結"><a href="./checkout_confirm.html">連結</a></div>
                   </div>
                   <div class="tr">
-                    <div class="td" rwd="Name">
+                    <div class="td" rwd="客戶名稱">
                       <p>Test</p>
                     </div>
-                    <div class="td" rwd="Status">
-                      <p>Unpaid</p>
+                    <div class="td" rwd="付款狀態">
+                      <p>未付款</p>
                     </div>
-                    <div class="td amount" rwd="Total">
+                    <div class="td amount" rwd="總金額">
                       <p>$500</p>
                     </div>
-                    <div class="td amount" rwd="Minimum">
+                    <div class="td amount" rwd="最小付款金額">
                       <p>$100</p>
                     </div>
-                    <div class="td amount" rwd="Customize">
+                    <div class="td amount" rwd="客戶自訂金額">
                       <p>-</p>
                     </div>
-                    <div class="td" rwd="Link"><a href="javascript:;">Overtime</a></div>
+                    <div class="td" rwd="Link"><a href="javascript:;">已失效</a></div>
                   </div>
                 </div>
               </section>

@@ -4,6 +4,30 @@
 
 .checkout_confirm
   .all-wrapper
+    .decor-layer
+      position: fixed
+      width: 100vw
+      height: 100vh
+      z-index: -1
+      overflow: hidden
+      >div
+        position: absolute
+        opacity: 0
+        &.decor1
+          width: 17.7083vw
+          right: 17.2395%
+          top: 0
+          height: 0
+          overflow: hidden
+          transition: opacity 0.3s, height 0.3s
+          +rwdmax(1024)
+            display: none
+      &.show
+        >div
+          opacity: 1
+          &.decor1
+            height: 282px
+
   main
     padding-bottom: 15.287%
     +rwdmax(767)
@@ -47,6 +71,11 @@
           +maxWidth($maxw: 395px, $margin: 0 auto 60px)
           .enter-amount
             font-size: px(22)
+          .form-row
+            .form-grid
+              padding: 0
+              .form-group
+                padding: 22px 10px
         .payment-group
           margin: 0 auto 60px
           display: flex

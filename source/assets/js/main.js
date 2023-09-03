@@ -160,7 +160,7 @@ let _common = {
   footerInview() {
     const now_page = $('body').attr('class')
     //有裝飾物的頁面
-    const hasDecor = ['news', 'search_result', 'product', 'product_list', 'qa', 'about', 'contact', 'login']
+    const hasDecor = ['news', 'search_result', 'product', 'product_list', 'qa', 'about', 'contact', 'login', 'checkout_table', 'checkout_amount', 'checkout_confirm']
     $('footer').on('inview', function (event, isInView) {
       if (isInView) {
         if (hasDecor.indexOf(now_page) != -1) {
@@ -2725,9 +2725,14 @@ let readyFunction = {
   checkout_confirm() {
     _checkout.confirm()
     _checkout.qrcode()
+    $('.decor-layer').delay4({time: '400',add: 'show'})
   },
   checkout_table() {
     _common.dropdown('.categories-select')
+    $('.decor-layer').delay4({time: '400',add: 'show'})
+  },
+  checkout_amount() {
+    $('.decor-layer').delay4({time: '400',add: 'show'})
   },
   customized() {
     _customized.all()

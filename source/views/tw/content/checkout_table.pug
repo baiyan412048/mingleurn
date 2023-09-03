@@ -8,6 +8,11 @@ html(lang="en")
   body.checkout_table(data-page="checkout_table")
     .main-wrapper.scrollbar-macosx(data-fake-body="")
       .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/contact/decor01.png", alt="")
+          .decor4
+            img(src="../../../assets/img/contact/decor04.png", alt="")
         // 導覽列
         include ../layouts/_navbar.pug
         // 購物車
@@ -18,72 +23,72 @@ html(lang="en")
         // 主要內容
         main
           .header
-            .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") subtitle
-            h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Self-checkout
-            p.section-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Dear customer, welcome to use online Self-checkout service. Please enter the checkout amount and leave your contact information, we will have customer service staff to contact you further, thank you!
+            .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") 副標題
+            h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") 自訂付款總攬
+            p.section-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") 自訂付款描述
 
           .container
             .content
               section.table-control
                 .filter
                   .name
-                    p Show by Name
-                    input(type="text" placeholder="Show by Name")
+                    p 依客戶名稱篩選
+                    input(type="text" placeholder="依客戶名稱篩選")
                   .status
-                    .categories-select(data-default="Show by status")
+                    .categories-select(data-default="依付款狀態篩選")
                       .selected 
-                        .text Show by status
+                        .text 依付款狀態篩選
                         .arrow.icon-arrow-up
                       .dropdown
                         ul.scrollbar-inner
-                          li All status
-                          li Paid
-                          li Unpaid
-                a.btn.btn-gold(href="./checkout_amount.html") Create Payment Page
+                          li 全部狀態
+                          li 已付款
+                          li 未付款
+                a.btn.btn-gold(href="./checkout_amount.html") 建立付款連結
               section.table
                 .thead
                   .th
                     .td
-                      p Name
+                      p 客戶名稱
                     .td
-                      p Status
+                      p 付款狀態
                     .td.amount
-                      p Total
+                      p 總金額
                     .td.amount
-                      p Minimum
+                      p 最小付款金額
                     .td.amount
-                      p Customize
+                      p 客戶自訂金額
                     .td
-                      p Link
+                      p 付款連結
                     .td.rwd
-                      p Payment List
+                      p 自訂付款列表
                 .tbody
                   .tr
-                    .td(rwd="Name")
+                    .td(rwd="客戶名稱")
                       p Test
-                    .td(rwd="Status")
-                      p Paid
-                    .td.amount(rwd="Total")
+                    .td(rwd="付款狀態")
+                      p 已付款
+                    .td.amount(rwd="總金額")
                       p $300
-                    .td.amount(rwd="Minimum")
+                    .td.amount(rwd="最小付款金額")
                       p $100
-                    .td.amount(rwd="Customize")
+                    .td.amount(rwd="客戶自訂金額")
                       p $300
-                    .td(rwd="Link")
-                      a(href="./checkout_confirm.html") Link
+                    .td(rwd="付款連結")
+                      a(href="./checkout_confirm.html") 連結
                   .tr
-                    .td(rwd="Name")
+                    .td(rwd="客戶名稱")
                       p Test
-                    .td(rwd="Status")
-                      p Unpaid
-                    .td.amount(rwd="Total")
+                    .td(rwd="付款狀態")
+                      p 未付款
+                    .td.amount(rwd="總金額")
                       p $500
-                    .td.amount(rwd="Minimum")
+                    .td.amount(rwd="最小付款金額")
                       p $100
-                    .td.amount(rwd="Customize")
+                    .td.amount(rwd="客戶自訂金額")
                       p -
                     .td(rwd="Link")
-                      a(href="javascript:;") Overtime
+                      a(href="javascript:;") 已失效
               section.paging
                 .paging-btn
                   i.icon-left-end

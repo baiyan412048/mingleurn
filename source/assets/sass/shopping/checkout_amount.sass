@@ -4,6 +4,41 @@
 
 .checkout_amount
   .all-wrapper
+    .decor-layer
+      position: fixed
+      width: 100vw
+      height: 100vh
+      z-index: -1
+      overflow: hidden
+      >div
+        position: absolute
+        opacity: 0
+        &.decor1
+          width: 17.7083vw
+          left: 15.52%
+          top: 0
+          height: 0
+          overflow: hidden
+          transition: opacity 0.3s, height 0.3s
+          +rwdmax(1024)
+            display: none
+        &.decor4
+          width: 9.1145vw
+          right: 9.375%
+          top: 68vh
+          height: 0
+          overflow: hidden
+          transition: opacity 0.3s, height 0.3s
+          +rwdmax(1024)
+            display: none
+      &.show
+        >div
+          opacity: 1
+          &.decor1
+            height: 257px
+          &.decor4
+            height: 146px
+
   main
     padding-bottom: 15.287%
     +rwdmax(767)
@@ -44,9 +79,23 @@
           +maxWidth($maxw: 500px, $margin: 0 auto 60px)
           .enter-amount
             font-size: px(22)
+          .form-row
+            .form-grid
+              padding: 0
+              .form-group
+                padding: 22px 10px
+          .form-group
+            &>p
+              font-size: px(15)
+            .readonly,
+            input,
+            textarea
+              font-size: px(15)
+          textarea
+            height: 50px
         .description
           +maxWidth($maxw: 525px, $margin: 0 auto 60px auto)
-          +fontSet($size: px(13), $lh: 25px)
+          +fontSet($size: px(14), $lh: 25px)
           +rwdmax(575)
             margin-bottom: 40px
         .btn-group
@@ -57,7 +106,7 @@
             width: 190px
             height: 50px
             border-radius: 10rem
-            +fontSetBold($font: $LBB, $size: px(13), $lh: 50px, $color: white)
+            +fontSetBold($font: $LBB, $size: px(14), $lh: 50px, $color: white)
             &:not(:first-child)
               margin-left: 12px
               +rwdmax(575)

@@ -8,6 +8,11 @@ html(lang="en")
   body.checkout_amount(data-page="checkout_amount")
     .main-wrapper.scrollbar-macosx(data-fake-body="")
       .all-wrapper
+        .decor-layer
+          .decor1
+            img(src="../../../assets/img/about/decor01.png", alt="")
+          .decor4
+            img(src="../../../assets/img/about/decor04.png", alt="")
         // 導覽列
         include ../layouts/_navbar.pug
         // 購物車
@@ -18,9 +23,9 @@ html(lang="en")
         // 主要內容
         main
           .header
-            .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") subtitle
-            h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Self-checkout
-            p.section-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") Dear customer, welcome to use online Self-checkout service. Please enter the checkout amount and leave your contact information, we will have customer service staff to contact you further, thank you!
+            .unit-name(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") 副標題
+            h1.unit-alias(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") 建立自訂付款連結
+            p.section-description.innertext(data-animate="fadeInUp" data-duration="0.4s" data-delay="0.4s") 自訂付款描述
 
           .container
             //- (style="background-image: url('../../../uploads/shopping/checkout-form-success.jpg')")
@@ -29,41 +34,41 @@ html(lang="en")
                 .form-row
                   .form-grid
                     label.form-group.required
-                      p Customer Name
-                      input(type="text" placeholder="Please enter the customer name")
+                      p 客戶名稱
+                      input(type="text" placeholder="請輸入客戶名稱")
                 .form-row
                   .form-grid
                     label.form-group.required
-                      p Total Amount
-                      input.enter-amount(type="number" placeholder="Please enter the total amount")
+                      p 總金額
+                      input.enter-amount(type="number" placeholder="請輸入總金額")
                 .form-row
                   .form-grid
                     label.form-group.message
-                      p Total Amount Remark
-                      textarea.scrollbar-inner(placeholder="Please enter what you want to remark")
+                      p 總金額備註
+                      textarea.scrollbar-inner(placeholder="請輸入備註文字")
                 .form-row
                   .form-grid
                     label.form-group
-                      p Minimum Amount
-                      input.enter-amount(type="number" placeholder="Please enter the Minimum Amount")
+                      p 最小付款金額
+                      input.enter-amount(type="number" placeholder="請輸入最小付款金額")
                 .form-row
                   .form-grid
                     label.form-group.message
-                      p Minimum Amount Remark
-                      textarea.scrollbar-inner(placeholder="Please enter what you want to remark")
+                      p 最小付款金額備註
+                      textarea.scrollbar-inner(placeholder="請輸入備註文字")
                 .form-row
                   .form-grid
                     label.form-group.message
-                      p Customize Amount Remark
-                      textarea.scrollbar-inner(placeholder="Please enter what you want to remark")
+                      p 自訂金額備註
+                      textarea.scrollbar-inner(placeholder="請輸入備註文字")
                 .form-row
                   .form-grid
                     label.form-group
-                      p Payment Time Limit (Minute)
-                      input(type="number" placeholder="Please enter the minute")
-              p.description Please confirm the payment amount with the service staff first.
+                      p 付款期限 (天)
+                      input(type="number" placeholder="請輸入天數")
+              p.description 請重複確認明細
               .btn-group
-                a.btn.btn-gold(href="javascript:;") Submit
+                a.btn.btn-gold(href="javascript:;") 送出
 
         // 頁尾
         footer
